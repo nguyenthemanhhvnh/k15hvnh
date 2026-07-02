@@ -471,3 +471,32 @@ footer{
 @media(max-width:380px){
   .event-slogan{font-size:22px}
 }
+/* ===========================
+   VIDEO
+=========================== */
+
+.video-section{
+    padding:90px 20px;
+    text-align:center;
+}
+
+.youtube-video{
+    width:min(950px,100%);
+    margin:40px auto 0;
+    border-radius:28px;
+    overflow:hidden;
+    border:1px solid rgba(255,255,255,.15);
+    box-shadow:0 25px 70px rgba(0,0,0,.35);
+}
+
+.youtube-video iframe{
+    display:block;
+    width:100%;
+    aspect-ratio:16/9;
+    border:none;
+}
+
+.video-section .lead{
+    max-width:760px;
+    margin:20px auto 0;
+}
