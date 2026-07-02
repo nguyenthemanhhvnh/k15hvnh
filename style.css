@@ -548,3 +548,81 @@ footer{
   line-height:1;
   cursor:pointer;
 }
+/* CONTACT */
+.contact-section{
+  padding:90px 18px;
+  background:linear-gradient(180deg,var(--bg2),var(--bg));
+}
+
+.contact-card{
+  width:min(720px,100%);
+  margin:36px auto 0;
+  padding:28px;
+  border-radius:28px;
+  border:1px solid var(--line);
+  background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.035));
+  box-shadow:0 24px 70px rgba(0,0,0,.28);
+  display:grid;
+  gap:18px;
+}
+
+.contact-item{
+  display:flex;
+  align-items:center;
+  gap:16px;
+  text-align:left;
+  padding:18px;
+  border-radius:20px;
+  background:rgba(255,255,255,.045);
+}
+
+.contact-icon{
+  width:46px;
+  height:46px;
+  border-radius:999px;
+  background:rgba(244,207,120,.15);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex:0 0 auto;
+}
+
+.contact-item strong{
+  display:block;
+  color:var(--gold);
+  font-size:24px;
+  line-height:1.2;
+}
+
+.contact-item span{
+  display:block;
+  margin-top:4px;
+  color:var(--muted);
+  font-weight:700;
+}
+
+.fanpage-link{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  min-height:54px;
+  padding:0 18px;
+  border-radius:999px;
+  background:var(--gold);
+  color:#10131b;
+  font-weight:950;
+}
+
+@media(max-width:560px){
+  .contact-card{
+    padding:20px;
+  }
+
+  .contact-item{
+    align-items:flex-start;
+  }
+
+  .contact-item strong{
+    font-size:20px;
+  }
+}
