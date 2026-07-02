@@ -35,3 +35,25 @@ const observer = new IntersectionObserver((entries)=>{
 },{threshold:0.15});
 
 document.querySelectorAll(".reveal").forEach((el)=>observer.observe(el));
+// Video popup
+const openVideoBtn = document.getElementById("openVideoBtn");
+const closeVideoBtn = document.getElementById("closeVideoBtn");
+const closeVideoBg = document.getElementById("closeVideoBg");
+const videoModal = document.getElementById("videoModal");
+const youtubeFrame = document.getElementById("youtubeFrame");
+
+const youtubeUrl = "https://www.youtube.com/embed/LVsBtRv6d7Y?autoplay=1&rel=0";
+
+function openVideo(){
+  videoModal.classList.add("active");
+  youtubeFrame.src = youtubeUrl;
+}
+
+function closeVideo(){
+  videoModal.classList.remove("active");
+  youtubeFrame.src = "";
+}
+
+if(openVideoBtn) openVideoBtn.addEventListener("click", openVideo);
+if(closeVideoBtn) closeVideoBtn.addEventListener("click", closeVideo);
+if(closeVideoBg) closeVideoBg.addEventListener("click", closeVideo);
