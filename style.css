@@ -626,3 +626,88 @@ footer{
     font-size:20px;
   }
 }
+/* ===========================
+   CONTACT
+=========================== */
+
+.contact-section{
+    padding:100px 20px;
+    text-align:center;
+}
+
+.contact-list{
+    margin-top:45px;
+    display:flex;
+    flex-direction:column;
+    gap:28px;
+    align-items:center;
+}
+
+.contact-item{
+    display:flex;
+    align-items:center;
+    gap:18px;
+}
+
+.contact-icon{
+    font-size:28px;
+    width:42px;
+    text-align:center;
+}
+
+.contact-item strong{
+    font-size:30px;
+    color:var(--gold);
+    font-weight:900;
+    display:block;
+    letter-spacing:.02em;
+}
+
+.contact-item span{
+    color:var(--muted);
+    font-size:18px;
+}
+
+.fanpage-title{
+    color:var(--muted);
+    font-size:17px;
+    margin-bottom:6px;
+}
+
+.fanpage-link{
+    color:var(--gold);
+    font-size:24px;
+    font-weight:900;
+    text-decoration:none;
+    letter-spacing:.02em;
+    transition:.35s ease;
+}
+
+.fanpage-link:hover{
+    color:#fff;
+    text-shadow:
+        0 0 8px rgba(244,207,120,.8),
+        0 0 18px rgba(244,207,120,.7),
+        0 0 32px rgba(244,207,120,.45);
+}
+
+@media(max-width:768px){
+
+.contact-item{
+    flex-direction:column;
+    gap:10px;
+}
+
+.contact-icon{
+    font-size:30px;
+}
+
+.contact-item strong{
+    font-size:24px;
+}
+
+.fanpage-link{
+    font-size:20px;
+}
+
+}
