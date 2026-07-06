@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Thư mời Thầy Cô – K15 FM</title>
 
-  <meta name="description" content="Thư mời Thầy Cô tham dự Lễ kỷ niệm 10 năm ra trường của Sinh viên Khóa 15 Học viện Ngân hàng.">
+  <meta name="description" content="Thư mời Thầy Cô tham dự Lễ kỷ niệm 10 năm ra trường Sinh viên Khóa 15 Học viện Ngân hàng.">
   <meta property="og:title" content="Thư mời Thầy Cô – K15 FM">
   <meta property="og:description" content="Ban Tổ chức K15 FM trân trọng kính mời Thầy Cô tham dự chương trình Thanh xuân phát lại.">
   <meta property="og:image" content="assets/images/hoc-vien-ngan-hang.jpg">
@@ -14,6 +14,21 @@
   <link rel="stylesheet" href="style.css">
 
   <style>
+    .teacher-logo{
+      width:92px;
+      height:92px;
+      margin:0 auto 20px;
+      border-radius:999px;
+      border:1px solid rgba(244,207,120,.45);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:var(--gold);
+      font-size:42px;
+      background:rgba(255,255,255,.06);
+      box-shadow:0 18px 60px rgba(0,0,0,.35);
+    }
+
     .teacher-name{
       margin:22px 0 10px;
       font-size:clamp(36px,7vw,86px);
@@ -24,20 +39,46 @@
     }
 
     .teacher-card{
-      width:min(860px,100%);
+      width:min(900px,100%);
       margin:0 auto;
-      padding:46px 32px;
-      border-radius:32px;
-      border:1px solid var(--line);
-      background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.035));
-      box-shadow:0 24px 70px rgba(0,0,0,.28);
+      padding:52px 34px;
+      border-radius:34px;
+      border:1px solid rgba(244,207,120,.35);
+      background:
+        radial-gradient(circle at top,rgba(244,207,120,.12),transparent 32%),
+        linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.035));
+      box-shadow:0 30px 90px rgba(0,0,0,.35);
       text-align:center;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .teacher-card:before,
+    .teacher-card:after{
+      content:"";
+      position:absolute;
+      width:160px;
+      height:160px;
+      border:1px solid rgba(244,207,120,.18);
+      border-radius:999px;
+    }
+
+    .teacher-card:before{
+      top:-70px;
+      left:-70px;
+    }
+
+    .teacher-card:after{
+      right:-70px;
+      bottom:-70px;
     }
 
     .teacher-card p{
+      position:relative;
+      z-index:1;
       color:var(--text);
       font-size:clamp(18px,2.2vw,26px);
-      line-height:1.65;
+      line-height:1.7;
       margin:18px 0 0;
       font-weight:700;
     }
@@ -48,6 +89,39 @@
       font-weight:600;
     }
 
+    .gratitude{
+      width:min(900px,100%);
+      margin:34px auto 0;
+      padding:34px 28px;
+      border-radius:30px;
+      border:1px solid rgba(244,207,120,.25);
+      background:rgba(255,255,255,.045);
+      color:var(--text);
+      text-align:center;
+      font-size:clamp(19px,2.5vw,30px);
+      line-height:1.55;
+      font-weight:850;
+    }
+
+    .gratitude span{
+      color:var(--gold);
+    }
+
+    .teacher-photo{
+      width:min(900px,100%);
+      margin:38px auto 0;
+      border-radius:32px;
+      overflow:hidden;
+      border:1px solid rgba(244,207,120,.28);
+      box-shadow:0 28px 80px rgba(0,0,0,.38);
+    }
+
+    .teacher-photo img{
+      width:100%;
+      display:block;
+      filter:brightness(.92) contrast(1.04);
+    }
+
     .teacher-info{
       display:grid;
       grid-template-columns:repeat(2,1fr);
@@ -56,8 +130,8 @@
     }
 
     .teacher-info-box{
-      padding:24px 18px;
-      border-radius:24px;
+      padding:26px 20px;
+      border-radius:26px;
       border:1px solid var(--line);
       background:rgba(255,255,255,.05);
       text-align:center;
@@ -79,22 +153,29 @@
       color:var(--text);
     }
 
-    .teacher-note{
-      width:min(860px,100%);
-      margin:34px auto 0;
-      color:var(--muted);
-      font-size:18px;
-      line-height:1.7;
+    .teacher-final{
+      width:min(900px,100%);
+      margin:38px auto 0;
+      color:var(--gold);
+      font-size:clamp(20px,2.7vw,34px);
+      line-height:1.45;
+      font-weight:900;
       text-align:center;
     }
 
     @media(max-width:720px){
       .teacher-card{
-        padding:34px 20px;
+        padding:38px 22px;
       }
 
       .teacher-info{
         grid-template-columns:1fr;
+      }
+
+      .teacher-logo{
+        width:78px;
+        height:78px;
+        font-size:34px;
       }
     }
   </style>
@@ -106,24 +187,25 @@
     <div class="hero-overlay"></div>
 
     <div class="hero-content">
-      <div class="invite-title reveal delay-1">THƯ MỜI</div>
-      <div class="hero-line reveal delay-2"></div>
+      <div class="teacher-logo reveal delay-1">🎓</div>
 
-      <div class="teacher-name reveal delay-3" id="teacherName">
+      <div class="invite-title reveal delay-2">THƯ MỜI</div>
+      <div class="hero-line reveal delay-3"></div>
+
+      <div class="teacher-name reveal delay-4" id="teacherName">
         Quý Thầy Cô
       </div>
 
-      <div class="event-slogan reveal delay-4">
+      <div class="event-slogan reveal delay-5">
         K15 FM – THANH XUÂN PHÁT LẠI
       </div>
 
-      <div class="event-desc reveal delay-5">
+      <div class="event-desc reveal delay-6">
         Lễ kỷ niệm 10 năm ra trường<br>
         Sinh viên Khóa 15 Học viện Ngân hàng
       </div>
 
-      <div class="event-date reveal delay-6">09.08.2026</div>
-      <div class="scroll-hint reveal delay-7">Cuộn xuống</div>
+      <div class="event-date reveal delay-7">09.08.2026</div>
     </div>
   </header>
 
@@ -147,8 +229,16 @@
         </p>
 
         <p class="sub">
-          Sự hiện diện của Thầy Cô là niềm vinh dự lớn lao và là nguồn động viên ý nghĩa đối với các thế hệ sinh viên Khóa 15 trong ngày trở về.
+          Sau 10 năm trưởng thành và bước đi trên những hành trình riêng, tập thể sinh viên Khóa 15 mong muốn được trở về, được gặp lại Thầy Cô và cùng ôn lại những ký ức đẹp dưới mái trường Học viện Ngân hàng.
         </p>
+      </div>
+
+      <div class="gratitude reveal">
+        💌 Với lòng biết ơn sâu sắc, K15 FM trân trọng gửi lời tri ân tới <span>Quý Thầy Cô</span> — những người đã dìu dắt, truyền cảm hứng và góp phần tạo nên thanh xuân đẹp nhất của chúng em.
+      </div>
+
+      <div class="teacher-photo reveal">
+        <img src="assets/images/anh-thay-co-k15.jpg" alt="Ảnh tập thể K15 với Thầy Cô" onerror="this.parentElement.style.display='none'">
       </div>
     </section>
 
@@ -169,7 +259,7 @@
 
           <div class="teacher-info-box">
             <div class="label">Địa điểm</div>
-            <strong>Học viện Ngân hàng<br>12 P. Chùa Bộc, Hà Nội</strong>
+            <strong>Học viện Ngân hàng<br>12 P. Chùa Bộc, Kim Liên, Hà Nội</strong>
           </div>
         </div>
 
@@ -208,9 +298,9 @@
           </div>
         </div>
 
-        <p class="teacher-note">
-          Ban Tổ chức rất mong được đón tiếp Thầy Cô trong ngày hội ngộ đặc biệt này.
-        </p>
+        <div class="teacher-final reveal">
+          “Sự hiện diện của Thầy Cô là niềm vinh dự và là món quà ý nghĩa nhất đối với tập thể sinh viên Khóa 15 Học viện Ngân hàng trong ngày hội ngộ.”
+        </div>
       </div>
     </section>
 
