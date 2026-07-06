@@ -1,15 +1,68 @@
 <!DOCTYPE html>
-<html>
+<html lang="vi">
 <head>
-<meta charset="UTF-8">
-<title>Avatar Studio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>K15FM Avatar Studio</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
+<body>
+  <main class="app">
+    <section class="hero">
+      <div class="eyebrow">Hội khóa K15FM</div>
+      <h1>Tạo ảnh đại diện</h1>
+      <p>K15 FM - Thanh xuân phát lại</p>
+    </section>
 
-<body style="background:#061a44;color:white;text-align:center;padding:100px">
+    <section class="studio">
+      <div class="preview-card">
+        <canvas id="avatarCanvas" width="1080" height="1080"></canvas>
+      </div>
 
-<h1>Avatar Studio K15FM</h1>
+      <div class="panel">
+        <label class="upload-box" for="photoInput">
+          <span class="upload-icon">📷</span>
+          <strong>Chọn ảnh của bạn</strong>
+          <small>Hỗ trợ JPG, PNG, WEBP</small>
+        </label>
+        <input id="photoInput" type="file" accept="image/*" hidden />
 
-<p>Đang xây dựng...</p>
+        <div class="control">
+          <div class="control-head">
+            <label for="zoomRange">Phóng to / thu nhỏ</label>
+            <span id="zoomValue">100%</span>
+          </div>
+          <input id="zoomRange" type="range" min="50" max="260" value="100" />
+        </div>
 
+        <div class="control">
+          <div class="control-head">
+            <label for="rotateRange">Xoay ảnh</label>
+            <span id="rotateValue">0°</span>
+          </div>
+          <input id="rotateRange" type="range" min="-30" max="30" value="0" />
+        </div>
+
+        <div class="actions">
+          <button id="resetBtn" class="btn btn-secondary">Căn lại</button>
+          <button id="downloadBtn" class="btn btn-primary">Tải avatar HD</button>
+        </div>
+
+        <p class="hint">
+          Mẹo: Sau khi chọn ảnh, hãy kéo trực tiếp trên ảnh để căn khuôn mặt vào giữa khung.
+        </p>
+      </div>
+    </section>
+
+    <section class="share-copy">
+      <h2>Caption gợi ý</h2>
+      <p id="captionText">
+        K15 FM - Thanh xuân phát lại 💙💛 Hẹn gặp nhau ngày 09.08.2026 tại Hội khóa 10 năm - Sinh viên K15 Học viện Ngân hàng!
+      </p>
+      <button id="copyCaptionBtn" class="btn btn-ghost">Sao chép caption</button>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
 </body>
 </html>
