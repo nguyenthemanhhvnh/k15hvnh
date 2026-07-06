@@ -11,528 +11,603 @@
   <meta property="og:image" content="assets/images/hoc-vien-ngan-hang.jpg">
   <meta property="og:type" content="website">
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&display=swap&subset=vietnamese" rel="stylesheet">
+
   <style>
-:root{
-  --bg:#050914;
-  --bg2:#08101f;
-  --gold:#f4cf78;
-  --text:#fff8e8;
-  --muted:rgba(255,255,255,.72);
-  --line:rgba(244,207,120,.28);
-}
+    :root{
+      --bg:#050914;
+      --bg2:#08101f;
+      --gold:#f4cf78;
+      --text:#fff8e8;
+      --muted:rgba(255,255,255,.74);
+      --line:rgba(244,207,120,.28);
+    }
 
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
-  margin:0;
-  font-family:"Plus Jakarta Sans",Arial,sans-serif;
-  background:var(--bg);
-  color:var(--text);
-}
+    *{box-sizing:border-box}
 
-.hero{
-  min-height:100svh;
-  position:relative;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  padding:110px 18px 56px;
-  overflow:hidden;
-}
+    body{
+      margin:0;
+      font-family:"Be Vietnam Pro",Arial,sans-serif;
+      background:var(--bg);
+      color:var(--text);
+    }
 
-.hero::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:url("assets/images/hoc-vien-ngan-hang.jpg") center/cover no-repeat;
-  filter:brightness(.68) contrast(1.08);
-  transform:scale(1.02);
-}
+    a{text-decoration:none;color:inherit}
 
-.hero::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:radial-gradient(circle at center,rgba(244,207,120,.18),transparent 34%),
-             linear-gradient(180deg,rgba(5,9,20,.22),rgba(5,9,20,.72) 55%,var(--bg));
-}
+    .hero{
+      min-height:100svh;
+      position:relative;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      padding:90px 18px 64px;
+      overflow:hidden;
+    }
 
-.hero-content{
-  position:relative;
-  z-index:2;
-  width:min(980px,100%);
-}
+    .hero:before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:url("assets/images/hoc-vien-ngan-hang.jpg") center/cover no-repeat;
+      filter:brightness(.62) contrast(1.05);
+      transform:scale(1.03);
+    }
 
-.logo-mark{font-size:44px;margin-bottom:18px}
+    .hero:after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        radial-gradient(circle at center,rgba(244,207,120,.18),transparent 36%),
+        linear-gradient(180deg,rgba(5,9,20,.18),rgba(5,9,20,.76) 62%,var(--bg));
+    }
 
-.small-label{
-  color:var(--gold);
-  text-transform:uppercase;
-  letter-spacing:.22em;
-  font-size:13px;
-  font-weight:950;
-}
+    .hero-content{
+      position:relative;
+      z-index:2;
+      width:min(980px,100%);
+    }
 
-.hero-line{
-  width:min(520px,80%);
-  height:1px;
-  margin:24px auto 28px;
-  background:var(--gold);
-  opacity:.8;
-}
+    .logo-mark{
+      width:88px;
+      height:88px;
+      margin:0 auto 22px;
+      border-radius:999px;
+      border:1px solid rgba(244,207,120,.48);
+      background:rgba(255,255,255,.08);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:40px;
+      box-shadow:0 18px 60px rgba(0,0,0,.38);
+    }
 
-.teacher-name{
-  margin:0;
-  color:var(--gold);
-  font-size:clamp(54px,10vw,128px);
-  line-height:.9;
-  font-weight:950;
-  letter-spacing:-.06em;
-}
+    .label{
+      color:var(--gold);
+      text-transform:uppercase;
+      letter-spacing:.22em;
+      font-size:13px;
+      font-weight:900;
+    }
 
-.event-title{
-  margin:24px 0 0;
-  color:var(--text);
-  font-size:clamp(34px,5vw,72px);
-  line-height:1;
-  font-weight:950;
-  text-transform:uppercase;
-}
+    .line{
+      width:min(520px,80%);
+      height:1px;
+      background:linear-gradient(90deg,transparent,var(--gold),transparent);
+      margin:24px auto 28px;
+    }
 
-.event-sub{
-  margin:22px auto 0;
-  color:var(--text);
-  font-size:clamp(20px,2.5vw,34px);
-  font-weight:800;
-  line-height:1.35;
-}
+    h1{
+      margin:0;
+      color:var(--gold);
+      font-size:clamp(44px,8vw,92px);
+      line-height:1.08;
+      font-weight:900;
+      letter-spacing:-.04em;
+    }
 
-.date{
-  margin-top:28px;
-  color:var(--gold);
-  font-size:clamp(28px,4vw,48px);
-  font-weight:950;
-  letter-spacing:.14em;
-}
+    .event-title{
+      margin-top:24px;
+      font-size:clamp(30px,5vw,62px);
+      line-height:1.08;
+      font-weight:900;
+      text-transform:uppercase;
+    }
 
-section{
-  padding:96px 18px;
-  background:linear-gradient(180deg,var(--bg),var(--bg2));
-}
+    .event-sub{
+      margin:22px auto 0;
+      font-size:clamp(18px,2.5vw,28px);
+      line-height:1.45;
+      font-weight:700;
+    }
 
-.inner{
-  width:min(1120px,100%);
-  margin:0 auto;
-  text-align:center;
-}
+    .date{
+      margin-top:28px;
+      color:var(--gold);
+      font-size:clamp(30px,4.5vw,52px);
+      font-weight:900;
+      letter-spacing:.12em;
+    }
 
-h2{
-  margin:16px 0 0;
-  font-size:clamp(46px,7vw,92px);
-  line-height:.95;
-  letter-spacing:-.06em;
-  font-weight:950;
-}
+    section{
+      padding:88px 18px;
+      background:linear-gradient(180deg,var(--bg),var(--bg2));
+    }
 
-h2 span{color:var(--gold)}
+    .inner{
+      width:min(1080px,100%);
+      margin:0 auto;
+      text-align:center;
+    }
 
-.invite-card,.agenda,.info-box,.contact-card{
-  border:1px solid var(--line);
-  border-radius:28px;
-  background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.035));
-  box-shadow:0 24px 70px rgba(0,0,0,.22);
-}
+    h2{
+      margin:14px 0 0;
+      font-size:clamp(40px,6.5vw,82px);
+      line-height:1.04;
+      font-weight:900;
+      letter-spacing:-.045em;
+    }
 
-.invite-card{
-  width:min(860px,100%);
-  margin:0 auto;
-  padding:44px 28px;
-}
+    h2 span{color:var(--gold)}
 
-.invite-card p{
-  margin:20px 0 0;
-  color:var(--text);
-  font-size:clamp(18px,2.2vw,26px);
-  line-height:1.65;
-  font-weight:700;
-}
+    .card{
+      width:min(900px,100%);
+      margin:0 auto;
+      padding:44px 28px;
+      border-radius:32px;
+      border:1px solid var(--line);
+      background:
+        radial-gradient(circle at top,rgba(244,207,120,.12),transparent 34%),
+        linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.035));
+      box-shadow:0 28px 80px rgba(0,0,0,.3);
+    }
 
-.invite-card strong{color:var(--gold)}
+    .card p{
+      margin:20px 0 0;
+      font-size:clamp(17px,2.2vw,24px);
+      line-height:1.75;
+      font-weight:600;
+    }
 
-.sub-note{
-  color:var(--muted)!important;
-  font-size:18px!important;
-  font-weight:600!important;
-}
+    .card strong{
+      color:var(--gold);
+      font-weight:900;
+    }
 
-.gratitude,.final-quote{
-  width:min(900px,100%);
-  margin:34px auto 0;
-  color:var(--gold);
-  font-size:clamp(20px,2.7vw,34px);
-  line-height:1.45;
-  font-weight:900;
-  text-align:center;
-}
+    .note{
+      color:var(--muted);
+      font-size:clamp(16px,2vw,20px)!important;
+      font-weight:500!important;
+    }
 
-.info-grid{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:18px;
-  margin-top:38px;
-}
+    .gratitude{
+      width:min(900px,100%);
+      margin:34px auto 0;
+      padding:30px 26px;
+      border-radius:28px;
+      border:1px solid rgba(244,207,120,.26);
+      background:rgba(255,255,255,.045);
+      font-size:clamp(18px,2.4vw,28px);
+      line-height:1.6;
+      font-weight:700;
+    }
 
-.info-box{
-  padding:26px 20px;
-}
+    .gratitude span{color:var(--gold);font-weight:900}
 
-.info-box .label{
-  color:var(--gold);
-  text-transform:uppercase;
-  letter-spacing:.18em;
-  font-size:12px;
-  font-weight:950;
-  margin-bottom:10px;
-}
+    .photo{
+      width:min(900px,100%);
+      margin:36px auto 0;
+      border-radius:30px;
+      overflow:hidden;
+      border:1px solid rgba(244,207,120,.26);
+      box-shadow:0 28px 80px rgba(0,0,0,.36);
+    }
 
-.info-box strong{
-  display:block;
-  font-size:22px;
-  line-height:1.45;
-}
+    .photo img{
+      width:100%;
+      display:block;
+    }
 
-.agenda{
-  margin:30px auto 0;
-  width:min(960px,100%);
-  padding:26px;
-  text-align:left;
-}
+    .info-grid{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:18px;
+      margin-top:36px;
+    }
 
-.agenda-part{
-  text-align:center;
-  color:var(--gold);
-  font-size:22px;
-  font-weight:950;
-  letter-spacing:.14em;
-  text-transform:uppercase;
-  margin-bottom:12px;
-}
+    .info-box{
+      padding:26px 20px;
+      border-radius:26px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.055);
+    }
 
-.agenda-part span{
-  display:block;
-  color:var(--text);
-  font-size:15px;
-  letter-spacing:0;
-  margin-top:6px;
-  text-transform:none;
-}
+    .info-box .small{
+      color:var(--gold);
+      text-transform:uppercase;
+      letter-spacing:.18em;
+      font-size:12px;
+      font-weight:900;
+      margin-bottom:10px;
+    }
 
-.agenda-row{
-  display:grid;
-  grid-template-columns:160px 1fr;
-  gap:18px;
-  padding:16px 0;
-  border-top:1px solid rgba(255,255,255,.1);
-}
+    .info-box b{
+      display:block;
+      font-size:21px;
+      line-height:1.5;
+    }
 
-.agenda-time{
-  color:var(--gold);
-  font-size:18px;
-  font-weight:950;
-}
+    .agenda{
+      width:min(960px,100%);
+      margin:30px auto 0;
+      padding:26px;
+      text-align:left;
+      border-radius:30px;
+      border:1px solid var(--line);
+      background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.035));
+      box-shadow:0 24px 70px rgba(0,0,0,.24);
+    }
 
-.agenda-text{
-  color:var(--text);
-  font-size:17px;
-  line-height:1.55;
-}
+    .agenda-title{
+      text-align:center;
+      color:var(--gold);
+      font-size:21px;
+      font-weight:900;
+      letter-spacing:.13em;
+      text-transform:uppercase;
+      margin:8px 0 14px;
+    }
 
-.agenda-text small{
-  display:block;
-  margin-top:6px;
-  color:var(--muted);
-  font-size:14px;
-}
+    .agenda-title span{
+      display:block;
+      margin-top:7px;
+      color:var(--text);
+      font-size:15px;
+      letter-spacing:0;
+      text-transform:none;
+      font-weight:600;
+    }
 
-.agenda-note{
-  margin:14px 0;
-  padding:13px 16px;
-  border-radius:16px;
-  background:rgba(244,207,120,.12);
-  color:var(--gold);
-  font-weight:950;
-  text-align:center;
-}
+    .agenda-row{
+      display:grid;
+      grid-template-columns:155px 1fr;
+      gap:18px;
+      padding:16px 0;
+      border-top:1px solid rgba(255,255,255,.1);
+    }
 
-.contact-card{
-  width:min(720px,100%);
-  margin:38px auto 0;
-  padding:30px 24px;
-  display:grid;
-  gap:22px;
-}
+    .time{
+      color:var(--gold);
+      font-size:17px;
+      font-weight:900;
+    }
 
-.contact-item{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:16px;
-  text-align:left;
-}
+    .agenda-text{
+      font-size:16.5px;
+      line-height:1.65;
+      font-weight:500;
+    }
 
-.contact-icon{font-size:28px}
+    .agenda-text small{
+      display:block;
+      margin-top:6px;
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.55;
+    }
 
-.contact-item strong{
-  color:var(--gold);
-  font-size:26px;
-  font-weight:950;
-}
+    .agenda-note{
+      margin:14px 0 22px;
+      padding:13px 16px;
+      border-radius:16px;
+      background:rgba(244,207,120,.12);
+      color:var(--gold);
+      font-weight:900;
+      text-align:center;
+    }
 
-.contact-item span{
-  display:block;
-  margin-top:4px;
-  color:var(--muted);
-  font-size:17px;
-  font-weight:700;
-}
+    .final{
+      width:min(920px,100%);
+      margin:40px auto 0;
+      color:var(--gold);
+      font-size:clamp(19px,2.6vw,30px);
+      line-height:1.55;
+      font-weight:800;
+    }
 
-.fanpage-title{
-  color:var(--muted);
-  font-size:17px;
-  margin-bottom:5px;
-}
+    .contact-card{
+      width:min(720px,100%);
+      margin:36px auto 0;
+      padding:30px 24px;
+      border-radius:30px;
+      border:1px solid var(--line);
+      background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.035));
+      display:grid;
+      gap:22px;
+    }
 
-.fanpage-link{
-  color:var(--gold);
-  font-size:23px;
-  font-weight:950;
-  text-decoration:none;
-  transition:.35s ease;
-}
+    .contact-item{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:16px;
+      text-align:left;
+    }
 
-.fanpage-link:hover{
-  color:#fff;
-  text-shadow:0 0 8px rgba(244,207,120,.8),0 0 18px rgba(244,207,120,.65);
-}
+    .contact-icon{
+      font-size:26px;
+      width:40px;
+      flex:0 0 auto;
+      text-align:center;
+    }
 
-footer{
-  padding:44px 18px;
-  text-align:center;
-  background:#03060d;
-  color:var(--muted);
-  line-height:1.8;
-}
+    .contact-item strong{
+      display:block;
+      color:var(--gold);
+      font-size:24px;
+      line-height:1.25;
+      font-weight:900;
+    }
 
-footer strong{color:var(--gold)}
+    .contact-item span{
+      display:block;
+      margin-top:4px;
+      color:var(--muted);
+      font-size:16px;
+      font-weight:600;
+    }
 
-@media(max-width:720px){
-  .teacher-name{
-    font-size:clamp(44px,13vw,74px);
-  }
+    .fanpage-title{
+      color:var(--muted);
+      font-size:16px;
+      margin-bottom:5px;
+      font-weight:600;
+    }
 
-  .event-title{
-    font-size:clamp(28px,8vw,44px);
-  }
+    .fanpage-link{
+      color:var(--gold);
+      font-size:22px;
+      font-weight:900;
+      transition:.3s ease;
+    }
 
-  .info-grid{
-    grid-template-columns:1fr;
-  }
+    .fanpage-link:hover{
+      color:#fff;
+      text-shadow:0 0 8px rgba(244,207,120,.8),0 0 18px rgba(244,207,120,.6);
+    }
 
-  .agenda-row{
-    grid-template-columns:1fr;
-    gap:6px;
-  }
+    footer{
+      padding:44px 18px;
+      text-align:center;
+      color:var(--muted);
+      background:#03060d;
+      line-height:1.8;
+      font-size:15px;
+    }
 
-  .contact-item{
-    flex-direction:column;
-    text-align:center;
-  }
-}
-</style>
+    footer strong{color:var(--gold)}
+
+    @media(max-width:720px){
+      .hero{
+        padding:72px 16px 56px;
+      }
+
+      .logo-mark{
+        width:74px;
+        height:74px;
+        font-size:32px;
+      }
+
+      h1{
+        font-size:clamp(38px,11vw,62px);
+      }
+
+      .event-title{
+        font-size:clamp(28px,8vw,42px);
+      }
+
+      .event-sub{
+        font-size:17px;
+      }
+
+      .info-grid{
+        grid-template-columns:1fr;
+      }
+
+      .agenda{
+        padding:22px;
+      }
+
+      .agenda-row{
+        grid-template-columns:1fr;
+        gap:6px;
+      }
+
+      .contact-item{
+        flex-direction:column;
+        text-align:center;
+      }
+
+      .contact-item strong{
+        font-size:22px;
+      }
+
+      .fanpage-link{
+        font-size:19px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-  <header class="hero">
-    <div class="hero-content">
-      <div class="logo-mark">🎓</div>
+<header class="hero">
+  <div class="hero-content">
+    <div class="logo-mark">🎓</div>
+    <div class="label">Thư mời trân trọng</div>
+    <div class="line"></div>
 
-      <div class="small-label">Thư mời trân trọng</div>
-      <div class="hero-line"></div>
+    <h1 id="teacherNameHero">Quý Thầy Cô</h1>
 
-      <h1 class="teacher-name" id="teacherNameHero">Quý Thầy Cô</h1>
-
-      <div class="event-title">
-        K15 FM<br>
-        Thanh xuân phát lại
-      </div>
-
-      <div class="event-sub">
-        Lễ kỷ niệm 10 năm ra trường<br>
-        Sinh viên Khóa 15 Học viện Ngân hàng
-      </div>
-
-      <div class="date">09.08.2026</div>
+    <div class="event-title">
+      K15 FM<br>
+      Thanh xuân phát lại
     </div>
-  </header>
 
-  <main>
+    <div class="event-sub">
+      Lễ kỷ niệm 10 năm ra trường<br>
+      Sinh viên Khóa 15 Học viện Ngân hàng
+    </div>
 
-    <section>
-      <div class="inner">
-        <div class="invite-card">
-          <div class="invite-card-content">
-            <div class="small-label">Kính gửi</div>
+    <div class="date">09.08.2026</div>
+  </div>
+</header>
 
-            <h2 id="teacherNameCard">Quý Thầy Cô</h2>
+<main>
 
-            <p>
-              Ban Tổ chức Hội khóa K15 FM trân trọng kính mời<br>
-              <strong id="teacherNameText">Quý Thầy Cô</strong><br>
-              tham dự chương trình<br>
-              <strong>Lễ kỷ niệm 10 năm ra trường của Sinh viên Khóa 15 Học viện Ngân hàng</strong>
-            </p>
+<section>
+  <div class="inner">
+    <div class="card">
+      <div class="label">Kính gửi</div>
 
-            <p class="sub-note">
-              Sau 10 năm trưởng thành và bước đi trên những hành trình riêng, tập thể sinh viên Khóa 15 mong muốn được trở về, được gặp lại Thầy Cô và cùng ôn lại những ký ức đẹp dưới mái trường Học viện Ngân hàng.
-            </p>
-          </div>
-        </div>
+      <h2 id="teacherNameCard">Quý Thầy Cô</h2>
 
-        <div class="gratitude">
-          💌 Với lòng biết ơn sâu sắc, K15 FM trân trọng gửi lời tri ân tới
-          <span>Quý Thầy Cô</span> — những người đã dìu dắt, truyền cảm hứng và góp phần tạo nên thanh xuân đẹp nhất của chúng em.
-        </div>
+      <p>
+        Ban Tổ chức Hội khóa K15 FM trân trọng kính mời<br>
+        <strong id="teacherNameText">Quý Thầy Cô</strong><br>
+        tham dự chương trình<br>
+        <strong>Lễ kỷ niệm 10 năm ra trường của Sinh viên Khóa 15 Học viện Ngân hàng</strong>
+      </p>
 
-        <div class="photo-box">
-          <img src="assets/images/anh-thay-co-k15.jpg" alt="Ảnh tập thể K15 với Thầy Cô" onerror="this.parentElement.style.display='none'">
+      <p class="note">
+        Sau 10 năm trưởng thành và bước đi trên những hành trình riêng, tập thể sinh viên Khóa 15 mong muốn được trở về, được gặp lại Thầy Cô và cùng ôn lại những ký ức đẹp dưới mái trường Học viện Ngân hàng.
+      </p>
+    </div>
+
+    <div class="gratitude">
+      💌 Với lòng biết ơn sâu sắc, K15 FM trân trọng gửi lời tri ân tới
+      <span>Quý Thầy Cô</span> — những người đã dìu dắt, truyền cảm hứng và góp phần tạo nên thanh xuân đẹp nhất của chúng em.
+    </div>
+
+    <div class="photo">
+      <img src="assets/images/anh-thay-co-k15.jpg" alt="Ảnh tập thể K15 với Thầy Cô" onerror="this.parentElement.style.display='none'">
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="inner">
+    <div class="label">Thông tin chương trình</div>
+
+    <h2>Hẹn gặp lại<br><span>09.08.2026</span></h2>
+
+    <div class="info-grid">
+      <div class="info-box">
+        <div class="small">Thời gian</div>
+        <b>08:00 – 14:00<br>Chủ nhật</b>
+      </div>
+
+      <div class="info-box">
+        <div class="small">Địa điểm</div>
+        <b>Học viện Ngân hàng<br>12 P. Chùa Bộc, Kim Liên, Hà Nội</b>
+      </div>
+    </div>
+
+    <div class="agenda">
+      <div class="agenda-title">Phần lễ <span>Hội trường lớn</span></div>
+
+      <div class="agenda-row">
+        <div class="time">8h00 - 9h00</div>
+        <div class="agenda-text">Đón tiếp, check-in, chụp ảnh kỷ niệm</div>
+      </div>
+
+      <div class="agenda-row">
+        <div class="time">9h00 - 10h30</div>
+        <div class="agenda-text">
+          Chương trình Hội ngộ - Tri ân - Kết nối
+          <small>Tri ân Nhà trường, Thầy Cô và các hoạt động kỷ niệm của K15 FM</small>
         </div>
       </div>
-    </section>
 
-    <section>
-      <div class="inner">
-        <div class="small-label">Thông tin chương trình</div>
+      <div class="agenda-row">
+        <div class="time">10h30 - 11h15</div>
+        <div class="agenda-text">Chụp ảnh kỷ niệm</div>
+      </div>
 
-        <h2>
-          Hẹn gặp lại<br>
-          <span>09.08.2026</span>
-        </h2>
+      <div class="agenda-note">Di chuyển qua Trung tâm tổ chức sự kiện</div>
 
-        <div class="info-grid">
-          <div class="info-box">
-            <div class="label">Thời gian</div>
-            <strong>08:00 – 14:00<br>Chủ nhật</strong>
-          </div>
+      <div class="agenda-title">Phần hội <span>Trung tâm tổ chức sự kiện</span></div>
 
-          <div class="info-box">
-            <div class="label">Địa điểm</div>
-            <strong>Học viện Ngân hàng<br>12 P. Chùa Bộc, Kim Liên, Hà Nội</strong>
-          </div>
-        </div>
+      <div class="agenda-row">
+        <div class="time">11h30 - 13h00</div>
+        <div class="agenda-text">Khai tiệc, giao lưu văn nghệ, minigame kết nối, lucky draw</div>
+      </div>
+    </div>
 
-        <div class="agenda">
-          <div class="agenda-part">
-            Phần lễ
-            <span>Hội trường lớn</span>
-          </div>
+    <div class="final">
+      “Sự hiện diện của Thầy Cô là niềm vinh dự và là món quà ý nghĩa nhất đối với tập thể sinh viên Khóa 15 Học viện Ngân hàng trong ngày hội ngộ.”
+    </div>
+  </div>
+</section>
 
-          <div class="agenda-row">
-            <div class="agenda-time">8h00 - 9h00</div>
-            <div class="agenda-text">Đón tiếp, check-in, chụp ảnh kỷ niệm</div>
-          </div>
+<section>
+  <div class="inner">
+    <div class="label">Liên hệ</div>
 
-          <div class="agenda-row">
-            <div class="agenda-time">9h00 - 10h30</div>
-            <div class="agenda-text">
-              Chương trình Hội ngộ - Tri ân - Kết nối
-              <small>Tri ân Nhà trường, Thầy Cô và các hoạt động kỷ niệm của K15 FM</small>
-            </div>
-          </div>
+    <h2>Hotline<br><span>Ban Tổ chức</span></h2>
 
-          <div class="agenda-row">
-            <div class="agenda-time">10h30 - 11h15</div>
-            <div class="agenda-text">Chụp ảnh kỷ niệm</div>
-          </div>
-
-          <div class="agenda-note">Di chuyển qua Trung tâm tổ chức sự kiện</div>
-
-          <div class="agenda-part">
-            Phần hội
-            <span>Trung tâm tổ chức sự kiện</span>
-          </div>
-
-          <div class="agenda-row">
-            <div class="agenda-time">11h30 - 13h00</div>
-            <div class="agenda-text">Khai tiệc, giao lưu văn nghệ, minigame kết nối, lucky draw</div>
-          </div>
-        </div>
-
-        <div class="final-quote">
-          “Sự hiện diện của Thầy Cô là niềm vinh dự và là món quà ý nghĩa nhất đối với tập thể sinh viên Khóa 15 Học viện Ngân hàng trong ngày hội ngộ.”
+    <div class="contact-card">
+      <div class="contact-item">
+        <div class="contact-icon">☎️</div>
+        <div>
+          <strong>0982 684 133</strong>
+          <span>Phương Dung (Dung Bee)</span>
         </div>
       </div>
-    </section>
 
-    <section>
-      <div class="inner">
-        <div class="small-label">Liên hệ</div>
-
-        <h2>
-          Hotline<br>
-          <span>Ban Tổ chức</span>
-        </h2>
-
-        <div class="contact-card">
-          <div class="contact-item">
-            <div class="contact-icon">☎️</div>
-            <div>
-              <strong>0982 684 133</strong>
-              <span>Phương Dung (Dung Bee)</span>
-            </div>
-          </div>
-
-          <div class="contact-item">
-            <div class="contact-icon">☎️</div>
-            <div>
-              <strong>0976 005 898</strong>
-              <span>Nam Tạ</span>
-            </div>
-          </div>
-
-          <div class="contact-item">
-            <div class="contact-icon">🌐</div>
-            <div>
-              <div class="fanpage-title">Fanpage chính thức</div>
-              <a class="fanpage-link" href="https://www.facebook.com/K15FM" target="_blank">
-                facebook.com/K15FM
-              </a>
-            </div>
-          </div>
+      <div class="contact-item">
+        <div class="contact-icon">☎️</div>
+        <div>
+          <strong>0976 005 898</strong>
+          <span>Nam Tạ</span>
         </div>
       </div>
-    </section>
 
-  </main>
+      <div class="contact-item">
+        <div class="contact-icon">🌐</div>
+        <div>
+          <div class="fanpage-title">Fanpage chính thức</div>
+          <a class="fanpage-link" href="https://www.facebook.com/K15FM" target="_blank">
+            facebook.com/K15FM
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-  <footer>
-    <strong>K15 FM – THANH XUÂN PHÁT LẠI</strong><br>
-    Ban Tổ chức trân trọng kính mời
-  </footer>
+</main>
 
-  <script>
-    const params = new URLSearchParams(window.location.search);
-    const ten = params.get("ten");
+<footer>
+  <strong>K15 FM – THANH XUÂN PHÁT LẠI</strong><br>
+  Ban Tổ chức trân trọng kính mời
+</footer>
 
-    if(ten){
-      const name = ten.replace(/\+/g," ");
-      document.getElementById("teacherNameHero").textContent = name;
-      document.getElementById("teacherNameCard").textContent = name;
-      document.getElementById("teacherNameText").textContent = name;
-      document.title = "Thư mời " + name + " – K15 FM";
-    }
-  </script>
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const ten = params.get("ten");
+
+  if(ten){
+    const name = ten.replace(/\+/g," ");
+    document.getElementById("teacherNameHero").textContent = name;
+    document.getElementById("teacherNameCard").textContent = name;
+    document.getElementById("teacherNameText").textContent = name;
+    document.title = "Thư mời " + name + " – K15 FM";
+  }
+</script>
 
 </body>
 </html>
