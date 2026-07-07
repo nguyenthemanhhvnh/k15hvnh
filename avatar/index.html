@@ -1,21 +1,57 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-<meta charset="UTF-8">
-<title>K15FM Avatar Studio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>K15FM Avatar Studio</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
+<body>
+  <main class="page">
+    <header class="hero">
+      <div class="pill">K15FM • Avatar Studio</div>
+      <h1>Tạo ảnh đại diện</h1>
+      <p>K15 FM - Thanh xuân phát lại</p>
+    </header>
 
-<body style="
-background:#061b49;
-color:white;
-font-family:Arial;
-text-align:center;
-padding-top:120px;
-">
+    <section class="studio">
+      <div class="preview">
+        <canvas id="canvas" width="1080" height="1080"></canvas>
+      </div>
 
-<h1>K15FM Avatar Studio</h1>
+      <aside class="panel">
+        <label class="upload-card" for="upload">
+          <span>📷</span>
+          <strong>Chọn ảnh của bạn</strong>
+          <small>Ảnh được xử lý ngay trên trình duyệt, không lưu lên server.</small>
+        </label>
+        <input id="upload" type="file" accept="image/*" hidden />
 
-<h2>Đang xây dựng...</h2>
+        <div class="control">
+          <div class="control-top"><label for="zoom">Phóng to / thu nhỏ</label><b id="zoomValue">100%</b></div>
+          <input id="zoom" type="range" min="60" max="280" value="100" />
+        </div>
 
+        <div class="control">
+          <div class="control-top"><label for="rotate">Xoay ảnh</label><b id="rotateValue">0°</b></div>
+          <input id="rotate" type="range" min="-35" max="35" value="0" />
+        </div>
+
+        <div class="button-grid">
+          <button id="reset" class="btn secondary">Căn lại</button>
+          <button id="download" class="btn primary">Tải avatar HD</button>
+        </div>
+
+        <p class="tip">Mẹo: Kéo trực tiếp trên ảnh để căn khuôn mặt. Trên máy tính có thể lăn chuột để zoom nhanh.</p>
+      </aside>
+    </section>
+
+    <section class="caption-box">
+      <h2>Caption gợi ý</h2>
+      <p id="caption">K15 FM - Thanh xuân phát lại 💙💛 Cùng đổi avatar và hẹn gặp nhau ngày 09.08.2026 tại Hội khóa 10 năm - Sinh viên K15 Học viện Ngân hàng!</p>
+      <button id="copy" class="btn ghost">Sao chép caption</button>
+    </section>
+  </main>
+  <script src="script.js"></script>
 </body>
 </html>
