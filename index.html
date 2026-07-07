@@ -30,6 +30,11 @@
         Sinh viên Khóa 15 Học viện Ngân hàng
       </div>
       <div class="event-date reveal delay-6">09.08.2026</div>
+      <div class="video-button-wrap reveal delay-7">
+        <button class="video-open-btn" id="openVideoBtn">
+           ▶ Xem video
+        </button>
+      </div> 
       <div class="scroll-hint reveal delay-7">Cuộn xuống</div>
     </div>
   </header>
@@ -55,8 +60,8 @@
         <div class="class-label">Tập thể lớp</div>
         <div id="className">K15 FM</div>
         <p>
-          tham dự chương trình Lễ kỷ niệm 10 năm ra trường của sinh viên Khóa 15<br>
-          Học viện Ngân hàng.
+          tham dự chương trình Lễ kỷ niệm 10 năm ra trường của <br>
+          sinh viên Khóa 15 Học viện Ngân hàng
         </p>
       </div>
     </section>
@@ -165,7 +170,21 @@
     <strong>K15 FM – THANH XUÂN PHÁT LẠI</strong><br>
     Ban Tổ chức trân trọng kính mời.
   </footer>
+<div class="video-modal" id="videoModal">
+  <div class="video-modal-bg" id="closeVideoBg"></div>
 
+  <div class="video-modal-content">
+    <button class="video-close-btn" id="closeVideoBtn">×</button>
+
+    <iframe
+      id="youtubeFrame"
+      src=""
+      title="Hành khúc Học viện Ngân hàng"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen>
+    </iframe>
+  </div>
+</div> 
   <script src="script.js"></script>
 </body>
 </html>
