@@ -4,7 +4,7 @@ html{scroll-behavior:smooth}
 body{margin:0;font-family:"Be Vietnam Pro",Arial,sans-serif;background:var(--bg);color:var(--text)}
 a{color:inherit;text-decoration:none}
 
-/* HERO FINAL - KHÔNG CHE BIỂN TRƯỜNG */
+/* HERO FINAL */
 .hero{
   min-height:100svh;
   position:relative;
@@ -12,7 +12,7 @@ a{color:inherit;text-decoration:none}
   align-items:flex-start;
   justify-content:center;
   text-align:center;
-  padding:28px 18px 56px;
+  padding:105px 18px 56px;
   overflow:hidden;
 }
 
@@ -21,7 +21,7 @@ a{color:inherit;text-decoration:none}
   inset:0;
   background:url("assets/images/hoc-vien-ngan-hang.jpg") center center/cover no-repeat;
   transform:scale(1);
-  filter:brightness(.74) contrast(1.06);
+  filter:brightness(.73) contrast(1.06);
 }
 
 .hero-overlay{
@@ -29,24 +29,24 @@ a{color:inherit;text-decoration:none}
   inset:0;
   background:
     linear-gradient(180deg,
-      rgba(5,9,20,.72) 0%,
-      rgba(5,9,20,.48) 18%,
-      rgba(5,9,20,.16) 38%,
-      rgba(5,9,20,.28) 58%,
-      rgba(5,9,20,.78) 100%);
+      rgba(5,9,20,.45) 0%,
+      rgba(5,9,20,.30) 22%,
+      rgba(5,9,20,.10) 42%,
+      rgba(5,9,20,.42) 68%,
+      rgba(5,9,20,.88) 100%);
 }
 
 .hero-content{
   position:relative;
   z-index:2;
-  width:min(860px,100%);
+  width:min(920px,100%);
   margin:0 auto;
   padding:0;
 }
 
 .invite-title{
   color:var(--gold);
-  font-size:clamp(20px,2.1vw,30px);
+  font-size:clamp(28px,3.2vw,46px);
   font-weight:950;
   letter-spacing:.22em;
   text-transform:uppercase;
@@ -54,24 +54,24 @@ a{color:inherit;text-decoration:none}
 }
 
 .hero-line{
-  width:min(320px,64%);
+  width:min(380px,68%);
   height:1px;
-  margin:10px auto 12px;
+  margin:14px auto 16px;
   background:linear-gradient(90deg,transparent,var(--gold),transparent);
 }
 
 .event-name{
   color:var(--gold);
-  font-size:clamp(34px,4.2vw,58px);
+  font-size:clamp(48px,6.2vw,86px);
   font-weight:950;
   line-height:.95;
   letter-spacing:-.04em;
 }
 
 .event-slogan{
-  margin-top:7px;
+  margin-top:10px;
   color:var(--text);
-  font-size:clamp(15px,1.7vw,23px);
+  font-size:clamp(20px,2.5vw,34px);
   font-weight:950;
   line-height:1.2;
   text-transform:uppercase;
@@ -79,28 +79,28 @@ a{color:inherit;text-decoration:none}
 }
 
 .event-desc{
-  margin-top:10px;
+  margin-top:14px;
   color:var(--text);
-  font-size:clamp(13px,1.35vw,18px);
+  font-size:clamp(15px,1.7vw,22px);
   font-weight:700;
   line-height:1.45;
 }
 
 .event-date{
-  margin-top:10px;
+  margin-top:14px;
   color:var(--gold);
-  font-size:clamp(18px,2vw,26px);
+  font-size:clamp(22px,2.6vw,34px);
   font-weight:950;
   letter-spacing:.12em;
 }
 
-.hero-actions{margin-top:12px}
+.hero-actions{margin-top:14px}
 
 .video-open-btn{
   border:1px solid rgba(244,207,120,.45);
   background:rgba(5,9,20,.38);
   color:var(--text);
-  padding:9px 18px;
+  padding:10px 20px;
   border-radius:999px;
   font-weight:850;
   letter-spacing:.03em;
@@ -113,7 +113,7 @@ a{color:inherit;text-decoration:none}
 .video-open-btn:hover{background:var(--gold);color:#10131b}
 
 .scroll-hint{
-  margin-top:10px;
+  margin-top:12px;
   color:var(--muted);
   text-transform:uppercase;
   letter-spacing:.22em;
@@ -122,7 +122,15 @@ a{color:inherit;text-decoration:none}
 
 section{padding:88px 18px;background:linear-gradient(180deg,var(--bg),var(--bg2))}
 .section-inner{width:min(1120px,100%);margin:0 auto;text-align:center}
-.section-label,.detail-label,.class-label{color:var(--gold);text-transform:uppercase;letter-spacing:.22em;font-size:13px;font-weight:950}
+.section-label,.detail-label{color:var(--gold);text-transform:uppercase;letter-spacing:.22em;font-size:13px;font-weight:950}
+
+.class-label{
+  color:var(--gold);
+  text-transform:uppercase;
+  letter-spacing:.22em;
+  font-size:18px;
+  font-weight:950;
+}
 
 h2{
   margin:16px 0 0;
@@ -175,10 +183,10 @@ h2 span{color:var(--gold)}
   font-weight:700;
 }
 
-.class-label{margin-top:26px}
+.class-label{margin-top:30px}
 
 #className{
-  margin-top:8px;
+  margin-top:10px;
   color:var(--gold);
   font-size:clamp(44px,7vw,88px);
   font-weight:950;
@@ -323,7 +331,7 @@ footer strong{color:var(--gold)}
 
 @media(max-width:720px){
   .hero{
-    padding:24px 14px 52px;
+    padding:86px 14px 52px;
   }
 
   .hero-fallback{
@@ -331,30 +339,30 @@ footer strong{color:var(--gold)}
   }
 
   .invite-title{
-    font-size:18px;
+    font-size:22px;
     letter-spacing:.18em;
   }
 
   .hero-line{
-    margin:9px auto 10px;
+    margin:11px auto 13px;
   }
 
   .event-name{
-    font-size:34px;
+    font-size:42px;
   }
 
   .event-slogan{
-    font-size:14px;
+    font-size:17px;
   }
 
   .event-desc{
-    font-size:12.5px;
-    margin-top:8px;
+    font-size:13.5px;
+    margin-top:10px;
   }
 
   .event-date{
-    font-size:18px;
-    margin-top:8px;
+    font-size:22px;
+    margin-top:10px;
   }
 
   .video-open-btn{
@@ -388,6 +396,10 @@ footer strong{color:var(--gold)}
 
   #className{
     font-size:clamp(42px,12vw,72px);
+  }
+
+  .class-label{
+    font-size:16px;
   }
 
   .contact-card{
