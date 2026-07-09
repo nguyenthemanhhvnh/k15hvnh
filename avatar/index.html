@@ -1,15 +1,98 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-<meta charset="UTF-8">
-<title>Avatar Studio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>K15FM Avatar Studio V4</title>
+  <meta name="description" content="Tạo ảnh đại diện K15FM - Thanh xuân phát lại." />
+
+  <link rel="icon" href="images/favicon.png?v=v4" />
+  <link rel="stylesheet" href="css/style.css?v=v4" />
 </head>
 
-<body style="background:#061a44;color:white;text-align:center;padding:80px">
+<body>
+  <main class="page">
+    <header class="topbar">
+      <a class="brand" href="https://k15hvnh.com/">
+        <span class="brand-icon">K15</span>
+        <span>
+          <strong>K15FM Avatar Studio V4</strong>
+          <small>Thanh xuân phát lại</small>
+        </span>
+      </a>
+      <a class="home-link" href="https://k15hvnh.com/">Về trang chính</a>
+    </header>
 
-<h1>K15 FM Avatar Studio</h1>
+    <section class="hero">
+      <div class="pill">Hội khóa 10 năm • 09.08.2026</div>
+      <h1>Tạo ảnh đại diện K15FM</h1>
+      <p>Chọn phong cách, upload ảnh, căn chỉnh và tải avatar HD. Đổi frame không cần upload lại ảnh.</p>
+    </section>
 
-<p>Đang xây dựng...</p>
+    <section class="studio">
+      <div class="preview-card">
+        <div class="frame-tabs">
+          <button class="tab active" data-frame="classic">🟦 Classic</button>
+          <button class="tab" data-frame="premium">🟨 Gold Premium</button>
+          <button class="tab" data-frame="retro">📻 FM Retro</button>
+        </div>
+        <canvas id="canvas" width="1080" height="1080"></canvas>
+      </div>
 
+      <aside class="panel">
+        <label class="upload-box" for="uploadInput">
+          <span>📷</span>
+          <strong>Chọn ảnh của bạn</strong>
+          <small>Ảnh chỉ xử lý trên trình duyệt, không upload lên server.</small>
+        </label>
+
+        <input id="uploadInput" type="file" accept="image/*" hidden />
+
+        <div class="control">
+          <div class="control-head">
+            <label for="zoomRange">Phóng to / thu nhỏ</label>
+            <b id="zoomValue">110%</b>
+          </div>
+          <input id="zoomRange" type="range" min="80" max="300" value="110" />
+        </div>
+
+        <div class="control">
+          <div class="control-head">
+            <label for="rotateRange">Xoay ảnh</label>
+            <b id="rotateValue">0°</b>
+          </div>
+          <input id="rotateRange" type="range" min="-35" max="35" value="0" />
+        </div>
+
+        <div class="quick-actions">
+          <button id="centerBtn" class="btn secondary">Căn giữa</button>
+          <button id="resetBtn" class="btn secondary">Làm lại</button>
+        </div>
+
+        <button id="downloadBtn" class="btn primary">Tải avatar HD</button>
+
+        <p class="hint">
+          Mẹo: kéo trực tiếp trên ảnh để căn khuôn mặt. Trên máy tính có thể lăn chuột để zoom nhanh.
+        </p>
+      </aside>
+    </section>
+
+    <section class="caption-card">
+      <div>
+        <h2>Caption gợi ý</h2>
+        <p id="captionText">K15FM - Thanh xuân phát lại 💙💛 Cùng đổi avatar và hẹn gặp nhau ngày 09.08.2026 tại Hội khóa 10 năm ra trường - Sinh viên K15 Học viện Ngân hàng! #K15FM #ThanhXuanPhatLai #HoiKhoa10Nam</p>
+      </div>
+
+      <button id="copyCaptionBtn" class="btn ghost">Sao chép caption</button>
+    </section>
+  </main>
+
+  <div id="toast" class="toast">Đã sao chép caption</div>
+
+  <script>
+    window.K15_OPENING = {"x": 64, "y": 64, "w": 952, "h": 729};
+  </script>
+  <script src="js/app.js?v=v4"></script>
 </body>
 </html>
