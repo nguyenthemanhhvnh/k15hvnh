@@ -459,3 +459,8 @@ copyCaptionBtn.addEventListener("click", async () => {
 });
 
 syncControls();
+const iosNotice = document.getElementById("iosNotice");
+
+if (iosNotice && (isIOSDevice() || isFacebookBrowser())) {
+  iosNotice.hidden = false;
+}
