@@ -140,16 +140,254 @@ rotateRange.addEventListener("input", () => {
 centerBtn.addEventListener("click", centerImage);
 resetBtn.addEventListener("click", resetAll);
 
-downloadBtn.addEventListener("click", () => {
+function isIOSDevice() {
+  return /iPad|iPhone|iPod/.test(navigator.userAgent) ||
+    (
+      navigator.platform === "MacIntel" &&
+      navigator.maxTouchPoints > 1
+    );
+}
+
+function isFacebookBrowser() {
+  return /FBAN|FBAV|FB_IAB|Instagram/i.test(navigator.userAgent);
+}
+
+function canvasToBlob(canvasElement) {
+  return new Promise((resolve, reject) => {
+    canvasElement.toBlob(
+      (blob) => {
+        if (blob) {
+          resolve(blob);
+        } else {
+          reject(new Error("Không thể tạo file ảnh."));
+        }
+      },
+      "image/png",
+      1
+    );
+  });
+}
+
+function showIOSSaveScreen(imageUrl) {
+  const saveWindow = window.open("", "_blank");
+
+  if (!saveWindow) {
+    window.location.href = imageUrl;
+    return;
+  }
+
+  saveWindow.document.open();
+  saveWindow.document.write(`
+    <!DOCTYPE html>
+    <html lang="vi">
+    <head>
+      <meta charset="UTF-8">
+      <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+      >
+      <title>Lưu Avatar K15FM</title>
+
+      <style>
+        * {
+          box-sizing: border-box;
+        }
+
+        body {
+          margin: 0;
+          min-height: 100vh;
+          padding: 24px 16px 40px;
+          font-family: Arial, Helvetica, sans-serif;
+          color: #ffffff;
+          text-align: center;
+          background:
+            radial-gradient(
+              circle at 85% 8%,
+              rgba(245, 158, 11, 0.35),
+              transparent 25%
+            ),
+            linear-gradient(
+              135deg,
+              #020a1f 0%,
+              #061b49 55%,
+              #020718 100%
+            );
+        }
+
+        .container {
+          width: min(620px, 100%);
+          margin: 0 auto;
+        }
+
+        h1 {
+          margin: 8px 0 10px;
+          color: #f5c451;
+          font-size: 28px;
+        }
+
+        p {
+          color: #d7e2f3;
+          line-height: 1.6;
+        }
+
+        .avatar {
+          display: block;
+          width: 100%;
+          margin: 20px auto;
+          border-radius: 20px;
+          box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+        }
+
+        .instruction {
+          margin-top: 18px;
+          padding: 16px;
+          color: #f5c451;
+          font-weight: 700;
+          line-height: 1.6;
+          border: 1px solid rgba(245, 196, 81, 0.4);
+          border-radius: 16px;
+          background: rgba(255, 255, 255, 0.08);
+        }
+
+        button {
+          width: 100%;
+          margin-top: 14px;
+          padding: 14px 18px;
+          color: #111827;
+          font-size: 16px;
+          font-weight: 800;
+          border: 0;
+          border-radius: 999px;
+          background: linear-gradient(
+            135deg,
+            #f5c451,
+            #f59e0b
+          );
+        }
+      </style>
+    </head>
+
+    <body>
+      <main class="container">
+        <h1>🎉 Avatar đã sẵn sàng!</h1>
+
+        <p>
+          Trên iPhone, hãy nhấn giữ vào ảnh bên dưới,
+          sau đó chọn <strong>“Lưu vào Ảnh”</strong>
+          hoặc <strong>“Save to Photos”</strong>.
+        </p>
+
+        <img
+          class="avatar"
+          src="${imageUrl}"
+          alt="Avatar K15FM"
+        >
+
+        <div class="instruction">
+          Nhấn giữ ảnh khoảng 1–2 giây
+          → chọn “Lưu vào Ảnh”.
+        </div>
+
+        <button onclick="window.close()">
+          Quay lại trang tạo Avatar
+        </button>
+      </main>
+    </body>
+    </html>
+  `);
+
+  saveWindow.document.close();
+}
+
+downloadBtn.addEventListener("click", async () => {
   if (!photo) {
     alert("Bạn vui lòng chọn ảnh trước nhé!");
     return;
   }
 
-  const link = document.createElement("a");
-  link.download = `avatar-k15fm-${currentFrame}.png`;
-  link.href = canvas.toDataURL("image/png");
-  link.click();
+  const oldButtonText = downloadBtn.textContent;
+  downloadBtn.disabled = true;
+  downloadBtn.textContent = "Đang tạo ảnh...";
+
+  try {
+    const blob = await canvasToBlob(canvas);
+
+    const fileName =
+      `avatar-k15fm-${currentFrame || "classic"}.png`;
+
+    const file = new File(
+      [blob],
+      fileName,
+      { type: "image/png" }
+    );
+
+    /*
+     * Ưu tiên bảng chia sẻ gốc của iPhone.
+     * Người dùng có thể chọn “Lưu hình ảnh”.
+     */
+    const canShareFile =
+      typeof navigator.share === "function" &&
+      typeof navigator.canShare === "function" &&
+      navigator.canShare({ files: [file] });
+
+    if (isIOSDevice() && canShareFile) {
+      try {
+        await navigator.share({
+          files: [file],
+          title: "Avatar K15FM",
+          text: "K15FM – Thanh xuân phát lại"
+        });
+
+        return;
+      } catch (shareError) {
+        /*
+         * AbortError xảy ra khi người dùng tự đóng bảng chia sẻ.
+         * Khi đó không cần hiện lỗi.
+         */
+        if (shareError.name === "AbortError") {
+          return;
+        }
+      }
+    }
+
+    /*
+     * iPhone hoặc trình duyệt Facebook:
+     * mở ảnh để người dùng nhấn giữ và lưu.
+     */
+    if (isIOSDevice() || isFacebookBrowser()) {
+      const imageUrl = canvas.toDataURL("image/png");
+      showIOSSaveScreen(imageUrl);
+      return;
+    }
+
+    /*
+     * Chrome, Cốc Cốc, Samsung Internet và trình duyệt desktop.
+     */
+    const objectUrl = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+
+    link.href = objectUrl;
+    link.download = fileName;
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+
+    setTimeout(() => {
+      URL.revokeObjectURL(objectUrl);
+    }, 1500);
+  } catch (error) {
+    console.error(error);
+
+    /*
+     * Phương án dự phòng cuối cùng:
+     * mở ảnh PNG trực tiếp.
+     */
+    const imageUrl = canvas.toDataURL("image/png");
+    showIOSSaveScreen(imageUrl);
+  } finally {
+    downloadBtn.disabled = false;
+    downloadBtn.textContent = oldButtonText;
+  }
 });
 
 function getPoint(event) {
