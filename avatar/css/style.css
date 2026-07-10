@@ -283,3 +283,22 @@ input[type="range"] { width: 100%; accent-color: var(--gold); }
   .frame-tabs { grid-template-columns: 1fr; }
   .quick-actions { grid-template-columns: 1fr; }
 }
+.ios-notice {
+  margin-top: 16px;
+  padding: 14px 16px;
+  color: #d7e2f3;
+  line-height: 1.55;
+  border: 1px solid rgba(245, 196, 81, 0.4);
+  border-radius: 16px;
+  background: rgba(245, 196, 81, 0.08);
+}
+
+.ios-notice strong {
+  display: block;
+  margin-bottom: 6px;
+  color: #f5c451;
+}
+
+.ios-notice p {
+  margin: 0;
+}
