@@ -152,7 +152,118 @@
       border-color: var(--orange);
       box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.14);
     }
+.chart-section {
+  margin: 0 0 22px;
+  padding: 20px;
+  background: #fffaf0;
+  border: 1px solid #f3d29b;
+  border-radius: 18px;
+}
 
+.chart-header {
+  margin-bottom: 18px;
+  text-align: center;
+}
+
+.chart-title {
+  margin: 0;
+  color: var(--navy);
+  font-size: 20px;
+  font-weight: 900;
+}
+
+.chart-description {
+  margin: 6px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.top-chart {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+}
+
+.chart-row {
+  display: grid;
+  grid-template-columns: 70px minmax(0, 1fr) 48px;
+  gap: 10px;
+  align-items: center;
+}
+
+.chart-class {
+  color: var(--navy);
+  font-size: 13px;
+  font-weight: 900;
+  text-align: right;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.chart-track {
+  height: 28px;
+  overflow: hidden;
+  background: #e5e7eb;
+  border-radius: 999px;
+}
+
+.chart-bar {
+  height: 100%;
+  min-width: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 9px;
+  box-sizing: border-box;
+  background: linear-gradient(90deg, #071d42, #17447e);
+  border-radius: 999px;
+  transition: width 0.5s ease;
+}
+
+.chart-rank {
+  color: #f8c24e;
+  font-size: 11px;
+  font-weight: 900;
+}
+
+.chart-count {
+  color: var(--navy);
+  font-size: 14px;
+  font-weight: 900;
+  text-align: left;
+}
+
+.chart-empty {
+  padding: 24px;
+  color: var(--muted);
+  text-align: center;
+  font-size: 14px;
+}
+
+@media (max-width: 520px) {
+  .chart-section {
+    padding: 15px 12px;
+  }
+
+  .chart-row {
+    grid-template-columns: 54px minmax(0, 1fr) 38px;
+    gap: 7px;
+  }
+
+  .chart-class {
+    font-size: 11px;
+  }
+
+  .chart-track {
+    height: 24px;
+  }
+
+  .chart-rank {
+    font-size: 10px;
+  }
+}
     .result-info {
       margin: 0 0 12px;
       color: var(--muted);
@@ -319,7 +430,23 @@
           <div class="stat-value small" id="lastUpdated">–</div>
         </div>
       </div>
+<div class="chart-section">
+  <div class="chart-header">
+    <h2 class="chart-title">
+      TOP 10 LỚP ĐĂNG KÝ ĐÔNG NHẤT
+    </h2>
 
+    <p class="chart-description">
+      Xếp hạng theo số thành viên đã được xác nhận tham dự
+    </p>
+  </div>
+
+  <div class="top-chart" id="topClassChart">
+    <div class="chart-empty">
+      Đang tải biểu đồ...
+    </div>
+  </div>
+</div>
       <div class="toolbar">
         <input
           id="searchInput"
@@ -377,14 +504,15 @@
     let allMembers = [];
 
     const elements = {
-      totalConfirmed: document.getElementById("totalConfirmed"),
-      totalClasses: document.getElementById("totalClasses"),
-      lastUpdated: document.getElementById("lastUpdated"),
-      searchInput: document.getElementById("searchInput"),
-      classFilter: document.getElementById("classFilter"),
-      resultInfo: document.getElementById("resultInfo"),
-      memberTable: document.getElementById("memberTable")
-    };
+  totalConfirmed: document.getElementById("totalConfirmed"),
+  totalClasses: document.getElementById("totalClasses"),
+  lastUpdated: document.getElementById("lastUpdated"),
+  topClassChart: document.getElementById("topClassChart"),
+  searchInput: document.getElementById("searchInput"),
+  classFilter: document.getElementById("classFilter"),
+  resultInfo: document.getElementById("resultInfo"),
+  memberTable: document.getElementById("memberTable")
+};
 
     function buildSheetUrl() {
       const query = encodeURIComponent(
@@ -417,9 +545,10 @@
 
         allMembers = convertRows(json.table.rows);
 
-        updateStatistics();
-        updateClassFilter();
-        applyFilters();
+updateStatistics();
+updateTopClassChart();
+updateClassFilter();
+applyFilters();
 
       } catch (error) {
         console.error(error);
@@ -509,7 +638,93 @@
       elements.lastUpdated.textContent =
         latestMember.timestamp || "Vừa cập nhật";
     }
+function updateTopClassChart() {
+  const classCounts = {};
 
+  allMembers.forEach(function(member) {
+    const className = String(
+      member.className || ""
+    ).trim();
+
+    if (!className) return;
+
+    classCounts[className] =
+      (classCounts[className] || 0) + 1;
+  });
+
+  const topClasses = Object.keys(classCounts)
+    .map(function(className) {
+      return {
+        className: className,
+        count: classCounts[className]
+      };
+    })
+    .sort(function(a, b) {
+      if (b.count !== a.count) {
+        return b.count - a.count;
+      }
+
+      return a.className.localeCompare(
+        b.className,
+        "vi"
+      );
+    })
+    .slice(0, 10);
+
+  if (topClasses.length === 0) {
+    elements.topClassChart.innerHTML =
+      "<div class='chart-empty'>" +
+      "Chưa có dữ liệu để tạo biểu đồ." +
+      "</div>";
+
+    return;
+  }
+
+  const maxCount = topClasses[0].count;
+
+  elements.topClassChart.innerHTML =
+    topClasses
+      .map(function(item, index) {
+        const percentage =
+          maxCount > 0
+            ? Math.max(
+                5,
+                Math.round(
+                  item.count / maxCount * 100
+                )
+              )
+            : 0;
+
+        return (
+          "<div class='chart-row'>" +
+
+            "<div class='chart-class' " +
+            "title='" +
+            escapeHtml(item.className) +
+            "'>" +
+              escapeHtml(item.className) +
+            "</div>" +
+
+            "<div class='chart-track'>" +
+              "<div class='chart-bar' " +
+              "style='width:" +
+              percentage +
+              "%;'>" +
+                "<span class='chart-rank'>" +
+                  "#" + (index + 1) +
+                "</span>" +
+              "</div>" +
+            "</div>" +
+
+            "<div class='chart-count'>" +
+              item.count +
+            "</div>" +
+
+          "</div>"
+        );
+      })
+      .join("");
+}
     function updateClassFilter() {
       const currentValue = elements.classFilter.value;
 
