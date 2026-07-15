@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Bảng vàng đăng ký K15 FM</title>
+
+  <meta
+    name="description"
+    content="Danh sách thành viên đã xác nhận tham dự K15 FM – Thanh xuân phát lại."
+  >
+
+  <style>
+    :root {
+      --navy: #071d42;
+      --navy-dark: #04132e;
+      --gold: #f8c24e;
+      --orange: #f59e0b;
+      --cream: #fffaf0;
+      --light: #f8fafc;
+      --border: #e5e7eb;
+      --text: #172033;
+      --muted: #64748b;
+      --white: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top right, rgba(245, 158, 11, 0.22), transparent 30%),
+        linear-gradient(135deg, var(--navy-dark), var(--navy));
+      min-height: 100vh;
+    }
+
+    .page {
+      width: min(1180px, calc(100% - 28px));
+      margin: 0 auto;
+      padding: 28px 0 48px;
+    }
+
+    .hero {
+      padding: 34px 22px;
+      text-align: center;
+      color: var(--white);
+    }
+
+    .hero-small {
+      color: #ffd46b;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      line-height: 1.6;
+    }
+
+    .hero h1 {
+      margin: 12px 0 4px;
+      color: var(--gold);
+      font-size: clamp(38px, 7vw, 72px);
+      font-style: italic;
+      letter-spacing: 2px;
+    }
+
+    .hero-subtitle {
+      font-size: clamp(19px, 4vw, 30px);
+      font-weight: 700;
+      color: #fff3cf;
+    }
+
+    .hero-description {
+      margin: 18px auto 0;
+      max-width: 720px;
+      color: #e5e7eb;
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    .panel {
+      background: rgba(255, 255, 255, 0.98);
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      border-radius: 26px;
+      padding: 22px;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.22);
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+
+    .stat-card {
+      min-height: 120px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      background: var(--cream);
+      border: 1px solid #f3d29b;
+      border-radius: 18px;
+      padding: 16px;
+    }
+
+    .stat-label {
+      color: var(--navy);
+      font-size: 13px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .stat-value {
+      margin-top: 10px;
+      color: var(--navy);
+      font-size: 34px;
+      font-weight: 900;
+    }
+
+    .stat-value.small {
+      font-size: 18px;
+      line-height: 1.5;
+    }
+
+    .toolbar {
+      display: grid;
+      grid-template-columns: minmax(0, 2fr) minmax(180px, 1fr);
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+
+    .field {
+      width: 100%;
+      height: 48px;
+      border: 1px solid #cbd5e1;
+      border-radius: 13px;
+      padding: 0 14px;
+      background: var(--white);
+      color: var(--text);
+      font-size: 15px;
+      outline: none;
+    }
+
+    .field:focus {
+      border-color: var(--orange);
+      box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.14);
+    }
+
+    .result-info {
+      margin: 0 0 12px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 720px;
+    }
+
+    thead th {
+      position: sticky;
+      top: 0;
+      z-index: 2;
+      background: var(--navy);
+      color: var(--gold);
+      padding: 15px 14px;
+      font-size: 13px;
+      letter-spacing: 0.5px;
+      text-align: left;
+      white-space: nowrap;
+    }
+
+    thead th:first-child,
+    tbody td:first-child {
+      width: 70px;
+      text-align: center;
+    }
+
+    tbody td {
+      padding: 14px;
+      border-bottom: 1px solid var(--border);
+      font-size: 14px;
+      vertical-align: middle;
+    }
+
+    tbody tr:nth-child(even) {
+      background: var(--light);
+    }
+
+    tbody tr:hover {
+      background: #fff7e6;
+    }
+
+    .name {
+      color: var(--navy);
+      font-weight: 800;
+    }
+
+    .class-badge {
+      display: inline-block;
+      min-width: 66px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: #eef2ff;
+      color: var(--navy);
+      font-weight: 800;
+      text-align: center;
+    }
+
+    .empty,
+    .loading,
+    .error {
+      padding: 42px 18px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .error {
+      color: #b91c1c;
+      background: #fef2f2;
+      border-radius: 14px;
+    }
+
+    .footer {
+      margin-top: 22px;
+      text-align: center;
+      color: #dbeafe;
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    .footer a {
+      color: var(--gold);
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    @media (max-width: 760px) {
+      .page {
+        width: min(100% - 18px, 1180px);
+        padding-top: 14px;
+      }
+
+      .hero {
+        padding: 24px 12px;
+      }
+
+      .panel {
+        padding: 14px;
+        border-radius: 20px;
+      }
+
+      .stats {
+        grid-template-columns: 1fr;
+      }
+
+      .stat-card {
+        min-height: 92px;
+      }
+
+      .toolbar {
+        grid-template-columns: 1fr;
+      }
+
+      .stat-value {
+        font-size: 30px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="page">
+    <section class="hero">
+      <div class="hero-small">
+        Kỷ niệm 10 năm ra trường<br>
+        Sinh viên K15 Học viện Ngân hàng
+      </div>
+
+      <h1>K15 FM</h1>
+
+      <div class="hero-subtitle">Thanh xuân phát lại</div>
+
+      <div class="hero-description">
+        Bảng vàng ghi nhận các thành viên đã hoàn tất đăng ký tham dự.
+        Danh sách được cập nhật tự động từ hệ thống K15 FM.
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="stats">
+        <div class="stat-card">
+          <div class="stat-label">Đã xác nhận</div>
+          <div class="stat-value" id="totalConfirmed">–</div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-label">Số lớp đã đăng ký</div>
+          <div class="stat-value" id="totalClasses">–</div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-label">Cập nhật gần nhất</div>
+          <div class="stat-value small" id="lastUpdated">–</div>
+        </div>
+      </div>
+
+      <div class="toolbar">
+        <input
+          id="searchInput"
+          class="field"
+          type="search"
+          placeholder="Tìm kiếm theo họ tên..."
+          autocomplete="off"
+        >
+
+        <select id="classFilter" class="field">
+          <option value="">Tất cả các lớp</option>
+        </select>
+      </div>
+
+      <p class="result-info" id="resultInfo">Đang tải dữ liệu...</p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>STT</th>
+              <th>Họ tên</th>
+              <th>Lớp</th>
+              <th>Thời gian đăng ký</th>
+            </tr>
+          </thead>
+
+          <tbody id="memberTable">
+            <tr>
+              <td colspan="4" class="loading">
+                Đang tải danh sách K15 FM...
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <footer class="footer">
+      Dữ liệu được đồng bộ tự động từ hệ thống đăng ký K15 FM.<br>
+      <a href="https://k15hvnh.com/">K15 FM – Thanh xuân phát lại</a>
+    </footer>
+  </main>
+
+  <script>
+    /*
+     * THAY ID GOOGLE SHEET CÔNG KHAI MỚI VÀO DÒNG DƯỚI.
+     * Tab nguồn phải có tên chính xác là: DuLieu
+     */
+    const SHEET_ID = "1T7uj8t38iZgacf8Bs8rGaJbk-vRb19BIryjUfnwKTE4";
+    const SHEET_NAME = "DuLieu";
+
+    const REFRESH_INTERVAL = 60000;
+
+    let allMembers = [];
+
+    const elements = {
+      totalConfirmed: document.getElementById("totalConfirmed"),
+      totalClasses: document.getElementById("totalClasses"),
+      lastUpdated: document.getElementById("lastUpdated"),
+      searchInput: document.getElementById("searchInput"),
+      classFilter: document.getElementById("classFilter"),
+      resultInfo: document.getElementById("resultInfo"),
+      memberTable: document.getElementById("memberTable")
+    };
+
+    function buildSheetUrl() {
+      const query = encodeURIComponent(
+        "select A, B, C where B is not null order by A asc"
+      );
+
+      return (
+        "https://docs.google.com/spreadsheets/d/" +
+        SHEET_ID +
+        "/gviz/tq?sheet=" +
+        encodeURIComponent(SHEET_NAME) +
+        "&tq=" +
+        query +
+        "&tqx=out:json"
+      );
+    }
+
+    async function loadData() {
+      try {
+        const response = await fetch(buildSheetUrl(), {
+          cache: "no-store"
+        });
+
+        if (!response.ok) {
+          throw new Error("Không thể kết nối Google Sheet.");
+        }
+
+        const text = await response.text();
+        const json = parseGoogleVisualizationResponse(text);
+
+        allMembers = convertRows(json.table.rows);
+
+        updateStatistics();
+        updateClassFilter();
+        applyFilters();
+
+      } catch (error) {
+        console.error(error);
+
+        elements.memberTable.innerHTML =
+          "<tr><td colspan='4' class='error'>" +
+          "Không tải được dữ liệu. Hãy kiểm tra quyền chia sẻ Google Sheet, " +
+          "ID file và tên tab DuLieu." +
+          "</td></tr>";
+
+        elements.resultInfo.textContent =
+          "Có lỗi khi tải dữ liệu.";
+      }
+    }
+
+    function parseGoogleVisualizationResponse(text) {
+      const start = text.indexOf("{");
+      const end = text.lastIndexOf("}");
+
+      if (start === -1 || end === -1) {
+        throw new Error("Google Sheet trả về dữ liệu không hợp lệ.");
+      }
+
+      return JSON.parse(text.slice(start, end + 1));
+    }
+
+    function convertRows(rows) {
+      return rows
+        .map(function(row) {
+          const cells = row.c || [];
+
+          return {
+            timestamp: readCell(cells[0]),
+            name: readCell(cells[1]),
+            className: readCell(cells[2])
+          };
+        })
+        .filter(function(member) {
+          return member.name;
+        });
+    }
+
+    function readCell(cell) {
+      if (!cell) return "";
+
+      if (cell.f !== undefined && cell.f !== null) {
+        return String(cell.f).trim();
+      }
+
+      if (cell.v !== undefined && cell.v !== null) {
+        return String(cell.v).trim();
+      }
+
+      return "";
+    }
+
+    function normalizeText(value) {
+      return String(value || "")
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .toLowerCase()
+        .trim();
+    }
+
+    function updateStatistics() {
+      elements.totalConfirmed.textContent =
+        allMembers.length.toLocaleString("vi-VN");
+
+      const classes = new Set(
+        allMembers
+          .map(function(member) {
+            return member.className;
+          })
+          .filter(Boolean)
+      );
+
+      elements.totalClasses.textContent =
+        classes.size.toLocaleString("vi-VN");
+
+      if (allMembers.length === 0) {
+        elements.lastUpdated.textContent = "Chưa có dữ liệu";
+        return;
+      }
+
+      const latestMember = allMembers[allMembers.length - 1];
+
+      elements.lastUpdated.textContent =
+        latestMember.timestamp || "Vừa cập nhật";
+    }
+
+    function updateClassFilter() {
+      const currentValue = elements.classFilter.value;
+
+      const classes = Array.from(
+        new Set(
+          allMembers
+            .map(function(member) {
+              return member.className;
+            })
+            .filter(Boolean)
+        )
+      ).sort(function(a, b) {
+        return a.localeCompare(b, "vi");
+      });
+
+      elements.classFilter.innerHTML =
+        "<option value=''>Tất cả các lớp</option>";
+
+      classes.forEach(function(className) {
+        const option = document.createElement("option");
+        option.value = className;
+        option.textContent = className;
+        elements.classFilter.appendChild(option);
+      });
+
+      if (classes.includes(currentValue)) {
+        elements.classFilter.value = currentValue;
+      }
+    }
+
+    function applyFilters() {
+      const searchValue = normalizeText(
+        elements.searchInput.value
+      );
+
+      const selectedClass =
+        elements.classFilter.value;
+
+      const filteredMembers = allMembers.filter(function(member) {
+        const matchesName =
+          !searchValue ||
+          normalizeText(member.name).includes(searchValue);
+
+        const matchesClass =
+          !selectedClass ||
+          member.className === selectedClass;
+
+        return matchesName && matchesClass;
+      });
+
+      renderTable(filteredMembers);
+
+      elements.resultInfo.textContent =
+        "Đang hiển thị " +
+        filteredMembers.length.toLocaleString("vi-VN") +
+        " / " +
+        allMembers.length.toLocaleString("vi-VN") +
+        " thành viên đã xác nhận.";
+    }
+
+    function renderTable(members) {
+      if (members.length === 0) {
+        elements.memberTable.innerHTML =
+          "<tr><td colspan='4' class='empty'>" +
+          "Không tìm thấy thành viên phù hợp." +
+          "</td></tr>";
+
+        return;
+      }
+
+      elements.memberTable.innerHTML =
+        members
+          .map(function(member, index) {
+            return (
+              "<tr>" +
+                "<td>" + (index + 1) + "</td>" +
+                "<td class='name'>" +
+                  escapeHtml(member.name) +
+                "</td>" +
+                "<td>" +
+                  "<span class='class-badge'>" +
+                    escapeHtml(member.className || "–") +
+                  "</span>" +
+                "</td>" +
+                "<td>" +
+                  escapeHtml(member.timestamp || "–") +
+                "</td>" +
+              "</tr>"
+            );
+          })
+          .join("");
+    }
+
+    function escapeHtml(value) {
+      return String(value || "")
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+    }
+
+    elements.searchInput.addEventListener(
+      "input",
+      applyFilters
+    );
+
+    elements.classFilter.addEventListener(
+      "change",
+      applyFilters
+    );
+
+    loadData();
+
+    setInterval(loadData, REFRESH_INTERVAL);
+  </script>
+</body>
+</html>
