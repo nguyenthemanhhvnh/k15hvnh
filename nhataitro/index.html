@@ -1,0 +1,2392 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Vinh danh Nhà tài trợ | K15 FM</title>
+
+  <meta
+    name="description"
+    content="Vinh danh các Nhà tài trợ đồng hành cùng chương trình K15 FM – Thanh xuân phát lại."
+  >
+
+  <link
+    rel="icon"
+    href="../images/favicon.png"
+  >
+
+  <style>
+    :root {
+      --navy: #071d42;
+      --navy-2: #0b2b60;
+      --navy-3: #123e7a;
+
+      --gold: #f8c24e;
+      --gold-2: #f59e0b;
+      --gold-soft: #fff3cf;
+
+      --cream: #fffaf0;
+      --white: #ffffff;
+
+      --text: #172033;
+      --muted: #667085;
+
+      --border: #e8dfce;
+      --soft-border: #e7ebf2;
+
+      --shadow:
+        0 18px 50px rgba(7, 29, 66, 0.11);
+
+      --shadow-soft:
+        0 9px 26px rgba(7, 29, 66, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    html,
+    body,
+    button,
+    input,
+    select {
+      font-family:
+        "Segoe UI",
+        Roboto,
+        "Helvetica Neue",
+        Arial,
+        sans-serif;
+    }
+
+    body {
+      margin: 0;
+      color: var(--text);
+      background:
+        radial-gradient(
+          circle at top left,
+          rgba(248, 194, 78, 0.11),
+          transparent 30%
+        ),
+        linear-gradient(
+          180deg,
+          #f7f9fc 0%,
+          #ffffff 42%,
+          #fffaf0 100%
+        );
+
+      font-synthesis: none;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    button,
+    input,
+    select {
+      font-size: inherit;
+    }
+
+    .page {
+      min-height: 100vh;
+    }
+
+    /* ==============================
+       NAVIGATION
+    ============================== */
+
+    .nav-wrap {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+
+      background:
+        rgba(7, 29, 66, 0.96);
+
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+
+      border-bottom:
+        1px solid rgba(255,255,255,0.08);
+    }
+
+    .nav {
+      width: min(1180px, calc(100% - 30px));
+      min-height: 68px;
+
+      margin: 0 auto;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+
+      color: white;
+      text-decoration: none;
+    }
+
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+
+      display: grid;
+      place-items: center;
+
+      border-radius: 50%;
+
+      background:
+        linear-gradient(
+          145deg,
+          var(--gold),
+          var(--gold-2)
+        );
+
+      color: var(--navy);
+      font-weight: 950;
+      font-size: 14px;
+
+      box-shadow:
+        0 8px 22px rgba(248,194,78,0.25);
+    }
+
+    .brand-copy {
+      min-width: 0;
+    }
+
+    .brand-title {
+      font-size: 15px;
+      font-weight: 900;
+      line-height: 1.1;
+    }
+
+    .brand-subtitle {
+      margin-top: 3px;
+
+      color: #ffe5a0;
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .nav-link {
+      padding: 9px 12px;
+
+      color: rgba(255,255,255,0.82);
+      text-decoration: none;
+
+      border-radius: 999px;
+
+      font-size: 13px;
+      font-weight: 750;
+
+      transition:
+        background 0.2s ease,
+        color 0.2s ease;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+      color: var(--navy);
+      background: var(--gold);
+    }
+
+    /* ==============================
+       HERO
+    ============================== */
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+
+      padding:
+        clamp(72px, 10vw, 126px)
+        20px
+        clamp(72px, 9vw, 108px);
+
+      color: white;
+      text-align: center;
+
+      background:
+        radial-gradient(
+          circle at 20% 20%,
+          rgba(248,194,78,0.20),
+          transparent 28%
+        ),
+        radial-gradient(
+          circle at 82% 15%,
+          rgba(248,194,78,0.16),
+          transparent 23%
+        ),
+        linear-gradient(
+          145deg,
+          #041329 0%,
+          var(--navy) 55%,
+          #0f3b76 100%
+        );
+    }
+
+    .hero::before,
+    .hero::after {
+      content: "";
+
+      position: absolute;
+      border-radius: 50%;
+
+      pointer-events: none;
+    }
+
+    .hero::before {
+      width: 380px;
+      height: 380px;
+
+      left: -170px;
+      bottom: -220px;
+
+      border:
+        1px solid rgba(248,194,78,0.24);
+    }
+
+    .hero::after {
+      width: 460px;
+      height: 460px;
+
+      right: -240px;
+      top: -250px;
+
+      border:
+        1px solid rgba(248,194,78,0.18);
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 2;
+
+      width: min(900px, 100%);
+      margin: 0 auto;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+
+      padding: 9px 15px;
+
+      border:
+        1px solid rgba(248,194,78,0.42);
+
+      border-radius: 999px;
+
+      color: #ffde88;
+      background:
+        rgba(255,255,255,0.06);
+
+      font-size: 12px;
+      font-weight: 850;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+    }
+
+    .hero-heart {
+      display: block;
+
+      margin: 24px auto 10px;
+
+      font-size: 42px;
+      line-height: 1;
+    }
+
+    .hero h1 {
+      margin: 0;
+
+      color: var(--gold);
+      font-size:
+        clamp(39px, 7.8vw, 78px);
+
+      font-weight: 950;
+      line-height: 1.03;
+      letter-spacing: -1.5px;
+    }
+
+    .hero-program {
+      margin-top: 18px;
+
+      color: white;
+      font-size:
+        clamp(21px, 3.2vw, 32px);
+
+      font-weight: 900;
+      line-height: 1.3;
+    }
+
+    .hero-program span {
+      color: #ffe39d;
+    }
+
+    .hero-description {
+      max-width: 710px;
+
+      margin: 22px auto 0;
+
+      color: rgba(255,255,255,0.82);
+      font-size: 16px;
+      line-height: 1.85;
+    }
+
+    .hero-scroll {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+
+      margin-top: 30px;
+      padding: 12px 18px;
+
+      color: var(--navy);
+      background: var(--gold);
+
+      border-radius: 999px;
+      text-decoration: none;
+
+      font-size: 14px;
+      font-weight: 900;
+
+      box-shadow:
+        0 12px 30px rgba(248,194,78,0.22);
+    }
+
+    /* ==============================
+       MAIN
+    ============================== */
+
+    .main {
+      width: min(1180px, calc(100% - 30px));
+      margin: -38px auto 0;
+
+      position: relative;
+      z-index: 10;
+    }
+
+    .section {
+      margin-top: 28px;
+    }
+
+    .section-header {
+      margin-bottom: 18px;
+      text-align: center;
+    }
+
+    .section-kicker {
+      color: var(--gold-2);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 1.25px;
+      text-transform: uppercase;
+    }
+
+    .section-title {
+      margin: 7px 0 0;
+
+      color: var(--navy);
+      font-size:
+        clamp(25px, 4vw, 37px);
+
+      font-weight: 950;
+      line-height: 1.25;
+    }
+
+    .section-description {
+      max-width: 680px;
+
+      margin: 9px auto 0;
+
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.75;
+    }
+
+    /* ==============================
+       STATISTICS
+    ============================== */
+
+    .stats {
+      display: grid;
+      grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+      gap: 14px;
+    }
+
+    .stat-card {
+      min-height: 144px;
+      padding: 22px 18px;
+
+      background: var(--white);
+
+      border:
+        1px solid rgba(7,29,66,0.08);
+
+      border-radius: 19px;
+      box-shadow: var(--shadow-soft);
+
+      text-align: center;
+    }
+
+    .stat-icon {
+      width: 42px;
+      height: 42px;
+
+      margin: 0 auto 10px;
+
+      display: grid;
+      place-items: center;
+
+      border-radius: 50%;
+
+      background: var(--gold-soft);
+      color: var(--navy);
+
+      font-size: 20px;
+    }
+
+    .stat-value {
+      color: var(--navy);
+      font-size:
+        clamp(23px, 3.4vw, 33px);
+
+      font-weight: 950;
+      line-height: 1.15;
+    }
+
+    .stat-label {
+      margin-top: 7px;
+
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.3px;
+      text-transform: uppercase;
+    }
+
+    /* ==============================
+       PODIUM
+    ============================== */
+
+    .podium {
+      display: grid;
+      grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+      align-items: end;
+      gap: 16px;
+    }
+
+    .podium-card {
+      position: relative;
+      overflow: hidden;
+
+      min-height: 270px;
+      padding: 25px 20px;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      text-align: center;
+
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+
+      box-shadow: var(--shadow-soft);
+
+      transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+    }
+
+    .podium-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow);
+    }
+
+    .podium-card.first {
+      min-height: 315px;
+
+      color: white;
+
+      background:
+        radial-gradient(
+          circle at top,
+          rgba(248,194,78,0.20),
+          transparent 34%
+        ),
+        linear-gradient(
+          145deg,
+          #06152f,
+          #0c3470
+        );
+
+      border:
+        1px solid rgba(248,194,78,0.42);
+    }
+
+    .podium-number {
+      width: 56px;
+      height: 56px;
+
+      display: grid;
+      place-items: center;
+
+      border-radius: 50%;
+
+      background:
+        linear-gradient(
+          145deg,
+          #ffe293,
+          var(--gold-2)
+        );
+
+      color: var(--navy);
+
+      font-size: 23px;
+      font-weight: 950;
+    }
+
+    .podium-card.first .podium-number {
+      width: 68px;
+      height: 68px;
+      font-size: 29px;
+    }
+
+    .podium-name {
+      margin-top: 18px;
+
+      color: var(--navy);
+      font-size: 19px;
+      font-weight: 950;
+      line-height: 1.4;
+    }
+
+    .podium-card.first .podium-name {
+      color: white;
+      font-size: 22px;
+    }
+
+    .podium-class {
+      margin-top: 9px;
+      padding: 6px 11px;
+
+      color: var(--navy);
+      background: var(--gold-soft);
+
+      border-radius: 999px;
+
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .podium-amount {
+      margin-top: 17px;
+
+      color: var(--gold-2);
+      font-size: 22px;
+      font-weight: 950;
+    }
+
+    .podium-card.first .podium-amount {
+      color: var(--gold);
+      font-size: 26px;
+    }
+
+    .podium-thanks {
+      margin-top: 11px;
+
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .podium-card.first .podium-thanks {
+      color: rgba(255,255,255,0.70);
+    }
+
+    /* ==============================
+       CHART
+    ============================== */
+
+    .chart-card {
+      padding: 25px;
+
+      background: var(--white);
+
+      border:
+        1px solid rgba(7,29,66,0.08);
+
+      border-radius: 22px;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .chart-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+
+      margin-top: 22px;
+    }
+
+    .chart-row {
+      display: grid;
+      grid-template-columns:
+        86px minmax(0, 1fr) 126px;
+
+      align-items: center;
+      gap: 12px;
+    }
+
+    .chart-class {
+      overflow: hidden;
+
+      color: var(--navy);
+      font-size: 13px;
+      font-weight: 900;
+
+      white-space: nowrap;
+      text-align: right;
+      text-overflow: ellipsis;
+    }
+
+    .chart-track {
+      height: 30px;
+
+      overflow: hidden;
+
+      background: #edf0f5;
+      border-radius: 999px;
+    }
+
+    .chart-bar {
+      width: 0;
+      min-width: 4px;
+      height: 100%;
+
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+
+      padding-right: 9px;
+
+      background:
+        linear-gradient(
+          90deg,
+          var(--navy),
+          var(--navy-3)
+        );
+
+      border-radius: 999px;
+
+      transition: width 0.8s ease;
+    }
+
+    .chart-rank {
+      color: var(--gold);
+      font-size: 11px;
+      font-weight: 950;
+    }
+
+    .chart-amount {
+      color: var(--navy);
+      font-size: 13px;
+      font-weight: 900;
+      white-space: nowrap;
+    }
+
+    /* ==============================
+       TOOLBAR
+    ============================== */
+
+    .directory-card {
+      padding: 24px;
+
+      background: var(--white);
+
+      border:
+        1px solid rgba(7,29,66,0.08);
+
+      border-radius: 22px;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .toolbar {
+      display: grid;
+      grid-template-columns:
+        minmax(0, 1.45fr)
+        minmax(160px, 0.65fr)
+        minmax(190px, 0.75fr);
+
+      gap: 12px;
+    }
+
+    .field {
+      position: relative;
+    }
+
+    .field-icon {
+      position: absolute;
+      left: 14px;
+      top: 50%;
+
+      transform: translateY(-50%);
+
+      color: #8a94a6;
+
+      pointer-events: none;
+    }
+
+    .control {
+      width: 100%;
+      min-height: 48px;
+
+      padding: 0 14px;
+
+      color: var(--text);
+      background: #f8fafc;
+
+      border: 1px solid #dce2ea;
+      border-radius: 13px;
+
+      outline: none;
+
+      transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+    }
+
+    .field .control {
+      padding-left: 42px;
+    }
+
+    .control:focus {
+      border-color: var(--gold-2);
+
+      box-shadow:
+        0 0 0 4px rgba(245,158,11,0.12);
+    }
+
+    .result-line {
+      margin-top: 15px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .result-line strong {
+      color: var(--navy);
+    }
+
+    /* ==============================
+       SPONSOR GRID
+    ============================== */
+
+    .sponsor-grid {
+      display: grid;
+      grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .sponsor-card {
+      position: relative;
+      overflow: hidden;
+
+      min-height: 245px;
+      padding: 22px;
+
+      display: flex;
+      flex-direction: column;
+
+      background:
+        linear-gradient(
+          180deg,
+          #ffffff,
+          #fffdf8
+        );
+
+      border: 1px solid var(--border);
+      border-radius: 20px;
+
+      box-shadow:
+        0 6px 18px rgba(7,29,66,0.06);
+
+      transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+    }
+
+    .sponsor-card::before {
+      content: "";
+
+      position: absolute;
+      left: 0;
+      top: 0;
+
+      width: 100%;
+      height: 5px;
+
+      background:
+        linear-gradient(
+          90deg,
+          var(--gold-2),
+          var(--gold),
+          #ffe4a1
+        );
+    }
+
+    .sponsor-card:hover {
+      transform: translateY(-5px);
+
+      border-color:
+        rgba(245,158,11,0.50);
+
+      box-shadow: var(--shadow);
+    }
+
+    .sponsor-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .sponsor-avatar {
+      width: 52px;
+      height: 52px;
+
+      flex: 0 0 auto;
+
+      display: grid;
+      place-items: center;
+
+      border-radius: 50%;
+
+      color: var(--navy);
+      background:
+        linear-gradient(
+          145deg,
+          #fff2c3,
+          #f8c24e
+        );
+
+      font-size: 17px;
+      font-weight: 950;
+    }
+
+    .sponsor-rank {
+      color: #98a1b2;
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .sponsor-name {
+      margin-top: 18px;
+
+      color: var(--navy);
+      font-size: 18px;
+      font-weight: 950;
+      line-height: 1.4;
+    }
+
+    .sponsor-class {
+      width: fit-content;
+
+      margin-top: 9px;
+      padding: 6px 11px;
+
+      color: var(--navy);
+      background: #edf3fb;
+
+      border-radius: 999px;
+
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .sponsor-amount {
+      margin-top: auto;
+      padding-top: 23px;
+
+      color: var(--gold-2);
+      font-size: 23px;
+      font-weight: 950;
+    }
+
+    .sponsor-message {
+      margin-top: 7px;
+
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 750;
+    }
+
+    /* ==============================
+       EMPTY / LOADING
+    ============================== */
+
+    .state-box {
+      grid-column: 1 / -1;
+
+      padding: 46px 18px;
+
+      text-align: center;
+
+      color: var(--muted);
+      background: #f8fafc;
+
+      border:
+        1px dashed #d4dae4;
+
+      border-radius: 17px;
+    }
+
+    .state-icon {
+      font-size: 34px;
+      margin-bottom: 10px;
+    }
+
+    .state-title {
+      color: var(--navy);
+      font-size: 17px;
+      font-weight: 900;
+    }
+
+    .state-copy {
+      margin-top: 7px;
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    /* ==============================
+       THANK-YOU SECTION
+    ============================== */
+
+    .thank-you {
+      position: relative;
+      overflow: hidden;
+
+      margin-top: 32px;
+      padding:
+        clamp(50px, 8vw, 82px)
+        22px;
+
+      color: white;
+      text-align: center;
+
+      border-radius: 26px 26px 0 0;
+
+      background:
+        radial-gradient(
+          circle at center top,
+          rgba(248,194,78,0.18),
+          transparent 35%
+        ),
+        linear-gradient(
+          145deg,
+          #041329,
+          var(--navy-2)
+        );
+    }
+
+    .thank-heart {
+      font-size: 38px;
+    }
+
+    .thank-title {
+      margin: 16px 0 0;
+
+      color: var(--gold);
+      font-size:
+        clamp(25px, 4vw, 38px);
+
+      font-weight: 950;
+    }
+
+    .thank-copy {
+      max-width: 690px;
+
+      margin: 17px auto 0;
+
+      color: rgba(255,255,255,0.82);
+      font-size: 16px;
+      line-height: 1.85;
+    }
+
+    .thank-signature {
+      margin-top: 22px;
+
+      color: #ffe39d;
+      font-size: 14px;
+      font-weight: 900;
+    }
+
+    .footer {
+      padding: 20px;
+
+      color: rgba(255,255,255,0.62);
+      background: #041329;
+
+      text-align: center;
+      font-size: 11px;
+      line-height: 1.7;
+    }
+
+    /* ==============================
+       RESPONSIVE
+    ============================== */
+
+    @media (max-width: 900px) {
+      .stats {
+        grid-template-columns:
+          repeat(2, minmax(0, 1fr));
+      }
+
+      .podium {
+        grid-template-columns: 1fr;
+      }
+
+      .podium-card,
+      .podium-card.first {
+        min-height: 250px;
+      }
+
+      .podium-card.first {
+        order: -1;
+      }
+
+      .toolbar {
+        grid-template-columns:
+          repeat(2, minmax(0, 1fr));
+      }
+
+      .toolbar .field:first-child {
+        grid-column: 1 / -1;
+      }
+
+      .sponsor-grid {
+        grid-template-columns:
+          repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 700px) {
+      .nav {
+        min-height: 62px;
+      }
+
+      .brand-subtitle {
+        display: none;
+      }
+
+      .nav-links {
+        gap: 3px;
+      }
+
+      .nav-link {
+        padding: 8px 9px;
+        font-size: 11px;
+      }
+
+      .hero {
+        padding-top: 66px;
+      }
+
+      .hero h1 {
+        letter-spacing: -0.7px;
+      }
+
+      .main {
+        width: min(100% - 20px, 1180px);
+      }
+
+      .chart-row {
+        grid-template-columns:
+          54px minmax(0, 1fr) 100px;
+
+        gap: 7px;
+      }
+
+      .chart-class,
+      .chart-amount {
+        font-size: 11px;
+      }
+
+      .chart-track {
+        height: 26px;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .nav-link:not(.active) {
+        display: none;
+      }
+
+      .stats {
+        grid-template-columns:
+          repeat(2, minmax(0, 1fr));
+
+        gap: 10px;
+      }
+
+      .stat-card {
+        min-height: 130px;
+        padding: 18px 10px;
+      }
+
+      .stat-value {
+        font-size: 23px;
+      }
+
+      .toolbar {
+        grid-template-columns: 1fr;
+      }
+
+      .toolbar .field:first-child {
+        grid-column: auto;
+      }
+
+      .result-line {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .sponsor-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .chart-card,
+      .directory-card {
+        padding: 18px 13px;
+      }
+
+      .chart-row {
+        grid-template-columns:
+          50px minmax(0, 1fr);
+
+        gap: 7px;
+      }
+
+      .chart-amount {
+        grid-column: 2;
+        margin-top: -4px;
+      }
+
+      .chart-class {
+        grid-row: 1 / span 2;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page">
+
+    <!-- Navigation -->
+    <div class="nav-wrap">
+      <nav class="nav">
+
+        <a class="brand" href="../">
+          <div class="brand-mark">K15</div>
+
+          <div class="brand-copy">
+            <div class="brand-title">K15 FM</div>
+
+            <div class="brand-subtitle">
+              Thanh xuân phát lại
+            </div>
+          </div>
+        </a>
+
+        <div class="nav-links">
+          <a class="nav-link" href="../">
+            Trang chủ
+          </a>
+
+          <a class="nav-link" href="../danhsach/">
+            Danh sách
+          </a>
+
+          <a class="nav-link active" href="./">
+            Nhà tài trợ
+          </a>
+
+          <a class="nav-link" href="../avatar/">
+            Avatar
+          </a>
+        </div>
+
+      </nav>
+    </div>
+
+    <!-- Hero -->
+    <header class="hero">
+      <div class="hero-inner">
+
+        <div class="hero-eyebrow">
+          Kỷ niệm 10 năm ra trường · Sinh viên K15 HVNH
+        </div>
+
+        <span class="hero-heart">❤️</span>
+
+        <h1>TRI ÂN NHÀ TÀI TRỢ</h1>
+
+        <div class="hero-program">
+          K15 FM · <span>Thanh xuân phát lại</span>
+        </div>
+
+        <p class="hero-description">
+          Ban Tổ chức xin trân trọng cảm ơn những tấm lòng
+          đã chung tay, đồng hành và góp phần tạo nên một
+          ngày hội ngộ ý nghĩa dành cho Sinh viên Khóa 15
+          Học viện Ngân hàng.
+        </p>
+
+        <a class="hero-scroll" href="#vinh-danh">
+          Xem bảng vinh danh ↓
+        </a>
+
+      </div>
+    </header>
+
+    <main class="main" id="vinh-danh">
+
+      <!-- Statistics -->
+      <section class="stats">
+
+        <article class="stat-card">
+          <div class="stat-icon">👥</div>
+
+          <div
+            class="stat-value"
+            id="totalSponsors"
+          >
+            0
+          </div>
+
+          <div class="stat-label">
+            Nhà tài trợ
+          </div>
+        </article>
+
+        <article class="stat-card">
+          <div class="stat-icon">💛</div>
+
+          <div
+            class="stat-value"
+            id="totalAmount"
+          >
+            0đ
+          </div>
+
+          <div class="stat-label">
+            Tổng giá trị tài trợ
+          </div>
+        </article>
+
+        <article class="stat-card">
+          <div class="stat-icon">🏫</div>
+
+          <div
+            class="stat-value"
+            id="totalClasses"
+          >
+            0
+          </div>
+
+          <div class="stat-label">
+            Lớp đồng hành
+          </div>
+        </article>
+
+        <article class="stat-card">
+          <div class="stat-icon">🕒</div>
+
+          <div
+            class="stat-value"
+            id="lastUpdated"
+            style="font-size:18px;"
+          >
+            --
+          </div>
+
+          <div class="stat-label">
+            Cập nhật gần nhất
+          </div>
+        </article>
+
+      </section>
+
+      <!-- Top 3 -->
+      <section class="section">
+
+        <div class="section-header">
+          <div class="section-kicker">
+            Dấu ấn đồng hành
+          </div>
+
+          <h2 class="section-title">
+            Top Nhà tài trợ nổi bật
+          </h2>
+
+          <p class="section-description">
+            Trân trọng vinh danh những thành viên có mức
+            tài trợ cao nhất cho chương trình.
+          </p>
+        </div>
+
+        <div class="podium" id="podium">
+          <div class="state-box">
+            <div class="state-icon">⏳</div>
+
+            <div class="state-title">
+              Đang tải bảng vinh danh...
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- Chart -->
+      <section class="section">
+
+        <div class="chart-card">
+
+          <div class="section-header">
+            <div class="section-kicker">
+              Sức mạnh tập thể
+            </div>
+
+            <h2 class="section-title">
+              Top lớp có tổng tài trợ cao nhất
+            </h2>
+
+            <p class="section-description">
+              Tổng hợp theo lớp của từng Nhà tài trợ.
+            </p>
+          </div>
+
+          <div class="chart-list" id="classChart">
+            <div class="state-box">
+              <div class="state-title">
+                Đang tổng hợp dữ liệu...
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- Directory -->
+      <section class="section">
+
+        <div class="directory-card">
+
+          <div class="section-header">
+            <div class="section-kicker">
+              Bức tường tri ân
+            </div>
+
+            <h2 class="section-title">
+              Danh sách Nhà tài trợ
+            </h2>
+
+            <p class="section-description">
+              Mỗi sự đồng hành, dù lớn hay nhỏ, đều là một
+              phần ý nghĩa của K15 FM.
+            </p>
+          </div>
+
+          <div class="toolbar">
+
+            <div class="field">
+              <span class="field-icon">⌕</span>
+
+              <input
+                id="searchInput"
+                class="control"
+                type="search"
+                placeholder="Tìm theo họ tên hoặc lớp..."
+                autocomplete="off"
+              >
+            </div>
+
+            <select
+              id="classFilter"
+              class="control"
+              aria-label="Lọc theo lớp"
+            >
+              <option value="">
+                Tất cả lớp
+              </option>
+            </select>
+
+            <select
+              id="sortSelect"
+              class="control"
+              aria-label="Sắp xếp danh sách"
+            >
+              <option value="amount-desc">
+                Số tiền cao xuống thấp
+              </option>
+
+              <option value="amount-asc">
+                Số tiền thấp lên cao
+              </option>
+
+              <option value="name-asc">
+                Tên A đến Z
+              </option>
+
+              <option value="class-asc">
+                Theo lớp
+              </option>
+            </select>
+
+          </div>
+
+          <div class="result-line">
+            <div id="resultInfo">
+              Đang tải dữ liệu...
+            </div>
+
+            <div>
+              Dữ liệu tự động đồng bộ từ Google Sheet
+            </div>
+          </div>
+
+          <div class="sponsor-grid" id="sponsorGrid">
+            <div class="state-box">
+              <div class="state-icon">⏳</div>
+
+              <div class="state-title">
+                Đang tải danh sách Nhà tài trợ...
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- Thank you -->
+      <section class="thank-you">
+
+        <div class="thank-heart">❤️</div>
+
+        <h2 class="thank-title">
+          Trân trọng cảm ơn sự đồng hành
+        </h2>
+
+        <p class="thank-copy">
+          Mỗi sự đóng góp đều góp phần làm nên một ngày
+          hội khóa chỉn chu, ý nghĩa và đầy cảm xúc.
+          Sự đồng hành của các bạn không chỉ là nguồn lực
+          cho chương trình, mà còn là minh chứng cho tinh
+          thần kết nối bền chặt của đại gia đình K15.
+        </p>
+
+        <div class="thank-signature">
+          BAN TỔ CHỨC K15 FM – THANH XUÂN PHÁT LẠI
+        </div>
+
+      </section>
+
+    </main>
+
+    <footer class="footer">
+      K15 FM · Thanh xuân phát lại<br>
+      Kỷ niệm 10 năm ra trường Sinh viên K15
+      Học viện Ngân hàng
+    </footer>
+
+  </div>
+
+  <script>
+    /* ===============================================
+       CẤU HÌNH GOOGLE SHEET
+    =============================================== */
+
+    const SHEET_ID =
+      "1qGn-YV8P9CNSAc4sckjJ7YtB_toLHkh3WIBe5gJ1sIQ";
+
+    const SHEET_GID = "0";
+
+    const REFRESH_INTERVAL = 60000;
+
+    const SHEET_URL =
+      "https://docs.google.com/spreadsheets/d/" +
+      SHEET_ID +
+      "/gviz/tq?tqx=out:json&gid=" +
+      SHEET_GID +
+      "&t=" +
+      Date.now();
+
+
+    /* ===============================================
+       STATE
+    =============================================== */
+
+    let allSponsors = [];
+
+    const elements = {
+      totalSponsors:
+        document.getElementById("totalSponsors"),
+
+      totalAmount:
+        document.getElementById("totalAmount"),
+
+      totalClasses:
+        document.getElementById("totalClasses"),
+
+      lastUpdated:
+        document.getElementById("lastUpdated"),
+
+      podium:
+        document.getElementById("podium"),
+
+      classChart:
+        document.getElementById("classChart"),
+
+      searchInput:
+        document.getElementById("searchInput"),
+
+      classFilter:
+        document.getElementById("classFilter"),
+
+      sortSelect:
+        document.getElementById("sortSelect"),
+
+      resultInfo:
+        document.getElementById("resultInfo"),
+
+      sponsorGrid:
+        document.getElementById("sponsorGrid")
+    };
+
+
+    /* ===============================================
+       LOAD DATA
+    =============================================== */
+
+    async function loadData() {
+      try {
+        const url =
+          "https://docs.google.com/spreadsheets/d/" +
+          SHEET_ID +
+          "/gviz/tq?tqx=out:json&gid=" +
+          SHEET_GID +
+          "&t=" +
+          Date.now();
+
+        const response = await fetch(url, {
+          cache: "no-store"
+        });
+
+        if (!response.ok) {
+          throw new Error(
+            "Không thể kết nối Google Sheet."
+          );
+        }
+
+        const text = await response.text();
+
+        const jsonText = text
+          .replace(
+            /^.*google\.visualization\.Query\.setResponse\(/s,
+            ""
+          )
+          .replace(/\);?\s*$/s, "");
+
+        const data = JSON.parse(jsonText);
+
+        if (
+          !data.table ||
+          !Array.isArray(data.table.rows)
+        ) {
+          throw new Error(
+            "Google Sheet chưa có dữ liệu hợp lệ."
+          );
+        }
+
+        allSponsors = convertRows(
+          data.table.rows
+        );
+
+        updateStatistics();
+        updateClassFilter();
+        renderPodium();
+        renderClassChart();
+        applyFilters();
+
+      } catch (error) {
+        console.error(error);
+
+        showLoadError(error.message);
+      }
+    }
+
+
+    /* ===============================================
+       CONVERT GOOGLE ROWS
+    =============================================== */
+
+    function convertRows(rows) {
+      return rows
+        .map(function(row, index) {
+          const cells = row.c || [];
+
+          const stt = getCellValue(cells[0]);
+
+          const name = String(
+            getCellValue(cells[1]) || ""
+          ).trim();
+
+          const className = String(
+            getCellValue(cells[2]) || ""
+          ).trim();
+
+          const amount = parseAmount(
+            getCellValue(cells[3])
+          );
+
+          return {
+            originalIndex: index,
+            stt: stt || index + 1,
+            name: name,
+            className: className,
+            amount: amount
+          };
+        })
+        .filter(function(item) {
+          return (
+            item.name &&
+            item.amount >= 0
+          );
+        });
+    }
+
+
+    function getCellValue(cell) {
+      if (!cell) {
+        return "";
+      }
+
+      if (
+        cell.v !== undefined &&
+        cell.v !== null
+      ) {
+        return cell.v;
+      }
+
+      if (
+        cell.f !== undefined &&
+        cell.f !== null
+      ) {
+        return cell.f;
+      }
+
+      return "";
+    }
+
+
+    function parseAmount(value) {
+      if (
+        typeof value === "number" &&
+        Number.isFinite(value)
+      ) {
+        return Math.round(value);
+      }
+
+      const cleaned = String(value || "")
+        .replace(/[^\d-]/g, "");
+
+      const parsed = Number(cleaned);
+
+      return Number.isFinite(parsed)
+        ? Math.max(0, parsed)
+        : 0;
+    }
+
+
+    /* ===============================================
+       STATISTICS
+    =============================================== */
+
+    function updateStatistics() {
+      const totalAmount = allSponsors.reduce(
+        function(sum, sponsor) {
+          return sum + sponsor.amount;
+        },
+        0
+      );
+
+      const classSet = new Set(
+        allSponsors
+          .map(function(sponsor) {
+            return sponsor.className;
+          })
+          .filter(Boolean)
+      );
+
+      animateNumber(
+        elements.totalSponsors,
+        allSponsors.length,
+        function(value) {
+          return formatNumber(value);
+        }
+      );
+
+      animateNumber(
+        elements.totalAmount,
+        totalAmount,
+        function(value) {
+          return formatCurrency(value);
+        }
+      );
+
+      animateNumber(
+        elements.totalClasses,
+        classSet.size,
+        function(value) {
+          return formatNumber(value);
+        }
+      );
+
+      elements.lastUpdated.textContent =
+        new Intl.DateTimeFormat(
+          "vi-VN",
+          {
+            hour: "2-digit",
+            minute: "2-digit",
+            day: "2-digit",
+            month: "2-digit"
+          }
+        ).format(new Date());
+    }
+
+
+    function animateNumber(
+      element,
+      target,
+      formatter
+    ) {
+      const duration = 900;
+      const startTime = performance.now();
+
+      function update(currentTime) {
+        const progress = Math.min(
+          (currentTime - startTime) / duration,
+          1
+        );
+
+        const eased =
+          1 - Math.pow(1 - progress, 3);
+
+        const currentValue = Math.round(
+          target * eased
+        );
+
+        element.textContent =
+          formatter(currentValue);
+
+        if (progress < 1) {
+          requestAnimationFrame(update);
+        }
+      }
+
+      requestAnimationFrame(update);
+    }
+
+
+    /* ===============================================
+       PODIUM
+    =============================================== */
+
+    function renderPodium() {
+      const topSponsors = [...allSponsors]
+        .sort(function(a, b) {
+          if (b.amount !== a.amount) {
+            return b.amount - a.amount;
+          }
+
+          return a.name.localeCompare(
+            b.name,
+            "vi"
+          );
+        })
+        .slice(0, 3);
+
+      if (topSponsors.length === 0) {
+        elements.podium.innerHTML =
+          createEmptyState(
+            "Chưa có dữ liệu Nhà tài trợ."
+          );
+
+        return;
+      }
+
+      const displayOrder = [];
+
+      if (topSponsors[1]) {
+        displayOrder.push({
+          sponsor: topSponsors[1],
+          rank: 2
+        });
+      }
+
+      if (topSponsors[0]) {
+        displayOrder.push({
+          sponsor: topSponsors[0],
+          rank: 1
+        });
+      }
+
+      if (topSponsors[2]) {
+        displayOrder.push({
+          sponsor: topSponsors[2],
+          rank: 3
+        });
+      }
+
+      elements.podium.innerHTML =
+        displayOrder
+          .map(function(item) {
+            const sponsor = item.sponsor;
+            const rank = item.rank;
+
+            return (
+              "<article class='podium-card " +
+              (rank === 1 ? "first" : "") +
+              "'>" +
+
+                "<div class='podium-number'>" +
+                  getMedal(rank) +
+                "</div>" +
+
+                "<div class='podium-name'>" +
+                  escapeHtml(sponsor.name) +
+                "</div>" +
+
+                "<div class='podium-class'>" +
+                  escapeHtml(
+                    sponsor.className ||
+                    "K15 HVNH"
+                  ) +
+                "</div>" +
+
+                "<div class='podium-amount'>" +
+                  formatCurrency(sponsor.amount) +
+                "</div>" +
+
+                "<div class='podium-thanks'>" +
+                  "Trân trọng cảm ơn sự đồng hành" +
+                "</div>" +
+
+              "</article>"
+            );
+          })
+          .join("");
+    }
+
+
+    function getMedal(rank) {
+      if (rank === 1) return "🥇";
+      if (rank === 2) return "🥈";
+      return "🥉";
+    }
+
+
+    /* ===============================================
+       CLASS CHART
+    =============================================== */
+
+    function renderClassChart() {
+      const classTotals = {};
+
+      allSponsors.forEach(function(sponsor) {
+        const className =
+          sponsor.className || "Khác";
+
+        classTotals[className] =
+          (classTotals[className] || 0) +
+          sponsor.amount;
+      });
+
+      const topClasses = Object.keys(
+        classTotals
+      )
+        .map(function(className) {
+          return {
+            className: className,
+            amount: classTotals[className]
+          };
+        })
+        .sort(function(a, b) {
+          if (b.amount !== a.amount) {
+            return b.amount - a.amount;
+          }
+
+          return a.className.localeCompare(
+            b.className,
+            "vi"
+          );
+        })
+        .slice(0, 10);
+
+      if (topClasses.length === 0) {
+        elements.classChart.innerHTML =
+          createEmptyState(
+            "Chưa có dữ liệu để lập biểu đồ."
+          );
+
+        return;
+      }
+
+      const maxAmount = topClasses[0].amount;
+
+      elements.classChart.innerHTML =
+        topClasses
+          .map(function(item, index) {
+            const width =
+              maxAmount > 0
+                ? Math.max(
+                    3,
+                    Math.round(
+                      item.amount /
+                      maxAmount *
+                      100
+                    )
+                  )
+                : 0;
+
+            return (
+              "<div class='chart-row'>" +
+
+                "<div class='chart-class' " +
+                "title='" +
+                escapeHtml(item.className) +
+                "'>" +
+                  escapeHtml(item.className) +
+                "</div>" +
+
+                "<div class='chart-track'>" +
+                  "<div class='chart-bar' " +
+                  "data-width='" +
+                  width +
+                  "%'>" +
+                    "<span class='chart-rank'>" +
+                      "#" + (index + 1) +
+                    "</span>" +
+                  "</div>" +
+                "</div>" +
+
+                "<div class='chart-amount'>" +
+                  formatCurrency(item.amount) +
+                "</div>" +
+
+              "</div>"
+            );
+          })
+          .join("");
+
+      requestAnimationFrame(function() {
+        document
+          .querySelectorAll(".chart-bar")
+          .forEach(function(bar) {
+            bar.style.width =
+              bar.dataset.width;
+          });
+      });
+    }
+
+
+    /* ===============================================
+       FILTER OPTIONS
+    =============================================== */
+
+    function updateClassFilter() {
+      const currentValue =
+        elements.classFilter.value;
+
+      const classes = [
+        ...new Set(
+          allSponsors
+            .map(function(sponsor) {
+              return sponsor.className;
+            })
+            .filter(Boolean)
+        )
+      ].sort(function(a, b) {
+        return a.localeCompare(b, "vi");
+      });
+
+      elements.classFilter.innerHTML =
+        "<option value=''>Tất cả lớp</option>" +
+        classes
+          .map(function(className) {
+            return (
+              "<option value='" +
+              escapeHtml(className) +
+              "'>" +
+              escapeHtml(className) +
+              "</option>"
+            );
+          })
+          .join("");
+
+      if (classes.includes(currentValue)) {
+        elements.classFilter.value =
+          currentValue;
+      }
+    }
+
+
+    /* ===============================================
+       SEARCH / SORT
+    =============================================== */
+
+    function applyFilters() {
+      const searchValue = normalizeText(
+        elements.searchInput.value
+      );
+
+      const selectedClass =
+        elements.classFilter.value;
+
+      const sortValue =
+        elements.sortSelect.value;
+
+      let filtered = allSponsors.filter(
+        function(sponsor) {
+          const matchesSearch =
+            !searchValue ||
+            normalizeText(sponsor.name)
+              .includes(searchValue) ||
+            normalizeText(sponsor.className)
+              .includes(searchValue);
+
+          const matchesClass =
+            !selectedClass ||
+            sponsor.className === selectedClass;
+
+          return (
+            matchesSearch &&
+            matchesClass
+          );
+        }
+      );
+
+      filtered = sortSponsors(
+        filtered,
+        sortValue
+      );
+
+      renderSponsorGrid(filtered);
+
+      elements.resultInfo.innerHTML =
+        "Đang hiển thị <strong>" +
+        filtered.length +
+        "</strong> trên tổng số <strong>" +
+        allSponsors.length +
+        "</strong> Nhà tài trợ.";
+    }
+
+
+    function sortSponsors(items, sortValue) {
+      const sorted = [...items];
+
+      if (sortValue === "amount-asc") {
+        return sorted.sort(function(a, b) {
+          return a.amount - b.amount;
+        });
+      }
+
+      if (sortValue === "name-asc") {
+        return sorted.sort(function(a, b) {
+          return a.name.localeCompare(
+            b.name,
+            "vi"
+          );
+        });
+      }
+
+      if (sortValue === "class-asc") {
+        return sorted.sort(function(a, b) {
+          const classCompare =
+            a.className.localeCompare(
+              b.className,
+              "vi"
+            );
+
+          if (classCompare !== 0) {
+            return classCompare;
+          }
+
+          return b.amount - a.amount;
+        });
+      }
+
+      return sorted.sort(function(a, b) {
+        if (b.amount !== a.amount) {
+          return b.amount - a.amount;
+        }
+
+        return a.name.localeCompare(
+          b.name,
+          "vi"
+        );
+      });
+    }
+
+
+    /* ===============================================
+       SPONSOR CARDS
+    =============================================== */
+
+    function renderSponsorGrid(sponsors) {
+      if (sponsors.length === 0) {
+        elements.sponsorGrid.innerHTML =
+          createEmptyState(
+            "Không tìm thấy Nhà tài trợ phù hợp."
+          );
+
+        return;
+      }
+
+      elements.sponsorGrid.innerHTML =
+        sponsors
+          .map(function(sponsor, index) {
+            const initials =
+              getInitials(sponsor.name);
+
+            return (
+              "<article class='sponsor-card'>" +
+
+                "<div class='sponsor-top'>" +
+
+                  "<div class='sponsor-avatar'>" +
+                    escapeHtml(initials) +
+                  "</div>" +
+
+                  "<div class='sponsor-rank'>" +
+                    "#" + (index + 1) +
+                  "</div>" +
+
+                "</div>" +
+
+                "<div class='sponsor-name'>" +
+                  escapeHtml(sponsor.name) +
+                "</div>" +
+
+                "<div class='sponsor-class'>" +
+                  escapeHtml(
+                    sponsor.className ||
+                    "K15 HVNH"
+                  ) +
+                "</div>" +
+
+                "<div class='sponsor-amount'>" +
+                  formatCurrency(sponsor.amount) +
+                "</div>" +
+
+                "<div class='sponsor-message'>" +
+                  "❤️ Xin trân trọng cảm ơn" +
+                "</div>" +
+
+              "</article>"
+            );
+          })
+          .join("");
+    }
+
+
+    /* ===============================================
+       HELPERS
+    =============================================== */
+
+    function formatCurrency(value) {
+      return new Intl.NumberFormat(
+        "vi-VN"
+      ).format(
+        Math.round(value || 0)
+      ) + "đ";
+    }
+
+
+    function formatNumber(value) {
+      return new Intl.NumberFormat(
+        "vi-VN"
+      ).format(
+        Math.round(value || 0)
+      );
+    }
+
+
+    function normalizeText(value) {
+      return String(value || "")
+        .normalize("NFD")
+        .replace(
+          /[\u0300-\u036f]/g,
+          ""
+        )
+        .replace(/đ/g, "d")
+        .replace(/Đ/g, "D")
+        .toLowerCase()
+        .trim();
+    }
+
+
+    function getInitials(name) {
+      const parts = String(name || "")
+        .trim()
+        .split(/\s+/)
+        .filter(Boolean);
+
+      if (parts.length === 0) {
+        return "K15";
+      }
+
+      if (parts.length === 1) {
+        return parts[0]
+          .slice(0, 2)
+          .toUpperCase();
+      }
+
+      return (
+        parts[parts.length - 2][0] +
+        parts[parts.length - 1][0]
+      ).toUpperCase();
+    }
+
+
+    function escapeHtml(value) {
+      return String(value || "")
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+    }
+
+
+    function createEmptyState(message) {
+      return (
+        "<div class='state-box'>" +
+          "<div class='state-icon'>❤️</div>" +
+          "<div class='state-title'>" +
+            escapeHtml(message) +
+          "</div>" +
+        "</div>"
+      );
+    }
+
+
+    function showLoadError(message) {
+      const errorHtml =
+        "<div class='state-box'>" +
+
+          "<div class='state-icon'>⚠️</div>" +
+
+          "<div class='state-title'>" +
+            "Chưa thể tải dữ liệu" +
+          "</div>" +
+
+          "<div class='state-copy'>" +
+            escapeHtml(message) +
+            "<br>" +
+            "Hãy kiểm tra Google Sheet đã được chia sẻ " +
+            "ở chế độ “Bất kỳ ai có đường liên kết – Người xem”." +
+          "</div>" +
+
+        "</div>";
+
+      elements.podium.innerHTML =
+        errorHtml;
+
+      elements.classChart.innerHTML =
+        errorHtml;
+
+      elements.sponsorGrid.innerHTML =
+        errorHtml;
+
+      elements.resultInfo.textContent =
+        "Không thể tải dữ liệu.";
+    }
+
+
+    /* ===============================================
+       EVENTS
+    =============================================== */
+
+    elements.searchInput.addEventListener(
+      "input",
+      applyFilters
+    );
+
+    elements.classFilter.addEventListener(
+      "change",
+      applyFilters
+    );
+
+    elements.sortSelect.addEventListener(
+      "change",
+      applyFilters
+    );
+
+
+    /* ===============================================
+       INITIALIZE
+    =============================================== */
+
+    loadData();
+
+    setInterval(
+      loadData,
+      REFRESH_INTERVAL
+    );
+  </script>
+</body>
+</html>
