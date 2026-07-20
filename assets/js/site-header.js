@@ -3,17 +3,15 @@
 
   const MENU_ITEMS = [
     {
-      label: "Trang chủ",
-      href: "/",
-      icon: "⌂"
-    },
-    {
-      label: "Thư mời",
-      icon: "✉",
-      children: [
+    label:"Trang chủ",
+    href:"/"
+},
+{
+    label:"Thư mời",
+    children:[
         {
-          label: "Thư mời hội khóa",
-          href: "/thumoi/"
+            label:"Thư mời hội khóa",
+            href:"/thumoi/"
         },
         {
           label: "Thư mời Thầy Cô",
