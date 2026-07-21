@@ -1,5 +1,5 @@
 const DASHBOARD_CONFIG={
-  API_URL:"https://script.google.com/macros/s/AKfycbxO8D70br_ONJj27gWp8TW1Q8BvwksFVKB7-B8t8xs9NbRRrm34QXMUUZ_r_16RN3eC3g/exec",
+  API_URL:"https://script.google.com/macros/s/AKfycbxAI95iD9HCGo4krMYgWKesvQgWyte7hKxKRvGERgF9-IC01pK-OrBvLZbznudCzy0WdQ/exec",
   REFRESH_INTERVAL:30000,
   EVENT_DATE:"2026-08-09T08:00:00+07:00",
   TOP_CLASS_LIMIT:10,
