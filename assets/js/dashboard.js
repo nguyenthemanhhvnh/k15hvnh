@@ -47,15 +47,6 @@ else if(k==="topClass"){
 else{
     animate(el,s[k]);
 }
-  const total=+s.totalRegistrations||0,confirmed=+s.confirmedRegistrations||0,rate=total?Math.round(confirmed/total*100):0;
-  document.getElementById("confirmedRate").textContent=`${rate}% tổng đăng ký`;
-  document.getElementById("topClassNote").textContent=s.topClassCount?`${fmt(s.topClassCount)} người đăng ký`:"Chưa có dữ liệu";
-  const p=Math.min(100,Math.round(total/DASHBOARD_CONFIG.REGISTRATION_TARGET*100));
-  document.getElementById("targetLabel").textContent=`Mục tiêu ${fmt(DASHBOARD_CONFIG.REGISTRATION_TARGET)} người`;
-  document.getElementById("progressPercent").textContent=`${p}%`;
-  document.getElementById("progressText").textContent=`${fmt(total)} / ${fmt(DASHBOARD_CONFIG.REGISTRATION_TARGET)} người`;
-  document.getElementById("progressBar").style.width=`${p}%`;
-}
 function renderRanking(items=[]){const c=document.getElementById("classRanking"),a=items.slice(0,DASHBOARD_CONFIG.TOP_CLASS_LIMIT);if(!a.length){c.innerHTML='<div class="dash-empty">Chưa có dữ liệu xếp hạng.</div>';return}const max=Math.max(...a.map(x=>+x.count||0),1);c.innerHTML=a.map((x,i)=>`<div class="dash-ranking-item"><div class="dash-ranking-item__position">${i+1}</div><div><div class="dash-ranking-item__name">${esc(x.className||"Chưa xác định")}</div><div class="dash-ranking-item__bar"><div class="dash-ranking-item__fill" style="width:${Math.max(4,Math.round((+x.count||0)/max*100))}%"></div></div></div><div class="dash-ranking-item__value">${fmt(x.count)}</div></div>`).join("")}
 function renderChart(items=[]){const c=document.getElementById("dailyChart"),a=items.slice(-14);if(!a.length){c.innerHTML='<div class="dash-empty">Chưa có dữ liệu biểu đồ.</div>';return}const max=Math.max(...a.map(x=>+x.count||0),1);c.innerHTML=a.map((x,i)=>`<div class="dash-chart__column"><div class="dash-chart__value">${fmt(x.count)}</div><div class="dash-chart__bar" style="height:${Math.max(5,Math.round((+x.count||0)/max*205))}px;animation-delay:${i*35}ms"></div><div class="dash-chart__label">${esc(x.date)}</div></div>`).join("")}
 function renderFeed(id,items=[],sponsor=false){const c=document.getElementById(id),a=items.slice(0,DASHBOARD_CONFIG.RECENT_LIMIT);if(!a.length){c.innerHTML='<div class="dash-empty">Chưa có dữ liệu.</div>';return}c.innerHTML=a.map(x=>`<div class="dash-feed-item"><div class="dash-feed-item__avatar">${sponsor?"💛":esc(initials(x.name))}</div><div><div class="dash-feed-item__title">${esc(x.name||"Thành viên K15")}</div><div class="dash-feed-item__subtitle">${esc(sponsor?(x.tier||"Đồng hành"):(x.className||"Chưa rõ lớp"))}</div></div><div class="dash-feed-item__value">${sponsor?money(x.amount):esc(x.status||"Đã đăng ký")}<span class="dash-feed-item__time">${ago(x.createdAt)}</span></div></div>`).join("")}
