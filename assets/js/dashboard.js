@@ -35,7 +35,18 @@ function ago(v){if(!v)return"Vừa cập nhật";const s=Math.max(0,Math.floor((
 function status(type,text,time){const d=document.getElementById("syncStatusDot");d.className="dash-status-dot"+(type==="online"?" is-online":type==="error"?" is-error":"");document.getElementById("syncStatusText").textContent=text;document.getElementById("lastUpdated").textContent=clock(time)}
 function animate(el,target,formatter=fmt){const start=Number(el.dataset.v||0),end=Number(target||0),t0=performance.now();function f(t){const p=Math.min(1,(t-t0)/650),v=Math.round(start+(end-start)*(1-Math.pow(1-p,3)));el.textContent=formatter(v);el.dataset.v=v;if(p<1)requestAnimationFrame(f)}requestAnimationFrame(f)}
 function renderSummary(s={}){
-  document.querySelectorAll("[data-kpi]").forEach(el=>{const k=el.dataset.kpi;if(k==="sponsorTotal")animate(el,s[k],money);else if(k==="topClass")el.textContent=s[k]||"--";else animate(el,s[k])});
+  document.querySelectorAll("[data-kpi]").forEach(el=>{const k=el.dataset.kpi;if(k==="sponsorTotal")animate(el,s[k],money);else if(k==="classCount"){
+    el.textContent=`${s[k]||0}/40`;
+}
+else if(k==="sponsorTotal"){
+    animate(el,s[k],money);
+}
+else if(k==="topClass"){
+    el.textContent=s[k]||"--";
+}
+else{
+    animate(el,s[k]);
+}
   const total=+s.totalRegistrations||0,confirmed=+s.confirmedRegistrations||0,rate=total?Math.round(confirmed/total*100):0;
   document.getElementById("confirmedRate").textContent=`${rate}% tổng đăng ký`;
   document.getElementById("topClassNote").textContent=s.topClassCount?`${fmt(s.topClassCount)} người đăng ký`:"Chưa có dữ liệu";
