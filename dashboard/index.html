@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>K15 FM Live Dashboard</title>
+  <meta name="description" content="Bảng điều hành trực tiếp K15 FM – Thanh xuân phát lại.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&display=swap&subset=vietnamese" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/site-header.css">
+  <link rel="stylesheet" href="/assets/css/dashboard.css?v=20260721-1">
+</head>
+<body>
+  <div id="k15-site-header"></div>
+
+  <main class="dash-page">
+    <section class="dash-hero">
+      <div class="dash-container dash-hero__inner">
+        <div>
+          <div class="dash-live-pill"><span class="dash-live-dot"></span> LIVE DASHBOARD</div>
+          <h1>K15 FM<br><span>Event Command Center</span></h1>
+          <p>Dữ liệu đăng ký, xác nhận, tài trợ và thi đua theo lớp được đồng bộ tự động.</p>
+        </div>
+
+        <aside class="dash-sync-card">
+          <div class="dash-sync-card__top">
+            <span id="syncStatusDot" class="dash-status-dot"></span>
+            <strong id="syncStatusText">Đang kết nối dữ liệu...</strong>
+          </div>
+          <div class="dash-sync-card__time" id="lastUpdated">--:--:--</div>
+          <small>Tự động làm mới mỗi 30 giây</small>
+          <button id="refreshButton" type="button">Làm mới ngay</button>
+        </aside>
+      </div>
+    </section>
+
+    <section class="dash-section dash-section--kpi">
+      <div class="dash-container">
+        <div class="dash-kpi-grid">
+          <article class="dash-kpi-card"><div class="dash-kpi-card__icon">👥</div><div class="dash-kpi-card__label">Tổng đăng ký</div><div class="dash-kpi-card__value" data-kpi="totalRegistrations">0</div><div class="dash-kpi-card__note">Người đã gửi thông tin</div></article>
+          <article class="dash-kpi-card"><div class="dash-kpi-card__icon">🎫</div><div class="dash-kpi-card__label">Đã xác nhận</div><div class="dash-kpi-card__value" data-kpi="confirmedRegistrations">0</div><div class="dash-kpi-card__note" id="confirmedRate">0% tổng đăng ký</div></article>
+          <article class="dash-kpi-card"><div class="dash-kpi-card__icon">🏫</div><div class="dash-kpi-card__label">Số lớp tham gia</div><div class="dash-kpi-card__value" data-kpi="classCount">0</div><div class="dash-kpi-card__note">Có người đã đăng ký</div></article>
+          <article class="dash-kpi-card dash-kpi-card--gold"><div class="dash-kpi-card__icon">💛</div><div class="dash-kpi-card__label">Tổng tài trợ</div><div class="dash-kpi-card__value dash-kpi-card__value--money" data-kpi="sponsorTotal">0 ₫</div><div class="dash-kpi-card__note">Tiền và giá trị quy đổi</div></article>
+          <article class="dash-kpi-card"><div class="dash-kpi-card__icon">🏆</div><div class="dash-kpi-card__label">Lớp dẫn đầu</div><div class="dash-kpi-card__value dash-kpi-card__value--text" data-kpi="topClass">--</div><div class="dash-kpi-card__note" id="topClassNote">Chưa có dữ liệu</div></article>
+          <article class="dash-kpi-card"><div class="dash-kpi-card__icon">⏳</div><div class="dash-kpi-card__label">Còn lại</div><div class="dash-kpi-card__value dash-kpi-card__value--text" id="daysRemaining">-- ngày</div><div class="dash-kpi-card__note">Đến 09.08.2026</div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="dash-section">
+      <div class="dash-container dash-two-columns">
+        <article class="dash-panel">
+          <div class="dash-panel__header"><div><div class="dash-panel__kicker">Thi đua theo lớp</div><h2>Bảng xếp hạng lớp</h2></div><span class="dash-chip">Top 10</span></div>
+          <div id="classRanking" class="dash-ranking"><div class="dash-empty">Đang tải bảng xếp hạng...</div></div>
+        </article>
+
+        <article class="dash-panel">
+          <div class="dash-panel__header"><div><div class="dash-panel__kicker">Xu hướng</div><h2>Đăng ký theo ngày</h2></div><span class="dash-chip">14 ngày gần nhất</span></div>
+          <div id="dailyChart" class="dash-chart"><div class="dash-empty">Đang tải biểu đồ...</div></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="dash-section dash-section--soft">
+      <div class="dash-container dash-two-columns">
+        <article class="dash-panel">
+          <div class="dash-panel__header"><div><div class="dash-panel__kicker">Luồng đăng ký</div><h2>Người đăng ký gần nhất</h2></div><span class="dash-live-mini"><i></i> LIVE</span></div>
+          <div id="recentRegistrations" class="dash-feed"><div class="dash-empty">Đang tải danh sách...</div></div>
+        </article>
+
+        <article class="dash-panel">
+          <div class="dash-panel__header"><div><div class="dash-panel__kicker">Nguồn lực đồng hành</div><h2>Nhà tài trợ mới nhất</h2></div><a href="/nhataitro/" class="dash-panel__link">Xem tất cả →</a></div>
+          <div id="recentSponsors" class="dash-feed"><div class="dash-empty">Đang tải danh sách...</div></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="dash-section">
+      <div class="dash-container">
+        <article class="dash-panel dash-progress-panel">
+          <div class="dash-panel__header"><div><div class="dash-panel__kicker">Tiến độ sự kiện</div><h2>Mức độ hoàn thành mục tiêu</h2></div><span id="targetLabel" class="dash-chip">Mục tiêu 500 người</span></div>
+          <div class="dash-progress-summary"><strong id="progressPercent">0%</strong><span id="progressText">0 / 500 người</span></div>
+          <div class="dash-progress-track"><div id="progressBar" class="dash-progress-bar"></div></div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="dash-footer">
+    <div class="dash-container"><strong>K15 FM – Thanh xuân phát lại</strong><span>Dữ liệu phục vụ công tác tổ chức Hội khóa K15 Học viện Ngân hàng.</span></div>
+  </footer>
+
+  <script src="/assets/js/dashboard.js?v=20260721-1"></script>
+  <script src="/assets/js/site-header.js"></script>
+</body>
+</html>
