@@ -12,8 +12,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&display=swap&subset=vietnamese" rel="stylesheet">
 
-  <link rel="stylesheet" href="/assets/css/site-header.css?v=20260722-final2">
-  <link rel="stylesheet" href="/assets/css/home-v5-premium.css?v=20260722-final2">
+  <link rel="stylesheet" href="/assets/css/site-header.css?v=20260722-music-final">
+  <link rel="stylesheet" href="/assets/css/home-v5-premium.css?v=20260722-music-final">
 </head>
 
 <body>
@@ -115,6 +115,71 @@
       <a class="v5-scroll" href="#quick-links" aria-label="Cuộn xuống">
         <span></span>
       </a>
+    </section>
+
+    <section class="v5-radio" aria-label="Ca khúc Hội khóa K15 FM">
+      <div class="v5-shell">
+        <div class="v5-radio__card reveal">
+          <div class="v5-radio__identity">
+            <div class="v5-radio__mark" aria-hidden="true">
+              <span>FM</span>
+            </div>
+
+            <div>
+              <p>K15 FM RADIO · CA KHÚC HỘI KHÓA</p>
+              <h2>Mình về nhé</h2>
+              <span>Thanh xuân phát lại · K15 Học viện Ngân hàng</span>
+            </div>
+          </div>
+
+          <div class="v5-radio__player">
+            <button
+              id="musicToggle"
+              class="v5-radio__play"
+              type="button"
+              aria-label="Phát bài hát"
+              aria-pressed="false"
+            >
+              <span class="v5-radio__play-icon">▶</span>
+            </button>
+
+            <div class="v5-radio__track">
+              <div class="v5-radio__time-row">
+                <span id="musicCurrentTime">00:00</span>
+                <span id="musicDuration">00:00</span>
+              </div>
+
+              <input
+                id="musicProgress"
+                class="v5-radio__progress"
+                type="range"
+                min="0"
+                max="100"
+                value="0"
+                step="0.1"
+                aria-label="Tiến trình bài hát"
+              >
+            </div>
+
+            <button
+              id="musicMute"
+              class="v5-radio__mute"
+              type="button"
+              aria-label="Tắt âm thanh"
+              aria-pressed="false"
+            >
+              🔊
+            </button>
+          </div>
+
+          <audio id="k15ThemeSong" preload="metadata">
+            <source
+              src="/assets/audio/minh-ve-nhe-k15fm.mp3"
+              type="audio/mpeg"
+            >
+          </audio>
+        </div>
+      </div>
     </section>
 
     <section class="v5-quick" id="quick-links">
@@ -251,7 +316,7 @@
             <div class="v5-contact-person">
               <div>
                 <strong>Nam Tạ</strong>
-                <span>Trưởng Ban Kiểm soát/ Phụ trách vé</span>
+                <span>Phụ trách vé và hỗ trợ chương trình</span>
               </div>
 
               <a href="tel:0976005898">
@@ -337,7 +402,7 @@
     </div>
   </footer>
 
-  <script src="/assets/js/home-v5-premium.js?v=20260722-final2"></script>
-  <script src="/assets/js/site-header.js?v=20260722-final2"></script>
+  <script src="/assets/js/home-v5-premium.js?v=20260722-music-final"></script>
+  <script src="/assets/js/site-header.js?v=20260722-music-final"></script>
 </body>
 </html>
