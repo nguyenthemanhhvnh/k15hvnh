@@ -626,30 +626,31 @@ applyFilters();
     }
 
     function updateStatistics() {
-      elements.totalConfirmed.textContent =
-        allMembers.length.toLocaleString("vi-VN");
+  elements.totalConfirmed.textContent =
+    allMembers.length.toLocaleString("vi-VN");
 
-      const classes = new Set(
-        allMembers
-          .map(function(member) {
-            return member.className;
-          })
-          .filter(Boolean)
-      );
+  const classes = new Set(
+    allMembers
+      .map(function(member) {
+        return member.className;
+      })
+      .filter(Boolean)
+  );
 
-      elements.totalClasses.textContent =
-        classes.size.toLocaleString("vi-VN");
+  elements.totalClasses.textContent =
+    classes.size.toLocaleString("vi-VN") + " / 40";
 
-      if (allMembers.length === 0) {
-        elements.lastUpdated.textContent = "Chưa có dữ liệu";
-        return;
-      }
+  if (allMembers.length === 0) {
+    elements.lastUpdated.textContent = "Chưa có dữ liệu";
+    return;
+  }
 
-      const latestMember = allMembers[allMembers.length - 1];
+  const latestMember = allMembers[allMembers.length - 1];
 
-      elements.lastUpdated.textContent =
-        latestMember.timestamp || "Vừa cập nhật";
-    }
+  elements.lastUpdated.textContent =
+    latestMember.timestamp || "Vừa cập nhật";
+}
+      
 function updateTopClassChart() {
   const classCounts = {};
 
