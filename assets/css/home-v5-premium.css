@@ -83,12 +83,13 @@ img{display:block;max-width:100%}
 .v5-hero__content{
   min-height:calc(100vh - 78px);
   display:grid;
-  grid-template-columns:minmax(0,680px) minmax(320px,400px);
-  grid-template-rows:auto 1fr auto;
+  grid-template-columns:minmax(0,680px);
+  grid-template-rows:auto 1fr;
+  align-content:center;
   align-items:center;
-  gap:26px 64px;
+  gap:28px;
   padding-top:74px;
-  padding-bottom:66px;
+  padding-bottom:180px;
 }
 .v5-hero__badge{
   grid-column:1/-1;
@@ -198,18 +199,27 @@ img{display:block;max-width:100%}
   background:rgba(255,255,255,.08);
   backdrop-filter:blur(14px);
 }
+.v5-countdown-rail{
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:38px;
+  z-index:3;
+  pointer-events:none;
+}
+.v5-countdown-rail .v5-shell{
+  display:flex;
+  justify-content:flex-start;
+}
 .v5-countdown-card{
-  align-self:end;
-  justify-self:start;
-  width:min(100%,390px);
-  margin-left:-42px;
-  margin-bottom:6px;
-  padding:20px;
+  width:min(100%,560px);
+  padding:17px 18px;
   border:1px solid rgba(255,255,255,.16);
-  border-radius:24px;
-  background:rgba(5,20,46,.62);
-  box-shadow:0 24px 60px rgba(0,0,0,.22);
+  border-radius:22px;
+  background:rgba(5,20,46,.76);
+  box-shadow:0 22px 55px rgba(0,0,0,.24);
   backdrop-filter:blur(18px);
+  pointer-events:auto;
 }
 .v5-countdown-card__top{
   display:flex;
@@ -256,10 +266,10 @@ img{display:block;max-width:100%}
   display:grid;
   grid-template-columns:repeat(4,1fr);
   gap:7px;
-  margin-top:18px;
+  margin-top:14px;
 }
 .v5-countdown div{
-  padding:14px 7px;
+  padding:11px 7px;
   border:1px solid rgba(255,255,255,.09);
   border-radius:14px;
   background:rgba(255,255,255,.055);
@@ -268,7 +278,7 @@ img{display:block;max-width:100%}
 .v5-countdown strong{
   display:block;
   color:var(--gold);
-  font-size:29px;
+  font-size:27px;
   line-height:1;
   font-weight:950;
   transition:transform .15s ease;
@@ -446,8 +456,10 @@ img{display:block;max-width:100%}
 .v5-story__quote{
   margin-top:28px;
   color:#fff;
-  font-family:Georgia,"Times New Roman",serif;
-  font-size:30px;
+  font-family:"Be Vietnam Pro",Arial,sans-serif;
+  font-size:26px;
+  font-weight:600;
+  letter-spacing:-.025em;
   line-height:1.45;
 }
 .v5-story__mini-grid{
@@ -642,8 +654,7 @@ img{display:block;max-width:100%}
     gap:24px;
   }
   .v5-countdown-card{
-    width:min(100%,540px);
-    margin-left:0;
+    width:min(100%,560px);
   }
   .v5-story__grid{grid-template-columns:1fr}
 }
@@ -660,9 +671,9 @@ img{display:block;max-width:100%}
       linear-gradient(180deg,rgba(3,13,30,.28) 0%,rgba(3,13,30,.44) 35%,rgba(3,13,30,.94) 76%,rgba(3,13,30,.99) 100%);
   }
   .v5-hero__content{
-    min-height:880px;
+    min-height:900px;
     padding-top:88px;
-    padding-bottom:56px;
+    padding-bottom:240px;
   }
   .v5-hero__badge{
     position:absolute;
@@ -681,7 +692,16 @@ img{display:block;max-width:100%}
   .v5-hero__meta i{display:none}
   .v5-hero__actions{display:grid}
   .v5-btn{width:100%}
-  .v5-countdown-card{padding:16px}
+  .v5-countdown-rail{
+    bottom:24px;
+  }
+  .v5-countdown-rail .v5-shell{
+    justify-content:center;
+  }
+  .v5-countdown-card{
+    width:100%;
+    padding:15px;
+  }
   .v5-countdown{gap:6px}
   .v5-countdown strong{font-size:24px}
   .v5-countdown div{padding:13px 5px}
