@@ -203,7 +203,7 @@ img{display:block;max-width:100%}
   position:absolute;
   left:0;
   right:0;
-  bottom:38px;
+  bottom:12px;
   z-index:3;
   pointer-events:none;
 }
@@ -336,6 +336,129 @@ img{display:block;max-width:100%}
   color:var(--navy);
   font-size:clamp(30px,4vw,46px);
   letter-spacing:-.045em;
+}
+
+
+/* K15 FM RADIO */
+.v5-radio{
+  position:relative;
+  z-index:5;
+  margin-top:-1px;
+  padding:22px 0 8px;
+  background:linear-gradient(180deg,#07182f 0%,#0a2248 100%);
+}
+.v5-radio__card{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(360px,520px);
+  gap:28px;
+  align-items:center;
+  padding:20px 22px;
+  border:1px solid rgba(255,255,255,.14);
+  border-radius:22px;
+  color:#fff;
+  background:
+    linear-gradient(135deg,rgba(255,255,255,.08),rgba(255,255,255,.035)),
+    rgba(7,24,47,.82);
+  box-shadow:0 22px 55px rgba(0,0,0,.18);
+  backdrop-filter:blur(18px);
+}
+.v5-radio__identity{
+  display:flex;
+  align-items:center;
+  gap:15px;
+  min-width:0;
+}
+.v5-radio__mark{
+  flex:0 0 auto;
+  width:54px;
+  height:54px;
+  display:grid;
+  place-items:center;
+  border-radius:17px;
+  color:var(--navy);
+  background:linear-gradient(135deg,var(--gold-2),var(--gold));
+  box-shadow:0 12px 28px rgba(233,166,45,.26);
+}
+.v5-radio__mark span{
+  font-size:15px;
+  font-weight:950;
+  letter-spacing:.04em;
+}
+.v5-radio__identity p{
+  margin:0;
+  color:var(--gold);
+  font-size:9px;
+  font-weight:900;
+  letter-spacing:.14em;
+}
+.v5-radio__identity h2{
+  margin:5px 0 0;
+  font-size:23px;
+  line-height:1.1;
+  letter-spacing:-.035em;
+}
+.v5-radio__identity>div>span{
+  display:block;
+  margin-top:6px;
+  color:rgba(255,255,255,.6);
+  font-size:10px;
+}
+.v5-radio__player{
+  display:grid;
+  grid-template-columns:auto 1fr auto;
+  gap:14px;
+  align-items:center;
+}
+.v5-radio__play,
+.v5-radio__mute{
+  border:0;
+  color:#fff;
+  background:transparent;
+}
+.v5-radio__play{
+  width:48px;
+  height:48px;
+  display:grid;
+  place-items:center;
+  border-radius:50%;
+  color:var(--navy);
+  background:linear-gradient(135deg,var(--gold-2),var(--gold));
+  box-shadow:0 12px 28px rgba(233,166,45,.25);
+}
+.v5-radio__play-icon{
+  margin-left:2px;
+  font-size:17px;
+}
+.v5-radio__mute{
+  width:40px;
+  height:40px;
+  border-radius:12px;
+  background:rgba(255,255,255,.08);
+  font-size:16px;
+}
+.v5-radio__track{
+  min-width:0;
+}
+.v5-radio__time-row{
+  display:flex;
+  justify-content:space-between;
+  margin-bottom:8px;
+  color:rgba(255,255,255,.62);
+  font-size:9px;
+  font-variant-numeric:tabular-nums;
+}
+.v5-radio__progress{
+  width:100%;
+  height:5px;
+  accent-color:var(--gold);
+  cursor:pointer;
+}
+.v5-radio.is-playing .v5-radio__mark{
+  animation:v5RadioPulse 1.6s ease-in-out infinite;
+}
+@keyframes v5RadioPulse{
+  0%,100%{transform:scale(1);box-shadow:0 12px 28px rgba(233,166,45,.24)}
+  50%{transform:scale(1.045);box-shadow:0 15px 38px rgba(233,166,45,.42)}
 }
 
 /* QUICK */
@@ -706,6 +829,15 @@ img{display:block;max-width:100%}
   .v5-countdown strong{font-size:24px}
   .v5-countdown div{padding:13px 5px}
   .v5-scroll{display:none}
+
+  .v5-radio{padding:14px 0 4px}
+  .v5-radio__card{
+    grid-template-columns:1fr;
+    gap:18px;
+    padding:17px;
+  }
+  .v5-radio__identity h2{font-size:20px}
+  .v5-radio__player{gap:10px}
   .v5-quick{padding:58px 0}
   .v5-quick-grid{grid-template-columns:1fr}
   .v5-card{padding:19px}
