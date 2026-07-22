@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#071b40">
+
+  <title>Thư mời Thầy Cô | K15 FM</title>
+  <meta name="description" content="Thư mời Thầy Cô tham dự Hội khóa K15 Học viện Ngân hàng và Giải Pickleball K15 FM.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&display=swap&subset=vietnamese" rel="stylesheet">
+
+  <link rel="stylesheet" href="/assets/css/site-header.css">
+  <link rel="stylesheet" href="/assets/css/teacher-invitation.css?v=20260722-1">
+</head>
+
+<body>
+  <div id="k15-site-header"></div>
+
+  <main class="teacher-page">
+    <section class="teacher-hero">
+      <div class="teacher-shell">
+        <p class="teacher-kicker">K15 FM · THANH XUÂN PHÁT LẠI</p>
+        <h1>THƯ MỜI THẦY CÔ</h1>
+        <p class="teacher-intro">
+          Trân trọng kính mời Thầy Cô cùng trở về, gặp lại những thế hệ học trò
+          và đồng hành trong hành trình kết nối mười năm của sinh viên K15.
+        </p>
+      </div>
+    </section>
+
+    <section class="teacher-content">
+      <div class="teacher-shell">
+        <div class="invitation-tabs" role="tablist" aria-label="Loại thư mời">
+          <button
+            class="invitation-tab is-active"
+            type="button"
+            role="tab"
+            aria-selected="true"
+            data-tab="main"
+          >
+            <span>09.08.2026</span>
+            Thư mời Lễ chính
+          </button>
+
+          <button
+            class="invitation-tab"
+            type="button"
+            role="tab"
+            aria-selected="false"
+            data-tab="pickle"
+          >
+            <span>08.08.2026</span>
+            Thư mời Pickleball
+          </button>
+        </div>
+
+        <section id="mainPanel" class="invitation-panel is-active" data-panel="main">
+          <div class="personalize-card">
+            <div class="personalize-copy">
+              <p class="section-label">CÁ NHÂN HÓA THƯ MỜI</p>
+              <h2>Điền tên Thầy/Cô và chức vụ</h2>
+              <p>
+                Nội dung sẽ được chèn trên cùng một dòng theo mẫu:
+                <strong>Kính gửi: Thầy/Cô [Tên] - [Chức vụ]</strong>.
+              </p>
+            </div>
+
+            <div class="personalize-form">
+              <label>
+                <span>Tên Thầy/Cô</span>
+                <input
+                  id="teacherName"
+                  type="text"
+                  placeholder="Ví dụ: Nguyễn Văn An"
+                  maxlength="60"
+                  autocomplete="name"
+                >
+              </label>
+
+              <label>
+                <span>Chức vụ</span>
+                <input
+                  id="teacherTitle"
+                  type="text"
+                  placeholder="Ví dụ: Nguyên Trưởng khoa Ngân hàng"
+                  maxlength="80"
+                >
+              </label>
+
+              <div class="form-actions">
+                <button id="previewMain" class="btn btn-primary" type="button">
+                  Cập nhật thư mời
+                </button>
+                <button id="downloadMain" class="btn btn-secondary" type="button">
+                  Tải ảnh PNG
+                </button>
+              </div>
+
+              <p id="formMessage" class="form-message" aria-live="polite"></p>
+            </div>
+          </div>
+
+          <div class="preview-card">
+            <div class="preview-heading">
+              <div>
+                <p class="section-label">XEM TRƯỚC</p>
+                <h2>Thư mời Lễ chính</h2>
+              </div>
+              <span>09.08.2026 · Học viện Ngân hàng</span>
+            </div>
+
+            <div class="canvas-wrap">
+              <canvas id="mainInvitationCanvas" width="617" height="848"></canvas>
+            </div>
+          </div>
+        </section>
+
+        <section id="picklePanel" class="invitation-panel" data-panel="pickle" hidden>
+          <div class="preview-card preview-card--pickle">
+            <div class="preview-heading">
+              <div>
+                <p class="section-label">THƯ MỜI GIẢI GIAO LƯU</p>
+                <h2>Pickleball K15 FM</h2>
+              </div>
+              <span>08.08.2026 · Sân Pickleball HVNH</span>
+            </div>
+
+            <div class="pickle-layout">
+              <div class="pickle-image-wrap">
+                <img
+                  src="/assets/images/thumoi/thu-moi-pickleball.jpg"
+                  alt="Thư mời Giải giao lưu Pickleball K15 FM"
+                >
+              </div>
+
+              <div class="pickle-actions">
+                <p>
+                  Thư mời Pickleball được dùng chung, không cần nhập tên.
+                  Bạn có thể mở ảnh gốc hoặc tải trực tiếp về máy.
+                </p>
+
+                <a
+                  class="btn btn-primary"
+                  href="/assets/images/thumoi/thu-moi-pickleball.jpg"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  Mở ảnh kích thước lớn
+                </a>
+
+                <a
+                  class="btn btn-secondary"
+                  href="/assets/images/thumoi/thu-moi-pickleball.jpg"
+                  download="Thu-moi-Pickleball-K15FM.jpg"
+                >
+                  Tải thư mời
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <script src="/assets/js/teacher-invitation.js?v=20260722-1"></script>
+  <script src="/assets/js/site-header.js?v=20260722-1"></script>
+</body>
+</html>
