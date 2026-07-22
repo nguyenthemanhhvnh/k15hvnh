@@ -2,131 +2,218 @@
 <html lang="vi">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#07182f">
+
   <title>K15 FM – Thanh xuân phát lại</title>
-  <meta name="description" content="Website chính thức Hội khóa K15 Học viện Ngân hàng – Kỷ niệm 10 năm ra trường, ngày 09.08.2026.">
-  <meta property="og:title" content="K15 FM – Thanh xuân phát lại">
-  <meta property="og:description" content="Hội khóa K15 Học viện Ngân hàng – Kỷ niệm 10 năm ra trường, ngày 09.08.2026.">
-  <meta property="og:image" content="https://k15hvnh.com/assets/images/hoc-vien-ngan-hang.jpg">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://k15hvnh.com/">
+  <meta name="description" content="Hội khóa 10 năm sinh viên K15 Học viện Ngân hàng – K15 FM, Thanh xuân phát lại.">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&display=swap&subset=vietnamese" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/css/site-header.css">
-  <link rel="stylesheet" href="/assets/css/home.css?v=20260721-2">
+
+  <link rel="stylesheet" href="/assets/css/site-header.css?v=20260722-2">
+  <link rel="stylesheet" href="/assets/css/home-premium.css?v=20260722-1">
 </head>
+
 <body>
   <div id="k15-site-header"></div>
+
   <main>
-    <section class="home-hero" id="top">
-      <div class="home-hero__media" aria-hidden="true"></div>
-      <div class="home-hero__overlay" aria-hidden="true"></div>
-      <div class="home-container home-hero__content">
-        <div class="home-hero__eyebrow reveal"><span class="home-live-dot"></span>HỘI KHÓA K15 HỌC VIỆN NGÂN HÀNG</div>
-        <h1 class="home-hero__title reveal"><span>K15 FM</span>THANH XUÂN PHÁT LẠI</h1>
-        <p class="home-hero__lead reveal">Kỷ niệm 10 năm ra trường Sinh viên Khóa 15 Học viện Ngân hàng</p>
-        <div class="home-hero__date reveal">09.08.2026 · HÀ NỘI</div>
-        <div class="home-hero__actions reveal">
-          <a class="home-button home-button--primary" href="https://forms.gle/RUw3AMJpvGwVvsqz5" target="_blank" rel="noopener">Đăng ký tham dự</a>
-          <a class="home-button home-button--ghost" href="/thumoi/">Xem thư mời</a>
+    <section class="premium-hero" id="home">
+      <div class="premium-hero__media" aria-hidden="true">
+        <img
+          src="/assets/images/home/k15fm-kv-premium.jpg"
+          alt=""
+          fetchpriority="high"
+        >
+      </div>
+
+      <div class="premium-hero__overlay"></div>
+      <div class="premium-hero__glow premium-hero__glow--one"></div>
+      <div class="premium-hero__glow premium-hero__glow--two"></div>
+
+      <div class="premium-shell premium-hero__content">
+        <div class="premium-hero__badge">
+          <span></span>
+          HỘI KHÓA 10 NĂM · SINH VIÊN K15 HVNH
         </div>
-        <div class="home-countdown reveal" aria-label="Đếm ngược đến sự kiện">
-          <div class="home-countdown__item"><strong id="days">0</strong><span>Ngày</span></div>
-          <div class="home-countdown__item"><strong id="hours">0</strong><span>Giờ</span></div>
-          <div class="home-countdown__item"><strong id="minutes">0</strong><span>Phút</span></div>
-          <div class="home-countdown__item"><strong id="seconds">0</strong><span>Giây</span></div>
+
+        <div class="premium-hero__copy">
+          <p class="premium-hero__eyebrow">K15 FM · THANH XUÂN PHÁT LẠI</p>
+          <h1>
+            MỘT THẬP KỶ<br>
+            <span>TRỞ VỀ</span>
+          </h1>
+
+          <p class="premium-hero__lead">
+            Gặp lại bạn cũ, thầy cô và những ký ức đã làm nên tuổi trẻ của một thế hệ sinh viên K15 Học viện Ngân hàng.
+          </p>
+
+          <div class="premium-hero__meta">
+            <span>09.08.2026</span>
+            <i></i>
+            <span>HỌC VIỆN NGÂN HÀNG · HÀ NỘI</span>
+          </div>
+
+          <div class="premium-hero__actions">
+            <a class="premium-btn premium-btn--gold" href="https://forms.gle/RUw3AMJpvGwVvsqz5" target="_blank" rel="noopener">
+              Đăng ký tham dự
+            </a>
+
+            <a class="premium-btn premium-btn--glass" href="/thumoi/">
+              Xem thư mời
+            </a>
+          </div>
+        </div>
+
+        <div class="premium-countdown-card" aria-label="Đếm ngược đến ngày hội khóa">
+          <div class="premium-countdown-card__top">
+            <div>
+              <span class="premium-countdown-card__label">ĐẾM NGƯỢC</span>
+              <strong>Đến ngày hội ngộ</strong>
+            </div>
+            <span class="premium-live-dot">LIVE</span>
+          </div>
+
+          <div class="premium-countdown" id="countdown">
+            <div>
+              <strong id="countDays">00</strong>
+              <span>Ngày</span>
+            </div>
+            <div>
+              <strong id="countHours">00</strong>
+              <span>Giờ</span>
+            </div>
+            <div>
+              <strong id="countMinutes">00</strong>
+              <span>Phút</span>
+            </div>
+            <div>
+              <strong id="countSeconds">00</strong>
+              <span>Giây</span>
+            </div>
+          </div>
         </div>
       </div>
-      <a class="home-scroll" href="#gioi-thieu" aria-label="Cuộn xuống phần giới thiệu"><span></span></a>
+
+      <a class="premium-scroll" href="#quick-links" aria-label="Cuộn xuống">
+        <span></span>
+      </a>
     </section>
 
-    <section class="home-section home-section--light" id="gioi-thieu">
-      <div class="home-container">
-        <div class="home-section__heading reveal">
-          <div class="home-kicker">Mười năm – một lần trở về</div>
-          <h2>Ngày chúng ta cùng bật lại<br><span>tần số thanh xuân</span></h2>
-          <p>Có những tình bạn dù nhiều năm không gặp vẫn nguyên vẹn như ngày hôm qua. K15 FM là dịp để chúng ta trở về, gặp lại thầy cô, bạn bè và những ký ức đẹp nhất dưới mái trường Học viện Ngân hàng.</p>
+    <section class="premium-quick" id="quick-links">
+      <div class="premium-shell">
+        <div class="premium-section-heading">
+          <p>KHÁM PHÁ K15 FM</p>
+          <h2>Mọi thông tin trong một điểm chạm</h2>
         </div>
-        <div class="home-story-grid">
-          <article class="home-story-card reveal"><div class="home-story-card__year">2012</div><h3>Ngày đầu gặp nhau</h3><p>Những gương mặt còn lạ lẫm, những giảng đường đầu tiên và một hành trình tuổi trẻ bắt đầu.</p></article>
-          <article class="home-story-card reveal"><div class="home-story-card__year">2016</div><h3>Ngày rời giảng đường</h3><p>Mỗi người mang theo một ước mơ, một con đường và những câu chuyện riêng của tuổi trưởng thành.</p></article>
-          <article class="home-story-card home-story-card--featured reveal"><div class="home-story-card__year">2026</div><h3>Ngày thanh xuân phát lại</h3><p>Mười năm nhìn lại, cùng trở về để tri ân, hội ngộ và viết tiếp những kết nối của K15.</p></article>
-        </div>
-      </div>
-    </section>
 
-    <section class="home-section home-section--navy" id="diem-nhan">
-      <div class="home-container">
-        <div class="home-section__heading home-section__heading--light reveal"><div class="home-kicker">Điểm nhấn chương trình</div><h2>Một ngày hội ngộ<br><span>đong đầy cảm xúc</span></h2></div>
-        <div class="home-highlight-grid">
-          <article class="home-highlight-card reveal"><div class="home-highlight-card__icon">🎓</div><h3>Tri ân Nhà trường</h3><p>Trở về nơi đã nuôi dưỡng những năm tháng đẹp nhất của tuổi trẻ.</p></article>
-          <article class="home-highlight-card reveal"><div class="home-highlight-card__icon">👨‍🏫</div><h3>Tri ân Thầy Cô</h3><p>Gửi lời cảm ơn tới những người đã đồng hành và truyền cảm hứng.</p></article>
-          <article class="home-highlight-card reveal"><div class="home-highlight-card__icon">🤝</div><h3>Hội ngộ bạn bè</h3><p>Gặp lại những gương mặt thân quen, cùng kể tiếp chuyện ngày xưa.</p></article>
-          <article class="home-highlight-card reveal"><div class="home-highlight-card__icon">🎉</div><h3>Gala kết nối</h3><p>Tiệc trưa, âm nhạc, minigame, lucky draw và nhiều bất ngờ thú vị.</p></article>
-        </div>
-      </div>
-    </section>
+        <div class="premium-quick-grid">
+          <a class="premium-quick-card" href="/thumoi/">
+            <div class="premium-quick-card__icon">✦</div>
+            <div>
+              <span>THƯ MỜI</span>
+              <h3>Thông tin chương trình</h3>
+              <p>Xem thư mời hội khóa và thư mời dành riêng cho Thầy Cô.</p>
+            </div>
+            <b>→</b>
+          </a>
 
-    <section class="home-section home-section--light" id="lich-trinh">
-      <div class="home-container">
-        <div class="home-section__heading reveal"><div class="home-kicker">Lịch trình ngày 09.08.2026</div><h2>Một ngày trở về<br><span>trọn vẹn</span></h2></div>
-        <div class="home-agenda">
-          <article class="home-agenda__item reveal"><div class="home-agenda__time">08:00</div><div class="home-agenda__body"><div class="home-agenda__tag">Phần lễ</div><h3>Đón tiếp và check-in</h3><p>Nhận giftset, gặp gỡ bạn bè, chụp ảnh và lưu giữ những khoảnh khắc đầu tiên của ngày hội ngộ.</p></div></article>
-          <article class="home-agenda__item reveal"><div class="home-agenda__time">09:00</div><div class="home-agenda__body"><div class="home-agenda__tag">Hội trường lớn</div><h3>Hội ngộ – Tri ân – Kết nối</h3><p>Minigame, tri ân Nhà trường, trao học bổng, trao giải cuộc thi và giải Pickleball.</p></div></article>
-          <article class="home-agenda__item reveal"><div class="home-agenda__time">10:30</div><div class="home-agenda__body"><div class="home-agenda__tag">Kỷ niệm</div><h3>Chụp ảnh tập thể</h3><p>Cùng thầy cô và bạn bè lưu lại khoảnh khắc của hành trình mười năm.</p></div></article>
-          <article class="home-agenda__item reveal"><div class="home-agenda__time">11:30</div><div class="home-agenda__body"><div class="home-agenda__tag">Phần hội</div><h3>Gala Lunch</h3><p>Khai tiệc, giao lưu văn nghệ, minigame kết nối, lucky draw và những câu chuyện chưa từng phát sóng.</p></div></article>
-        </div>
-      </div>
-    </section>
+          <a class="premium-quick-card" href="/danhsach/">
+            <div class="premium-quick-card__icon">☷</div>
+            <div>
+              <span>DANH SÁCH</span>
+              <h3>Kết nối bạn bè K15</h3>
+              <p>Tra cứu danh sách đăng ký và tìm lại những gương mặt thân quen.</p>
+            </div>
+            <b>→</b>
+          </a>
 
-    <section class="home-section home-section--soft" id="tien-ich">
-      <div class="home-container">
-        <div class="home-section__heading reveal"><div class="home-kicker">K15 FM Online</div><h2>Mọi tiện ích<br><span>trong một điểm chạm</span></h2></div>
-        <div class="home-tool-grid">
-          <a class="home-tool-card reveal" href="/thumoi/"><div class="home-tool-card__icon">💌</div><div><h3>Thư mời</h3><p>Xem thư mời chính thức của chương trình.</p></div><span>→</span></a>
-          <a class="home-tool-card reveal" href="/avatar/"><div class="home-tool-card__icon">🖼️</div><div><h3>Tạo ảnh đại diện</h3><p>Tạo avatar K15 FM mang dấu ấn riêng.</p></div><span>→</span></a>
-          <a class="home-tool-card reveal" href="/danhsach/"><div class="home-tool-card__icon">📋</div><div><h3>Danh sách tham dự</h3><p>Theo dõi những người bạn đang trở về.</p></div><span>→</span></a>
-          <a class="home-tool-card reveal" href="/nhataitro/"><div class="home-tool-card__icon">💛</div><div><h3>Nhà tài trợ</h3><p>Ghi nhận những đóng góp dành cho K15 FM.</p></div><span>→</span></a>
-        </div>
-      </div>
-    </section>
+          <a class="premium-quick-card" href="/gallery/">
+            <div class="premium-quick-card__icon">◫</div>
+            <div>
+              <span>ẢNH LỚP</span>
+              <h3>Thanh xuân qua từng khung hình</h3>
+              <p>Xem lại album các lớp và những khoảnh khắc đáng nhớ thời sinh viên.</p>
+            </div>
+            <b>→</b>
+          </a>
 
-    <section class="home-register">
-      <div class="home-register__overlay" aria-hidden="true"></div>
-      <div class="home-container home-register__content reveal">
-        <div class="home-kicker">K15 đang lên sóng</div>
-        <h2>Đừng để thanh xuân<br>phát lại mà thiếu bạn</h2>
-        <p>Hẹn gặp nhau vào Chủ nhật, ngày 09 tháng 08 năm 2026 tại Học viện Ngân hàng.</p>
-        <div class="home-register__actions">
-          <a class="home-button home-button--primary" href="https://forms.gle/RUw3AMJpvGwVvsqz5" target="_blank" rel="noopener">Đăng ký ngay</a>
-          <a class="home-button home-button--ghost" href="https://www.google.com/maps/place/H%E1%BB%8Dc+Vi%E1%BB%87n+Ng%C3%A2n+H%C3%A0ng/" target="_blank" rel="noopener">Xem địa điểm</a>
+          <a class="premium-quick-card" href="/dashboard/">
+            <div class="premium-quick-card__icon">◈</div>
+            <div>
+              <span>LIVE DASHBOARD</span>
+              <h3>Không khí hội khóa đang lên sóng</h3>
+              <p>Theo dõi đăng ký, tài trợ, xếp hạng lớp và check-in theo thời gian thực.</p>
+            </div>
+            <b>→</b>
+          </a>
         </div>
       </div>
     </section>
 
-    <section class="home-section home-section--light" id="lien-he">
-      <div class="home-container">
-        <div class="home-contact-card reveal">
-          <div><div class="home-kicker">Ban Tổ chức K15 FM</div><h2>Cần hỗ trợ?<br><span>Chúng mình luôn ở đây</span></h2></div>
-          <div class="home-contact-list">
-            <a href="tel:0982684133"><strong>0982 684 133</strong><span>Phương Dung (Dung Bee)</span></a>
-            <a href="tel:0976005898"><strong>0976 005 898</strong><span>Nam Tạ</span></a>
-            <a href="https://www.facebook.com/K15FM" target="_blank" rel="noopener"><strong>facebook.com/K15FM</strong><span>Fanpage chính thức</span></a>
+    <section class="premium-story">
+      <div class="premium-shell premium-story__grid">
+        <div class="premium-story__copy">
+          <p class="premium-section-kicker">2012 — 2026</p>
+          <h2>Mười năm không chỉ là một cột mốc</h2>
+          <p>
+            Đó là quãng đường đủ dài để mỗi người trưởng thành, nhưng cũng đủ gần để chỉ một bài hát, một tấm ảnh hay một câu chuyện cũ có thể đưa tất cả trở lại sân trường năm ấy.
+          </p>
+          <p>
+            K15 FM không chỉ là một buổi gặp mặt. Đây là dịp để những kỷ niệm được phát lại, những kết nối được nối dài và thanh xuân được gọi tên thêm một lần nữa.
+          </p>
+
+          <div class="premium-story__actions">
+            <a href="/nhataitro/" class="premium-text-link">Xem Nhà tài trợ <span>→</span></a>
+            <a href="/avatar/" class="premium-text-link">Tạo ảnh đại diện <span>→</span></a>
+          </div>
+        </div>
+
+        <div class="premium-story__panel">
+          <div class="premium-story__panel-top">
+            <span>K15 FM</span>
+            <strong>09.08.2026</strong>
+          </div>
+
+          <div class="premium-story__quote">
+            “Có những thanh xuân chỉ cần một lần phát lại là đủ khiến ta muốn trở về.”
+          </div>
+
+          <div class="premium-story__mini-grid">
+            <div>
+              <strong>10</strong>
+              <span>Năm kết nối</span>
+            </div>
+            <div>
+              <strong>40</strong>
+              <span>Lớp đồng hành</span>
+            </div>
+            <div>
+              <strong>01</strong>
+              <span>Ngày hội ngộ</span>
+            </div>
           </div>
         </div>
       </div>
     </section>
+
+    <section class="premium-final-cta">
+      <div class="premium-shell premium-final-cta__inner">
+        <div>
+          <p>THANH XUÂN ĐANG PHÁT LẠI</p>
+          <h2>Hẹn gặp bạn vào ngày trở về.</h2>
+        </div>
+
+        <a class="premium-btn premium-btn--gold" href="https://forms.gle/RUw3AMJpvGwVvsqz5" target="_blank" rel="noopener">
+          Đăng ký ngay
+        </a>
+      </div>
+    </section>
   </main>
 
-  <footer class="home-footer">
-    <div class="home-container home-footer__inner">
-      <div><strong>K15 FM – THANH XUÂN PHÁT LẠI</strong><span>Kỷ niệm 10 năm ra trường Sinh viên K15 Học viện Ngân hàng</span></div>
-      <a href="#top">Lên đầu trang ↑</a>
-    </div>
-  </footer>
-
-  <script src="/assets/js/home.js"></script>
-  <script src="/assets/js/site-header.js"></script>
+  <script src="/assets/js/home-premium.js?v=20260722-1"></script>
+  <script src="/assets/js/site-header.js?v=20260722-2"></script>
 </body>
 </html>
