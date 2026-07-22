@@ -637,8 +637,11 @@ applyFilters();
       .filter(Boolean)
   );
 
-  elements.totalClasses.textContent =
-    classes.size.toLocaleString("vi-VN") + " / 40";
+  elements.totalClasses.innerHTML =
+    '<span style="font-size:42px;font-weight:900;">'
+    + classes.size +
+    '</span>'
+    + '<span style="font-size:20px;color:#64748b;"> / 40</span>';
 
   if (allMembers.length === 0) {
     elements.lastUpdated.textContent = "Chưa có dữ liệu";
