@@ -30,6 +30,10 @@
       icon: "♥"
     },
     {
+  label: "Ảnh lớp",
+  href: "/gallery/"
+}
+    {
       label: "Tiện ích",
       icon: "◇",
       children: [
