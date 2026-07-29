@@ -638,19 +638,22 @@
       main: {
         image: "/assets/images/thumoi/thu-moi-thay-co.jpg",
         fileName: "Thu-moi-Hoi-khoa-K15FM",
+
+        // Vùng dòng “Kính gửi...” trên ảnh gốc 1447 x 2048
         cover: {
-          x: 105,
-          y: 296,
-          w: 805,
+          x: 160,
+          y: 432,
+          w: 760,
           h: 48,
-          color: "#14184d"
+          color: "#171a4d"
         },
+
         text: {
-          x: 118,
-          y: 323,
-          maxWidth: 775,
-          fontSize: 20,
-          minFontSize: 13,
+          x: 171,
+          y: 456,
+          maxWidth: 735,
+          fontSize: 22,
+          minFontSize: 14,
           color: "#ffffff",
           fontFamily: "Georgia, 'Times New Roman', serif",
           weight: "700",
@@ -661,24 +664,28 @@
       pickle: {
         image: "/assets/images/thumoi/thu-moi-pickleball.jpg",
         fileName: "Thu-moi-Pickleball-K15FM",
+
+        // Vùng “TRÂN TRỌNG KÍNH MỜI CÁC THẦY CÔ”
+        // trên ảnh gốc 1562 x 2048
         cover: {
-          x: 37,
-          y: 845,
-          w: 455,
-          h: 132,
-          color: "#f8f5ec"
+          x: 55,
+          y: 1240,
+          w: 505,
+          h: 155,
+          color: "#faf7ef"
         },
+
         text: {
-          x: 265,
-          y: 883,
-          maxWidth: 410,
-          fontSize: 27,
-          minFontSize: 17,
+          x: 307,
+          y: 1276,
+          maxWidth: 455,
+          fontSize: 29,
+          minFontSize: 18,
           color: "#075847",
           fontFamily: "'Arial Narrow', 'Segoe UI', Arial, sans-serif",
           weight: "900",
           align: "center",
-          lineHeight: 1.14
+          lineHeight: 1.12
         }
       }
     };
@@ -747,7 +754,7 @@
           reject(new Error(`Không tải được ảnh mẫu ${type}`));
         };
 
-        img.src = CONFIG[type].image + "?v=20260729";
+        img.src = CONFIG[type].image + "?v=20260729b";
       });
     }
 
@@ -789,12 +796,23 @@
 
     function drawMainPersonalization(ctx, name, role){
       const cfg = CONFIG.main;
-      const text = `Kính gửi: ${combinedText(name, role)}`;
+      const cleanName = safeText(name) || "Thầy/Cô";
+      const cleanRole = safeText(role);
+
+      const text = cleanRole
+        ? `Kính gửi: ${cleanName} - ${cleanRole}`
+        : `Kính gửi: ${cleanName}`;
 
       ctx.save();
 
+      // Chỉ phủ đúng dòng placeholder cũ, không chạm vào tiêu đề THƯ MỜI.
       ctx.fillStyle = cfg.cover.color;
-      ctx.fillRect(cfg.cover.x, cfg.cover.y, cfg.cover.w, cfg.cover.h);
+      ctx.fillRect(
+        cfg.cover.x,
+        cfg.cover.y,
+        cfg.cover.w,
+        cfg.cover.h
+      );
 
       ctx.textBaseline = "middle";
       ctx.textAlign = cfg.text.align;
@@ -817,48 +835,94 @@
 
     function drawPicklePersonalization(ctx, name, role){
       const cfg = CONFIG.pickle;
-      const cleanName = safeText(name) || "QUÝ THẦY CÔ";
-      const cleanRole = safeText(role);
+      const cleanName = (safeText(name) || "QUÝ THẦY CÔ").toUpperCase();
+      const cleanRole = safeText(role).toUpperCase();
 
       ctx.save();
 
+      // Phủ đúng khối chữ mời cũ, không ảnh hưởng chữ PICKLEBALL,
+      // dải vàng và phần thời gian/địa điểm bên dưới.
       ctx.fillStyle = cfg.cover.color;
-      ctx.fillRect(cfg.cover.x, cfg.cover.y, cfg.cover.w, cfg.cover.h);
+      ctx.fillRect(
+        cfg.cover.x,
+        cfg.cover.y,
+        cfg.cover.w,
+        cfg.cover.h
+      );
 
       ctx.textAlign = "center";
       ctx.textBaseline = "middle";
       ctx.fillStyle = cfg.text.color;
 
-      const heading = "TRÂN TRỌNG KÍNH MỜI";
-      setFont(ctx, 25, cfg.text);
-      ctx.fillText(heading, cfg.text.x, cfg.text.y - 25);
+      // Dòng tiêu đề
+      const headingConfig = {
+        ...cfg.text,
+        fontSize: 26,
+        minFontSize: 22
+      };
 
-      let bodyText = cleanRole
-        ? `${cleanName} - ${cleanRole}`
-        : cleanName;
+      setFont(ctx, headingConfig.fontSize, headingConfig);
+      ctx.fillText(
+        "TRÂN TRỌNG KÍNH MỜI",
+        cfg.text.x,
+        cfg.text.y
+      );
 
-      let fontSize = cfg.text.fontSize;
-      let lines = [];
+      // Tên Thầy/Cô: tự co chữ và tối đa 2 dòng
+      let nameSize = cfg.text.fontSize;
+      let nameLines = [];
 
-      while(fontSize >= cfg.text.minFontSize){
-        setFont(ctx, fontSize, cfg.text);
-        lines = wrapText(ctx, bodyText.toUpperCase(), cfg.text.maxWidth);
+      while(nameSize >= cfg.text.minFontSize){
+        setFont(ctx, nameSize, cfg.text);
+        nameLines = wrapText(ctx, cleanName, cfg.text.maxWidth);
 
-        if(lines.length <= 2){
+        if(nameLines.length <= 2){
           break;
         }
 
-        fontSize -= 1;
+        nameSize -= 1;
       }
 
-      setFont(ctx, fontSize, cfg.text);
+      setFont(ctx, nameSize, cfg.text);
 
-      const lineHeight = fontSize * cfg.text.lineHeight;
-      const startY = cfg.text.y + 18 - ((lines.length - 1) * lineHeight / 2);
+      const nameLineHeight = nameSize * cfg.text.lineHeight;
+      const nameStartY = cleanRole
+        ? cfg.text.y + 39
+        : cfg.text.y + 47 - ((nameLines.length - 1) * nameLineHeight / 2);
 
-      lines.slice(0, 2).forEach((line, index) => {
-        ctx.fillText(line, cfg.text.x, startY + index * lineHeight);
+      nameLines.slice(0, 2).forEach((line, index) => {
+        ctx.fillText(
+          line,
+          cfg.text.x,
+          nameStartY + index * nameLineHeight
+        );
       });
+
+      // Chức vụ để riêng một dòng nhỏ, không ghép dấu gạch ngang vào tên.
+      if(cleanRole){
+        const roleConfig = {
+          ...cfg.text,
+          weight: "800"
+        };
+
+        const roleSize = fitSingleLine(
+          ctx,
+          cleanRole,
+          cfg.text.maxWidth,
+          20,
+          14,
+          roleConfig
+        );
+
+        setFont(ctx, roleSize, roleConfig);
+
+        const roleY =
+          nameStartY +
+          Math.min(nameLines.length, 2) * nameLineHeight +
+          10;
+
+        ctx.fillText(cleanRole, cfg.text.x, roleY);
+      }
 
       ctx.restore();
     }
