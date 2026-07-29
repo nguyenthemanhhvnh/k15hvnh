@@ -21,6 +21,21 @@
     .inkind-link{display:inline-flex;margin-top:8px;color:#0f766e;font-size:12px;font-weight:850;text-decoration:none;word-break:break-word}
     .inkind-link:hover{text-decoration:underline}
     .total-value-note{display:block;margin-top:6px;color:#667085;font-size:11px;font-weight:750}
+
+    .sponsor-card.inkind{border-top:5px solid #0f766e;background:linear-gradient(180deg,#ffffff 0%,#f5fffb 100%)}
+    .inkind-hero{margin-top:16px;padding:18px;border-radius:16px;background:linear-gradient(145deg,#ecfdf5,#f0fdfa);border:1px solid #b7ead7;text-align:center}
+    .inkind-brand-main{color:#075847;font-size:clamp(21px,2.8vw,28px);font-weight:950;line-height:1.25;letter-spacing:-.3px}
+    .inkind-value-main{margin-top:10px;color:#b66a00;font-size:clamp(24px,3.2vw,32px);font-weight:950;line-height:1.1}
+    .inkind-value-caption{margin-top:5px;color:#667085;font-size:11px;font-weight:850;text-transform:uppercase;letter-spacing:.7px}
+    .inkind-product-main{margin-top:18px;padding:15px 16px;border-radius:14px;background:#fff8e7;border:1px solid #f4d88b}
+    .inkind-product-title{color:#8a5300;font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:.7px}
+    .inkind-product-text{margin-top:7px;color:#5b4314;font-size:17px;font-weight:900;line-height:1.55}
+    .inkind-detail-block{margin-top:16px;padding:15px 16px;border-radius:14px;background:#fff;border:1px solid #dce8e3}
+    .inkind-detail-block .inkind-label{margin-bottom:8px}
+    .inkind-representative{margin-top:18px;padding-top:15px;border-top:1px dashed #bfd5cc;color:#667085;font-size:12px;line-height:1.65}
+    .inkind-representative strong{color:#344054}
+    .inkind-brand-placeholder{color:#075847;font-size:22px;font-weight:950}
+    .inkind-top-badge{display:inline-flex;margin-top:10px;padding:6px 10px;border-radius:999px;color:#075847;background:#ccfbf1;border:1px solid #99e7d9;font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.6px}
 @media(max-width:900px){.stats{grid-template-columns:repeat(2,1fr)}.podium{grid-template-columns:1fr}.podium-card.first{order:-1}.toolbar{grid-template-columns:repeat(2,1fr)}.toolbar .field:first-child{grid-column:1/-1}.sponsor-grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:560px){.nav-link:not(.active){display:none}.toolbar{grid-template-columns:1fr}.toolbar .field:first-child{grid-column:auto}.sponsor-grid{grid-template-columns:1fr}.result-line{flex-direction:column}.chart-row{grid-template-columns:50px minmax(0,1fr)}.chart-amount{grid-column:2}.chart-class{grid-row:1/span 2}}
 
     .inkind-information{margin-top:18px;display:flex;flex-direction:column;gap:14px}
@@ -67,7 +82,7 @@
           <div class="field">
             <span class="field-icon">⌕</span>
             <input id="searchInput" class="control" type="search"
-              placeholder="Tìm theo họ tên, lớp, thương hiệu hoặc nội dung tài trợ..." autocomplete="off">
+              placeholder="Tìm theo thương hiệu, sản phẩm, người đại diện hoặc lớp..." autocomplete="off">
           </div>
 
           <select id="classFilter" class="control">
@@ -342,20 +357,35 @@ function renderPodium() {
   if (top[0]) order.push({ sponsor: top[0], rank: 1 });
   if (top[2]) order.push({ sponsor: top[2], rank: 3 });
 
-  e.podium.innerHTML = order.map(({ sponsor, rank }) => `
-    <article class="podium-card ${rank === 1 ? "first" : ""}">
-      <div class="podium-number">${rank === 1 ? "🥇" : rank === 2 ? "🥈" : "🥉"}</div>
-      <div class="podium-name">${escapeHtml(sponsor.name)}</div>
-      <div class="podium-class">${escapeHtml(sponsor.className || "K15 HVNH")}</div>
-      <div class="sponsor-type ${sponsor.type}">
-        ${sponsor.type === "cash" ? "Hiện kim" : "Hiện vật"}
-      </div>
-      <div class="podium-amount">${formatCurrency(sponsor.contributionValue)}</div>
-      <div class="podium-thanks">
-        ${sponsor.type === "inkind" ? "Trị giá quy đổi hiện vật" : "Giá trị tài trợ hiện kim"}
-      </div>
-    </article>
-  `).join("");
+  e.podium.innerHTML = order.map(({ sponsor, rank }) => {
+    const displayName = sponsor.type === "inkind"
+      ? (sponsor.brand || sponsor.name)
+      : sponsor.name;
+
+    const subtitle = sponsor.type === "inkind"
+      ? [
+          ...(sponsor.products || []),
+          ...(sponsor.details || [])
+        ].filter(Boolean)[0] || "Tài trợ hiện vật"
+      : (sponsor.className || "K15 HVNH");
+
+    return `
+      <article class="podium-card ${rank === 1 ? "first" : ""}">
+        <div class="podium-number">${rank === 1 ? "🥇" : rank === 2 ? "🥈" : "🥉"}</div>
+        <div class="podium-name">${escapeHtml(displayName)}</div>
+        <div class="podium-class">${escapeHtml(subtitle)}</div>
+        <div class="sponsor-type ${sponsor.type}">
+          ${sponsor.type === "cash" ? "Hiện kim" : "Hiện vật"}
+        </div>
+        <div class="podium-amount">${formatCurrency(sponsor.contributionValue)}</div>
+        <div class="podium-thanks">
+          ${sponsor.type === "inkind"
+            ? `Đại diện: ${escapeHtml(sponsor.name)}${sponsor.className ? " · " + escapeHtml(sponsor.className) : ""}`
+            : "Trân trọng cảm ơn sự đồng hành"}
+        </div>
+      </article>
+    `;
+  }).join("");
 }
 
 function renderClassChart() {
@@ -531,72 +561,67 @@ function renderCards(items) {
       `;
     }
 
-    const brandHtml = item.brand
-      ? `<div class="inkind-section">
-          <span class="inkind-label">Thương hiệu / Đơn vị</span>
-          <div class="inkind-brand">${escapeHtml(item.brand)}</div>
-        </div>`
-      : "";
+    const brandName = item.brand || item.name || "Nhà tài trợ hiện vật";
 
-    const linkHtml = item.link
-      ? `<div class="inkind-section">
-          <span class="inkind-label">Link thông tin</span>
-          <a class="inkind-link" href="${escapeAttribute(item.link)}"
-             target="_blank" rel="noopener noreferrer">
-            ${escapeHtml(item.link)}
-          </a>
-        </div>`
-      : "";
+    const productLines = (item.products || []).filter(Boolean);
+    const detailLines = (item.details || []).filter(Boolean);
 
-    const productsHtml = item.products?.length
-      ? `<div class="inkind-section">
-          <span class="inkind-label">Sản phẩm tài trợ</span>
-          <div class="inkind-details">
-            ${item.products.map(product =>
-              `<div class="inkind-detail-line">${escapeHtml(product)}</div>`
-            ).join("")}
+    const productHtml = productLines.length
+      ? `<div class="inkind-product-main">
+          <div class="inkind-product-title">Sản phẩm tài trợ</div>
+          <div class="inkind-product-text">
+            ${productLines.map(product => escapeHtml(product)).join("<br>")}
           </div>
         </div>`
       : "";
 
-    const detailsHtml = item.details?.length
-      ? `<div class="inkind-section">
+    const detailsHtml = detailLines.length
+      ? `<div class="inkind-detail-block">
           <span class="inkind-label">Thông tin chi tiết</span>
           <div class="inkind-details">
-            ${item.details.map(detail =>
+            ${detailLines.map(detail =>
               `<div class="inkind-detail-line">${escapeHtml(detail)}</div>`
             ).join("")}
           </div>
         </div>`
       : "";
 
-    const convertedHtml = item.convertedValue > 0
-      ? `<div class="inkind-converted">
-          <span class="inkind-label">Trị giá quy đổi</span>
-          <strong>${formatCurrency(item.convertedValue)}</strong>
-        </div>`
-      : `<div class="inkind-converted">
-          <span class="inkind-label">Trị giá quy đổi</span>
-          <strong>Đang cập nhật</strong>
-        </div>`;
+    const linkHtml = item.link
+      ? `<a class="inkind-link" href="${escapeAttribute(item.link)}"
+           target="_blank" rel="noopener noreferrer">
+          Xem thông tin thương hiệu ↗
+        </a>`
+      : "";
 
     return `
       <article class="sponsor-card inkind">
         <div class="sponsor-top">
-          <div class="sponsor-avatar">${escapeHtml(initials(item.name))}</div>
+          <div class="sponsor-avatar">🏢</div>
           <div class="sponsor-rank">#${index + 1}</div>
         </div>
 
-        <div class="sponsor-name">${escapeHtml(item.name)}</div>
-        <div class="sponsor-class">${escapeHtml(item.className || "K15 HVNH")}</div>
-        <div class="sponsor-type inkind">Tài trợ hiện vật</div>
+        <div class="inkind-top-badge">Nhà tài trợ hiện vật</div>
 
-        <div class="inkind-information">
-          ${brandHtml}
+        <div class="inkind-hero">
+          <div class="inkind-brand-main">${escapeHtml(brandName)}</div>
+
+          <div class="inkind-value-main">
+            ${item.convertedValue > 0
+              ? formatCurrency(item.convertedValue)
+              : "Đang cập nhật"}
+          </div>
+
+          <div class="inkind-value-caption">Trị giá quy đổi</div>
           ${linkHtml}
-          ${productsHtml}
-          ${detailsHtml}
-          ${convertedHtml}
+        </div>
+
+        ${productHtml}
+        ${detailsHtml}
+
+        <div class="inkind-representative">
+          <strong>Đại diện kết nối:</strong>
+          ${escapeHtml(item.name)}
+          ${item.className ? ` · ${escapeHtml(item.className)}` : ""}
         </div>
       </article>
     `;
