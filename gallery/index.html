@@ -10,10 +10,83 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
   <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&display=swap&subset=vietnamese" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="/assets/css/site-header.css">
-  <link rel="stylesheet" href="/assets/css/gallery.css?v=20260721-1">
+  <link rel="stylesheet" href="/assets/css/gallery.css?v=20260729-title-sora">
+
+  <style>
+    /*
+      Chỉ tinh chỉnh tiêu đề “THANH XUÂN PHÁT LẠI”
+      Dùng selector cụ thể và !important để không bị gallery.css ghi đè.
+    */
+    .gallery-hero .gallery-hero__title{
+      display:flex !important;
+      flex-direction:column !important;
+      align-items:flex-start !important;
+      gap:12px !important;
+
+      margin:24px 0 28px !important;
+      padding:0 !important;
+
+      font-family:"Sora","Be Vietnam Pro",sans-serif !important;
+      font-size:clamp(48px,5vw,76px) !important;
+      font-weight:600 !important;
+      line-height:.96 !important;
+      letter-spacing:-3.8px !important;
+
+      text-transform:none !important;
+      font-synthesis:none;
+      -webkit-font-smoothing:antialiased;
+      text-rendering:geometricPrecision;
+    }
+
+    .gallery-hero .gallery-hero__title-line{
+      display:block !important;
+      margin:0 !important;
+      padding:0 !important;
+      font:inherit !important;
+      line-height:inherit !important;
+      letter-spacing:inherit !important;
+      white-space:nowrap;
+    }
+
+    .gallery-hero .gallery-hero__title-line--white{
+      color:#ffffff !important;
+      font-weight:600 !important;
+      text-shadow:0 4px 18px rgba(0,0,0,.22);
+    }
+
+    .gallery-hero .gallery-hero__title-line--gold{
+      color:#f7c652 !important;
+      font-weight:700 !important;
+      letter-spacing:-3px !important;
+      text-shadow:0 4px 18px rgba(0,0,0,.18);
+    }
+
+    @media(max-width:768px){
+      .gallery-hero .gallery-hero__title{
+        gap:8px !important;
+        margin:20px 0 24px !important;
+        font-size:clamp(40px,10.4vw,60px) !important;
+        line-height:1 !important;
+        letter-spacing:-2.6px !important;
+      }
+
+      .gallery-hero .gallery-hero__title-line--gold{
+        letter-spacing:-2px !important;
+      }
+    }
+
+    @media(max-width:430px){
+      .gallery-hero .gallery-hero__title{
+        font-size:clamp(35px,10.5vw,48px) !important;
+        letter-spacing:-2px !important;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -24,7 +97,17 @@
       <div class="gallery-shell gallery-hero__inner">
         <div>
           <div class="gallery-kicker">K15 MEMORIES</div>
-          <h1>THANH XUÂN<br><span>PHÁT LẠI</span></h1>
+
+          <h1 class="gallery-hero__title">
+            <span class="gallery-hero__title-line gallery-hero__title-line--white">
+              THANH XUÂN
+            </span>
+
+            <span class="gallery-hero__title-line gallery-hero__title-line--gold">
+              PHÁT LẠI
+            </span>
+          </h1>
+
           <p>
             Mỗi bức ảnh là một đoạn ký ức. Mỗi lớp là một phần thanh xuân không thể thay thế.
           </p>
@@ -35,6 +118,7 @@
             <strong id="totalAlbums">0</strong>
             <span>Album lớp</span>
           </div>
+
           <div>
             <strong id="totalPhotos">0</strong>
             <span>Khoảnh khắc</span>
@@ -48,6 +132,7 @@
         <div class="gallery-toolbar">
           <label class="gallery-search" for="gallerySearch">
             <span>⌕</span>
+
             <input
               id="gallerySearch"
               type="search"
@@ -89,7 +174,12 @@
   <div id="albumModal" class="album-modal" aria-hidden="true">
     <div class="album-modal__backdrop" data-close-modal></div>
 
-    <section class="album-modal__panel" role="dialog" aria-modal="true" aria-labelledby="albumModalTitle">
+    <section
+      class="album-modal__panel"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="albumModalTitle"
+    >
       <header class="album-modal__header">
         <div>
           <div class="album-modal__eyebrow">ALBUM LỚP</div>
@@ -97,7 +187,14 @@
           <p id="albumModalMeta"></p>
         </div>
 
-        <button class="album-modal__close" type="button" data-close-modal aria-label="Đóng album">×</button>
+        <button
+          class="album-modal__close"
+          type="button"
+          data-close-modal
+          aria-label="Đóng album"
+        >
+          ×
+        </button>
       </header>
 
       <div id="photoGrid" class="photo-grid"></div>
@@ -105,21 +202,44 @@
   </div>
 
   <div id="lightbox" class="lightbox" aria-hidden="true">
-    <button class="lightbox__close" type="button" data-close-lightbox aria-label="Đóng ảnh">×</button>
-    <button class="lightbox__nav lightbox__nav--prev" type="button" data-lightbox-prev aria-label="Ảnh trước">‹</button>
+    <button
+      class="lightbox__close"
+      type="button"
+      data-close-lightbox
+      aria-label="Đóng ảnh"
+    >
+      ×
+    </button>
+
+    <button
+      class="lightbox__nav lightbox__nav--prev"
+      type="button"
+      data-lightbox-prev
+      aria-label="Ảnh trước"
+    >
+      ‹
+    </button>
 
     <figure class="lightbox__figure">
       <img id="lightboxImage" alt="">
+
       <figcaption>
         <strong id="lightboxCaption"></strong>
         <span id="lightboxCounter"></span>
       </figcaption>
     </figure>
 
-    <button class="lightbox__nav lightbox__nav--next" type="button" data-lightbox-next aria-label="Ảnh tiếp theo">›</button>
+    <button
+      class="lightbox__nav lightbox__nav--next"
+      type="button"
+      data-lightbox-next
+      aria-label="Ảnh tiếp theo"
+    >
+      ›
+    </button>
   </div>
 
-  <script src="/assets/js/gallery.js?v=20260721-1"></script>
+  <script src="/assets/js/gallery.js?v=20260729-title-sora"></script>
   <script src="/assets/js/site-header.js"></script>
 </body>
 </html>
