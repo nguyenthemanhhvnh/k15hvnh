@@ -641,10 +641,10 @@
 
         // Vùng dòng “Kính gửi...” trên ảnh gốc 1447 x 2048
         cover: {
-          x: 160,
-          y: 432,
-          w: 760,
-          h: 48,
+          x: 158,
+          y: 430,
+          w: 765,
+          h: 52,
           color: "#171a4d"
         },
 
@@ -655,7 +655,7 @@
           fontSize: 22,
           minFontSize: 14,
           color: "#ffffff",
-          fontFamily: "Georgia, 'Times New Roman', serif",
+          fontFamily: "'Segoe UI', Arial, sans-serif",
           weight: "700",
           align: "left"
         }
@@ -669,16 +669,16 @@
         // trên ảnh gốc 1562 x 2048
         cover: {
           x: 55,
-          y: 1240,
-          w: 505,
-          h: 155,
+          y: 1238,
+          w: 610,
+          h: 160,
           color: "#faf7ef"
         },
 
         text: {
-          x: 307,
+          x: 335,
           y: 1276,
-          maxWidth: 455,
+          maxWidth: 520,
           fontSize: 29,
           minFontSize: 18,
           color: "#075847",
@@ -725,7 +725,10 @@
     }
 
     function safeText(value){
-      return String(value || "").trim().replace(/\s+/g, " ");
+      return String(value || "")
+        .normalize("NFC")
+        .trim()
+        .replace(/\s+/g, " ");
     }
 
     function combinedText(name, role){
@@ -754,7 +757,7 @@
           reject(new Error(`Không tải được ảnh mẫu ${type}`));
         };
 
-        img.src = CONFIG[type].image + "?v=20260729b";
+        img.src = CONFIG[type].image + "?v=20260729c";
       });
     }
 
@@ -799,9 +802,12 @@
       const cleanName = safeText(name) || "Thầy/Cô";
       const cleanRole = safeText(role);
 
-      const text = cleanRole
-        ? `Kính gửi: ${cleanName} - ${cleanRole}`
-        : `Kính gửi: ${cleanName}`;
+      const displayName = cleanName.normalize("NFC");
+      const displayRole = cleanRole.normalize("NFC");
+
+      const text = displayRole
+        ? `Kính gửi: ${displayName} - ${displayRole}`
+        : `Kính gửi: ${displayName}`;
 
       ctx.save();
 
