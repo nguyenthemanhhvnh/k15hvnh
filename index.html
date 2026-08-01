@@ -14,78 +14,206 @@
   <link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="/assets/css/site-header.css?v=20260722-music-final">
-  <link rel="stylesheet" href="/assets/css/home-v5-premium.css?v=20260729-hero-sora-v2">
+  <link rel="stylesheet" href="/assets/css/home-v5-premium.css?v=20260722-music-final">
 
   <style>
-    /*
-      Chỉ tinh chỉnh tiêu đề “MỘT THẬP KỶ TRỞ VỀ”.
-      Dùng selector cụ thể + !important để không bị CSS ngoài ghi đè.
-    */
-    .v5-hero .v5-hero__copy .v5-hero-title{
-      display:flex !important;
-      flex-direction:column !important;
-      align-items:flex-start !important;
-      gap:12px !important;
-
-      margin:22px 0 34px !important;
-      padding:0 !important;
-
-      font-family:"Sora","Be Vietnam Pro",sans-serif !important;
-      font-size:clamp(46px,4.75vw,74px) !important;
-      font-weight:600 !important;
-      line-height:.96 !important;
-      letter-spacing:-3.8px !important;
-
-      text-transform:none !important;
-      font-synthesis:none;
-      -webkit-font-smoothing:antialiased;
-      text-rendering:geometricPrecision;
+    /* Chỉ tinh chỉnh tiêu đề “MỘT THẬP KỶ TRỞ VỀ” */
+    .v5-hero__copy h1{
+      font-family:"Sora","Be Vietnam Pro",sans-serif;
+      font-size:clamp(52px,5.6vw,86px);
+      line-height:.96;
+      letter-spacing:-3px;
+      font-weight:700;
+      margin:20px 0 30px;
     }
 
-    .v5-hero .v5-hero__copy .v5-hero-title__line{
-      display:block !important;
-      margin:0 !important;
-      padding:0 !important;
-      font:inherit !important;
-      line-height:inherit !important;
-      letter-spacing:inherit !important;
-      white-space:nowrap;
-    }
-
-    .v5-hero .v5-hero__copy .v5-hero-title__line--white{
-      color:#fff !important;
-      font-weight:600 !important;
-      text-shadow:0 4px 18px rgba(0,0,0,.24);
-    }
-
-    .v5-hero .v5-hero__copy .v5-hero-title__line--gold{
-      color:#ffc94d !important;
-      font-weight:700 !important;
-      letter-spacing:-3px !important;
-      text-shadow:0 4px 18px rgba(0,0,0,.22);
+    .v5-hero__copy h1 span{
+      display:block;
+      margin-top:10px;
+      font-weight:800;
     }
 
     @media(max-width:768px){
-      .v5-hero .v5-hero__copy .v5-hero-title{
-        gap:8px !important;
-        margin:18px 0 28px !important;
-        font-size:clamp(39px,10vw,58px) !important;
-        line-height:1 !important;
-        letter-spacing:-2.6px !important;
+      .v5-hero__copy h1{
+        font-size:clamp(44px,11.2vw,66px);
+        line-height:1;
+        letter-spacing:-2px;
+        margin:18px 0 26px;
       }
 
-      .v5-hero .v5-hero__copy .v5-hero-title__line--gold{
-        letter-spacing:-2px !important;
-      }
-    }
-
-    @media(max-width:430px){
-      .v5-hero .v5-hero__copy .v5-hero-title{
-        font-size:clamp(35px,10.5vw,48px) !important;
-        letter-spacing:-2px !important;
+      .v5-hero__copy h1 span{
+        margin-top:8px;
       }
     }
   </style>
+
+  <style>
+    /* ===== LƯU Ý KHI THAM GIA ===== */
+    .v5-notice{
+      padding:76px 0;
+      background:
+        radial-gradient(circle at 12% 8%,rgba(245,181,27,.12),transparent 28%),
+        linear-gradient(180deg,#f7f9fc 0%,#ffffff 100%);
+    }
+
+    .v5-notice__heading{
+      max-width:760px;
+      margin:0 auto 28px;
+      text-align:center;
+    }
+
+    .v5-notice__heading p{
+      margin:0 0 8px;
+      color:#d89500;
+      font-size:12px;
+      font-weight:900;
+      letter-spacing:1.4px;
+      text-transform:uppercase;
+    }
+
+    .v5-notice__heading h2{
+      margin:0;
+      color:#071d42;
+      font-family:"Sora","Be Vietnam Pro",sans-serif;
+      font-size:clamp(30px,4.2vw,48px);
+      line-height:1.15;
+      font-weight:700;
+      letter-spacing:-1.8px;
+    }
+
+    .v5-notice__heading span{
+      display:block;
+      margin-top:10px;
+      color:#667085;
+      font-size:14px;
+      line-height:1.7;
+    }
+
+    .v5-notice__card{
+      width:min(820px,100%);
+      margin:auto;
+      padding:14px;
+      overflow:hidden;
+      background:#fff;
+      border:1px solid rgba(7,29,66,.10);
+      border-radius:24px;
+      box-shadow:0 22px 60px rgba(7,29,66,.14);
+    }
+
+    .v5-notice__image-button{
+      width:100%;
+      padding:0;
+      display:block;
+      overflow:hidden;
+      border:0;
+      border-radius:17px;
+      background:#061a3b;
+      cursor:zoom-in;
+    }
+
+    .v5-notice__image-button img{
+      width:100%;
+      height:auto;
+      display:block;
+      transition:transform .35s ease;
+    }
+
+    .v5-notice__image-button:hover img{
+      transform:scale(1.012);
+    }
+
+    .v5-notice__actions{
+      display:flex;
+      justify-content:center;
+      gap:10px;
+      padding:16px 8px 4px;
+    }
+
+    .v5-notice__btn{
+      min-height:44px;
+      padding:0 18px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      border:0;
+      border-radius:12px;
+      text-decoration:none;
+      font-size:13px;
+      font-weight:900;
+      cursor:pointer;
+    }
+
+    .v5-notice__btn--primary{
+      color:#071d42;
+      background:#f5b51b;
+    }
+
+    .v5-notice__btn--secondary{
+      color:#071d42;
+      background:#f2f5f9;
+      border:1px solid #dce2ea;
+    }
+
+    .v5-notice-lightbox{
+      position:fixed;
+      inset:0;
+      z-index:9999;
+      display:none;
+      align-items:center;
+      justify-content:center;
+      padding:18px;
+      background:rgba(2,10,24,.94);
+    }
+
+    .v5-notice-lightbox.is-open{
+      display:flex;
+    }
+
+    .v5-notice-lightbox img{
+      max-width:min(96vw,980px);
+      max-height:93vh;
+      object-fit:contain;
+      border-radius:14px;
+      box-shadow:0 30px 90px rgba(0,0,0,.42);
+    }
+
+    .v5-notice-lightbox__close{
+      position:fixed;
+      top:18px;
+      right:18px;
+      width:44px;
+      height:44px;
+      display:grid;
+      place-items:center;
+      color:#fff;
+      background:rgba(255,255,255,.12);
+      border:1px solid rgba(255,255,255,.25);
+      border-radius:50%;
+      font-size:25px;
+      cursor:pointer;
+    }
+
+    @media(max-width:640px){
+      .v5-notice{
+        padding:54px 0;
+      }
+
+      .v5-notice__card{
+        padding:9px;
+        border-radius:18px;
+      }
+
+      .v5-notice__actions{
+        flex-direction:column;
+      }
+
+      .v5-notice__btn{
+        width:100%;
+      }
+    }
+  </style>
+
 </head>
 
 <body>
@@ -113,9 +241,9 @@
         <div class="v5-hero__copy reveal">
           <p class="v5-eyebrow">K15 FM · THANH XUÂN PHÁT LẠI</p>
 
-          <h1 class="v5-hero-title">
-            <span class="v5-hero-title__line v5-hero-title__line--white">MỘT THẬP KỶ</span>
-            <span class="v5-hero-title__line v5-hero-title__line--gold">TRỞ VỀ</span>
+          <h1>
+            MỘT THẬP KỶ
+            <span>TRỞ VỀ</span>
           </h1>
 
           <p class="v5-hero__lead">
@@ -250,6 +378,53 @@
               type="audio/mpeg"
             >
           </audio>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="v5-notice" id="luu-y-tham-gia">
+      <div class="v5-shell">
+        <div class="v5-notice__heading reveal">
+          <p>THÔNG TIN QUAN TRỌNG</p>
+          <h2>Một số lưu ý khi tham gia Hội khóa</h2>
+          <span>
+            Cả nhà vui lòng xem trước để chủ động di chuyển, chuẩn bị trang phục
+            và có trải nghiệm trọn vẹn trong ngày hội ngộ.
+          </span>
+        </div>
+
+        <div class="v5-notice__card reveal">
+          <button
+            class="v5-notice__image-button"
+            id="noticeImageButton"
+            type="button"
+            aria-label="Xem toàn màn hình các lưu ý khi tham gia"
+          >
+            <img
+              src="/assets/images/home/luu-y-tham-gia.jpg?v=20260801"
+              alt="Một số lưu ý khi tham gia Hội khóa K15 FM"
+              loading="lazy"
+            >
+          </button>
+
+          <div class="v5-notice__actions">
+            <button
+              class="v5-notice__btn v5-notice__btn--primary"
+              id="noticeViewButton"
+              type="button"
+            >
+              🔍 Xem toàn màn hình
+            </button>
+
+            <a
+              class="v5-notice__btn v5-notice__btn--secondary"
+              href="/assets/images/home/luu-y-tham-gia.jpg"
+              download="Luu-y-tham-gia-K15FM.jpg"
+            >
+              ⬇️ Lưu ảnh
+            </a>
+          </div>
         </div>
       </div>
     </section>
@@ -474,8 +649,62 @@
     </div>
   </footer>
 
-  <script src="/assets/js/home-v5-premium.js?v=20260729-hero-sora-v2"></script>
-  <script src="/assets/js/site-header.js?v=20260729-hero-sora-v2"></script>
+
+  <div class="v5-notice-lightbox" id="noticeLightbox" aria-hidden="true">
+    <button
+      class="v5-notice-lightbox__close"
+      id="noticeLightboxClose"
+      type="button"
+      aria-label="Đóng"
+    >
+      ×
+    </button>
+
+    <img
+      src="/assets/images/home/luu-y-tham-gia.jpg?v=20260801"
+      alt="Một số lưu ý khi tham gia Hội khóa K15 FM"
+    >
+  </div>
+
+  <script src="/assets/js/home-v5-premium.js?v=20260722-music-final"></script>
+  <script src="/assets/js/site-header.js?v=20260722-music-final"></script>
+
+  <script>
+    (() => {
+      const lightbox = document.getElementById("noticeLightbox");
+      const imageButton = document.getElementById("noticeImageButton");
+      const viewButton = document.getElementById("noticeViewButton");
+      const closeButton = document.getElementById("noticeLightboxClose");
+
+      function openNotice(){
+        lightbox.classList.add("is-open");
+        lightbox.setAttribute("aria-hidden","false");
+        document.body.style.overflow = "hidden";
+      }
+
+      function closeNotice(){
+        lightbox.classList.remove("is-open");
+        lightbox.setAttribute("aria-hidden","true");
+        document.body.style.overflow = "";
+      }
+
+      imageButton?.addEventListener("click",openNotice);
+      viewButton?.addEventListener("click",openNotice);
+      closeButton?.addEventListener("click",closeNotice);
+
+      lightbox?.addEventListener("click",event => {
+        if(event.target === lightbox){
+          closeNotice();
+        }
+      });
+
+      document.addEventListener("keydown",event => {
+        if(event.key === "Escape"){
+          closeNotice();
+        }
+      });
+    })();
+  </script>
+
 </body>
 </html>
-
