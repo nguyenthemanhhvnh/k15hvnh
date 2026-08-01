@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="/assets/css/site-header.css?v=20260801-sponsor-premium-final">
+  <link rel="stylesheet" href="/assets/css/site-header.css?v=20260801-sponsor-premium-merge-final">
 
   <style>
     :root{
@@ -1114,6 +1114,39 @@
       }
     }
 
+
+    .badge.combined{
+      color:#5a3b00;
+      background:linear-gradient(135deg,#fff4c7,#e9f7f3);
+      border:1px solid #dfc56c;
+    }
+    .sponsor-breakdown{
+      margin-top:13px;
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:8px;
+    }
+    .sponsor-breakdown__item{
+      padding:10px 11px;
+      border-radius:11px;
+      background:#f8fafc;
+      border:1px solid #e4e8ef;
+    }
+    .sponsor-breakdown__item span{
+      display:block;
+      color:#8a94a6;
+      font-size:9px;
+      font-weight:850;
+      text-transform:uppercase;
+      letter-spacing:.45px;
+    }
+    .sponsor-breakdown__item strong{
+      display:block;
+      margin-top:4px;
+      color:#071d42;
+      font-size:12px;
+    }
+
     @media(max-width:960px){
       .stats{grid-template-columns:repeat(2,1fr)}
       .tier-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
@@ -1151,7 +1184,8 @@
         <div class="hero-program">K15 FM · <span>Thanh xuân phát lại</span></div>
         <p class="hero-description">
           Ban Tổ chức trân trọng cảm ơn các cá nhân, doanh nghiệp và thương hiệu
-          đã đồng hành cùng Hội khóa.
+          đã đồng hành cùng Hội khóa. Giá trị hiện vật được xếp hạng theo
+          <b>trị giá quy đổi</b> tương đương với tài trợ hiện kim.
         </p>
         <a class="hero-cta" href="#hang-tai-tro">Xem các hạng tài trợ ↓</a>
       </div>
@@ -1189,6 +1223,8 @@
           <div class="section-kicker">Bức tường tri ân</div>
           <h2 class="section-title">Các hạng Nhà tài trợ K15 FM</h2>
           <p class="section-description">
+            Hệ thống tự động cộng gộp hiện kim và trị giá quy đổi hiện vật của cùng một Nhà tài trợ trước khi phân hạng.
+            Khi bạn cập nhật Google Sheet, bảng vinh danh sẽ tự thay đổi.
           </p>
         </div>
 
@@ -1250,7 +1286,7 @@
     </footer>
   </div>
 
-  <script src="/assets/js/site-header.js?v=20260801-sponsor-premium-final"></script>
+  <script src="/assets/js/site-header.js?v=20260801-sponsor-premium-merge-final"></script>
 
   <script>
     const SHEET_ID = "1Btmk1yZ4TfbLqnhhhnW5ykAplfT69eZh";
@@ -1302,6 +1338,8 @@
     ];
 
     let allSponsors = [];
+    let rawCashSponsors = [];
+    let rawInKindSponsors = [];
     let activeType = "all";
 
     const els = {
@@ -1613,74 +1651,117 @@
         .trim();
     }
 
+
+    function normalizePersonKey(value){
+      return String(value || "")
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g,"")
+        .toLowerCase()
+        .replace(/\s+/g," ")
+        .trim();
+    }
+
+    function mergeSponsorsForRecognition(cashSponsors,inKindSponsors){
+      const map = new Map();
+
+      function ensureBase(item){
+        const key = normalizePersonKey(item.name);
+
+        if(!map.has(key)){
+          map.set(key,{
+            id:`merged-${key}`,
+            type:"combined",
+            name:item.name,
+            className:item.className || "",
+            brand:"",
+            website:"",
+            logoUrl:"",
+            imageUrl:"",
+            note:"",
+            products:[],
+            details:[],
+            cashValue:0,
+            inKindValue:0,
+            value:0
+          });
+        }
+
+        return map.get(key);
+      }
+
+      cashSponsors.forEach(item=>{
+        const merged = ensureBase(item);
+        merged.cashValue += item.value || 0;
+        merged.value += item.value || 0;
+        if(!merged.className && item.className) merged.className = item.className;
+        if(!merged.imageUrl && item.imageUrl) merged.imageUrl = item.imageUrl;
+        if(item.note){
+          merged.note = merged.note ? merged.note + " | " + item.note : item.note;
+        }
+      });
+
+      inKindSponsors.forEach(item=>{
+        const merged = ensureBase(item);
+        merged.inKindValue += item.value || 0;
+        merged.value += item.value || 0;
+
+        if(item.brand) merged.brand = item.brand;
+        if(item.website) merged.website = item.website;
+        if(item.logoUrl) merged.logoUrl = item.logoUrl;
+        if(!merged.className && item.className) merged.className = item.className;
+
+        (item.products || []).forEach(v=>{
+          if(v && !merged.products.includes(v)) merged.products.push(v);
+        });
+        (item.details || []).forEach(v=>{
+          if(v && !merged.details.includes(v)) merged.details.push(v);
+        });
+      });
+
+      return [...map.values()].map(item=>{
+        if(item.cashValue > 0 && item.inKindValue > 0) item.type = "combined";
+        else if(item.inKindValue > 0) item.type = "inkind";
+        else item.type = "cash";
+        return item;
+      });
+    }
+
     function renderStats(){
-      const cash = allSponsors.filter(
-        item=>item.type === "cash"
-      );
-
-      const inKind = allSponsors.filter(
-        item=>item.type === "inkind"
-      );
-
-      const totalCash = cash.reduce(
-        (sum,item)=>sum + item.value,
-        0
-      );
-
-      const totalInKind = inKind.reduce(
-        (sum,item)=>sum + item.value,
-        0
-      );
+      const totalCash = rawCashSponsors.reduce((sum,item)=>sum + item.value,0);
+      const totalInKind = rawInKindSponsors.reduce((sum,item)=>sum + item.value,0);
 
       els.totalSponsors.textContent =
-        new Intl.NumberFormat("vi-VN")
-          .format(allSponsors.length);
+        new Intl.NumberFormat("vi-VN").format(allSponsors.length);
 
-      els.totalCash.textContent =
-        formatMoney(totalCash);
-
-      els.totalInKind.textContent =
-        formatMoney(totalInKind);
-
-      els.totalValue.textContent =
-        formatMoney(totalCash + totalInKind);
+      els.totalCash.textContent = formatMoney(totalCash);
+      els.totalInKind.textContent = formatMoney(totalInKind);
+      els.totalValue.textContent = formatMoney(totalCash + totalInKind);
     }
 
     function renderSponsorCard(item){
       const tier = getTier(item.value);
-      const isInKind = item.type === "inkind";
+      const isCombined = item.type === "combined";
+      const hasBrand = !!item.brand;
+      const isInKind = item.type === "inkind" || isCombined;
       const isPremium = tier.id === "diamond" || tier.id === "gold";
 
-      const mainTitle = isInKind
-        ? (item.brand || item.name)
-        : item.name;
+      const mainTitle = hasBrand ? item.brand : item.name;
 
-      const subTitle = isInKind
-        ? [
-            item.name,
-            item.className
-          ].filter(Boolean).join(" · ")
+      const subTitle = hasBrand
+        ? ["Đại diện: " + item.name, item.className].filter(Boolean).join(" · ")
         : (item.className || "K15 HVNH");
 
-      const rawImage = isInKind
-        ? item.logoUrl
-        : item.imageUrl;
-
+      const rawImage = hasBrand ? item.logoUrl : item.imageUrl;
       const imageUrl = driveImageUrl(rawImage);
-
       const showMedia = item.value >= 5000000;
 
       const premiumCrown = isPremium
-        ? `
-          <div class="premium-crown">
-            ${tier.id === "diamond" ? "💎 Đặc biệt" : "★ Vinh danh"}
-          </div>
-        `
+        ? `<div class="premium-crown">${tier.id === "diamond" ? "💎 Đặc biệt" : "★ Vinh danh"}</div>`
         : "";
 
       const mediaHtml = showMedia
         ? `
-          <div class="sponsor-media ${isInKind ? "" : "person"}">
+          <div class="sponsor-media ${hasBrand ? "" : "person"}">
             ${premiumCrown}
             ${
               imageUrl
@@ -1693,95 +1774,95 @@
                   <div class="sponsor-placeholder" style="display:none">
                     ${escapeHtml(initials(mainTitle))}
                   </div>`
-                : `<div class="sponsor-placeholder">
-                    ${escapeHtml(initials(mainTitle))}
-                  </div>`
+                : `<div class="sponsor-placeholder">${escapeHtml(initials(mainTitle))}</div>`
             }
           </div>
         `
         : "";
 
-      const productHtml = isInKind && item.products?.length
+      const badgeText = isCombined
+        ? "Hiện kim + hiện vật"
+        : item.type === "inkind"
+          ? "Tài trợ hiện vật"
+          : "Tài trợ hiện kim";
+
+      const breakdownHtml = isCombined
         ? `
-          <div class="sponsor-product">
+          <div class="sponsor-breakdown">
+            <div class="sponsor-breakdown__item">
+              <span>Hiện kim</span>
+              <strong>${formatMoney(item.cashValue)}</strong>
+            </div>
+            <div class="sponsor-breakdown__item">
+              <span>Hiện vật quy đổi</span>
+              <strong>${formatMoney(item.inKindValue)}</strong>
+            </div>
+          </div>
+        `
+        : "";
+
+      const productHtml = item.products?.length
+        ? `<div class="sponsor-product">
             <strong>Sản phẩm tài trợ:</strong><br>
-            ${item.products
-              .map(value=>escapeHtml(value))
-              .join("<br>")}
-          </div>
-        `
+            ${item.products.map(v=>escapeHtml(v)).join("<br>")}
+          </div>`
         : "";
 
-      const detailsHtml = isInKind && item.details?.length
-        ? `
-          <div class="sponsor-detail">
-            ${item.details
-              .map(value=>escapeHtml(value))
-              .join("<br>")}
-          </div>
-        `
+      const detailsHtml = item.details?.length
+        ? `<div class="sponsor-detail">
+            ${item.details.map(v=>escapeHtml(v)).join("<br>")}
+          </div>`
         : "";
 
-      const noteHtml = !isInKind && item.note
-        ? `
-          <div class="sponsor-note">
+      const noteHtml = item.note
+        ? `<div class="sponsor-note">
             <strong>Ghi chú:</strong><br>
             ${escapeHtml(item.note)}
-          </div>
-        `
+          </div>`
         : "";
 
       const website = normalizeLink(item.website);
 
-      const linkHtml = isInKind && website
-        ? `
-          <div class="sponsor-link">
-            <a
-              href="${escapeAttr(website)}"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+      const linkHtml = hasBrand && website
+        ? `<div class="sponsor-link">
+            <a href="${escapeAttr(website)}" target="_blank" rel="noopener noreferrer">
               Xem website / Fanpage ↗
             </a>
-          </div>
-        `
+          </div>`
         : "";
 
       const premiumThanks = isPremium
-        ? `
-          <div class="premium-thanks">
+        ? `<div class="premium-thanks">
             K15 FM trân trọng cảm ơn sự đồng hành và những giá trị quý báu
             Nhà tài trợ đã dành cho chương trình.
-          </div>
-        `
+          </div>`
         : "";
 
       return `
-        <article class="sponsor-card ${tier.id} ${isInKind ? "inkind" : "cash"}">
+        <article class="sponsor-card ${tier.id} ${hasBrand ? "inkind" : "cash"}">
           ${mediaHtml}
-
           <div class="sponsor-body">
             <div class="sponsor-badges">
-              <span class="badge ${item.type}">
-                ${isInKind ? "Tài trợ hiện vật" : "Tài trợ hiện kim"}
+              <span class="badge ${isCombined ? "combined" : item.type}">
+                ${badgeText}
               </span>
             </div>
 
-            <div class="sponsor-name">
-              ${escapeHtml(mainTitle)}
-            </div>
-
-            <div class="sponsor-sub">
-              ${escapeHtml(subTitle)}
-            </div>
+            <div class="sponsor-name">${escapeHtml(mainTitle)}</div>
+            <div class="sponsor-sub">${escapeHtml(subTitle)}</div>
 
             <div class="sponsor-value">
               ${formatMoney(item.value)}
               <small>
-                ${isInKind ? "Trị giá quy đổi" : "Giá trị tài trợ"}
+                ${isCombined
+                  ? "Tổng giá trị đồng hành"
+                  : item.type === "inkind"
+                    ? "Trị giá quy đổi"
+                    : "Giá trị tài trợ"}
               </small>
             </div>
 
+            ${breakdownHtml}
             ${productHtml}
             ${detailsHtml}
             ${noteHtml}
@@ -1793,31 +1874,31 @@
     }
 
     function renderPartnerItem(item){
-      const isInKind = item.type === "inkind";
+      const title = item.brand ? item.brand : item.name;
 
-      const title = isInKind
-        ? (item.brand || item.name)
-        : item.name;
+      let meta = "";
 
-      const meta = isInKind
-        ? [
-            item.products?.[0],
-            item.name,
-            item.className
-          ].filter(Boolean).join(" · ")
-        : [
-            item.className,
-            item.note
-          ].filter(Boolean).join(" · ");
+      if(item.type === "combined"){
+        meta = [
+          `Đại diện: ${item.name}`,
+          item.className,
+          `Hiện kim ${formatMoney(item.cashValue)}`,
+          `Hiện vật ${formatMoney(item.inKindValue)}`
+        ].filter(Boolean).join(" · ");
+      }else if(item.type === "inkind"){
+        meta = [
+          item.products?.[0],
+          item.name,
+          item.className
+        ].filter(Boolean).join(" · ");
+      }else{
+        meta = [item.className,item.note].filter(Boolean).join(" · ");
+      }
 
       return `
         <div class="partner-item">
           <strong>${escapeHtml(title)}</strong>
-          ${
-            meta
-              ? `<span>${escapeHtml(meta)}</span>`
-              : ""
-          }
+          ${meta ? `<span>${escapeHtml(meta)}</span>` : ""}
           <b>${formatMoney(item.value)}</b>
         </div>
       `;
@@ -1911,11 +1992,17 @@
       const sort = els.sortSelect.value;
 
       let data = allSponsors.filter(item=>{
-        if(
-          activeType !== "all" &&
-          item.type !== activeType
-        ){
-          return false;
+        if(activeType !== "all"){
+          const matchesType =
+            item.type === activeType ||
+            (
+              item.type === "combined" &&
+              (activeType === "cash" || activeType === "inkind")
+            );
+
+          if(!matchesType){
+            return false;
+          }
         }
 
         if(!query){
@@ -2026,10 +2113,13 @@
           inKindTable.rows || []
         );
 
-        allSponsors = [
-          ...cash,
-          ...inKind
-        ];
+        rawCashSponsors = cash;
+        rawInKindSponsors = inKind;
+
+        allSponsors = mergeSponsorsForRecognition(
+          cash,
+          inKind
+        );
 
         renderStats();
         applyFilters();
@@ -2074,7 +2164,7 @@
     );
 
     loadData();
-
+a
     setInterval(
       loadData,
       REFRESH_INTERVAL
