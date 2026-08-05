@@ -10,9 +10,9 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?faamily=Be+Vietnam+Pro:wght@400;500;600;700;800;900&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="/assets/css/site-header.css?v=20260801-sponsor-premium-merge-final">
+  <link rel="stylesheet" href="/assets/css/site-header.css?v=20260805-sponsor-fullimage-final">
 
   <style>
     :root{
@@ -456,7 +456,7 @@
 
     .sponsor-media{
       position:relative;
-      height:145px;
+      height:185px;
       display:flex;
       align-items:center;
       justify-content:center;
@@ -472,13 +472,24 @@
       height:100%;
       display:block;
       object-fit:contain;
+      object-position:center center;
       padding:18px;
       background:#fff;
     }
 
+    /* Ảnh cá nhân: luôn hiển thị trọn ảnh, tuyệt đối không crop */
+    .sponsor-media.person{
+      background:
+        radial-gradient(circle at 50% 35%,#ffffff 0%,#f7f9fc 58%,#edf2f7 100%);
+    }
+
     .sponsor-media.person img{
-      object-fit:cover;
-      padding:0;
+      width:100%;
+      height:100%;
+      object-fit:contain;
+      object-position:center center;
+      padding:8px;
+      background:transparent;
     }
 
     .sponsor-placeholder{
@@ -937,7 +948,10 @@
 
     .tier-section.tier-diamond .sponsor-media.person img,
     .tier-section.tier-gold .sponsor-media.person img{
-      padding:0;
+      object-fit:contain;
+      object-position:center center;
+      padding:10px;
+      background:transparent;
     }
 
     .tier-section.tier-diamond .sponsor-placeholder{
@@ -1170,7 +1184,41 @@
       .sync-line{flex-direction:column}
       .hero h1{letter-spacing:-1.5px}
     }
-  </style>
+  
+    /* =====================================================
+       ẢNH / LOGO NHÀ TÀI TRỢ - FULL IMAGE FINAL
+       ===================================================== */
+    .sponsor-card.inkind .sponsor-media img{
+      object-fit:contain !important;
+      object-position:center center !important;
+      padding:16px !important;
+      background:#fff !important;
+    }
+    .sponsor-card.cash .sponsor-media.person img{
+      object-fit:contain !important;
+      object-position:center center !important;
+      padding:8px !important;
+      background:transparent !important;
+    }
+    .sponsor-card.cash .sponsor-media.person{
+      min-height:185px;
+      background:linear-gradient(135deg,#f8fafc 0%,#ffffff 48%,#f4f7fb 100%);
+    }
+    .tier-section.tier-diamond .sponsor-card.cash .sponsor-media.person img,
+    .tier-section.tier-gold .sponsor-card.cash .sponsor-media.person img{
+      object-fit:contain !important;
+      object-position:center center !important;
+      padding:10px !important;
+    }
+    .tier-section.tier-diamond .sponsor-card.cash .sponsor-media.person{height:245px;}
+    .tier-section.tier-gold .sponsor-card.cash .sponsor-media.person{height:220px;}
+    @media(max-width:650px){
+      .sponsor-media,.sponsor-card.cash .sponsor-media.person{height:210px;}
+      .tier-section.tier-diamond .sponsor-card.cash .sponsor-media.person,
+      .tier-section.tier-gold .sponsor-card.cash .sponsor-media.person{height:220px;}
+    }
+
+</style>
 </head>
 
 <body>
@@ -1286,7 +1334,7 @@
     </footer>
   </div>
 
-  <script src="/assets/js/site-header.js?v=20260801-sponsor-premium-merge-final"></script>
+  <script src="/assets/js/site-header.js?v=20260805-sponsor-fullimage-final"></script>
 
   <script>
     const SHEET_ID = "1Btmk1yZ4TfbLqnhhhnW5ykAplfT69eZh";
