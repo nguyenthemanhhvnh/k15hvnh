@@ -2,57 +2,61 @@
   "use strict";
 
   const MENU_ITEMS = [
-    {
-      label: "Trang chủ",
-      href: "/"
-    },
-    {
-      label: "Thư mời",
-      children: [
-        {
-          label: "Thư mời hội khóa",
-          href: "/thumoi/"
-        },
-        {
-          label: "Thư mời Thầy Cô",
-          href: "/thumoi/thay-co/"
-        }
-      ]
-    },
-    {
-      label: "Danh sách",
-      href: "/danhsach/",
-      icon: "☷"
-    },
-    {
-      label: "Nhà tài trợ",
-      href: "/nhataitro/",
-      icon: "♥"
-    },
-    {
-      label: "Ảnh lớp",
-      href: "/gallery/"
-    },
-    {
-      label: "Ảnh & Video",
-      href: "/media/",
-      icon: "▶"
-    },
-    {
-      label: "Tiện ích",
-      icon: "◇",
-      children: [
-        {
-          label: "Tạo ảnh đại diện",
-          href: "/avatar/"
-        },
-        {
-          label: "Live Dashboard",
-          href: "/dashboard/"
-        }
-      ]
-    }
-  ];
+  {
+    label: "Trang chủ",
+    href: "/"
+  },
+  {
+    label: "Thư mời",
+    children: [
+      {
+        label: "Thư mời hội khóa",
+        href: "/thumoi/"
+      },
+      {
+        label: "Thư mời Thầy Cô",
+        href: "/thumoi/thay-co/"
+      }
+    ]
+  },
+  {
+    label: "Danh sách",
+    href: "/danhsach/",
+    icon: "☷"
+  },
+  {
+    label: "Nhà tài trợ",
+    href: "/nhataitro/",
+    icon: "♥"
+  },
+  {
+    label: "Ảnh lớp",
+    href: "/gallery/"
+  },
+  {
+    label: "Ảnh & Video",
+    href: "/media/",
+    icon: "▶"
+  },
+  {
+    label: "Tiện ích",
+    icon: "◇",
+    children: [
+      {
+        label: "Tạo ảnh đại diện",
+        href: "/avatar/"
+      },
+      {
+        label: "Thư gửi tương lai",
+        href: "/tuonglai/"
+      },
+      {
+        label: "Live Dashboard",
+        href: "/dashboard/"
+      }
+    ]
+  }
+];
 
   function normalizePath(path) {
     let value = String(path || "/")
