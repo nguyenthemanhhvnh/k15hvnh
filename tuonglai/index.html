@@ -133,34 +133,98 @@
 <footer>K15 FM · Thanh xuân phát lại<br>Kỷ niệm 10 năm ra trường Sinh viên K15 Học viện Ngân hàng</footer>
 
 <script src="/assets/js/site-header.js?v=20260805-future"></script>
+
 <script>
-const FUTURE_MAIL_WEB_APP_URL="https://script.google.com/macros/s/AKfycbzLRAKF2-Gu9euPALOFmz8MRHsx74eCv1KvlGO_DHKWzNpFugnQcVcVmRzHDq6lEq1h/exec
-";
-const form=document.getElementById("futureLetterForm");
-const letter=document.getElementById("letter");
-const count=document.getElementById("charCount");
-letter.addEventListener("input",()=>count.textContent=letter.value.length);
+  const FUTURE_MAIL_WEB_APP_URL =
+    "https://script.google.com/macros/s/AKfycbzLRAKF2-Gu9euPALOFmz8MRHsx74eCv1KvlGO_DHKWzNpFugnQcVcVmRzHDq6lEq1h/exec";
 
-form.addEventListener("submit",function(e){
-  if(!FUTURE_MAIL_WEB_APP_URL || FUTURE_MAIL_WEB_APP_URL.includes("PASTE_YOUR")){
-    e.preventDefault();
-    alert("Chưa cấu hình FUTURE_MAIL_WEB_APP_URL.");
-    return;
+  const form = document.getElementById("futureLetterForm");
+  const letter = document.getElementById("letter");
+  const count = document.getElementById("charCount");
+  const submitBtn = document.getElementById("submitBtn");
+  const formArea = document.getElementById("formArea");
+  const successCard = document.getElementById("successCard");
+  const sendAnother = document.getElementById("sendAnother");
+
+  // Đếm ký tự
+  if (letter && count) {
+    count.textContent = String(letter.value.length);
+
+    letter.addEventListener("input", function () {
+      count.textContent = String(letter.value.length);
+    });
   }
-  form.action=FUTURE_MAIL_WEB_APP_URL;
-  document.getElementById("submitBtn").disabled=true;
-  setTimeout(()=>{
-    document.getElementById("formArea").style.display="none";
-    document.getElementById("successCard").classList.add("show");
-    document.getElementById("submitBtn").disabled=false;
-  },1200);
-});
 
-document.getElementById("sendAnother").addEventListener("click",()=>{
-  form.reset();count.textContent="0";
-  document.getElementById("successCard").classList.remove("show");
-  document.getElementById("formArea").style.display="";
-});
+  // Gửi thư
+  if (form) {
+    form.addEventListener("submit", function (event) {
+
+      if (
+        !FUTURE_MAIL_WEB_APP_URL ||
+        FUTURE_MAIL_WEB_APP_URL.includes("PASTE_YOUR")
+      ) {
+        event.preventDefault();
+        alert("Chưa cấu hình FUTURE_MAIL_WEB_APP_URL.");
+        return;
+      }
+
+      // Cho trình duyệt tự kiểm tra các trường required
+      if (!form.checkValidity()) {
+        return;
+      }
+
+      form.action = FUTURE_MAIL_WEB_APP_URL;
+      form.method = "POST";
+      form.target = "hiddenSubmitFrame";
+
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = "⏳ ĐANG NIÊM PHONG...";
+      }
+
+      /*
+       * Form sẽ POST trực tiếp vào Apps Script qua iframe.
+       * Sau khoảng 1,5 giây hiện trạng thái thành công.
+       */
+      window.setTimeout(function () {
+        if (formArea) {
+          formArea.style.display = "none";
+        }
+
+        if (successCard) {
+          successCard.classList.add("show");
+        }
+
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.textContent = "✉️ NIÊM PHONG & GỬI THƯ";
+        }
+      }, 1500);
+    });
+  }
+
+  // Viết thêm thư
+  if (sendAnother) {
+    sendAnother.addEventListener("click", function () {
+      if (form) {
+        form.reset();
+      }
+
+      if (count) {
+        count.textContent = "0";
+      }
+
+      if (successCard) {
+        successCard.classList.remove("show");
+      }
+
+      if (formArea) {
+        formArea.style.display = "";
+      }
+
+      if (letter) {
+        letter.focus();
+      }
+    });
+  }
 </script>
-</body>
-</html>
