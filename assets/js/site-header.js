@@ -3,15 +3,15 @@
 
   const MENU_ITEMS = [
     {
-    label:"Trang chủ",
-    href:"/"
-},
-{
-    label:"Thư mời",
-    children:[
+      label: "Trang chủ",
+      href: "/"
+    },
+    {
+      label: "Thư mời",
+      children: [
         {
-            label:"Thư mời hội khóa",
-            href:"/thumoi/"
+          label: "Thư mời hội khóa",
+          href: "/thumoi/"
         },
         {
           label: "Thư mời Thầy Cô",
@@ -30,8 +30,13 @@
       icon: "♥"
     },
     {
-  label: "Ảnh lớp",
-  href: "/gallery/"
+      label: "Ảnh lớp",
+      href: "/gallery/"
+    },
+    {
+      label: "Ảnh & Video",
+      href: "/media/",
+      icon: "▶"
     },
     {
       label: "Tiện ích",
