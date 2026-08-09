@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/css/site-header.css?v=20260809-media-gallery-final">
+<link rel="stylesheet" href="/assets/css/site-header.css?v=20260809-media-api-final">
 <style>
 :root{--navy:#071d42;--navy2:#0b2b60;--navy3:#123e7a;--gold:#f8c24e;--text:#172033;--muted:#667085;--shadow:0 20px 60px rgba(7,29,66,.12)}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--text);font-family:"Be Vietnam Pro","Segoe UI",Arial,sans-serif;background:radial-gradient(circle at 8% 0%,rgba(248,194,78,.11),transparent 26%),linear-gradient(180deg,#f8fafc 0%,#fff 48%,#fffaf0 100%);-webkit-font-smoothing:antialiased}a{color:inherit}.shell{width:min(1180px,calc(100% - 28px));margin:auto}
@@ -32,6 +32,26 @@
 .video-strip{margin-top:30px;padding:20px;background:#fff;border:1px solid #e4e8ef;border-radius:18px}.video-strip-head{display:flex;align-items:end;justify-content:space-between;gap:12px}.video-strip-head small{color:#d68c00;font-size:10px;font-weight:900;text-transform:uppercase}.video-strip-head h3{margin:4px 0 0;color:var(--navy);font-family:"Sora",sans-serif}.video-strip-head>span{color:#667085;font-size:11px}.video-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px}.video-card{display:flex;align-items:center;gap:10px;padding:12px;border:1px solid #e4e8ef;border-radius:12px;text-decoration:none;background:#f8fafc}.video-icon{width:38px;height:38px;display:grid;place-items:center;border-radius:50%;background:#f8c24e;color:#071d42}.video-card strong{display:block;color:#071d42;font-size:11px}.video-card span{display:block;margin-top:3px;color:#667085;font-size:9px}
 .photo-lightbox{position:fixed;inset:0;z-index:99999;display:none;align-items:center;justify-content:center;padding:20px;background:rgba(2,10,24,.94)}.photo-lightbox.open{display:flex}.lb-content{width:min(1050px,86vw)}.lb-content img{width:100%;max-height:76vh;display:block;object-fit:contain;border-radius:14px;background:#08162d}.lb-meta{margin-top:10px;display:flex;align-items:center;justify-content:space-between;gap:12px;color:#fff}.lb-meta strong{display:block;font-size:12px}.lb-meta span{display:block;margin-top:3px;color:rgba(255,255,255,.6);font-size:10px}.lb-actions{display:flex;gap:8px}.lb-close,.lb-nav{position:fixed;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.09);color:#fff;cursor:pointer}.lb-close{right:18px;top:18px;width:44px;height:44px;border-radius:50%;font-size:24px}.lb-nav{top:50%;transform:translateY(-50%);width:48px;height:64px;border-radius:13px;font-size:36px}.lb-prev{left:16px}.lb-next{right:16px}
 @media(max-width:900px){.photo-grid{grid-template-columns:repeat(3,1fr)}.video-grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:650px){.gallery-tools{align-items:flex-start;flex-direction:column}.photo-grid{grid-template-columns:repeat(2,1fr);gap:7px}.video-grid{grid-template-columns:1fr}.lb-content{width:94vw}.lb-nav{width:40px;height:54px}.lb-prev{left:6px}.lb-next{right:6px}.lb-meta{align-items:flex-start;flex-direction:column}.lb-actions{width:100%}.lb-actions .btn{flex:1}}
+
+
+.gallery-loading,.gallery-error{
+  grid-column:1/-1;
+  padding:34px 20px;
+  text-align:center;
+  background:#fff;
+  border:1px solid #e4e8ef;
+  border-radius:16px;
+  color:#667085
+}
+.gallery-loading p,.gallery-error p{margin:10px auto 0;max-width:560px;line-height:1.7}
+.gallery-error strong{display:block;color:#071d42;font-family:"Sora",sans-serif;font-size:16px}
+.gallery-error .btn{margin-top:16px}
+.gallery-spinner{
+  width:34px;height:34px;margin:0 auto;
+  border:3px solid #e4e8ef;border-top-color:#f6b81a;
+  border-radius:50%;animation:k15Spin .8s linear infinite
+}
+@keyframes k15Spin{to{transform:rotate(360deg)}}
 
 </style>
 </head>
@@ -137,55 +157,193 @@
 </div>
 
 <footer class="footer">K15 FM · Thanh xuân phát lại<br>Kỷ niệm 10 năm ra trường Sinh viên K15 Học viện Ngân hàng</footer>
-<script src="/assets/js/site-header.js?v=20260809-media-gallery-final"></script>
+<script src="/assets/js/site-header.js?v=20260809-media-api-final"></script>
 <script>
-const PHOTOBOOTH_ITEMS = [{"id": "1K5_kewxLZQ9OqpdYa3gWgw6XY0C_KhR1", "name": "20260809_070625_618.jpg", "type": "image", "thumb": "https://drive.google.com/thumbnail?id=1K5_kewxLZQ9OqpdYa3gWgw6XY0C_KhR1&sz=w900", "view": "https://drive.google.com/file/d/1K5_kewxLZQ9OqpdYa3gWgw6XY0C_KhR1/view", "download": "https://drive.google.com/uc?export=download&id=1K5_kewxLZQ9OqpdYa3gWgw6XY0C_KhR1"}, {"id": "1KRq4TpuAdKFVRSWK5El362X-lUinrEW0", "name": "20260809_070625_618.mp4", "type": "video", "thumb": "", "view": "https://drive.google.com/file/d/1KRq4TpuAdKFVRSWK5El362X-lUinrEW0/view", "download": "https://drive.google.com/uc?export=download&id=1KRq4TpuAdKFVRSWK5El362X-lUinrEW0"}, {"id": "1fL_fCK3OV8Msq3ndxJWjPlM9Dw94-M4u", "name": "20260809_071050_370.jpg", "type": "image", "thumb": "https://drive.google.com/thumbnail?id=1fL_fCK3OV8Msq3ndxJWjPlM9Dw94-M4u&sz=w900", "view": "https://drive.google.com/file/d/1fL_fCK3OV8Msq3ndxJWjPlM9Dw94-M4u/view", "download": "https://drive.google.com/uc?export=download&id=1fL_fCK3OV8Msq3ndxJWjPlM9Dw94-M4u"}, {"id": "1QThW-ED8Sncl1MjPZ3Mz1cB1AZorhlJB", "name": "20260809_071500_762_1x.jpg", "type": "image", "thumb": "https://drive.google.com/thumbnail?id=1QThW-ED8Sncl1MjPZ3Mz1cB1AZorhlJB&sz=w900", "view": "https://drive.google.com/file/d/1QThW-ED8Sncl1MjPZ3Mz1cB1AZorhlJB/view", "download": "https://drive.google.com/uc?export=download&id=1QThW-ED8Sncl1MjPZ3Mz1cB1AZorhlJB"}, {"id": "1SIGVQIYGPzPQgKMnzG8T5lJ7_zHMlUvh", "name": "20260809_071500_762_1x.mp4", "type": "video", "thumb": "", "view": "https://drive.google.com/file/d/1SIGVQIYGPzPQgKMnzG8T5lJ7_zHMlUvh/view", "download": "https://drive.google.com/uc?export=download&id=1SIGVQIYGPzPQgKMnzG8T5lJ7_zHMlUvh"}, {"id": "10n1CFGqC8GAGQUHmgU_ZA7xUal0pKkyK", "name": "20260809_071743_141.jpg", "type": "image", "thumb": "https://drive.google.com/thumbnail?id=10n1CFGqC8GAGQUHmgU_ZA7xUal0pKkyK&sz=w900", "view": "https://drive.google.com/file/d/10n1CFGqC8GAGQUHmgU_ZA7xUal0pKkyK/view", "download": "https://drive.google.com/uc?export=download&id=10n1CFGqC8GAGQUHmgU_ZA7xUal0pKkyK"}, {"id": "1J0o9WIAsxfZm6ukbESqqiAqjMieWpT6T", "name": "20260809_071743_141.mp4", "type": "video", "thumb": "", "view": "https://drive.google.com/file/d/1J0o9WIAsxfZm6ukbESqqiAqjMieWpT6T/view", "download": "https://drive.google.com/uc?export=download&id=1J0o9WIAsxfZm6ukbESqqiAqjMieWpT6T"}, {"id": "1qu0MPQQIQDklJunnrudhu7diKJJFPjaH", "name": "20260809_071848_963.jpg", "type": "image", "thumb": "https://drive.google.com/thumbnail?id=1qu0MPQQIQDklJunnrudhu7diKJJFPjaH&sz=w900", "view": "https://drive.google.com/file/d/1qu0MPQQIQDklJunnrudhu7diKJJFPjaH/view", "download": "https://drive.google.com/uc?export=download&id=1qu0MPQQIQDklJunnrudhu7diKJJFPjaH"}, {"id": "1LbTMuEdVpAhKLG4SG7MyYlANJb6WdFTT", "name": "20260809_072032_467.jpg", "type": "image", "thumb": "https://drive.google.com/thumbnail?id=1LbTMuEdVpAhKLG4SG7MyYlANJb6WdFTT&sz=w900", "view": "https://drive.google.com/file/d/1LbTMuEdVpAhKLG4SG7MyYlANJb6WdFTT/view", "download": "https://drive.google.com/uc?export=download&id=1LbTMuEdVpAhKLG4SG7MyYlANJb6WdFTT"}, {"id": "1MvBTbbBmMfr-NpdbYyGucVibx1v4NlHv", "name": "20260809_072053_811.jpg", "type": "image", "thumb": "https://drive.google.com/thumbnail?id=1MvBTbbBmMfr-NpdbYyGucVibx1v4NlHv&sz=w900", "view": "https://drive.google.com/file/d/1MvBTbbBmMfr-NpdbYyGucVibx1v4NlHv/view", "download": "https://drive.google.com/uc?export=download&id=1MvBTbbBmMfr-NpdbYyGucVibx1v4NlHv"}, {"id": "1SQEKEibSvcqDHlejQrcZ3q3DF0NUnKtK", "name": "20260809_072310_859.jpg", "type": "image", "thumb": "https://drive.google.com/thumbnail?id=1SQEKEibSvcqDHlejQrcZ3q3DF0NUnKtK&sz=w900", "view": "https://drive.google.com/file/d/1SQEKEibSvcqDHlejQrcZ3q3DF0NUnKtK/view", "download": "https://drive.google.com/uc?export=download&id=1SQEKEibSvcqDHlejQrcZ3q3DF0NUnKtK"}, {"id": "1hr8IUOtZs5ZYRc6ra1WsSu9jWfibb5NK", "name": "20260809_072310_859.mp4", "type": "video", "thumb": "", "view": "https://drive.google.com/file/d/1hr8IUOtZs5ZYRc6ra1WsSu9jWfibb5NK/view", "download": "https://drive.google.com/uc?export=download&id=1hr8IUOtZs5ZYRc6ra1WsSu9jWfibb5NK"}, {"id": "18p-dHz3eG-oMXULG7MsyRv8SG4aKN62X", "name": "20260809_072428_951.jpg", "type": "image", "thumb": "https://drive.google.com/thumbnail?id=18p-dHz3eG-oMXULG7MsyRv8SG4aKN62X&sz=w900", "view": "https://drive.google.com/file/d/18p-dHz3eG-oMXULG7MsyRv8SG4aKN62X/view", "download": "https://drive.google.com/uc?export=download&id=18p-dHz3eG-oMXULG7MsyRv8SG4aKN62X"}, {"id": "1I0qIQpMFsqKSrbNmYcNlhzp-qxlQ5riq", "name": "20260809_072428_951.mp4", "type": "video", "thumb": "", "view": "https://drive.google.com/file/d/1I0qIQpMFsqKSrbNmYcNlhzp-qxlQ5riq/view", "download": "https://drive.google.com/uc?export=download&id=1I0qIQpMFsqKSrbNmYcNlhzp-qxlQ5riq"}, {"id": "1PwOW-EKiYW11urBrNVjj59R6wQgYKoN0", "name": "20260809_072526_174.jpg", "type": "image", "thumb": "https://drive.google.com/thumbnail?id=1PwOW-EKiYW11urBrNVjj59R6wQgYKoN0&sz=w900", "view": "https://drive.google.com/file/d/1PwOW-EKiYW11urBrNVjj59R6wQgYKoN0/view", "download": "https://drive.google.com/uc?export=download&id=1PwOW-EKiYW11urBrNVjj59R6wQgYKoN0"}, {"id": "1Y3bM5QrWAwcpr2A_W32n5OBbCdYvQl1i", "name": "20260809_072644_361.jpg", "type": "image", "thumb": "https://drive.google.com/thumbnail?id=1Y3bM5QrWAwcpr2A_W32n5OBbCdYvQl1i&sz=w900", "view": "https://drive.google.com/file/d/1Y3bM5QrWAwcpr2A_W32n5OBbCdYvQl1i/view", "download": "https://drive.google.com/uc?export=download&id=1Y3bM5QrWAwcpr2A_W32n5OBbCdYvQl1i"}, {"id": "1cbjJiuBrczk81e5a8dWAmYHsqdhYrSvG", "name": "20260809_072644_361.mp4", "type": "video", "thumb": "", "view": "https://drive.google.com/file/d/1cbjJiuBrczk81e5a8dWAmYHsqdhYrSvG/view", "download": "https://drive.google.com/uc?export=download&id=1cbjJiuBrczk81e5a8dWAmYHsqdhYrSvG"}, {"id": "1aPC3URZ1a8bOaicTlMxN1ff3YtISXXf_", "name": "20260809_072738_452.jpg", "type": "image", "thumb": "https://drive.google.com/thumbnail?id=1aPC3URZ1a8bOaicTlMxN1ff3YtISXXf_&sz=w900", "view": "https://drive.google.com/file/d/1aPC3URZ1a8bOaicTlMxN1ff3YtISXXf_/view", "download": "https://drive.google.com/uc?export=download&id=1aPC3URZ1a8bOaicTlMxN1ff3YtISXXf_"}, {"id": "1BksHPrauZm5IkHj-dQg3QJjmzvhkY8vK", "name": "20260809_073206_454.jpg", "type": "image", "thumb": "https://drive.google.com/thumbnail?id=1BksHPrauZm5IkHj-dQg3QJjmzvhkY8vK&sz=w900", "view": "https://drive.google.com/file/d/1BksHPrauZm5IkHj-dQg3QJjmzvhkY8vK/view", "download": "https://drive.google.com/uc?export=download&id=1BksHPrauZm5IkHj-dQg3QJjmzvhkY8vK"}, {"id": "1iHIkx38tl0qsILcHpecgt07EaC3hLfMO", "name": "20260809_073206_454.mp4", "type": "video", "thumb": "", "view": "https://drive.google.com/file/d/1iHIkx38tl0qsILcHpecgt07EaC3hLfMO/view", "download": "https://drive.google.com/uc?export=download&id=1iHIkx38tl0qsILcHpecgt07EaC3hLfMO"}, {"id": "1XG3cZLfvxiS89go3pOy8QeRnZoSxF3Pc", "name": "20260809_073304_571.jpg", "type": "image", "thumb": "https://drive.google.com/thumbnail?id=1XG3cZLfvxiS89go3pOy8QeRnZoSxF3Pc&sz=w900", "view": "https://drive.google.com/file/d/1XG3cZLfvxiS89go3pOy8QeRnZoSxF3Pc/view", "download": "https://drive.google.com/uc?export=download&id=1XG3cZLfvxiS89go3pOy8QeRnZoSxF3Pc"}, {"id": "12Me3PQnXpQF42OZ_YNTjYJhse4fQUYiF", "name": "20260809_073326_496.jpg", "type": "image", "thumb": "https://drive.google.com/thumbnail?id=12Me3PQnXpQF42OZ_YNTjYJhse4fQUYiF&sz=w900", "view": "https://drive.google.com/file/d/12Me3PQnXpQF42OZ_YNTjYJhse4fQUYiF/view", "download": "https://drive.google.com/uc?export=download&id=12Me3PQnXpQF42OZ_YNTjYJhse4fQUYiF"}, {"id": "1WKBxbSZkHEu5bWw_ECF0h0Cv1Yyvfe-v", "name": "20260809_073417_646.jpg", "type": "image", "thumb": "https://drive.google.com/thumbnail?id=1WKBxbSZkHEu5bWw_ECF0h0Cv1Yyvfe-v&sz=w900", "view": "https://drive.google.com/file/d/1WKBxbSZkHEu5bWw_ECF0h0Cv1Yyvfe-v/view", "download": "https://drive.google.com/uc?export=download&id=1WKBxbSZkHEu5bWw_ECF0h0Cv1Yyvfe-v"}, {"id": "1DUKFspaxjqn5a_h3-ZIBsqeCVLmjvleM", "name": "20260809_073443_559.jpg", "type": "image", "thumb": "https://drive.google.com/thumbnail?id=1DUKFspaxjqn5a_h3-ZIBsqeCVLmjvleM&sz=w900", "view": "https://drive.google.com/file/d/1DUKFspaxjqn5a_h3-ZIBsqeCVLmjvleM/view", "download": "https://drive.google.com/uc?export=download&id=1DUKFspaxjqn5a_h3-ZIBsqeCVLmjvleM"}, {"id": "1IsnIu68vd9rGwqOgvNrXyyhmxnESIINZ", "name": "20260809_073504_511.jpg", "type": "image", "thumb": "https://drive.google.com/thumbnail?id=1IsnIu68vd9rGwqOgvNrXyyhmxnESIINZ&sz=w900", "view": "https://drive.google.com/file/d/1IsnIu68vd9rGwqOgvNrXyyhmxnESIINZ/view", "download": "https://drive.google.com/uc?export=download&id=1IsnIu68vd9rGwqOgvNrXyyhmxnESIINZ"}, {"id": "1JCYx2oJwPjpQsb6mbVPhW-1XJPt1LuDG", "name": "20260809_073528_009.jpg", "type": "image", "thumb": "https://drive.google.com/thumbnail?id=1JCYx2oJwPjpQsb6mbVPhW-1XJPt1LuDG&sz=w900", "view": "https://drive.google.com/file/d/1JCYx2oJwPjpQsb6mbVPhW-1XJPt1LuDG/view", "download": "https://drive.google.com/uc?export=download&id=1JCYx2oJwPjpQsb6mbVPhW-1XJPt1LuDG"}, {"id": "13dL5unwncl7gVDwwK27kkpS1Ka5pSQ0G", "name": "20260809_073701_167.jpg", "type": "image", "thumb": "https://drive.google.com/thumbnail?id=13dL5unwncl7gVDwwK27kkpS1Ka5pSQ0G&sz=w900", "view": "https://drive.google.com/file/d/13dL5unwncl7gVDwwK27kkpS1Ka5pSQ0G/view", "download": "https://drive.google.com/uc?export=download&id=13dL5unwncl7gVDwwK27kkpS1Ka5pSQ0G"}, {"id": "1lfqZ5brPDGUMFSS5zzcSUH1hquUJYzFv", "name": "20260809_073701_167.mp4", "type": "video", "thumb": "", "view": "https://drive.google.com/file/d/1lfqZ5brPDGUMFSS5zzcSUH1hquUJYzFv/view", "download": "https://drive.google.com/uc?export=download&id=1lfqZ5brPDGUMFSS5zzcSUH1hquUJYzFv"}, {"id": "1T0ZNwBzgePW1dej0aZ-8lP339PmjBxUn", "name": "20260809_073940_728.jpg", "type": "image", "thumb": "https://drive.google.com/thumbnail?id=1T0ZNwBzgePW1dej0aZ-8lP339PmjBxUn&sz=w900", "view": "https://drive.google.com/file/d/1T0ZNwBzgePW1dej0aZ-8lP339PmjBxUn/view", "download": "https://drive.google.com/uc?export=download&id=1T0ZNwBzgePW1dej0aZ-8lP339PmjBxUn"}, {"id": "1XfkhWF_W49YKa_RgSkk4HOFIyhV6zPRy", "name": "20260809_073940_728.mp4", "type": "video", "thumb": "", "view": "https://drive.google.com/file/d/1XfkhWF_W49YKa_RgSkk4HOFIyhV6zPRy/view", "download": "https://drive.google.com/uc?export=download&id=1XfkhWF_W49YKa_RgSkk4HOFIyhV6zPRy"}, {"id": "1R_3pjwSZr6-_KcViKwUebZV2vmRzf6X-", "name": "20260809_074137_961.jpg", "type": "image", "thumb": "https://drive.google.com/thumbnail?id=1R_3pjwSZr6-_KcViKwUebZV2vmRzf6X-&sz=w900", "view": "https://drive.google.com/file/d/1R_3pjwSZr6-_KcViKwUebZV2vmRzf6X-/view", "download": "https://drive.google.com/uc?export=download&id=1R_3pjwSZr6-_KcViKwUebZV2vmRzf6X-"}, {"id": "1MndN2bba7x-y3TjTxaVhcgkqgtXwGZCz", "name": "20260809_074137_961.mp4", "type": "video", "thumb": "", "view": "https://drive.google.com/file/d/1MndN2bba7x-y3TjTxaVhcgkqgtXwGZCz/view", "download": "https://drive.google.com/uc?export=download&id=1MndN2bba7x-y3TjTxaVhcgkqgtXwGZCz"}, {"id": "13WuRK8cX9F-g_hN-2eRtp1GJJjOV9su_", "name": "20260809_074239_466.jpg", "type": "image", "thumb": "https://drive.google.com/thumbnail?id=13WuRK8cX9F-g_hN-2eRtp1GJJjOV9su_&sz=w900", "view": "https://drive.google.com/file/d/13WuRK8cX9F-g_hN-2eRtp1GJJjOV9su_/view", "download": "https://drive.google.com/uc?export=download&id=13WuRK8cX9F-g_hN-2eRtp1GJJjOV9su_"}, {"id": "1HmXq7KWzSPhdAFHX1qxT1eaL0dmqk2DB", "name": "20260809_074300_870.jpg", "type": "image", "thumb": "https://drive.google.com/thumbnail?id=1HmXq7KWzSPhdAFHX1qxT1eaL0dmqk2DB&sz=w900", "view": "https://drive.google.com/file/d/1HmXq7KWzSPhdAFHX1qxT1eaL0dmqk2DB/view", "download": "https://drive.google.com/uc?export=download&id=1HmXq7KWzSPhdAFHX1qxT1eaL0dmqk2DB"}, {"id": "15RlF3xR_5WKeJxtKGcaZNGMY0tDRqFTO", "name": "20260809_074401_634.jpg", "type": "image", "thumb": "https://drive.google.com/thumbnail?id=15RlF3xR_5WKeJxtKGcaZNGMY0tDRqFTO&sz=w900", "view": "https://drive.google.com/file/d/15RlF3xR_5WKeJxtKGcaZNGMY0tDRqFTO/view", "download": "https://drive.google.com/uc?export=download&id=15RlF3xR_5WKeJxtKGcaZNGMY0tDRqFTO"}, {"id": "1_jyukBaGzbsFyKT1wm9YCtfVDjzLU54z", "name": "20260809_074529_555.jpg", "type": "image", "thumb": "https://drive.google.com/thumbnail?id=1_jyukBaGzbsFyKT1wm9YCtfVDjzLU54z&sz=w900", "view": "https://drive.google.com/file/d/1_jyukBaGzbsFyKT1wm9YCtfVDjzLU54z/view", "download": "https://drive.google.com/uc?export=download&id=1_jyukBaGzbsFyKT1wm9YCtfVDjzLU54z"}, {"id": "130wZj4E3qLdtr7j71eBBERQPISeA6Cwf", "name": "20260809_074529_555.mp4", "type": "video", "thumb": "", "view": "https://drive.google.com/file/d/130wZj4E3qLdtr7j71eBBERQPISeA6Cwf/view", "download": "https://drive.google.com/uc?export=download&id=130wZj4E3qLdtr7j71eBBERQPISeA6Cwf"}, {"id": "1gv5ZVeqe768146fINZA9HqS4ElboMn9J", "name": "20260809_074620_397.jpg", "type": "image", "thumb": "https://drive.google.com/thumbnail?id=1gv5ZVeqe768146fINZA9HqS4ElboMn9J&sz=w900", "view": "https://drive.google.com/file/d/1gv5ZVeqe768146fINZA9HqS4ElboMn9J/view", "download": "https://drive.google.com/uc?export=download&id=1gv5ZVeqe768146fINZA9HqS4ElboMn9J"}, {"id": "1Ffk3oQMzuovKoEGUosNo2SLt9sOxXipW", "name": "20260809_074805_778.jpg", "type": "image", "thumb": "https://drive.google.com/thumbnail?id=1Ffk3oQMzuovKoEGUosNo2SLt9sOxXipW&sz=w900", "view": "https://drive.google.com/file/d/1Ffk3oQMzuovKoEGUosNo2SLt9sOxXipW/view", "download": "https://drive.google.com/uc?export=download&id=1Ffk3oQMzuovKoEGUosNo2SLt9sOxXipW"}, {"id": "1hYpSt-KTfdx9pZfnT-VbZV0mmP7I6ko5", "name": "20260809_074901_725.jpg", "type": "image", "thumb": "https://drive.google.com/thumbnail?id=1hYpSt-KTfdx9pZfnT-VbZV0mmP7I6ko5&sz=w900", "view": "https://drive.google.com/file/d/1hYpSt-KTfdx9pZfnT-VbZV0mmP7I6ko5/view", "download": "https://drive.google.com/uc?export=download&id=1hYpSt-KTfdx9pZfnT-VbZV0mmP7I6ko5"}, {"id": "1lX61aw9BfPZc5z0rU4LQ-WxF9K_S-jjt", "name": "20260809_074949_780.jpg", "type": "image", "thumb": "https://drive.google.com/thumbnail?id=1lX61aw9BfPZc5z0rU4LQ-WxF9K_S-jjt&sz=w900", "view": "https://drive.google.com/file/d/1lX61aw9BfPZc5z0rU4LQ-WxF9K_S-jjt/view", "download": "https://drive.google.com/uc?export=download&id=1lX61aw9BfPZc5z0rU4LQ-WxF9K_S-jjt"}, {"id": "1pspO0HNVJH23Qxnd8gScm5thQ-hzk4BT", "name": "20260809_075033_663.jpg", "type": "image", "thumb": "https://drive.google.com/thumbnail?id=1pspO0HNVJH23Qxnd8gScm5thQ-hzk4BT&sz=w900", "view": "https://drive.google.com/file/d/1pspO0HNVJH23Qxnd8gScm5thQ-hzk4BT/view", "download": "https://drive.google.com/uc?export=download&id=1pspO0HNVJH23Qxnd8gScm5thQ-hzk4BT"}, {"id": "1rRas-NF_lclKbiQfKOm6B2ORiF4S-4T3", "name": "20260809_075135_756.jpg", "type": "image", "thumb": "https://drive.google.com/thumbnail?id=1rRas-NF_lclKbiQfKOm6B2ORiF4S-4T3&sz=w900", "view": "https://drive.google.com/file/d/1rRas-NF_lclKbiQfKOm6B2ORiF4S-4T3/view", "download": "https://drive.google.com/uc?export=download&id=1rRas-NF_lclKbiQfKOm6B2ORiF4S-4T3"}, {"id": "1epGJ31ZLhYmwEeU89Yxhfh_IHPyAE7x6", "name": "20260809_075221_822.jpg", "type": "image", "thumb": "https://drive.google.com/thumbnail?id=1epGJ31ZLhYmwEeU89Yxhfh_IHPyAE7x6&sz=w900", "view": "https://drive.google.com/file/d/1epGJ31ZLhYmwEeU89Yxhfh_IHPyAE7x6/view", "download": "https://drive.google.com/uc?export=download&id=1epGJ31ZLhYmwEeU89Yxhfh_IHPyAE7x6"}, {"id": "16qM-o5lFzNiNZlmgchGpqg_5QiF_gzik", "name": "20260809_075420_742.jpg", "type": "image", "thumb": "https://drive.google.com/thumbnail?id=16qM-o5lFzNiNZlmgchGpqg_5QiF_gzik&sz=w900", "view": "https://drive.google.com/file/d/16qM-o5lFzNiNZlmgchGpqg_5QiF_gzik/view", "download": "https://drive.google.com/uc?export=download&id=16qM-o5lFzNiNZlmgchGpqg_5QiF_gzik"}, {"id": "12pS6oJdcL3vCTJQ4LMmfxEXMTokufK_-", "name": "20260809_075420_742.mp4", "type": "video", "thumb": "", "view": "https://drive.google.com/file/d/12pS6oJdcL3vCTJQ4LMmfxEXMTokufK_-/view", "download": "https://drive.google.com/uc?export=download&id=12pS6oJdcL3vCTJQ4LMmfxEXMTokufK_-"}, {"id": "1HSGjHLsbXQBRJU1hInFx7EPbAMmV8tNu", "name": "20260809_075549_028.jpg", "type": "image", "thumb": "https://drive.google.com/thumbnail?id=1HSGjHLsbXQBRJU1hInFx7EPbAMmV8tNu&sz=w900", "view": "https://drive.google.com/file/d/1HSGjHLsbXQBRJU1hInFx7EPbAMmV8tNu/view", "download": "https://drive.google.com/uc?export=download&id=1HSGjHLsbXQBRJU1hInFx7EPbAMmV8tNu"}, {"id": "1T2kBxaPqmtJUkXxvENTk-r6eibzMIwcP", "name": "20260809_075624_853.jpg", "type": "image", "thumb": "https://drive.google.com/thumbnail?id=1T2kBxaPqmtJUkXxvENTk-r6eibzMIwcP&sz=w900", "view": "https://drive.google.com/file/d/1T2kBxaPqmtJUkXxvENTk-r6eibzMIwcP/view", "download": "https://drive.google.com/uc?export=download&id=1T2kBxaPqmtJUkXxvENTk-r6eibzMIwcP"}, {"id": "1XMHuweDB2vnbUBBR5KJQr4LwULdl1x6W", "name": "20260809_075718_523.jpg", "type": "image", "thumb": "https://drive.google.com/thumbnail?id=1XMHuweDB2vnbUBBR5KJQr4LwULdl1x6W&sz=w900", "view": "https://drive.google.com/file/d/1XMHuweDB2vnbUBBR5KJQr4LwULdl1x6W/view", "download": "https://drive.google.com/uc?export=download&id=1XMHuweDB2vnbUBBR5KJQr4LwULdl1x6W"}, {"id": "1Cn0iHPOtXIPgcN2i7SDuQOfv4gRcuWiD", "name": "20260809_080229_730.jpg", "type": "image", "thumb": "https://drive.google.com/thumbnail?id=1Cn0iHPOtXIPgcN2i7SDuQOfv4gRcuWiD&sz=w900", "view": "https://drive.google.com/file/d/1Cn0iHPOtXIPgcN2i7SDuQOfv4gRcuWiD/view", "download": "https://drive.google.com/uc?export=download&id=1Cn0iHPOtXIPgcN2i7SDuQOfv4gRcuWiD"}, {"id": "19FtHhf2drjzapVhorO_ZI5lKWnO5OaW0", "name": "20260809_080229_730.mp4", "type": "video", "thumb": "", "view": "https://drive.google.com/file/d/19FtHhf2drjzapVhorO_ZI5lKWnO5OaW0/view", "download": "https://drive.google.com/uc?export=download&id=19FtHhf2drjzapVhorO_ZI5lKWnO5OaW0"}, {"id": "1JxNoX_6Kf7D7Zn4wwJrXyVyNULG7J9Uv", "name": "20260809_080446_178.jpg", "type": "image", "thumb": "https://drive.google.com/thumbnail?id=1JxNoX_6Kf7D7Zn4wwJrXyVyNULG7J9Uv&sz=w900", "view": "https://drive.google.com/file/d/1JxNoX_6Kf7D7Zn4wwJrXyVyNULG7J9Uv/view", "download": "https://drive.google.com/uc?export=download&id=1JxNoX_6Kf7D7Zn4wwJrXyVyNULG7J9Uv"}, {"id": "1NfzPLjGNXolXc7nGfbXMgPVBplBzc0oR", "name": "20260809_080446_178.mp4", "type": "video", "thumb": "", "view": "https://drive.google.com/file/d/1NfzPLjGNXolXc7nGfbXMgPVBplBzc0oR/view", "download": "https://drive.google.com/uc?export=download&id=1NfzPLjGNXolXc7nGfbXMgPVBplBzc0oR"}, {"id": "1GBhRnKeNmVcpVHMN5fywsWGsAS39eFUV", "name": "20260809_080543_034.jpg", "type": "image", "thumb": "https://drive.google.com/thumbnail?id=1GBhRnKeNmVcpVHMN5fywsWGsAS39eFUV&sz=w900", "view": "https://drive.google.com/file/d/1GBhRnKeNmVcpVHMN5fywsWGsAS39eFUV/view", "download": "https://drive.google.com/uc?export=download&id=1GBhRnKeNmVcpVHMN5fywsWGsAS39eFUV"}, {"id": "1yTaqJhPlqcQ_HLToTQw_yeer50HJZ5iD", "name": "20260809_080851_168.jpg", "type": "image", "thumb": "https://drive.google.com/thumbnail?id=1yTaqJhPlqcQ_HLToTQw_yeer50HJZ5iD&sz=w900", "view": "https://drive.google.com/file/d/1yTaqJhPlqcQ_HLToTQw_yeer50HJZ5iD/view", "download": "https://drive.google.com/uc?export=download&id=1yTaqJhPlqcQ_HLToTQw_yeer50HJZ5iD"}, {"id": "1esGhtQ0ByFB0_QsCEuTU9A4-RKMawWLD", "name": "20260809_080851_168.mp4", "type": "video", "thumb": "", "view": "https://drive.google.com/file/d/1esGhtQ0ByFB0_QsCEuTU9A4-RKMawWLD/view", "download": "https://drive.google.com/uc?export=download&id=1esGhtQ0ByFB0_QsCEuTU9A4-RKMawWLD"}, {"id": "1dv4_QROZunQUyMXH4o-3xQLKU9apiprh", "name": "20260809_081021_231.jpg", "type": "image", "thumb": "https://drive.google.com/thumbnail?id=1dv4_QROZunQUyMXH4o-3xQLKU9apiprh&sz=w900", "view": "https://drive.google.com/file/d/1dv4_QROZunQUyMXH4o-3xQLKU9apiprh/view", "download": "https://drive.google.com/uc?export=download&id=1dv4_QROZunQUyMXH4o-3xQLKU9apiprh"}, {"id": "1N89PMTZG_yLj7g-lqriKiwehFY5opyoo", "name": "20260809_081042_976.jpg", "type": "image", "thumb": "https://drive.google.com/thumbnail?id=1N89PMTZG_yLj7g-lqriKiwehFY5opyoo&sz=w900", "view": "https://drive.google.com/file/d/1N89PMTZG_yLj7g-lqriKiwehFY5opyoo/view", "download": "https://drive.google.com/uc?export=download&id=1N89PMTZG_yLj7g-lqriKiwehFY5opyoo"}, {"id": "1sQeS96jiClGCbUd2KuIahWKospr4OOOx", "name": "20260809_081137_365.jpg", "type": "image", "thumb": "https://drive.google.com/thumbnail?id=1sQeS96jiClGCbUd2KuIahWKospr4OOOx&sz=w900", "view": "https://drive.google.com/file/d/1sQeS96jiClGCbUd2KuIahWKospr4OOOx/view", "download": "https://drive.google.com/uc?export=download&id=1sQeS96jiClGCbUd2KuIahWKospr4OOOx"}, {"id": "1DwVl0Fd4A_X5sndXFzsYj24enicrakDl", "name": "20260809_081201_053.jpg", "type": "image", "thumb": "https://drive.google.com/thumbnail?id=1DwVl0Fd4A_X5sndXFzsYj24enicrakDl&sz=w900", "view": "https://drive.google.com/file/d/1DwVl0Fd4A_X5sndXFzsYj24enicrakDl/view", "download": "https://drive.google.com/uc?export=download&id=1DwVl0Fd4A_X5sndXFzsYj24enicrakDl"}, {"id": "1X-vzpE9_yCqzycs2uuonAawLNMVWbfgE", "name": "20260809_081301_812.jpg", "type": "image", "thumb": "https://drive.google.com/thumbnail?id=1X-vzpE9_yCqzycs2uuonAawLNMVWbfgE&sz=w900", "view": "https://drive.google.com/file/d/1X-vzpE9_yCqzycs2uuonAawLNMVWbfgE/view", "download": "https://drive.google.com/uc?export=download&id=1X-vzpE9_yCqzycs2uuonAawLNMVWbfgE"}, {"id": "1e5iIKqFGz4HpmR0vNWsbPwu9BoQx_qHE", "name": "20260809_081326_869.jpg", "type": "image", "thumb": "https://drive.google.com/thumbnail?id=1e5iIKqFGz4HpmR0vNWsbPwu9BoQx_qHE&sz=w900", "view": "https://drive.google.com/file/d/1e5iIKqFGz4HpmR0vNWsbPwu9BoQx_qHE/view", "download": "https://drive.google.com/uc?export=download&id=1e5iIKqFGz4HpmR0vNWsbPwu9BoQx_qHE"}, {"id": "1TUiPk0oVL6xawameoDwAIH3KF0KeopDt", "name": "20260809_081514_868.jpg", "type": "image", "thumb": "https://drive.google.com/thumbnail?id=1TUiPk0oVL6xawameoDwAIH3KF0KeopDt&sz=w900", "view": "https://drive.google.com/file/d/1TUiPk0oVL6xawameoDwAIH3KF0KeopDt/view", "download": "https://drive.google.com/uc?export=download&id=1TUiPk0oVL6xawameoDwAIH3KF0KeopDt"}, {"id": "17hd_3n1iXXWWvFs_9hubiEILnx4mWPfH", "name": "20260809_081905_920.jpg", "type": "image", "thumb": "https://drive.google.com/thumbnail?id=17hd_3n1iXXWWvFs_9hubiEILnx4mWPfH&sz=w900", "view": "https://drive.google.com/file/d/17hd_3n1iXXWWvFs_9hubiEILnx4mWPfH/view", "download": "https://drive.google.com/uc?export=download&id=17hd_3n1iXXWWvFs_9hubiEILnx4mWPfH"}, {"id": "1igJOJMXxioEfCTOeI74Yzr5eZcyTFnbv", "name": "20260809_081905_920.mp4", "type": "video", "thumb": "", "view": "https://drive.google.com/file/d/1igJOJMXxioEfCTOeI74Yzr5eZcyTFnbv/view", "download": "https://drive.google.com/uc?export=download&id=1igJOJMXxioEfCTOeI74Yzr5eZcyTFnbv"}, {"id": "1OgK5LsvM0y7SE_1a3R6t7rkthMkWBlXz", "name": "20260809_082025_151.jpg", "type": "image", "thumb": "https://drive.google.com/thumbnail?id=1OgK5LsvM0y7SE_1a3R6t7rkthMkWBlXz&sz=w900", "view": "https://drive.google.com/file/d/1OgK5LsvM0y7SE_1a3R6t7rkthMkWBlXz/view", "download": "https://drive.google.com/uc?export=download&id=1OgK5LsvM0y7SE_1a3R6t7rkthMkWBlXz"}, {"id": "1IiUf0Avn1FGD05Tp6UGqreMVEp-kyyBm", "name": "20260809_082058_964.jpg", "type": "image", "thumb": "https://drive.google.com/thumbnail?id=1IiUf0Avn1FGD05Tp6UGqreMVEp-kyyBm&sz=w900", "view": "https://drive.google.com/file/d/1IiUf0Avn1FGD05Tp6UGqreMVEp-kyyBm/view", "download": "https://drive.google.com/uc?export=download&id=1IiUf0Avn1FGD05Tp6UGqreMVEp-kyyBm"}, {"id": "1G4Ese9PVDHqxXCoQmKNEakLPNmBOOpku", "name": "20260809_082259_564.jpg", "type": "image", "thumb": "https://drive.google.com/thumbnail?id=1G4Ese9PVDHqxXCoQmKNEakLPNmBOOpku&sz=w900", "view": "https://drive.google.com/file/d/1G4Ese9PVDHqxXCoQmKNEakLPNmBOOpku/view", "download": "https://drive.google.com/uc?export=download&id=1G4Ese9PVDHqxXCoQmKNEakLPNmBOOpku"}, {"id": "1JYKpd1--UrrVpzIrMFus_mBVev9i_ipU", "name": "20260809_082321_225.jpg", "type": "image", "thumb": "https://drive.google.com/thumbnail?id=1JYKpd1--UrrVpzIrMFus_mBVev9i_ipU&sz=w900", "view": "https://drive.google.com/file/d/1JYKpd1--UrrVpzIrMFus_mBVev9i_ipU/view", "download": "https://drive.google.com/uc?export=download&id=1JYKpd1--UrrVpzIrMFus_mBVev9i_ipU"}, {"id": "10rTFtvTz6gnc433_3bI5yIg_3MHYqdae", "name": "20260809_082342_034.jpg", "type": "image", "thumb": "https://drive.google.com/thumbnail?id=10rTFtvTz6gnc433_3bI5yIg_3MHYqdae&sz=w900", "view": "https://drive.google.com/file/d/10rTFtvTz6gnc433_3bI5yIg_3MHYqdae/view", "download": "https://drive.google.com/uc?export=download&id=10rTFtvTz6gnc433_3bI5yIg_3MHYqdae"}, {"id": "1gVII-USDqiRQJsZVmXyBqqhj1j8t_j8H", "name": "20260809_082402_925.jpg", "type": "image", "thumb": "https://drive.google.com/thumbnail?id=1gVII-USDqiRQJsZVmXyBqqhj1j8t_j8H&sz=w900", "view": "https://drive.google.com/file/d/1gVII-USDqiRQJsZVmXyBqqhj1j8t_j8H/view", "download": "https://drive.google.com/uc?export=download&id=1gVII-USDqiRQJsZVmXyBqqhj1j8t_j8H"}, {"id": "1zKexhajFa6KHPPEimxYrtzp8-LnEbOoT", "name": "20260809_082433_540.jpg", "type": "image", "thumb": "https://drive.google.com/thumbnail?id=1zKexhajFa6KHPPEimxYrtzp8-LnEbOoT&sz=w900", "view": "https://drive.google.com/file/d/1zKexhajFa6KHPPEimxYrtzp8-LnEbOoT/view", "download": "https://drive.google.com/uc?export=download&id=1zKexhajFa6KHPPEimxYrtzp8-LnEbOoT"}, {"id": "1ji3Nou-o6E3pHAY3P1MaDwF9kGENCGVT", "name": "20260809_082615_872.jpg", "type": "image", "thumb": "https://drive.google.com/thumbnail?id=1ji3Nou-o6E3pHAY3P1MaDwF9kGENCGVT&sz=w900", "view": "https://drive.google.com/file/d/1ji3Nou-o6E3pHAY3P1MaDwF9kGENCGVT/view", "download": "https://drive.google.com/uc?export=download&id=1ji3Nou-o6E3pHAY3P1MaDwF9kGENCGVT"}, {"id": "1W7tI1xMO4ezsKi1tsAqpnXhxMjwVQpAD", "name": "20260809_082615_872.mp4", "type": "video", "thumb": "", "view": "https://drive.google.com/file/d/1W7tI1xMO4ezsKi1tsAqpnXhxMjwVQpAD/view", "download": "https://drive.google.com/uc?export=download&id=1W7tI1xMO4ezsKi1tsAqpnXhxMjwVQpAD"}, {"id": "1UTODnXB_fhQKNCDZlLJAs-FI2eh2L8Rv", "name": "20260809_082836_217.jpg", "type": "image", "thumb": "https://drive.google.com/thumbnail?id=1UTODnXB_fhQKNCDZlLJAs-FI2eh2L8Rv&sz=w900", "view": "https://drive.google.com/file/d/1UTODnXB_fhQKNCDZlLJAs-FI2eh2L8Rv/view", "download": "https://drive.google.com/uc?export=download&id=1UTODnXB_fhQKNCDZlLJAs-FI2eh2L8Rv"}, {"id": "1LNBi2yuRR4KT3EPC5N9wr6z3QKPyeEe4", "name": "20260809_082857_490.jpg", "type": "image", "thumb": "https://drive.google.com/thumbnail?id=1LNBi2yuRR4KT3EPC5N9wr6z3QKPyeEe4&sz=w900", "view": "https://drive.google.com/file/d/1LNBi2yuRR4KT3EPC5N9wr6z3QKPyeEe4/view", "download": "https://drive.google.com/uc?export=download&id=1LNBi2yuRR4KT3EPC5N9wr6z3QKPyeEe4"}, {"id": "1W-ArabCNYIS3uiILaGcF9Ids3nzjgoyP", "name": "20260809_083007_889.jpg", "type": "image", "thumb": "https://drive.google.com/thumbnail?id=1W-ArabCNYIS3uiILaGcF9Ids3nzjgoyP&sz=w900", "view": "https://drive.google.com/file/d/1W-ArabCNYIS3uiILaGcF9Ids3nzjgoyP/view", "download": "https://drive.google.com/uc?export=download&id=1W-ArabCNYIS3uiILaGcF9Ids3nzjgoyP"}, {"id": "14Bs8pmkGxZLVIhDHR_EFgP4oBN8niI9O", "name": "20260809_083032_287.jpg", "type": "image", "thumb": "https://drive.google.com/thumbnail?id=14Bs8pmkGxZLVIhDHR_EFgP4oBN8niI9O&sz=w900", "view": "https://drive.google.com/file/d/14Bs8pmkGxZLVIhDHR_EFgP4oBN8niI9O/view", "download": "https://drive.google.com/uc?export=download&id=14Bs8pmkGxZLVIhDHR_EFgP4oBN8niI9O"}, {"id": "1sR0U7bkrNew6UVEwMryVJ1T8e-Q3CILX", "name": "20260809_083054_990.jpg", "type": "image", "thumb": "https://drive.google.com/thumbnail?id=1sR0U7bkrNew6UVEwMryVJ1T8e-Q3CILX&sz=w900", "view": "https://drive.google.com/file/d/1sR0U7bkrNew6UVEwMryVJ1T8e-Q3CILX/view", "download": "https://drive.google.com/uc?export=download&id=1sR0U7bkrNew6UVEwMryVJ1T8e-Q3CILX"}, {"id": "1D4z9Cb7V_Csxi_w421R6ineEBZz_-hpO", "name": "20260809_083220_402.jpg", "type": "image", "thumb": "https://drive.google.com/thumbnail?id=1D4z9Cb7V_Csxi_w421R6ineEBZz_-hpO&sz=w900", "view": "https://drive.google.com/file/d/1D4z9Cb7V_Csxi_w421R6ineEBZz_-hpO/view", "download": "https://drive.google.com/uc?export=download&id=1D4z9Cb7V_Csxi_w421R6ineEBZz_-hpO"}, {"id": "14ohWmyRnJpjpVV2C_1cMuSOeygfYeNvZ", "name": "20260809_083220_402.mp4", "type": "video", "thumb": "", "view": "https://drive.google.com/file/d/14ohWmyRnJpjpVV2C_1cMuSOeygfYeNvZ/view", "download": "https://drive.google.com/uc?export=download&id=14ohWmyRnJpjpVV2C_1cMuSOeygfYeNvZ"}, {"id": "1kQYZygWMpiK-SnBmk7ghUHMpGd9aElRK", "name": "20260809_083521_898.jpg", "type": "image", "thumb": "https://drive.google.com/thumbnail?id=1kQYZygWMpiK-SnBmk7ghUHMpGd9aElRK&sz=w900", "view": "https://drive.google.com/file/d/1kQYZygWMpiK-SnBmk7ghUHMpGd9aElRK/view", "download": "https://drive.google.com/uc?export=download&id=1kQYZygWMpiK-SnBmk7ghUHMpGd9aElRK"}, {"id": "18Qg8Z8Vf1f-1AElsgSDsTdyFXCHyLH1l", "name": "20260809_083521_898.mp4", "type": "video", "thumb": "", "view": "https://drive.google.com/file/d/18Qg8Z8Vf1f-1AElsgSDsTdyFXCHyLH1l/view", "download": "https://drive.google.com/uc?export=download&id=18Qg8Z8Vf1f-1AElsgSDsTdyFXCHyLH1l"}, {"id": "1ecPSWPO0_Lj-mKaGF4kaaJoABzM6sylF", "name": "20260809_083712_621.jpg", "type": "image", "thumb": "https://drive.google.com/thumbnail?id=1ecPSWPO0_Lj-mKaGF4kaaJoABzM6sylF&sz=w900", "view": "https://drive.google.com/file/d/1ecPSWPO0_Lj-mKaGF4kaaJoABzM6sylF/view", "download": "https://drive.google.com/uc?export=download&id=1ecPSWPO0_Lj-mKaGF4kaaJoABzM6sylF"}, {"id": "17CsFpW6h07LVlJ9B-jP-cvWVWAXiq8sR", "name": "20260809_083712_621.mp4", "type": "video", "thumb": "", "view": "https://drive.google.com/file/d/17CsFpW6h07LVlJ9B-jP-cvWVWAXiq8sR/view", "download": "https://drive.google.com/uc?export=download&id=17CsFpW6h07LVlJ9B-jP-cvWVWAXiq8sR"}, {"id": "1PALYXSyDhGQE_tWrjB7-A-VxQUl1iT4T", "name": "20260809_083806_486.jpg", "type": "image", "thumb": "https://drive.google.com/thumbnail?id=1PALYXSyDhGQE_tWrjB7-A-VxQUl1iT4T&sz=w900", "view": "https://drive.google.com/file/d/1PALYXSyDhGQE_tWrjB7-A-VxQUl1iT4T/view", "download": "https://drive.google.com/uc?export=download&id=1PALYXSyDhGQE_tWrjB7-A-VxQUl1iT4T"}, {"id": "1xO3knSHJetzC61mmAGTzJ-F3lwi4H_N5", "name": "20260809_083833_355.jpg", "type": "image", "thumb": "https://drive.google.com/thumbnail?id=1xO3knSHJetzC61mmAGTzJ-F3lwi4H_N5&sz=w900", "view": "https://drive.google.com/file/d/1xO3knSHJetzC61mmAGTzJ-F3lwi4H_N5/view", "download": "https://drive.google.com/uc?export=download&id=1xO3knSHJetzC61mmAGTzJ-F3lwi4H_N5"}, {"id": "1vbOKhiSFMDG2Uwq2dsFOVidMyiwxmDDV", "name": "20260809_083856_231.jpg", "type": "image", "thumb": "https://drive.google.com/thumbnail?id=1vbOKhiSFMDG2Uwq2dsFOVidMyiwxmDDV&sz=w900", "view": "https://drive.google.com/file/d/1vbOKhiSFMDG2Uwq2dsFOVidMyiwxmDDV/view", "download": "https://drive.google.com/uc?export=download&id=1vbOKhiSFMDG2Uwq2dsFOVidMyiwxmDDV"}, {"id": "13Mgv3BubGUlA931SaTqLHi101EyhvU0F", "name": "20260809_083920_220.jpg", "type": "image", "thumb": "https://drive.google.com/thumbnail?id=13Mgv3BubGUlA931SaTqLHi101EyhvU0F&sz=w900", "view": "https://drive.google.com/file/d/13Mgv3BubGUlA931SaTqLHi101EyhvU0F/view", "download": "https://drive.google.com/uc?export=download&id=13Mgv3BubGUlA931SaTqLHi101EyhvU0F"}, {"id": "1LlQEO3r0GDqxNc5kCloknmcv67-Uz_zk", "name": "20260809_084053_532.jpg", "type": "image", "thumb": "https://drive.google.com/thumbnail?id=1LlQEO3r0GDqxNc5kCloknmcv67-Uz_zk&sz=w900", "view": "https://drive.google.com/file/d/1LlQEO3r0GDqxNc5kCloknmcv67-Uz_zk/view", "download": "https://drive.google.com/uc?export=download&id=1LlQEO3r0GDqxNc5kCloknmcv67-Uz_zk"}, {"id": "1qTZg1a_IDU03Uec4ghkrymDZpR4xe0Z8", "name": "20260809_084053_532.mp4", "type": "video", "thumb": "", "view": "https://drive.google.com/file/d/1qTZg1a_IDU03Uec4ghkrymDZpR4xe0Z8/view", "download": "https://drive.google.com/uc?export=download&id=1qTZg1a_IDU03Uec4ghkrymDZpR4xe0Z8"}, {"id": "1lQFROoo2NxFSxgq9pZ7zXaSXMOGTvhde", "name": "20260809_084231_525.jpg", "type": "image", "thumb": "https://drive.google.com/thumbnail?id=1lQFROoo2NxFSxgq9pZ7zXaSXMOGTvhde&sz=w900", "view": "https://drive.google.com/file/d/1lQFROoo2NxFSxgq9pZ7zXaSXMOGTvhde/view", "download": "https://drive.google.com/uc?export=download&id=1lQFROoo2NxFSxgq9pZ7zXaSXMOGTvhde"}, {"id": "1CT_BJiX-bei3dEgk_SsTUNlkT-h4tIpJ", "name": "20260809_084252_101.jpg", "type": "image", "thumb": "https://drive.google.com/thumbnail?id=1CT_BJiX-bei3dEgk_SsTUNlkT-h4tIpJ&sz=w900", "view": "https://drive.google.com/file/d/1CT_BJiX-bei3dEgk_SsTUNlkT-h4tIpJ/view", "download": "https://drive.google.com/uc?export=download&id=1CT_BJiX-bei3dEgk_SsTUNlkT-h4tIpJ"}, {"id": "19d6u9mDqF8RLov2cD6ITgbNrv2ChM0dB", "name": "20260809_084313_939.jpg", "type": "image", "thumb": "https://drive.google.com/thumbnail?id=19d6u9mDqF8RLov2cD6ITgbNrv2ChM0dB&sz=w900", "view": "https://drive.google.com/file/d/19d6u9mDqF8RLov2cD6ITgbNrv2ChM0dB/view", "download": "https://drive.google.com/uc?export=download&id=19d6u9mDqF8RLov2cD6ITgbNrv2ChM0dB"}, {"id": "17uWNtfatw6iFhcBM_cpu1bCqgc1J-vKC", "name": "20260809_084436_074.jpg", "type": "image", "thumb": "https://drive.google.com/thumbnail?id=17uWNtfatw6iFhcBM_cpu1bCqgc1J-vKC&sz=w900", "view": "https://drive.google.com/file/d/17uWNtfatw6iFhcBM_cpu1bCqgc1J-vKC/view", "download": "https://drive.google.com/uc?export=download&id=17uWNtfatw6iFhcBM_cpu1bCqgc1J-vKC"}, {"id": "1kfzjfoMU52_TvqXVxbB6t74V8ZVQL45z", "name": "20260809_084436_074.mp4", "type": "video", "thumb": "", "view": "https://drive.google.com/file/d/1kfzjfoMU52_TvqXVxbB6t74V8ZVQL45z/view", "download": "https://drive.google.com/uc?export=download&id=1kfzjfoMU52_TvqXVxbB6t74V8ZVQL45z"}, {"id": "12bVYlbvvD02weH6_0s2aMagRd_5OaAMX", "name": "20260809_084533_370.jpg", "type": "image", "thumb": "https://drive.google.com/thumbnail?id=12bVYlbvvD02weH6_0s2aMagRd_5OaAMX&sz=w900", "view": "https://drive.google.com/file/d/12bVYlbvvD02weH6_0s2aMagRd_5OaAMX/view", "download": "https://drive.google.com/uc?export=download&id=12bVYlbvvD02weH6_0s2aMagRd_5OaAMX"}, {"id": "15xsdznhSnwQioXSw1MNNgtbpHm8pyvHC", "name": "20260809_084554_937.jpg", "type": "image", "thumb": "https://drive.google.com/thumbnail?id=15xsdznhSnwQioXSw1MNNgtbpHm8pyvHC&sz=w900", "view": "https://drive.google.com/file/d/15xsdznhSnwQioXSw1MNNgtbpHm8pyvHC/view", "download": "https://drive.google.com/uc?export=download&id=15xsdznhSnwQioXSw1MNNgtbpHm8pyvHC"}, {"id": "1lC1MuZy4mAYtPYw-msQCUTpjm5-fj3eT", "name": "20260809_084642_510.jpg", "type": "image", "thumb": "https://drive.google.com/thumbnail?id=1lC1MuZy4mAYtPYw-msQCUTpjm5-fj3eT&sz=w900", "view": "https://drive.google.com/file/d/1lC1MuZy4mAYtPYw-msQCUTpjm5-fj3eT/view", "download": "https://drive.google.com/uc?export=download&id=1lC1MuZy4mAYtPYw-msQCUTpjm5-fj3eT"}, {"id": "11KWgIvCP-8dJaewm-UkHwavt9rlBh_ui", "name": "20260809_084706_859.jpg", "type": "image", "thumb": "https://drive.google.com/thumbnail?id=11KWgIvCP-8dJaewm-UkHwavt9rlBh_ui&sz=w900", "view": "https://drive.google.com/file/d/11KWgIvCP-8dJaewm-UkHwavt9rlBh_ui/view", "download": "https://drive.google.com/uc?export=download&id=11KWgIvCP-8dJaewm-UkHwavt9rlBh_ui"}];
+const MEDIA_API_URL = "https://script.google.com/macros/s/AKfycbxKK68exvmpy4ob1GXF4E42FMfalVzap3R2HwNi8zj_ZQttF9NHY6UVk4EtzqWRIe8b/exec";
+const PHOTOBOOTH_DRIVE_URL = "https://drive.google.com/drive/u/0/folders/1Df-eb1bueh1vVP2pQXXT4wqtjjbVIJ6T";
+const UPLOAD_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSd8YAUmHpNYTHK5HhW0391wwBun_IYbXJ5GayD4aAsgf2oerQ/viewform?usp=publish-editor";
 
 const PHOTO_BATCH = 18;
-let photoVisible = PHOTO_BATCH;
 
-const photos = PHOTOBOOTH_ITEMS.filter(x => x.type === "image");
-const videos = PHOTOBOOTH_ITEMS.filter(x => x.type === "video");
+let PHOTOBOOTH_ITEMS = [];
+let photos = [];
+let videos = [];
+let photoVisible = PHOTO_BATCH;
+let lightboxIndex = 0;
 
 const photoGrid = document.getElementById("photoboothGrid");
 const showMoreBtn = document.getElementById("showMoreBtn");
 const photoCount = document.getElementById("photoCount");
 const videoStrip = document.getElementById("photoboothVideos");
 
-let lightboxIndex = 0;
+function escapeHtml(value) {
+  return String(value || "")
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
+}
 
-function renderPhotos(){
-  if(!photoGrid) return;
+function normalizeItem(item) {
+  const id = String(item.id || "").trim();
+  const type = String(item.type || "").toLowerCase();
+
+  return {
+    id,
+    name: String(item.name || "K15 FM"),
+    type,
+    thumbnail:
+      item.thumbnail ||
+      (type === "image"
+        ? "https://drive.google.com/thumbnail?id=" + encodeURIComponent(id) + "&sz=w1200"
+        : ""),
+    preview:
+      item.preview ||
+      ("https://drive.google.com/file/d/" + encodeURIComponent(id) + "/view"),
+    download:
+      item.download ||
+      ("https://drive.google.com/uc?export=download&id=" + encodeURIComponent(id))
+  };
+}
+
+async function loadMediaFromDrive() {
+  if (photoGrid) {
+    photoGrid.innerHTML = `
+      <div class="gallery-loading">
+        <div class="gallery-spinner"></div>
+        <p>Đang tải ảnh Photobooth từ Google Drive...</p>
+      </div>
+    `;
+  }
+
+  if (photoCount) photoCount.textContent = "· đang tải...";
+
+  try {
+    const response = await fetch(
+      MEDIA_API_URL + "?type=all&t=" + Date.now(),
+      { cache: "no-store" }
+    );
+
+    if (!response.ok) {
+      throw new Error("HTTP " + response.status);
+    }
+
+    const data = await response.json();
+
+    if (!data || data.success !== true || !Array.isArray(data.items)) {
+      throw new Error(data && data.error ? data.error : "Dữ liệu API không hợp lệ");
+    }
+
+    PHOTOBOOTH_ITEMS = data.items
+      .map(normalizeItem)
+      .filter(item => item.id && (item.type === "image" || item.type === "video"));
+
+    photos = PHOTOBOOTH_ITEMS.filter(item => item.type === "image");
+    videos = PHOTOBOOTH_ITEMS.filter(item => item.type === "video");
+
+    photoVisible = PHOTO_BATCH;
+
+    renderPhotos();
+    renderVideos();
+
+    if (photoCount) {
+      photoCount.textContent =
+        "· " + photos.length + " ảnh" +
+        (videos.length ? " · " + videos.length + " video" : "");
+    }
+
+  } catch (error) {
+    console.error("K15 Media API error:", error);
+
+    if (photoCount) photoCount.textContent = "· chưa kết nối được";
+
+    if (photoGrid) {
+      photoGrid.innerHTML = `
+        <div class="gallery-error">
+          <strong>Chưa tải được ảnh Photobooth</strong>
+          <p>
+            Website chưa kết nối được Media API. Bạn vẫn có thể mở album
+            Photobooth trực tiếp trên Google Drive.
+          </p>
+          <a
+            class="btn btn-primary"
+            href="${PHOTOBOOTH_DRIVE_URL}"
+            target="_blank"
+            rel="noopener"
+          >
+            Mở Google Drive
+          </a>
+        </div>
+      `;
+    }
+
+    if (showMoreBtn) showMoreBtn.style.display = "none";
+    if (videoStrip) videoStrip.style.display = "none";
+  }
+}
+
+function renderPhotos() {
+  if (!photoGrid) return;
+
+  if (!photos.length) {
+    photoGrid.innerHTML = `
+      <div class="gallery-error">
+        <strong>Chưa có ảnh trong album</strong>
+        <p>Khi BTC thêm ảnh vào folder Photobooth, ảnh sẽ tự xuất hiện tại đây.</p>
+      </div>
+    `;
+    if (showMoreBtn) showMoreBtn.style.display = "none";
+    return;
+  }
 
   photoGrid.innerHTML = photos
-    .slice(0,photoVisible)
-    .map((item,index)=>`
-      <button class="photo-card" type="button" data-index="${index}" aria-label="Xem ${item.name}">
-        <img src="${item.thumb}" alt="${item.name}" loading="lazy">
+    .slice(0, photoVisible)
+    .map((item, index) => `
+      <button
+        class="photo-card"
+        type="button"
+        data-index="${index}"
+        aria-label="Xem ${escapeHtml(item.name)}"
+      >
+        <img
+          src="${item.thumbnail}"
+          alt="${escapeHtml(item.name)}"
+          loading="lazy"
+          decoding="async"
+        >
         <span>🔍</span>
       </button>
     `)
     .join("");
 
-  photoCount.textContent = `· ${photos.length} ảnh`;
-
-  if(photoVisible >= photos.length){
-    showMoreBtn.style.display = "none";
-  }else{
-    showMoreBtn.style.display = "inline-flex";
-    showMoreBtn.textContent = `Xem thêm ảnh (${Math.min(PHOTO_BATCH,photos.length-photoVisible)})`;
+  if (showMoreBtn) {
+    if (photoVisible >= photos.length) {
+      showMoreBtn.style.display = "none";
+    } else {
+      const remain = photos.length - photoVisible;
+      showMoreBtn.style.display = "inline-flex";
+      showMoreBtn.textContent =
+        "Xem thêm ảnh (" + Math.min(PHOTO_BATCH, remain) + ")";
+    }
   }
 
-  document.querySelectorAll(".photo-card").forEach(btn=>{
-    btn.addEventListener("click",()=>openLightbox(Number(btn.dataset.index)));
+  document.querySelectorAll(".photo-card").forEach(btn => {
+    btn.addEventListener("click", () => {
+      openLightbox(Number(btn.dataset.index));
+    });
   });
 }
 
-function renderVideos(){
-  if(!videoStrip || !videos.length){
-    if(videoStrip) videoStrip.style.display="none";
+function renderVideos() {
+  if (!videoStrip) return;
+
+  if (!videos.length) {
+    videoStrip.style.display = "none";
     return;
   }
+
+  videoStrip.style.display = "";
 
   videoStrip.innerHTML = `
     <div class="video-strip-head">
@@ -195,12 +353,18 @@ function renderVideos(){
       </div>
       <span>${videos.length} video</span>
     </div>
+
     <div class="video-grid">
-      ${videos.slice(0,12).map(v=>`
-        <a class="video-card" href="${v.view}" target="_blank" rel="noopener">
+      ${videos.map(v => `
+        <a
+          class="video-card"
+          href="${v.preview}"
+          target="_blank"
+          rel="noopener"
+        >
           <div class="video-icon">▶</div>
           <div>
-            <strong>${v.name.replace(".mp4","")}</strong>
+            <strong>${escapeHtml(v.name.replace(/\.mp4$/i, ""))}</strong>
             <span>Xem video trên Google Drive</span>
           </div>
         </a>
@@ -209,71 +373,137 @@ function renderVideos(){
   `;
 }
 
-function openLightbox(index){
+function openLightbox(index) {
+  if (!photos.length) return;
+
   lightboxIndex = index;
   updateLightbox();
-  document.getElementById("photoLightbox").classList.add("open");
-  document.body.style.overflow="hidden";
+
+  const lightbox = document.getElementById("photoLightbox");
+  if (lightbox) {
+    lightbox.classList.add("open");
+    lightbox.setAttribute("aria-hidden", "false");
+  }
+
+  document.body.style.overflow = "hidden";
 }
 
-function updateLightbox(){
+function updateLightbox() {
   const item = photos[lightboxIndex];
-  document.getElementById("lightboxImage").src = item.thumb.replace("w900","w1600");
-  document.getElementById("lightboxName").textContent = item.name;
-  document.getElementById("lightboxCounter").textContent = `${lightboxIndex+1} / ${photos.length}`;
-  document.getElementById("lightboxDownload").href = item.download;
-  document.getElementById("lightboxDrive").href = item.view;
+  if (!item) return;
+
+  const image = document.getElementById("lightboxImage");
+  const name = document.getElementById("lightboxName");
+  const counter = document.getElementById("lightboxCounter");
+  const download = document.getElementById("lightboxDownload");
+  const drive = document.getElementById("lightboxDrive");
+
+  if (image) {
+    image.src =
+      "https://drive.google.com/thumbnail?id=" +
+      encodeURIComponent(item.id) +
+      "&sz=w2000";
+    image.alt = item.name;
+  }
+
+  if (name) name.textContent = item.name;
+  if (counter) counter.textContent = (lightboxIndex + 1) + " / " + photos.length;
+  if (download) download.href = item.download;
+  if (drive) drive.href = item.preview;
 }
 
-function closeLightbox(){
-  document.getElementById("photoLightbox").classList.remove("open");
-  document.body.style.overflow="";
+function closeLightbox() {
+  const lightbox = document.getElementById("photoLightbox");
+
+  if (lightbox) {
+    lightbox.classList.remove("open");
+    lightbox.setAttribute("aria-hidden", "true");
+  }
+
+  document.body.style.overflow = "";
 }
 
-function nextPhoto(step){
-  lightboxIndex = (lightboxIndex + step + photos.length) % photos.length;
+function nextPhoto(step) {
+  if (!photos.length) return;
+
+  lightboxIndex =
+    (lightboxIndex + step + photos.length) % photos.length;
+
   updateLightbox();
 }
 
-showMoreBtn?.addEventListener("click",()=>{
-  photoVisible += PHOTO_BATCH;
-  renderPhotos();
+if (showMoreBtn) {
+  showMoreBtn.addEventListener("click", () => {
+    photoVisible += PHOTO_BATCH;
+    renderPhotos();
+  });
+}
+
+document.getElementById("lightboxClose")
+  ?.addEventListener("click", closeLightbox);
+
+document.getElementById("lightboxPrev")
+  ?.addEventListener("click", () => nextPhoto(-1));
+
+document.getElementById("lightboxNext")
+  ?.addEventListener("click", () => nextPhoto(1));
+
+document.getElementById("photoLightbox")
+  ?.addEventListener("click", event => {
+    if (event.target.id === "photoLightbox") closeLightbox();
+  });
+
+document.addEventListener("keydown", event => {
+  const lightbox = document.getElementById("photoLightbox");
+
+  if (!lightbox?.classList.contains("open")) return;
+
+  if (event.key === "Escape") closeLightbox();
+  if (event.key === "ArrowLeft") nextPhoto(-1);
+  if (event.key === "ArrowRight") nextPhoto(1);
 });
 
-document.getElementById("lightboxClose")?.addEventListener("click",closeLightbox);
-document.getElementById("lightboxPrev")?.addEventListener("click",()=>nextPhoto(-1));
-document.getElementById("lightboxNext")?.addEventListener("click",()=>nextPhoto(1));
-document.getElementById("photoLightbox")?.addEventListener("click",e=>{
-  if(e.target.id==="photoLightbox") closeLightbox();
+let touchStartX = 0;
+
+document.getElementById("photoLightbox")
+  ?.addEventListener("touchstart", event => {
+    touchStartX = event.changedTouches[0].clientX;
+  }, { passive: true });
+
+document.getElementById("photoLightbox")
+  ?.addEventListener("touchend", event => {
+    const dx = event.changedTouches[0].clientX - touchStartX;
+
+    if (Math.abs(dx) > 50) {
+      nextPhoto(dx < 0 ? 1 : -1);
+    }
+  }, { passive: true });
+
+/* Active tab theo section */
+const tabs = [...document.querySelectorAll(".tab")];
+const sections = [...document.querySelectorAll(".section")];
+
+sections.forEach(section => {
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+
+      tabs.forEach(tab => {
+        tab.classList.toggle(
+          "active",
+          tab.getAttribute("href") === "#" + entry.target.id
+        );
+      });
+    });
+  }, {
+    rootMargin: "-35% 0px -55% 0px"
+  });
+
+  observer.observe(section);
 });
 
-document.addEventListener("keydown",e=>{
-  const lb=document.getElementById("photoLightbox");
-  if(!lb?.classList.contains("open")) return;
-  if(e.key==="Escape") closeLightbox();
-  if(e.key==="ArrowLeft") nextPhoto(-1);
-  if(e.key==="ArrowRight") nextPhoto(1);
-});
-
-let touchStartX=0;
-document.getElementById("photoLightbox")?.addEventListener("touchstart",e=>{
-  touchStartX=e.changedTouches[0].clientX;
-},{passive:true});
-document.getElementById("photoLightbox")?.addEventListener("touchend",e=>{
-  const dx=e.changedTouches[0].clientX-touchStartX;
-  if(Math.abs(dx)>50) nextPhoto(dx<0?1:-1);
-},{passive:true});
-
-const tabs=[...document.querySelectorAll(".tab")],sections=[...document.querySelectorAll(".section")];
-sections.forEach(s=>{
-  const o=new IntersectionObserver(es=>es.forEach(e=>{
-    if(e.isIntersecting) tabs.forEach(t=>t.classList.toggle("active",t.getAttribute("href")==="#"+e.target.id));
-  }),{rootMargin:"-35% 0px -55% 0px"});
-  o.observe(s);
-});
-
-renderPhotos();
-renderVideos();
+/* Khởi động */
+loadMediaFromDrive();
 </script>
 </body>
 </html>
