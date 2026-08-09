@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/css/site-header.css?v=20260803-media">
+<link rel="stylesheet" href="/assets/css/site-header.css?v=20260809-media-final">
 <style>
 :root{--navy:#071d42;--navy2:#0b2b60;--navy3:#123e7a;--gold:#f8c24e;--text:#172033;--muted:#667085;--shadow:0 20px 60px rgba(7,29,66,.12)}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--text);font-family:"Be Vietnam Pro","Segoe UI",Arial,sans-serif;background:radial-gradient(circle at 8% 0%,rgba(248,194,78,.11),transparent 26%),linear-gradient(180deg,#f8fafc 0%,#fff 48%,#fffaf0 100%);-webkit-font-smoothing:antialiased}a{color:inherit}.shell{width:min(1180px,calc(100% - 28px));margin:auto}
@@ -22,6 +22,12 @@
 .contrib{overflow:hidden;display:grid;grid-template-columns:1fr 1fr;border-radius:24px;background:radial-gradient(circle at 95% 5%,rgba(248,194,78,.18),transparent 27%),linear-gradient(145deg,#041329,var(--navy2));box-shadow:var(--shadow)}.contrib>div{padding:32px 28px}.contrib h3{margin:0;color:var(--gold);font-family:"Sora","Be Vietnam Pro",sans-serif;font-size:29px}.contrib p,.contrib li{color:rgba(255,255,255,.82);font-size:12px;line-height:1.8}.side{background:rgba(255,255,255,.06);display:flex;flex-direction:column;justify-content:center}.side .btn{margin:5px 0}
 .note{margin-top:16px;padding:22px;text-align:center;background:#fff9e8;border:1px dashed #e5bf59;border-radius:18px;color:#6b5316;font-size:12px;line-height:1.75}.footer{padding:24px 18px;color:rgba(255,255,255,.65);background:#041329;text-align:center;font-size:11px;line-height:1.7}
 @media(max-width:900px){.recap,.contrib{grid-template-columns:1fr}.grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:650px){.tabs{top:68px;grid-template-columns:1fr}.grid{grid-template-columns:1fr}.recap-cover{min-height:250px}}
+
+.featured-album{border:1px solid #e5bd51;box-shadow:0 14px 34px rgba(180,112,0,.12)}
+.featured-album .thumb{position:relative;background:radial-gradient(circle at 75% 20%,rgba(248,194,78,.28),transparent 28%),linear-gradient(145deg,#071d42,#15457e)}
+.ready-badge{position:absolute;top:12px;right:12px;padding:6px 9px;border-radius:999px;background:#f8c24e;color:#071d42;font-size:9px;font-weight:900;letter-spacing:.4px}
+.album-ready{color:#0b5c49!important;background:#e9f8f3;padding:9px 11px;border-radius:9px}
+
 </style>
 </head>
 <body>
@@ -47,7 +53,14 @@
 <section class="section" id="album">
 <div class="section-head"><small>Photo Gallery</small><h2>Album ảnh sau Hội khóa</h2><p>Chia theo từng nhóm để mọi người tìm ảnh nhanh và dễ lưu lại.</p></div>
 <div class="grid">
-<article class="card"><div class="thumb">📷</div><div class="body"><h3>Check-in & Photobooth</h3><p>Khoảnh khắc đầu tiên khi K15 trở về trường.</p><a id="a1" class="disabled" href="#">Xem album →</a></div></article>
+<article class="card featured-album">
+<div class="thumb">📷<span class="ready-badge">ĐÃ CÓ ẢNH</span></div>
+<div class="body">
+<h3>Ảnh Photobooth K15 FM</h3>
+<p>Trọn bộ ảnh Photobooth trong ngày hội ngộ, được chia thành nhiều phần để mọi người dễ xem và tải về.</p>
+<a id="a1" class="album-ready" href="#">Xem & tải ảnh →</a>
+</div>
+</article>
 <article class="card"><div class="thumb">🎓</div><div class="body"><h3>Hội ngộ & Tri ân</h3><p>Sân khấu chính, thầy cô, học bổng và các hoạt động hội ngộ.</p><a id="a2" class="disabled" href="#">Xem album →</a></div></article>
 <article class="card"><div class="thumb">👥</div><div class="body"><h3>Ảnh tập thể các lớp</h3><p>Ảnh từng lớp, khoa, CLB và đại gia đình K15.</p><a id="a3" class="disabled" href="#">Xem album →</a></div></article>
 <article class="card"><div class="thumb">🥂</div><div class="body"><h3>Phần Hội & Tiệc liên hoan</h3><p>Văn nghệ, minigame, lucky draw và những khoảnh khắc kết nối.</p><a id="a4" class="disabled" href="#">Xem album →</a></div></article>
@@ -60,21 +73,48 @@
 <section class="section" id="dong-gop">
 <div class="section-head"><small>K15 Community</small><h2>Bạn có khoảnh khắc đẹp?</h2><p>Ảnh điện thoại đôi khi lại là những ký ức tự nhiên nhất. Hãy cùng góp thêm vào kho lưu niệm chung của K15.</p></div>
 <div class="contrib">
-<div><h3>Gửi ảnh & video của bạn cho K15 FM</h3><p>BTC có thể chọn những khoảnh khắc đẹp để bổ sung vào album cộng đồng, video recap hoặc các bài viết sau Hội khóa.</p><ul><li>Ảnh cá nhân, ảnh lớp, ảnh cùng thầy cô</li><li>Video ngắn, story, clip hậu trường</li><li>Khoảnh khắc vui, xúc động hoặc “khó đỡ” của K15</li></ul></div>
-<div class="side"><a id="uploadBtn" class="btn btn-primary disabled" href="#">☁️ Gửi ảnh / video</a><a class="btn btn-secondary" href="https://www.facebook.com/K15FM" target="_blank" rel="noopener">Facebook K15 FM</a></div>
+<div>
+<h3>Gửi ảnh & video của bạn cho K15 FM</h3>
+<p>BTC rất mong nhận thêm những khoảnh khắc do chính các bạn ghi lại để bổ sung vào kho lưu niệm chung của K15.</p>
+<ul>
+<li>Ảnh cá nhân, ảnh lớp, ảnh cùng thầy cô</li>
+<li>Video ngắn, story, clip hậu trường</li>
+<li>Khoảnh khắc vui, xúc động hoặc “khó đỡ” của K15</li>
+</ul>
+<p><b>Gợi ý:</b> nên dùng Google Form có câu hỏi “Tải tệp lên” để mọi người gửi ảnh/video an toàn hơn việc mở quyền chỉnh sửa cả thư mục Drive.</p>
+</div>
+<div class="side">
+<a id="uploadBtn" class="btn btn-primary disabled" href="#">☁️ UP ẢNH / VIDEO CHO BTC</a>
+<a class="btn btn-secondary" href="https://www.facebook.com/K15FM" target="_blank" rel="noopener">Facebook K15 FM</a>
+</div>
 </div>
 </section>
 </main>
 
 <footer class="footer">K15 FM · Thanh xuân phát lại<br>Kỷ niệm 10 năm ra trường Sinh viên K15 Học viện Ngân hàng</footer>
-<script src="/assets/js/site-header.js?v=20260803-media"></script>
+<script src="/assets/js/site-header.js?v=20260809-media-final"></script>
 <script>
 const MEDIA_CONFIG={
   officialVideo:"",
-  uploadDrive:"",
-  albums:{checkin:"",ceremony:"",classes:"",party:"",pickleball:"",behind:""}
+  // Dán link Google Form upload ảnh/video vào đây sau khi tạo form.
+  uploadDrive:"PASTE_UPLOAD_FORM_URL_HERE",
+  albums:{
+    checkin:"https://drive.google.com/drive/folders/1Df-eb1bueh1vVP2pQXXT4wqtjjbVIJ6T?usp=sharing",
+    ceremony:"",
+    classes:"",
+    party:"",
+    pickleball:"",
+    behind:""
+  }
 };
-function setLink(id,url){const el=document.getElementById(id);if(!el||!url)return;el.href=url;el.target="_blank";el.rel="noopener";el.classList.remove("disabled")}
+function setLink(id,url){
+  const el=document.getElementById(id);
+  if(!el || !url || url.includes("PASTE_")) return;
+  el.href=url;
+  el.target="_blank";
+  el.rel="noopener";
+  el.classList.remove("disabled");
+}
 setLink("videoOfficial",MEDIA_CONFIG.officialVideo);
 setLink("uploadBtn",MEDIA_CONFIG.uploadDrive);
 setLink("a1",MEDIA_CONFIG.albums.checkin);
