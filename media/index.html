@@ -6,1253 +6,163 @@
 <meta name="theme-color" content="#071d42">
 <title>Ảnh & Video | K15 FM – Thanh xuân phát lại</title>
 <meta name="description" content="Ảnh, video recap và những khoảnh khắc sau Hội khóa 10 năm K15 Học viện Ngân hàng.">
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/css/site-header.css?v=20260809-media-multifolder-final">
-
+<link rel="stylesheet" href="/assets/css/site-header.css?v=20260810-media-recursive-v3">
 <style>
-:root{
-  --navy:#071d42;
-  --navy2:#0b2b60;
-  --navy3:#123e7a;
-  --gold:#f8c24e;
-  --text:#172033;
-  --muted:#667085;
-  --shadow:0 20px 60px rgba(7,29,66,.12)
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
-  margin:0;
-  color:var(--text);
-  font-family:"Be Vietnam Pro","Segoe UI",Arial,sans-serif;
-  background:
-    radial-gradient(circle at 8% 0%,rgba(248,194,78,.11),transparent 26%),
-    linear-gradient(180deg,#f8fafc 0%,#fff 48%,#fffaf0 100%);
-  -webkit-font-smoothing:antialiased
-}
-a{color:inherit}
-button{font:inherit}
-.shell{width:min(1180px,calc(100% - 28px));margin:auto}
-
-.hero{
-  position:relative;
-  overflow:hidden;
-  padding:96px 20px 90px;
-  color:#fff;
-  text-align:center;
-  background:
-    radial-gradient(circle at 15% 18%,rgba(248,194,78,.21),transparent 28%),
-    linear-gradient(145deg,#041329 0%,var(--navy) 57%,var(--navy3) 100%)
-}
-.hero-inner{width:min(920px,100%);margin:auto}
-.kicker{
-  display:inline-flex;
-  padding:9px 15px;
-  border:1px solid rgba(248,194,78,.45);
-  border-radius:999px;
-  color:#ffe39d;
-  background:rgba(255,255,255,.06);
-  font-size:12px;
-  font-weight:900;
-  letter-spacing:1px;
-  text-transform:uppercase
-}
-.hero h1{
-  margin:22px 0 0;
-  font-family:"Sora","Be Vietnam Pro",sans-serif;
-  font-size:clamp(43px,7vw,76px);
-  line-height:1.04;
-  font-weight:700;
-  letter-spacing:-2.8px
-}
-.hero h1 span{display:block;margin-top:8px;color:var(--gold)}
-.hero p{
-  max-width:760px;
-  margin:20px auto 0;
-  color:rgba(255,255,255,.82);
-  font-size:15px;
-  line-height:1.85
-}
-
-.main{padding:34px 0 76px}
-.tabs{
-  position:sticky;
-  top:76px;
-  z-index:20;
-  padding:8px;
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:7px;
-  background:rgba(255,255,255,.94);
-  border:1px solid rgba(7,29,66,.08);
-  border-radius:16px;
-  box-shadow:0 12px 30px rgba(7,29,66,.08);
-  backdrop-filter:blur(10px)
-}
-.tab{
-  min-height:46px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  border-radius:11px;
-  text-decoration:none;
-  color:#475467;
-  font-size:12px;
-  font-weight:900
-}
-.tab.active,.tab:hover{
-  color:#fff;
-  background:linear-gradient(135deg,var(--navy),var(--navy3))
-}
-
-.section{scroll-margin-top:150px;margin-top:38px}
-.section-head{text-align:center;margin-bottom:20px}
-.section-head small{
-  color:#d68c00;
-  font-size:11px;
-  font-weight:900;
-  letter-spacing:1.2px;
-  text-transform:uppercase
-}
-.section-head h2{
-  margin:7px 0 0;
-  color:var(--navy);
-  font-family:"Sora","Be Vietnam Pro",sans-serif;
-  font-size:clamp(28px,4vw,40px);
-  font-weight:700;
-  letter-spacing:-1.6px
-}
-.section-head p{
-  max-width:720px;
-  margin:10px auto 0;
-  color:var(--muted);
-  font-size:13px;
-  line-height:1.75
-}
-
-.recap{
-  overflow:hidden;
-  display:grid;
-  grid-template-columns:1.15fr .85fr;
-  background:#fff;
-  border:1px solid rgba(7,29,66,.08);
-  border-radius:25px;
-  box-shadow:var(--shadow)
-}
-.recap-cover{
-  min-height:360px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  color:#071d42;
-  background:
-    radial-gradient(circle at 80% 10%,rgba(248,194,78,.22),transparent 25%),
-    linear-gradient(145deg,#041329,#0d3972)
-}
-.play{
-  width:84px;height:84px;
-  display:grid;place-items:center;
-  border-radius:50%;
-  background:var(--gold);
-  font-size:28px;
-  box-shadow:0 18px 40px rgba(0,0,0,.24)
-}
-.recap-copy{padding:34px 28px;display:flex;flex-direction:column;justify-content:center}
-.tag{
-  width:fit-content;
-  padding:7px 10px;
-  color:#8a5300;
-  background:#fff4ce;
-  border-radius:999px;
-  font-size:10px;
-  font-weight:900;
-  text-transform:uppercase
-}
-.recap-copy h3{
-  margin:14px 0 0;
-  color:var(--navy);
-  font-family:"Sora","Be Vietnam Pro",sans-serif;
-  font-size:30px
-}
-.recap-copy p{
-  margin:12px 0 0;
-  color:var(--muted);
-  font-size:13px;
-  line-height:1.8
-}
-
-.btn{
-  min-height:44px;
-  padding:0 15px;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  border-radius:11px;
-  text-decoration:none;
-  border:0;
-  cursor:pointer;
-  font-size:12px;
-  font-weight:900
-}
-.btn-primary{color:#071d42;background:var(--gold)}
-.btn-secondary{color:#071d42;background:#f0f3f7;border:1px solid #dce2ea}
-.actions{display:flex;flex-wrap:wrap;gap:9px;margin-top:20px}
-.disabled{opacity:.5;pointer-events:none}
-
-.category-tabs{
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
-  gap:8px;
-  margin-bottom:20px
-}
-.category-tab{
-  min-height:40px;
-  padding:0 13px;
-  border:1px solid #dce2ea;
-  border-radius:999px;
-  background:#fff;
-  color:#475467;
-  cursor:pointer;
-  font-size:11px;
-  font-weight:900
-}
-.category-tab.active{
-  color:#fff;
-  border-color:var(--navy);
-  background:var(--navy)
-}
-
-.category-block{
-  margin-top:28px;
-  padding:20px;
-  background:#fff;
-  border:1px solid #e4e8ef;
-  border-radius:20px;
-  box-shadow:0 9px 28px rgba(7,29,66,.05)
-}
-.category-block[hidden]{display:none!important}
-.category-head{
-  display:flex;
-  align-items:flex-end;
-  justify-content:space-between;
-  gap:12px;
-  margin-bottom:14px
-}
-.category-head h3{
-  margin:0;
-  color:var(--navy);
-  font-family:"Sora","Be Vietnam Pro",sans-serif;
-  font-size:21px
-}
-.category-meta{
-  margin-top:5px;
-  color:#667085;
-  font-size:10px
-}
-.category-head-actions{
-  display:flex;
-  gap:8px;
-  flex-wrap:wrap
-}
-
-.photo-grid{
-  display:grid;
-  grid-template-columns:repeat(4,minmax(0,1fr));
-  gap:10px
-}
-.photo-card{
-  position:relative;
-  overflow:hidden;
-  aspect-ratio:4/3;
-  padding:0;
-  border:0;
-  border-radius:14px;
-  background:#edf2f7;
-  cursor:pointer;
-  box-shadow:0 7px 18px rgba(7,29,66,.06)
-}
-.photo-card img{
-  width:100%;
-  height:100%;
-  display:block;
-  object-fit:cover;
-  transition:transform .25s ease
-}
-.photo-card:hover img{transform:scale(1.035)}
-.photo-card span{
-  position:absolute;
-  right:9px;
-  bottom:9px;
-  width:30px;height:30px;
-  display:grid;place-items:center;
-  border-radius:50%;
-  background:rgba(4,19,41,.72);
-  color:#fff;
-  font-size:12px
-}
-
-.more-wrap{text-align:center;margin-top:15px}
-
-.video-strip{
-  margin-top:18px;
-  padding:16px;
-  background:#f8fafc;
-  border:1px solid #e4e8ef;
-  border-radius:15px
-}
-.video-strip-head{
-  display:flex;
-  align-items:end;
-  justify-content:space-between;
-  gap:12px
-}
-.video-strip-head small{
-  color:#d68c00;
-  font-size:10px;
-  font-weight:900;
-  text-transform:uppercase
-}
-.video-strip-head h4{
-  margin:4px 0 0;
-  color:var(--navy);
-  font-family:"Sora",sans-serif
-}
-.video-strip-head>span{color:#667085;font-size:11px}
-.video-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:10px;
-  margin-top:14px
-}
-.video-card{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  padding:12px;
-  border:1px solid #e4e8ef;
-  border-radius:12px;
-  text-decoration:none;
-  background:#fff
-}
-.video-icon{
-  width:38px;height:38px;
-  display:grid;place-items:center;
-  border-radius:50%;
-  background:#f8c24e;
-  color:#071d42
-}
-.video-card strong{
-  display:block;
-  color:#071d42;
-  font-size:11px
-}
-.video-card span{
-  display:block;
-  margin-top:3px;
-  color:#667085;
-  font-size:9px
-}
-
-.gallery-loading,.gallery-error{
-  padding:38px 20px;
-  text-align:center;
-  background:#fff;
-  border:1px solid #e4e8ef;
-  border-radius:18px;
-  color:#667085
-}
-.gallery-loading p,.gallery-error p{
-  margin:10px auto 0;
-  max-width:560px;
-  line-height:1.7
-}
-.gallery-error strong{
-  display:block;
-  color:#071d42;
-  font-family:"Sora",sans-serif;
-  font-size:16px
-}
-.gallery-spinner{
-  width:36px;height:36px;
-  margin:auto;
-  border:3px solid #e4e8ef;
-  border-top-color:#f8c24e;
-  border-radius:50%;
-  animation:k15Spin .8s linear infinite
-}
-@keyframes k15Spin{to{transform:rotate(360deg)}}
-
-.contrib{
-  overflow:hidden;
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  border-radius:24px;
-  background:
-    radial-gradient(circle at 95% 5%,rgba(248,194,78,.18),transparent 27%),
-    linear-gradient(145deg,#041329,var(--navy2));
-  box-shadow:var(--shadow)
-}
-.contrib>div{padding:32px 28px}
-.contrib h3{
-  margin:0;
-  color:var(--gold);
-  font-family:"Sora","Be Vietnam Pro",sans-serif;
-  font-size:29px
-}
-.contrib p,.contrib li{
-  color:rgba(255,255,255,.82);
-  font-size:12px;
-  line-height:1.8
-}
-.side{
-  background:rgba(255,255,255,.06);
-  display:flex;
-  flex-direction:column;
-  justify-content:center
-}
-.side .btn{margin:5px 0}
-
-.photo-lightbox{
-  position:fixed;
-  inset:0;
-  z-index:99999;
-  display:none;
-  align-items:center;
-  justify-content:center;
-  padding:20px;
-  background:rgba(2,10,24,.94)
-}
-.photo-lightbox.open{display:flex}
-.lb-content{width:min(1050px,86vw)}
-.lb-content img{
-  width:100%;
-  max-height:76vh;
-  display:block;
-  object-fit:contain;
-  border-radius:14px;
-  background:#08162d
-}
-.lb-meta{
-  margin-top:10px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:12px;
-  color:#fff
-}
-.lb-meta strong{display:block;font-size:12px}
-.lb-meta span{
-  display:block;
-  margin-top:3px;
-  color:rgba(255,255,255,.6);
-  font-size:10px
-}
-.lb-actions{display:flex;gap:8px}
-.lb-close,.lb-nav{
-  position:fixed;
-  border:1px solid rgba(255,255,255,.2);
-  background:rgba(255,255,255,.09);
-  color:#fff;
-  cursor:pointer
-}
-.lb-close{
-  right:18px;top:18px;
-  width:44px;height:44px;
-  border-radius:50%;
-  font-size:24px
-}
-.lb-nav{
-  top:50%;
-  transform:translateY(-50%);
-  width:48px;height:64px;
-  border-radius:13px;
-  font-size:36px
-}
-.lb-prev{left:16px}
-.lb-next{right:16px}
-
-.footer{
-  padding:24px 18px;
-  color:rgba(255,255,255,.65);
-  background:#041329;
-  text-align:center;
-  font-size:11px;
-  line-height:1.7
-}
-
-@media(max-width:900px){
-  .recap,.contrib{grid-template-columns:1fr}
-  .photo-grid{grid-template-columns:repeat(3,1fr)}
-  .video-grid{grid-template-columns:repeat(2,1fr)}
-}
-@media(max-width:650px){
-  .tabs{top:68px;grid-template-columns:1fr}
-  .recap-cover{min-height:250px}
-  .category-head{align-items:flex-start;flex-direction:column}
-  .photo-grid{grid-template-columns:repeat(2,1fr);gap:7px}
-  .video-grid{grid-template-columns:1fr}
-  .lb-content{width:94vw}
-  .lb-nav{width:40px;height:54px}
-  .lb-prev{left:6px}
-  .lb-next{right:6px}
-  .lb-meta{align-items:flex-start;flex-direction:column}
-  .lb-actions{width:100%}
-  .lb-actions .btn{flex:1}
-}
+:root{--navy:#071d42;--navy2:#0b2b60;--navy3:#123e7a;--gold:#f8c24e;--text:#172033;--muted:#667085;--shadow:0 20px 60px rgba(7,29,66,.12)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--text);font-family:"Be Vietnam Pro","Segoe UI",Arial,sans-serif;background:radial-gradient(circle at 8% 0%,rgba(248,194,78,.11),transparent 26%),linear-gradient(180deg,#f8fafc 0%,#fff 48%,#fffaf0 100%);-webkit-font-smoothing:antialiased}
+a{color:inherit}button{font:inherit}.shell{width:min(1180px,calc(100% - 28px));margin:auto}
+.hero{position:relative;overflow:hidden;padding:96px 20px 90px;color:#fff;text-align:center;background:radial-gradient(circle at 15% 18%,rgba(248,194,78,.21),transparent 28%),linear-gradient(145deg,#041329 0%,var(--navy) 57%,var(--navy3) 100%)}
+.hero-inner{width:min(920px,100%);margin:auto}.kicker{display:inline-flex;padding:9px 15px;border:1px solid rgba(248,194,78,.45);border-radius:999px;color:#ffe39d;background:rgba(255,255,255,.06);font-size:12px;font-weight:900;letter-spacing:1px;text-transform:uppercase}
+.hero h1{margin:22px 0 0;font-family:"Sora","Be Vietnam Pro",sans-serif;font-size:clamp(43px,7vw,76px);line-height:1.04;font-weight:700;letter-spacing:-2.8px}.hero h1 span{display:block;margin-top:8px;color:var(--gold)}.hero p{max-width:760px;margin:20px auto 0;color:rgba(255,255,255,.82);font-size:15px;line-height:1.85}
+.main{padding:34px 0 76px}.tabs{position:sticky;top:76px;z-index:20;padding:8px;display:grid;grid-template-columns:repeat(3,1fr);gap:7px;background:rgba(255,255,255,.94);border:1px solid rgba(7,29,66,.08);border-radius:16px;box-shadow:0 12px 30px rgba(7,29,66,.08);backdrop-filter:blur(10px)}
+.tab{min-height:46px;display:flex;align-items:center;justify-content:center;border-radius:11px;text-decoration:none;color:#475467;font-size:12px;font-weight:900}.tab.active,.tab:hover{color:#fff;background:linear-gradient(135deg,var(--navy),var(--navy3))}
+.section{scroll-margin-top:150px;margin-top:38px}.section-head{text-align:center;margin-bottom:20px}.section-head small{color:#d68c00;font-size:11px;font-weight:900;letter-spacing:1.2px;text-transform:uppercase}.section-head h2{margin:7px 0 0;color:var(--navy);font-family:"Sora","Be Vietnam Pro",sans-serif;font-size:clamp(28px,4vw,40px);font-weight:700;letter-spacing:-1.6px}.section-head p{max-width:760px;margin:10px auto 0;color:var(--muted);font-size:13px;line-height:1.75}
+.recap{overflow:hidden;display:grid;grid-template-columns:1.15fr .85fr;background:#fff;border:1px solid rgba(7,29,66,.08);border-radius:25px;box-shadow:var(--shadow)}.recap-cover{min-height:360px;display:flex;align-items:center;justify-content:center;color:#071d42;background:radial-gradient(circle at 80% 10%,rgba(248,194,78,.22),transparent 25%),linear-gradient(145deg,#041329,#0d3972)}.play{width:84px;height:84px;display:grid;place-items:center;border-radius:50%;background:var(--gold);font-size:28px;box-shadow:0 18px 40px rgba(0,0,0,.24)}.recap-copy{padding:34px 28px;display:flex;flex-direction:column;justify-content:center}.tag{width:fit-content;padding:7px 10px;color:#8a5300;background:#fff4ce;border-radius:999px;font-size:10px;font-weight:900;text-transform:uppercase}.recap-copy h3{margin:14px 0 0;color:var(--navy);font-family:"Sora","Be Vietnam Pro",sans-serif;font-size:30px}.recap-copy p{margin:12px 0 0;color:var(--muted);font-size:13px;line-height:1.8}
+.btn{min-height:44px;padding:0 15px;display:inline-flex;align-items:center;justify-content:center;border-radius:11px;text-decoration:none;border:0;cursor:pointer;font-size:12px;font-weight:900}.btn-primary{color:#071d42;background:var(--gold)}.btn-secondary{color:#071d42;background:#f0f3f7;border:1px solid #dce2ea}.actions{display:flex;flex-wrap:wrap;gap:9px;margin-top:20px}.disabled{opacity:.5;pointer-events:none}
+.category-tabs{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-bottom:20px}.category-tab{min-height:40px;padding:0 13px;border:1px solid #dce2ea;border-radius:999px;background:#fff;color:#475467;cursor:pointer;font-size:11px;font-weight:900}.category-tab.active{color:#fff;border-color:var(--navy);background:var(--navy)}
+.category-block{margin-top:28px;padding:20px;background:#fff;border:1px solid #e4e8ef;border-radius:20px;box-shadow:0 9px 28px rgba(7,29,66,.05)}.category-block[hidden]{display:none!important}.category-head{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;margin-bottom:14px}.category-head h3{margin:0;color:var(--navy);font-family:"Sora","Be Vietnam Pro",sans-serif;font-size:21px}.category-meta{margin-top:5px;color:#667085;font-size:10px}.category-head-actions{display:flex;gap:8px;flex-wrap:wrap}
+.subfolder-list{display:grid;gap:14px;margin-top:16px}.subfolder-block{padding:15px;border:1px solid #edf0f4;border-radius:15px;background:#fbfcfe}.subfolder-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:10px}.subfolder-head h4{margin:0;color:#20365f;font-size:13px}.subfolder-head span{color:#667085;font-size:9px}
+.photo-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}.photo-card{position:relative;overflow:hidden;aspect-ratio:4/3;padding:0;border:0;border-radius:14px;background:#edf2f7;cursor:pointer;box-shadow:0 7px 18px rgba(7,29,66,.06)}.photo-card img{width:100%;height:100%;display:block;object-fit:cover;transition:transform .25s ease}.photo-card:hover img{transform:scale(1.035)}.photo-card span{position:absolute;right:9px;bottom:9px;width:30px;height:30px;display:grid;place-items:center;border-radius:50%;background:rgba(4,19,41,.72);color:#fff;font-size:12px}
+.more-wrap{text-align:center;margin-top:15px}.video-strip{margin-top:18px;padding:16px;background:#f8fafc;border:1px solid #e4e8ef;border-radius:15px}.video-strip-head{display:flex;align-items:end;justify-content:space-between;gap:12px}.video-strip-head small{color:#d68c00;font-size:10px;font-weight:900;text-transform:uppercase}.video-strip-head h4{margin:4px 0 0;color:var(--navy);font-family:"Sora",sans-serif}.video-strip-head>span{color:#667085;font-size:11px}.video-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px}.video-card{display:flex;align-items:center;gap:10px;padding:12px;border:1px solid #e4e8ef;border-radius:12px;text-decoration:none;background:#fff}.video-icon{width:38px;height:38px;display:grid;place-items:center;border-radius:50%;background:#f8c24e;color:#071d42}.video-card strong{display:block;color:#071d42;font-size:11px}.video-card span{display:block;margin-top:3px;color:#667085;font-size:9px}
+.gallery-loading,.gallery-error{padding:38px 20px;text-align:center;background:#fff;border:1px solid #e4e8ef;border-radius:18px;color:#667085}.gallery-loading p,.gallery-error p{margin:10px auto 0;max-width:560px;line-height:1.7}.gallery-error strong{display:block;color:#071d42;font-family:"Sora",sans-serif;font-size:16px}.gallery-spinner{width:36px;height:36px;margin:auto;border:3px solid #e4e8ef;border-top-color:#f8c24e;border-radius:50%;animation:k15Spin .8s linear infinite}@keyframes k15Spin{to{transform:rotate(360deg)}}
+.contrib{overflow:hidden;display:grid;grid-template-columns:1fr 1fr;border-radius:24px;background:radial-gradient(circle at 95% 5%,rgba(248,194,78,.18),transparent 27%),linear-gradient(145deg,#041329,var(--navy2));box-shadow:var(--shadow)}.contrib>div{padding:32px 28px}.contrib h3{margin:0;color:var(--gold);font-family:"Sora","Be Vietnam Pro",sans-serif;font-size:29px}.contrib p,.contrib li{color:rgba(255,255,255,.82);font-size:12px;line-height:1.8}.side{background:rgba(255,255,255,.06);display:flex;flex-direction:column;justify-content:center}.side .btn{margin:5px 0}
+.photo-lightbox{position:fixed;inset:0;z-index:99999;display:none;align-items:center;justify-content:center;padding:20px;background:rgba(2,10,24,.94)}.photo-lightbox.open{display:flex}.lb-content{width:min(1050px,86vw)}.lb-content img{width:100%;max-height:76vh;display:block;object-fit:contain;border-radius:14px;background:#08162d}.lb-meta{margin-top:10px;display:flex;align-items:center;justify-content:space-between;gap:12px;color:#fff}.lb-meta strong{display:block;font-size:12px}.lb-meta span{display:block;margin-top:3px;color:rgba(255,255,255,.6);font-size:10px}.lb-actions{display:flex;gap:8px}.lb-close,.lb-nav{position:fixed;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.09);color:#fff;cursor:pointer}.lb-close{right:18px;top:18px;width:44px;height:44px;border-radius:50%;font-size:24px}.lb-nav{top:50%;transform:translateY(-50%);width:48px;height:64px;border-radius:13px;font-size:36px}.lb-prev{left:16px}.lb-next{right:16px}
+.footer{padding:24px 18px;color:rgba(255,255,255,.65);background:#041329;text-align:center;font-size:11px;line-height:1.7}
+@media(max-width:900px){.recap,.contrib{grid-template-columns:1fr}.photo-grid{grid-template-columns:repeat(3,1fr)}.video-grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:650px){.tabs{top:68px;grid-template-columns:1fr}.recap-cover{min-height:250px}.category-head,.subfolder-head{align-items:flex-start;flex-direction:column}.photo-grid{grid-template-columns:repeat(2,1fr);gap:7px}.video-grid{grid-template-columns:1fr}.lb-content{width:94vw}.lb-nav{width:40px;height:54px}.lb-prev{left:6px}.lb-next{right:6px}.lb-meta{align-items:flex-start;flex-direction:column}.lb-actions{width:100%}.lb-actions .btn{flex:1}}
 </style>
 </head>
-
 <body>
 <div id="k15-site-header"></div>
-
-<header class="hero">
-  <div class="hero-inner">
-    <div class="kicker">K15 Memories · Sau ngày hội ngộ</div>
-    <h1>KHOẢNH KHẮC<span>THANH XUÂN PHÁT LẠI</span></h1>
-    <p>Nơi lưu giữ những bức ảnh, thước phim, tiếng cười và cảm xúc của ngày K15 trở về Học viện Ngân hàng sau một thập kỷ.</p>
-  </div>
-</header>
+<header class="hero"><div class="hero-inner"><div class="kicker">K15 Memories · Sau ngày hội ngộ</div><h1>KHOẢNH KHẮC<span>THANH XUÂN PHÁT LẠI</span></h1><p>Nơi lưu giữ những bức ảnh, thước phim, tiếng cười và cảm xúc của ngày K15 trở về Học viện Ngân hàng sau một thập kỷ.</p></div></header>
 
 <main class="main shell">
-  <nav class="tabs">
-    <a class="tab active" href="#video">🎬 Video Recap</a>
-    <a class="tab" href="#album">📸 Ảnh & Video sự kiện</a>
-    <a class="tab" href="#dong-gop">☁️ Gửi ảnh / video</a>
-  </nav>
+<nav class="tabs"><a class="tab active" href="#video">🎬 Video Recap</a><a class="tab" href="#album">📸 Ảnh & Video sự kiện</a><a class="tab" href="#dong-gop">☁️ Gửi ảnh / video</a></nav>
 
-  <section class="section" id="video">
-    <div class="section-head">
-      <small>K15 FM Official</small>
-      <h2>Video Recap Hội khóa</h2>
-      <p>Video chính thức sẽ được cập nhật tại đây sau khi ekip hoàn thiện hậu kỳ.</p>
-    </div>
+<section class="section" id="video">
+<div class="section-head"><small>K15 FM Official</small><h2>Video Recap Hội khóa</h2><p>Video chính thức sẽ được cập nhật tại đây sau khi ekip hoàn thiện hậu kỳ.</p></div>
+<div class="recap"><div class="recap-cover"><div class="play">▶</div></div><div class="recap-copy"><div class="tag">Official Recap</div><h3>Một thập kỷ trở về</h3><p>Những khoảnh khắc từ check-in, tri ân, hội ngộ, chụp ảnh tập thể đến phần hội và những phút giây kết nối của K15.</p><div class="actions"><a id="videoOfficial" class="btn btn-primary disabled" href="#">▶ Xem video chính thức</a><a class="btn btn-secondary" href="https://www.facebook.com/K15FM" target="_blank" rel="noopener">Fanpage K15 FM</a></div></div></div>
+</section>
 
-    <div class="recap">
-      <div class="recap-cover"><div class="play">▶</div></div>
+<section class="section" id="album">
+<div class="section-head"><small>Media Gallery</small><h2>Ảnh & Video sau Hội khóa</h2><p>Website tự đọc toàn bộ ảnh/video trong các folder con, kể cả khi một album tiếp tục được chia nhỏ thành nhiều folder.</p></div>
+<div id="categoryTabs" class="category-tabs"></div>
+<div id="mediaLoading" class="gallery-loading"><div class="gallery-spinner"></div><p>Đang tải kho ảnh & video K15 FM...</p></div>
+<div id="mediaCategories"></div>
+</section>
 
-      <div class="recap-copy">
-        <div class="tag">Official Recap</div>
-        <h3>Một thập kỷ trở về</h3>
-        <p>Những khoảnh khắc từ check-in, tri ân, hội ngộ, chụp ảnh tập thể đến phần hội và những phút giây kết nối của K15.</p>
-
-        <div class="actions">
-          <a id="videoOfficial" class="btn btn-primary disabled" href="#">▶ Xem video chính thức</a>
-          <a class="btn btn-secondary" href="https://www.facebook.com/K15FM" target="_blank" rel="noopener">Fanpage K15 FM</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="album">
-    <div class="section-head">
-      <small>Media Gallery</small>
-      <h2>Ảnh & Video sau Hội khóa</h2>
-      <p>BTC đã chia thành từng khu vực để mọi người tìm ảnh nhanh hơn. Khi thêm file vào bất kỳ folder con nào trong Drive, website sẽ tự cập nhật.</p>
-    </div>
-
-    <div id="categoryTabs" class="category-tabs"></div>
-
-    <div id="mediaLoading" class="gallery-loading">
-      <div class="gallery-spinner"></div>
-      <p>Đang tải kho ảnh & video K15 FM...</p>
-    </div>
-
-    <div id="mediaCategories"></div>
-  </section>
-
-  <section class="section" id="dong-gop">
-    <div class="section-head">
-      <small>K15 Community</small>
-      <h2>Bạn có khoảnh khắc đẹp?</h2>
-      <p>Gửi ảnh hoặc video bạn tự chụp để BTC bổ sung vào kho lưu niệm chung của K15.</p>
-    </div>
-
-    <div class="contrib">
-      <div>
-        <h3>Gửi ảnh & video của bạn cho K15 FM</h3>
-        <p>BTC rất mong nhận thêm những khoảnh khắc từ điện thoại của các bạn: ảnh lớp, ảnh cùng thầy cô, clip hậu trường, story và những khoảnh khắc vui của ngày hội ngộ.</p>
-
-        <ul>
-          <li>Ảnh cá nhân, ảnh lớp, ảnh cùng thầy cô</li>
-          <li>Video ngắn, story, clip hậu trường</li>
-          <li>Khoảnh khắc vui, xúc động hoặc “khó đỡ” của K15</li>
-        </ul>
-      </div>
-
-      <div class="side">
-        <a
-          class="btn btn-primary"
-          href="https://docs.google.com/forms/d/e/1FAIpQLSd8YAUmHpNYTHK5HhW0391wwBun_IYbXJ5GayD4aAsgf2oerQ/viewform?usp=publish-editor"
-          target="_blank"
-          rel="noopener"
-        >
-          ☁️ UP ẢNH / VIDEO CHO BTC
-        </a>
-
-        <a
-          class="btn btn-secondary"
-          href="https://www.facebook.com/K15FM"
-          target="_blank"
-          rel="noopener"
-        >
-          Facebook K15 FM
-        </a>
-      </div>
-    </div>
-  </section>
+<section class="section" id="dong-gop">
+<div class="section-head"><small>K15 Community</small><h2>Bạn có khoảnh khắc đẹp?</h2><p>Gửi ảnh hoặc video bạn tự chụp để BTC bổ sung vào kho lưu niệm chung của K15.</p></div>
+<div class="contrib"><div><h3>Gửi ảnh & video của bạn cho K15 FM</h3><p>BTC rất mong nhận thêm những khoảnh khắc từ điện thoại của các bạn: ảnh lớp, ảnh cùng thầy cô, clip hậu trường, story và những khoảnh khắc vui của ngày hội ngộ.</p><ul><li>Ảnh cá nhân, ảnh lớp, ảnh cùng thầy cô</li><li>Video ngắn, story, clip hậu trường</li><li>Khoảnh khắc vui, xúc động hoặc “khó đỡ” của K15</li></ul></div><div class="side"><a class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSd8YAUmHpNYTHK5HhW0391wwBun_IYbXJ5GayD4aAsgf2oerQ/viewform?usp=publish-editor" target="_blank" rel="noopener">☁️ UP ẢNH / VIDEO CHO BTC</a><a class="btn btn-secondary" href="https://www.facebook.com/K15FM" target="_blank" rel="noopener">Facebook K15 FM</a></div></div>
+</section>
 </main>
 
-<div class="photo-lightbox" id="photoLightbox" aria-hidden="true">
-  <button class="lb-close" id="lightboxClose" type="button">×</button>
-  <button class="lb-nav lb-prev" id="lightboxPrev" type="button">‹</button>
+<div class="photo-lightbox" id="photoLightbox" aria-hidden="true"><button class="lb-close" id="lightboxClose" type="button">×</button><button class="lb-nav lb-prev" id="lightboxPrev" type="button">‹</button><div class="lb-content"><img id="lightboxImage" alt="Ảnh K15 FM"><div class="lb-meta"><div><strong id="lightboxName"></strong><span id="lightboxCounter"></span></div><div class="lb-actions"><a id="lightboxDownload" class="btn btn-primary" href="#" target="_blank" rel="noopener">⬇ Tải ảnh</a><a id="lightboxDrive" class="btn btn-secondary" href="#" target="_blank" rel="noopener">Mở trên Drive</a></div></div></div><button class="lb-nav lb-next" id="lightboxNext" type="button">›</button></div>
 
-  <div class="lb-content">
-    <img id="lightboxImage" alt="Ảnh K15 FM">
+<footer class="footer">K15 FM · Thanh xuân phát lại<br>Kỷ niệm 10 năm ra trường Sinh viên K15 Học viện Ngân hàng</footer>
 
-    <div class="lb-meta">
-      <div>
-        <strong id="lightboxName"></strong>
-        <span id="lightboxCounter"></span>
-      </div>
-
-      <div class="lb-actions">
-        <a id="lightboxDownload" class="btn btn-primary" href="#" target="_blank" rel="noopener">⬇ Tải ảnh</a>
-        <a id="lightboxDrive" class="btn btn-secondary" href="#" target="_blank" rel="noopener">Mở trên Drive</a>
-      </div>
-    </div>
-  </div>
-
-  <button class="lb-nav lb-next" id="lightboxNext" type="button">›</button>
-</div>
-
-<footer class="footer">
-  K15 FM · Thanh xuân phát lại<br>
-  Kỷ niệm 10 năm ra trường Sinh viên K15 Học viện Ngân hàng
-</footer>
-
-<script src="/assets/js/site-header.js?v=20260809-media-multifolder-final"></script>
-
+<script src="/assets/js/site-header.js?v=20260810-media-recursive-v3"></script>
 <script>
-const MEDIA_API_URL =
-  "https://script.google.com/macros/s/AKfycbxKK68exvmpy4ob1GXF4E42FMfalVzap3R2HwNi8zj_ZQttF9NHY6UVk4EtzqWRIe8b/exec";
+const MEDIA_API_URL="https://script.google.com/macros/s/AKfycbxKK68exvmpy4ob1GXF4E42FMfalVzap3R2HwNi8zj_ZQttF9NHY6UVk4EtzqWRIe8b/exec";
+const ROOT_DRIVE_URL="https://drive.google.com/drive/folders/1LTJAG3FKjAx1Rm6ixR-ud9tCtUoSJufT?usp=sharing";
+const PHOTO_BATCH=18;
+let categories=[],activeCategoryId="all",lightboxPhotos=[],lightboxIndex=0;
+const visibleCount={};
 
-const ROOT_DRIVE_URL =
-  "https://drive.google.com/drive/folders/1LTJAG3FKjAx1Rm6ixR-ud9tCtUoSJufT?usp=sharing";
+function escapeHtml(value){return String(value||"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;").replace(/'/g,"&#039;")}
+function normalizeItem(item){const id=String(item.id||"").trim(),type=String(item.type||"").toLowerCase();return{id,name:String(item.name||"K15 FM"),type,thumbnail:item.thumbnail||(type==="image"?"https://drive.google.com/thumbnail?id="+encodeURIComponent(id)+"&sz=w1200":""),preview:item.preview||"https://drive.google.com/file/d/"+encodeURIComponent(id)+"/view",download:item.download||"https://drive.google.com/uc?export=download&id="+encodeURIComponent(id)}}
+function normalizeFolder(folder){return{id:String(folder.id||""),name:String(folder.name||"Album K15 FM"),slug:String(folder.slug||""),driveUrl:String(folder.driveUrl||ROOT_DRIVE_URL),imageCount:Number(folder.imageCount||0),videoCount:Number(folder.videoCount||0),ownItems:Array.isArray(folder.ownItems)?folder.ownItems.map(normalizeItem):[],allItems:Array.isArray(folder.allItems)?folder.allItems.map(normalizeItem):[],subfolders:Array.isArray(folder.subfolders)?folder.subfolders.map(normalizeFolder):[]}}
 
-const PHOTO_BATCH = 18;
-
-let categories = [];
-let activeCategoryId = "all";
-let lightboxPhotos = [];
-let lightboxIndex = 0;
-const visibleCount = {};
-
-function escapeHtml(value) {
-  return String(value || "")
-    .replace(/&/g,"&amp;")
-    .replace(/</g,"&lt;")
-    .replace(/>/g,"&gt;")
-    .replace(/"/g,"&quot;")
-    .replace(/'/g,"&#039;");
+async function loadMedia(){
+ const loading=document.getElementById("mediaLoading"),container=document.getElementById("mediaCategories");
+ try{
+  const response=await fetch(MEDIA_API_URL+"?t="+Date.now(),{cache:"no-store"});
+  if(!response.ok)throw new Error("HTTP "+response.status);
+  const data=await response.json();
+  if(!data||data.success!==true||!Array.isArray(data.categories))throw new Error(data&&data.error?data.error:"Media API không trả về dữ liệu hợp lệ");
+  categories=data.categories.map(normalizeFolder);
+  function initVisible(folder){visibleCount[folder.id]=PHOTO_BATCH;folder.subfolders.forEach(initVisible)}
+  categories.forEach(initVisible);
+  loading.style.display="none";renderCategoryTabs();renderCategories();
+ }catch(error){
+  console.error("Media API error:",error);
+  loading.style.display="none";
+  container.innerHTML=`<div class="gallery-error"><strong>Chưa tải được kho ảnh & video</strong><p>Website chưa kết nối được Media API. Bạn vẫn có thể mở thư mục tổng trên Google Drive.</p><a class="btn btn-primary" href="${ROOT_DRIVE_URL}" target="_blank" rel="noopener">Mở Google Drive</a></div>`;
+ }
 }
 
-function normalizeItem(item) {
-  const id = String(item.id || "").trim();
-  const type = String(item.type || "").toLowerCase();
-
-  return {
-    id:id,
-    name:String(item.name || "K15 FM"),
-    type:type,
-    thumbnail:
-      item.thumbnail ||
-      (
-        type === "image"
-          ? "https://drive.google.com/thumbnail?id=" +
-            encodeURIComponent(id) +
-            "&sz=w1200"
-          : ""
-      ),
-    preview:
-      item.preview ||
-      "https://drive.google.com/file/d/" +
-      encodeURIComponent(id) +
-      "/view",
-    download:
-      item.download ||
-      "https://drive.google.com/uc?export=download&id=" +
-      encodeURIComponent(id)
-  };
+function renderCategoryTabs(){
+ const root=document.getElementById("categoryTabs");
+ root.innerHTML=`<button class="category-tab ${activeCategoryId==="all"?"active":""}" type="button" data-category="all">Tất cả</button>`+categories.map(c=>`<button class="category-tab ${activeCategoryId===c.id?"active":""}" type="button" data-category="${escapeHtml(c.id)}">${escapeHtml(c.name)}</button>`).join("");
+ root.querySelectorAll(".category-tab").forEach(button=>button.addEventListener("click",function(){
+  activeCategoryId=button.dataset.category;renderCategoryTabs();renderCategories();
+  const target=activeCategoryId==="all"?document.getElementById("mediaCategories"):document.getElementById("category-"+activeCategoryId);
+  target?.scrollIntoView({behavior:"smooth",block:"start"});
+ }));
 }
 
-async function loadMedia() {
-  const loading = document.getElementById("mediaLoading");
-  const container = document.getElementById("mediaCategories");
-
-  try {
-    const response = await fetch(
-      MEDIA_API_URL +
-      "?mode=all&t=" +
-      Date.now(),
-      {cache:"no-store"}
-    );
-
-    if (!response.ok) {
-      throw new Error("HTTP " + response.status);
-    }
-
-    const data = await response.json();
-
-    if (
-      !data ||
-      data.success !== true ||
-      !Array.isArray(data.categories)
-    ) {
-      throw new Error(
-        data && data.error
-          ? data.error
-          : "Media API không trả về dữ liệu hợp lệ"
-      );
-    }
-
-    categories = data.categories.map(function(category) {
-      return {
-        id:String(category.id || ""),
-        name:String(category.name || "Album K15 FM"),
-        slug:String(category.slug || ""),
-        driveUrl:String(category.driveUrl || ROOT_DRIVE_URL),
-        imageCount:Number(category.imageCount || 0),
-        videoCount:Number(category.videoCount || 0),
-        items:Array.isArray(category.items)
-          ? category.items.map(normalizeItem)
-          : []
-      };
-    });
-
-    categories.forEach(function(category) {
-      visibleCount[category.id] = PHOTO_BATCH;
-    });
-
-    loading.style.display = "none";
-
-    renderCategoryTabs();
-    renderCategories();
-
-  } catch (error) {
-    console.error("Media API error:", error);
-
-    loading.style.display = "none";
-
-    container.innerHTML = `
-      <div class="gallery-error">
-        <strong>Chưa tải được kho ảnh & video</strong>
-        <p>
-          Website chưa kết nối được Media API.
-          Bạn vẫn có thể mở thư mục tổng trên Google Drive.
-        </p>
-
-        <a
-          class="btn btn-primary"
-          href="${ROOT_DRIVE_URL}"
-          target="_blank"
-          rel="noopener"
-        >
-          Mở Google Drive
-        </a>
-      </div>
-    `;
-  }
+function renderCategories(){
+ const root=document.getElementById("mediaCategories");
+ if(!categories.length){root.innerHTML=`<div class="gallery-error"><strong>Chưa có folder media</strong><p>Khi BTC thêm folder con vào thư mục tổng, folder sẽ tự xuất hiện tại đây.</p></div>`;return}
+ root.innerHTML=categories.map(renderTopCategory).join("");
+ bindCategoryEvents();
 }
 
-function renderCategoryTabs() {
-  const root = document.getElementById("categoryTabs");
-
-  root.innerHTML =
-    `
-    <button
-      class="category-tab ${activeCategoryId === "all" ? "active" : ""}"
-      type="button"
-      data-category="all"
-    >
-      Tất cả
-    </button>
-    ` +
-    categories.map(function(category) {
-      return `
-        <button
-          class="category-tab ${activeCategoryId === category.id ? "active" : ""}"
-          type="button"
-          data-category="${escapeHtml(category.id)}"
-        >
-          ${escapeHtml(category.name)}
-        </button>
-      `;
-    }).join("");
-
-  root.querySelectorAll(".category-tab").forEach(function(button) {
-    button.addEventListener("click", function() {
-      activeCategoryId = button.dataset.category;
-
-      renderCategoryTabs();
-      renderCategories();
-
-      const target =
-        activeCategoryId === "all"
-          ? document.getElementById("mediaCategories")
-          : document.getElementById(
-              "category-" + activeCategoryId
-            );
-
-      target?.scrollIntoView({
-        behavior:"smooth",
-        block:"start"
-      });
-    });
-  });
+function renderTopCategory(category){
+ const hidden=activeCategoryId!=="all"&&activeCategoryId!==category.id;
+ const photos=category.allItems.filter(x=>x.type==="image"),videos=category.allItems.filter(x=>x.type==="video");
+ return `<section class="category-block" id="category-${escapeHtml(category.id)}" ${hidden?"hidden":""}>
+ <div class="category-head"><div><h3>${escapeHtml(category.name)}</h3><div class="category-meta">${photos.length} ảnh${videos.length?" · "+videos.length+" video":""}${category.subfolders.length?" · "+category.subfolders.length+" thư mục con":""}</div></div>
+ <div class="category-head-actions"><a class="btn btn-primary" href="${escapeHtml(category.driveUrl)}" target="_blank" rel="noopener">⬇ Tải tất cả</a><a class="btn btn-secondary" href="${escapeHtml(category.driveUrl)}" target="_blank" rel="noopener">Mở folder Drive</a></div></div>
+ ${category.subfolders.length?`<div class="subfolder-list">${category.subfolders.map(renderSubfolder).join("")}</div>`:renderMediaContent(category.id,photos,videos,visibleCount[category.id]||PHOTO_BATCH)}
+ </section>`;
 }
 
-function renderCategories() {
-  const root = document.getElementById("mediaCategories");
-
-  if (!categories.length) {
-    root.innerHTML = `
-      <div class="gallery-error">
-        <strong>Chưa có folder media</strong>
-        <p>
-          Khi BTC thêm folder con vào thư mục tổng,
-          folder sẽ tự xuất hiện tại đây.
-        </p>
-      </div>
-    `;
-    return;
-  }
-
-  root.innerHTML = categories.map(function(category) {
-    const photos =
-      category.items.filter(function(item) {
-        return item.type === "image";
-      });
-
-    const videos =
-      category.items.filter(function(item) {
-        return item.type === "video";
-      });
-
-    const visible =
-      visibleCount[category.id] || PHOTO_BATCH;
-
-    const hidden =
-      activeCategoryId !== "all" &&
-      activeCategoryId !== category.id;
-
-    return `
-      <section
-        class="category-block"
-        id="category-${escapeHtml(category.id)}"
-        ${hidden ? "hidden" : ""}
-      >
-        <div class="category-head">
-          <div>
-            <h3>${escapeHtml(category.name)}</h3>
-            <div class="category-meta">
-              ${photos.length} ảnh
-              ${videos.length ? " · " + videos.length + " video" : ""}
-            </div>
-          </div>
-
-          <div class="category-head-actions">
-            <a
-              class="btn btn-secondary"
-              href="${escapeHtml(category.driveUrl)}"
-              target="_blank"
-              rel="noopener"
-            >
-              Mở folder Drive
-            </a>
-          </div>
-        </div>
-
-        ${
-          photos.length
-            ? `
-              <div class="photo-grid">
-                ${photos
-                  .slice(0, visible)
-                  .map(function(item, index) {
-                    return `
-                      <button
-                        class="photo-card"
-                        type="button"
-                        data-category-id="${escapeHtml(category.id)}"
-                        data-photo-index="${index}"
-                        aria-label="Xem ${escapeHtml(item.name)}"
-                      >
-                        <img
-                          src="${escapeHtml(item.thumbnail)}"
-                          alt="${escapeHtml(item.name)}"
-                          loading="lazy"
-                          decoding="async"
-                        >
-                        <span>🔍</span>
-                      </button>
-                    `;
-                  })
-                  .join("")}
-              </div>
-
-              ${
-                visible < photos.length
-                  ? `
-                    <div class="more-wrap">
-                      <button
-                        class="btn btn-primary category-more"
-                        type="button"
-                        data-category-id="${escapeHtml(category.id)}"
-                      >
-                        Xem thêm ảnh
-                        (${Math.min(PHOTO_BATCH, photos.length - visible)})
-                      </button>
-                    </div>
-                  `
-                  : ""
-              }
-            `
-            : ""
-        }
-
-        ${
-          videos.length
-            ? `
-              <div class="video-strip">
-                <div class="video-strip-head">
-                  <div>
-                    <small>K15 FM Video</small>
-                    <h4>Video trong album</h4>
-                  </div>
-
-                  <span>${videos.length} video</span>
-                </div>
-
-                <div class="video-grid">
-                  ${videos.map(function(video) {
-                    return `
-                      <a
-                        class="video-card"
-                        href="${escapeHtml(video.preview)}"
-                        target="_blank"
-                        rel="noopener"
-                      >
-                        <div class="video-icon">▶</div>
-
-                        <div>
-                          <strong>
-                            ${escapeHtml(
-                              video.name.replace(/\.mp4$/i,"")
-                            )}
-                          </strong>
-
-                          <span>
-                            Xem video trên Google Drive
-                          </span>
-                        </div>
-                      </a>
-                    `;
-                  }).join("")}
-                </div>
-              </div>
-            `
-            : ""
-        }
-
-        ${
-          !photos.length && !videos.length
-            ? `
-              <div class="gallery-error">
-                <strong>Folder chưa có ảnh/video</strong>
-                <p>
-                  Chỉ cần upload file vào folder này,
-                  website sẽ tự cập nhật.
-                </p>
-              </div>
-            `
-            : ""
-        }
-      </section>
-    `;
-  }).join("");
-
-  bindCategoryEvents();
+function renderSubfolder(folder){
+ const photos=folder.allItems.filter(x=>x.type==="image"),videos=folder.allItems.filter(x=>x.type==="video");
+ return `<div class="subfolder-block" id="subfolder-${escapeHtml(folder.id)}">
+ <div class="subfolder-head"><div><h4>${escapeHtml(folder.name)}</h4><span>${photos.length} ảnh${videos.length?" · "+videos.length+" video":""}</span></div>
+ <div class="category-head-actions"><a class="btn btn-primary" href="${escapeHtml(folder.driveUrl)}" target="_blank" rel="noopener">⬇ Tải tất cả</a><a class="btn btn-secondary" href="${escapeHtml(folder.driveUrl)}" target="_blank" rel="noopener">Mở Drive</a></div></div>
+ ${folder.subfolders.length?folder.subfolders.map(renderSubfolder).join(""):renderMediaContent(folder.id,photos,videos,visibleCount[folder.id]||PHOTO_BATCH)}
+ </div>`;
 }
 
-function bindCategoryEvents() {
-  document.querySelectorAll(".category-more")
-    .forEach(function(button) {
-      button.addEventListener("click", function() {
-        const id = button.dataset.categoryId;
-
-        visibleCount[id] =
-          (visibleCount[id] || PHOTO_BATCH) +
-          PHOTO_BATCH;
-
-        renderCategories();
-      });
-    });
-
-  document.querySelectorAll(".photo-card")
-    .forEach(function(button) {
-      button.addEventListener("click", function() {
-        const categoryId =
-          button.dataset.categoryId;
-
-        const category =
-          categories.find(function(item) {
-            return item.id === categoryId;
-          });
-
-        if (!category) {
-          return;
-        }
-
-        lightboxPhotos =
-          category.items.filter(function(item) {
-            return item.type === "image";
-          });
-
-        lightboxIndex =
-          Number(button.dataset.photoIndex || 0);
-
-        openLightbox();
-      });
-    });
+function renderMediaContent(folderId,photos,videos,visible){
+ return `${photos.length?`<div class="photo-grid">${photos.slice(0,visible).map((item,index)=>`<button class="photo-card" type="button" data-folder-id="${escapeHtml(folderId)}" data-photo-index="${index}" aria-label="Xem ${escapeHtml(item.name)}"><img src="${escapeHtml(item.thumbnail)}" alt="${escapeHtml(item.name)}" loading="lazy" decoding="async"><span>🔍</span></button>`).join("")}</div>${visible<photos.length?`<div class="more-wrap"><button class="btn btn-primary category-more" type="button" data-folder-id="${escapeHtml(folderId)}">Xem thêm ảnh (${Math.min(PHOTO_BATCH,photos.length-visible)})</button></div>`:""}`:""}${videos.length?`<div class="video-strip"><div class="video-strip-head"><div><small>K15 FM Video</small><h4>Video trong album</h4></div><span>${videos.length} video</span></div><div class="video-grid">${videos.map(video=>`<a class="video-card" href="${escapeHtml(video.preview)}" target="_blank" rel="noopener"><div class="video-icon">▶</div><div><strong>${escapeHtml(video.name.replace(/\.mp4$/i,""))}</strong><span>Xem video trên Google Drive</span></div></a>`).join("")}</div></div>`:""}${!photos.length&&!videos.length?`<div class="gallery-error"><strong>Folder chưa có ảnh/video</strong><p>Chỉ cần upload file vào folder này, website sẽ tự cập nhật.</p></div>`:""}`;
 }
 
-function openLightbox() {
-  if (!lightboxPhotos.length) {
-    return;
-  }
-
-  updateLightbox();
-
-  const lightbox =
-    document.getElementById("photoLightbox");
-
-  lightbox.classList.add("open");
-  lightbox.setAttribute(
-    "aria-hidden",
-    "false"
-  );
-
-  document.body.style.overflow = "hidden";
+function findFolderById(folderId){
+ let found=null;
+ function walk(folder){if(folder.id===folderId){found=folder;return}folder.subfolders.forEach(child=>{if(!found)walk(child)})}
+ categories.forEach(category=>{if(!found)walk(category)});
+ return found;
 }
 
-function updateLightbox() {
-  const item =
-    lightboxPhotos[lightboxIndex];
-
-  if (!item) {
-    return;
-  }
-
-  const image =
-    document.getElementById(
-      "lightboxImage"
-    );
-
-  image.src =
-    "https://drive.google.com/thumbnail?id=" +
-    encodeURIComponent(item.id) +
-    "&sz=w2000";
-
-  image.alt = item.name;
-
-  document.getElementById(
-    "lightboxName"
-  ).textContent = item.name;
-
-  document.getElementById(
-    "lightboxCounter"
-  ).textContent =
-    (lightboxIndex + 1) +
-    " / " +
-    lightboxPhotos.length;
-
-  document.getElementById(
-    "lightboxDownload"
-  ).href = item.download;
-
-  document.getElementById(
-    "lightboxDrive"
-  ).href = item.preview;
+function bindCategoryEvents(){
+ document.querySelectorAll(".category-more").forEach(button=>button.addEventListener("click",function(){const id=button.dataset.folderId;visibleCount[id]=(visibleCount[id]||PHOTO_BATCH)+PHOTO_BATCH;renderCategories()}));
+ document.querySelectorAll(".photo-card").forEach(button=>button.addEventListener("click",function(){
+  const folder=findFolderById(button.dataset.folderId);if(!folder)return;
+  lightboxPhotos=folder.allItems.filter(x=>x.type==="image");lightboxIndex=Number(button.dataset.photoIndex||0);openLightbox();
+ }));
 }
 
-function closeLightbox() {
-  const lightbox =
-    document.getElementById(
-      "photoLightbox"
-    );
+function openLightbox(){if(!lightboxPhotos.length)return;updateLightbox();const lightbox=document.getElementById("photoLightbox");lightbox.classList.add("open");lightbox.setAttribute("aria-hidden","false");document.body.style.overflow="hidden"}
+function updateLightbox(){const item=lightboxPhotos[lightboxIndex];if(!item)return;const image=document.getElementById("lightboxImage");image.src="https://drive.google.com/thumbnail?id="+encodeURIComponent(item.id)+"&sz=w2000";image.alt=item.name;document.getElementById("lightboxName").textContent=item.name;document.getElementById("lightboxCounter").textContent=(lightboxIndex+1)+" / "+lightboxPhotos.length;document.getElementById("lightboxDownload").href=item.download;document.getElementById("lightboxDrive").href=item.preview}
+function closeLightbox(){const lightbox=document.getElementById("photoLightbox");lightbox.classList.remove("open");lightbox.setAttribute("aria-hidden","true");document.body.style.overflow=""}
+function moveLightbox(step){if(!lightboxPhotos.length)return;lightboxIndex=(lightboxIndex+step+lightboxPhotos.length)%lightboxPhotos.length;updateLightbox()}
+document.getElementById("lightboxClose").addEventListener("click",closeLightbox);
+document.getElementById("lightboxPrev").addEventListener("click",()=>moveLightbox(-1));
+document.getElementById("lightboxNext").addEventListener("click",()=>moveLightbox(1));
+document.getElementById("photoLightbox").addEventListener("click",event=>{if(event.target.id==="photoLightbox")closeLightbox()});
+document.addEventListener("keydown",event=>{const lightbox=document.getElementById("photoLightbox");if(!lightbox.classList.contains("open"))return;if(event.key==="Escape")closeLightbox();if(event.key==="ArrowLeft")moveLightbox(-1);if(event.key==="ArrowRight")moveLightbox(1)});
+let touchStartX=0;
+document.getElementById("photoLightbox").addEventListener("touchstart",event=>{touchStartX=event.changedTouches[0].clientX},{passive:true});
+document.getElementById("photoLightbox").addEventListener("touchend",event=>{const dx=event.changedTouches[0].clientX-touchStartX;if(Math.abs(dx)>50)moveLightbox(dx<0?1:-1)},{passive:true});
 
-  lightbox.classList.remove("open");
-  lightbox.setAttribute(
-    "aria-hidden",
-    "true"
-  );
-
-  document.body.style.overflow = "";
-}
-
-function moveLightbox(step) {
-  if (!lightboxPhotos.length) {
-    return;
-  }
-
-  lightboxIndex =
-    (
-      lightboxIndex +
-      step +
-      lightboxPhotos.length
-    ) %
-    lightboxPhotos.length;
-
-  updateLightbox();
-}
-
-document.getElementById(
-  "lightboxClose"
-).addEventListener(
-  "click",
-  closeLightbox
-);
-
-document.getElementById(
-  "lightboxPrev"
-).addEventListener(
-  "click",
-  function() {
-    moveLightbox(-1);
-  }
-);
-
-document.getElementById(
-  "lightboxNext"
-).addEventListener(
-  "click",
-  function() {
-    moveLightbox(1);
-  }
-);
-
-document.getElementById(
-  "photoLightbox"
-).addEventListener(
-  "click",
-  function(event) {
-    if (
-      event.target.id ===
-      "photoLightbox"
-    ) {
-      closeLightbox();
-    }
-  }
-);
-
-document.addEventListener(
-  "keydown",
-  function(event) {
-    const lightbox =
-      document.getElementById(
-        "photoLightbox"
-      );
-
-    if (
-      !lightbox.classList.contains(
-        "open"
-      )
-    ) {
-      return;
-    }
-
-    if (event.key === "Escape") {
-      closeLightbox();
-    }
-
-    if (event.key === "ArrowLeft") {
-      moveLightbox(-1);
-    }
-
-    if (event.key === "ArrowRight") {
-      moveLightbox(1);
-    }
-  }
-);
-
-let touchStartX = 0;
-
-document.getElementById(
-  "photoLightbox"
-).addEventListener(
-  "touchstart",
-  function(event) {
-    touchStartX =
-      event.changedTouches[0].clientX;
-  },
-  {passive:true}
-);
-
-document.getElementById(
-  "photoLightbox"
-).addEventListener(
-  "touchend",
-  function(event) {
-    const dx =
-      event.changedTouches[0].clientX -
-      touchStartX;
-
-    if (Math.abs(dx) > 50) {
-      moveLightbox(
-        dx < 0 ? 1 : -1
-      );
-    }
-  },
-  {passive:true}
-);
-
-/* Tabs chính */
-const tabs =
-  [...document.querySelectorAll(".tab")];
-
-const sections =
-  [...document.querySelectorAll(".section")];
-
-sections.forEach(function(section) {
-  const observer =
-    new IntersectionObserver(
-      function(entries) {
-        entries.forEach(function(entry) {
-          if (!entry.isIntersecting) {
-            return;
-          }
-
-          tabs.forEach(function(tab) {
-            tab.classList.toggle(
-              "active",
-              tab.getAttribute("href") ===
-                "#" + entry.target.id
-            );
-          });
-        });
-      },
-      {
-        rootMargin:
-          "-35% 0px -55% 0px"
-      }
-    );
-
-  observer.observe(section);
-});
+const tabs=[...document.querySelectorAll(".tab")],sections=[...document.querySelectorAll(".section")];
+sections.forEach(section=>{const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(!entry.isIntersecting)return;tabs.forEach(tab=>tab.classList.toggle("active",tab.getAttribute("href")==="#"+entry.target.id))})},{rootMargin:"-35% 0px -55% 0px"});observer.observe(section)});
 
 loadMedia();
 </script>
