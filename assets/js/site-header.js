@@ -1,7 +1,7 @@
 (function () {
   "use strict";
 
-  const MENU_ITEMS = [
+ const MENU_ITEMS = [
   {
     label: "Trang chủ",
     href: "/"
@@ -34,9 +34,14 @@
     href: "/gallery/"
   },
   {
-    label: "Ảnh & Video",
+    label: "Ảnh & Video Hội khóa 09.08.2026",
     href: "/media/",
     icon: "▶"
+  },
+  {
+    label: "Confession",
+    href: "/confession/",
+    icon: "♡"
   },
   {
     label: "Tiện ích",
@@ -47,7 +52,7 @@
         href: "/avatar/"
       },
       {
-        label: "Thư gửi tương lai",
+        label: "✉ Thư gửi tương lai",
         href: "/tuonglai/"
       },
       {
