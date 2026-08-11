@@ -10,10 +10,9 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
 <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="/assets/css/site-header.css?v=20260811-confession-final">
+<link rel="stylesheet" href="/assets/css/site-header.css?v=20260811-confession-upload-final">
 
 <style>
 :root{
@@ -29,10 +28,8 @@
   --red:#b42318;
   --shadow:0 20px 60px rgba(7,29,66,.12)
 }
-
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-
 body{
   margin:0;
   color:var(--text);
@@ -43,14 +40,9 @@ body{
     linear-gradient(180deg,#f8fafc 0%,#fff 48%,#fffaf0 100%);
   -webkit-font-smoothing:antialiased
 }
-
 button,input,textarea,select{font:inherit}
 a{color:inherit}
-
-.shell{
-  width:min(1120px,calc(100% - 28px));
-  margin:auto
-}
+.shell{width:min(1120px,calc(100% - 28px));margin:auto}
 
 /* HERO */
 .hero{
@@ -64,7 +56,6 @@ a{color:inherit}
     radial-gradient(circle at 82% 10%,rgba(255,255,255,.08),transparent 22%),
     linear-gradient(145deg,#041329 0%,var(--navy) 58%,var(--navy3) 100%)
 }
-
 .hero::after{
   content:"";
   position:absolute;
@@ -75,14 +66,12 @@ a{color:inherit}
   background:#f8fafc;
   border-radius:50% 50% 0 0
 }
-
 .hero-inner{
   position:relative;
   z-index:2;
   width:min(850px,100%);
   margin:auto
 }
-
 .eyebrow{
   display:inline-flex;
   padding:9px 15px;
@@ -95,7 +84,6 @@ a{color:inherit}
   letter-spacing:1px;
   text-transform:uppercase
 }
-
 .hero h1{
   margin:20px 0 0;
   font-family:"Sora","Be Vietnam Pro",sans-serif;
@@ -104,13 +92,7 @@ a{color:inherit}
   font-weight:700;
   letter-spacing:-2.4px
 }
-
-.hero h1 span{
-  display:block;
-  margin-top:8px;
-  color:var(--gold)
-}
-
+.hero h1 span{display:block;margin-top:8px;color:var(--gold)}
 .hero p{
   max-width:720px;
   margin:18px auto 0;
@@ -126,14 +108,12 @@ a{color:inherit}
   margin-top:-26px;
   padding-bottom:78px
 }
-
 .intro-grid{
   display:grid;
   grid-template-columns:.9fr 1.1fr;
   gap:20px;
   align-items:start
 }
-
 .panel{
   overflow:hidden;
   background:#fff;
@@ -150,7 +130,6 @@ a{color:inherit}
     radial-gradient(circle at 88% 10%,rgba(248,194,78,.18),transparent 28%),
     linear-gradient(145deg,#06182f,#0c3269)
 }
-
 .info-panel h2{
   margin:0;
   color:var(--gold);
@@ -158,13 +137,11 @@ a{color:inherit}
   font-size:28px;
   line-height:1.3
 }
-
 .info-panel p{
   color:rgba(255,255,255,.82);
   font-size:12px;
   line-height:1.8
 }
-
 .info-point{
   margin-top:11px;
   padding:11px 12px;
@@ -177,33 +154,26 @@ a{color:inherit}
 }
 
 /* FORM */
-.form-panel{
-  padding:28px
-}
-
+.form-panel{padding:28px}
 .form-panel h2{
   margin:0;
   color:var(--navy);
   font-family:"Sora","Be Vietnam Pro",sans-serif;
   font-size:25px
 }
-
 .lead{
   margin:7px 0 18px;
   color:var(--muted);
   font-size:11.5px;
   line-height:1.7
 }
-
 .grid{
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:12px
 }
-
 .field{margin-bottom:12px}
 .full{grid-column:1/-1}
-
 label{
   display:block;
   margin-bottom:6px;
@@ -211,10 +181,7 @@ label{
   font-size:11px;
   font-weight:800
 }
-
-input,
-select,
-textarea{
+input,select,textarea{
   width:100%;
   border:1px solid #d8dee8;
   border-radius:11px;
@@ -222,27 +189,12 @@ textarea{
   color:#172033;
   outline:none
 }
-
-input,
-select{
-  height:46px;
-  padding:0 13px
-}
-
-textarea{
-  min-height:180px;
-  padding:13px;
-  resize:vertical;
-  line-height:1.7
-}
-
-input:focus,
-select:focus,
-textarea:focus{
+input,select{height:46px;padding:0 13px}
+textarea{min-height:180px;padding:13px;resize:vertical;line-height:1.7}
+input:focus,select:focus,textarea:focus{
   border-color:#91a7c7;
   box-shadow:0 0 0 4px rgba(7,29,66,.06)
 }
-
 .anon-row{
   display:flex;
   align-items:flex-start;
@@ -255,13 +207,11 @@ textarea:focus{
   line-height:1.6;
   color:#475467
 }
-
 .anon-row input{
   width:18px;
   height:18px;
   margin-top:1px
 }
-
 .privacy{
   margin-top:12px;
   padding:11px 12px;
@@ -272,21 +222,18 @@ textarea:focus{
   font-size:10.5px;
   line-height:1.65
 }
-
 .counter{
   margin-top:5px;
   text-align:right;
   color:#98a2b3;
   font-size:10px
 }
-
 .submit-row{
   display:flex;
   align-items:center;
   gap:10px;
   margin-top:14px
 }
-
 .submit-btn{
   min-height:48px;
   padding:0 18px;
@@ -297,19 +244,13 @@ textarea:focus{
   font-weight:900;
   cursor:pointer
 }
-
-.submit-btn:disabled{
-  opacity:.55;
-  cursor:not-allowed
-}
-
+.submit-btn:disabled{opacity:.55;cursor:not-allowed}
 .status{
   flex:1;
   color:var(--muted);
   font-size:10.5px;
   line-height:1.5
 }
-
 .status.error{color:var(--red)}
 .status.success{color:var(--green)}
 
@@ -325,9 +266,7 @@ textarea:focus{
   font-size:11px;
   line-height:1.7
 }
-
 .success-box.show{display:block}
-
 .send-another{
   margin-top:10px;
   min-height:40px;
@@ -340,16 +279,83 @@ textarea:focus{
   cursor:pointer
 }
 
+/* IMAGE UPLOAD */
+.upload-box{
+  position:relative;
+  padding:15px;
+  border:1.5px dashed #c9d2df;
+  border-radius:14px;
+  background:#fbfcfe
+}
+.upload-box.has-image{
+  border-style:solid;
+  border-color:#e1b94a;
+  background:#fffdf7
+}
+.upload-input{display:none}
+.upload-trigger{
+  min-height:44px;
+  padding:0 14px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  border:0;
+  border-radius:11px;
+  background:#eef3f9;
+  color:var(--navy);
+  font-size:10.5px;
+  font-weight:900;
+  cursor:pointer
+}
+.upload-note{
+  margin-top:8px;
+  color:#667085;
+  font-size:9.5px;
+  line-height:1.6
+}
+.image-preview{
+  display:none;
+  margin-top:13px
+}
+.image-preview.show{display:block}
+.image-preview-wrap{
+  position:relative;
+  overflow:hidden;
+  max-width:440px;
+  border-radius:13px;
+  border:1px solid #e4e8ef;
+  background:#eef2f6
+}
+.image-preview img{
+  width:100%;
+  max-height:360px;
+  display:block;
+  object-fit:contain;
+  background:#f8fafc
+}
+.remove-image{
+  position:absolute;
+  top:9px;
+  right:9px;
+  min-width:34px;
+  height:34px;
+  border:0;
+  border-radius:50%;
+  background:rgba(4,19,41,.78);
+  color:#fff;
+  cursor:pointer
+}
+.image-file-info{
+  margin-top:7px;
+  color:#667085;
+  font-size:9.5px;
+  line-height:1.5
+}
+
 /* WALL */
-.wall-section{
-  margin-top:40px
-}
-
-.section-head{
-  text-align:center;
-  margin-bottom:18px
-}
-
+.wall-section{margin-top:40px}
+.section-head{text-align:center;margin-bottom:18px}
 .section-head small{
   color:#d68c00;
   font-size:10px;
@@ -357,14 +363,12 @@ textarea:focus{
   letter-spacing:1px;
   text-transform:uppercase
 }
-
 .section-head h2{
   margin:7px 0 0;
   color:var(--navy);
   font-family:"Sora","Be Vietnam Pro",sans-serif;
   font-size:clamp(28px,4vw,40px)
 }
-
 .section-head p{
   max-width:700px;
   margin:8px auto 0;
@@ -372,7 +376,6 @@ textarea:focus{
   font-size:12px;
   line-height:1.7
 }
-
 .filters{
   display:flex;
   flex-wrap:wrap;
@@ -380,7 +383,6 @@ textarea:focus{
   gap:8px;
   margin-bottom:18px
 }
-
 .filter-btn{
   min-height:38px;
   padding:0 12px;
@@ -392,19 +394,16 @@ textarea:focus{
   font-size:10.5px;
   font-weight:900
 }
-
 .filter-btn.active{
   color:#fff;
   border-color:var(--navy);
   background:var(--navy)
 }
-
 .confession-grid{
   display:grid;
   grid-template-columns:repeat(3,minmax(0,1fr));
   gap:14px
 }
-
 .confession-card{
   position:relative;
   overflow:hidden;
@@ -415,17 +414,13 @@ textarea:focus{
   border-radius:18px;
   box-shadow:0 8px 24px rgba(7,29,66,.06)
 }
-
 .confession-card::before{
   content:"";
   position:absolute;
-  left:0;
-  top:0;
-  bottom:0;
+  left:0;top:0;bottom:0;
   width:4px;
   background:var(--gold)
 }
-
 .confession-meta{
   display:flex;
   align-items:center;
@@ -434,7 +429,6 @@ textarea:focus{
   color:#98a2b3;
   font-size:9.5px
 }
-
 .confession-tag{
   padding:5px 8px;
   border-radius:999px;
@@ -442,14 +436,12 @@ textarea:focus{
   color:#8a5300;
   font-weight:900
 }
-
 .confession-to{
   margin-top:13px;
   color:#344054;
   font-size:10.5px;
   font-weight:800
 }
-
 .confession-text{
   margin-top:9px;
   color:#1f2937;
@@ -457,7 +449,20 @@ textarea:focus{
   line-height:1.8;
   white-space:pre-wrap
 }
-
+.confession-image{
+  margin-top:14px;
+  overflow:hidden;
+  border-radius:13px;
+  border:1px solid #e4e8ef;
+  background:#eef2f6;
+  cursor:pointer
+}
+.confession-image img{
+  width:100%;
+  max-height:320px;
+  display:block;
+  object-fit:cover
+}
 .confession-sign{
   margin-top:16px;
   padding-top:11px;
@@ -466,10 +471,7 @@ textarea:focus{
   font-size:10px;
   font-style:italic
 }
-
-.empty,
-.loading,
-.error-box{
+.empty,.loading,.error-box{
   grid-column:1/-1;
   padding:32px 18px;
   text-align:center;
@@ -480,19 +482,48 @@ textarea:focus{
   font-size:11px;
   line-height:1.7
 }
-
 .spinner{
-  width:34px;
-  height:34px;
+  width:34px;height:34px;
   margin:0 auto 10px;
   border:3px solid #e4e8ef;
   border-top-color:var(--gold);
   border-radius:50%;
   animation:spin .8s linear infinite
 }
+@keyframes spin{to{transform:rotate(360deg)}}
 
-@keyframes spin{
-  to{transform:rotate(360deg)}
+/* LIGHTBOX */
+.lightbox{
+  position:fixed;
+  inset:0;
+  z-index:99999;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+  background:rgba(2,10,24,.94)
+}
+.lightbox.open{display:flex}
+.lightbox img{
+  width:min(1100px,92vw);
+  max-height:86vh;
+  display:block;
+  object-fit:contain;
+  border-radius:14px;
+  background:#08162d
+}
+.lb-close{
+  position:fixed;
+  top:18px;
+  right:18px;
+  width:44px;
+  height:44px;
+  border:1px solid rgba(255,255,255,.22);
+  border-radius:50%;
+  color:#fff;
+  background:rgba(255,255,255,.10);
+  font-size:24px;
+  cursor:pointer
 }
 
 .footer{
@@ -508,16 +539,11 @@ textarea:focus{
   .intro-grid{grid-template-columns:1fr}
   .confession-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
-
 @media(max-width:600px){
   .grid{grid-template-columns:1fr}
   .full{grid-column:auto}
-  .form-panel,
-  .info-panel{padding:22px 17px}
-  .submit-row{
-    flex-direction:column;
-    align-items:stretch
-  }
+  .form-panel,.info-panel{padding:22px 17px}
+  .submit-row{flex-direction:column;align-items:stretch}
   .submit-btn{width:100%}
   .status{text-align:center}
   .confession-grid{grid-template-columns:1fr}
@@ -531,18 +557,11 @@ textarea:focus{
 
 <header class="hero">
   <div class="hero-inner">
-    <div class="eyebrow">
-      K15 Confession · Sau ngày hội ngộ
-    </div>
-
-    <h1>
-      ĐIỀU CHƯA KỊP
-      <span>NÓI</span>
-    </h1>
-
+    <div class="eyebrow">K15 Confession · Sau ngày hội ngộ</div>
+    <h1>ĐIỀU CHƯA KỊP<span>NÓI</span></h1>
     <p>
       Một lời cảm ơn, một lời nhắn, một điều từng giữ trong lòng.
-      Bạn có thể ký tên hoặc để lại câu chuyện hoàn toàn ẩn danh.
+      Bạn có thể ký tên, để lại câu chuyện ẩn danh và gửi kèm một bức ảnh kỷ niệm.
     </p>
   </div>
 </header>
@@ -552,50 +571,28 @@ textarea:focus{
   <section class="intro-grid">
 
     <aside class="panel info-panel">
-
-      <h2>
-        Gửi một lời cho thanh xuân
-      </h2>
-
+      <h2>Gửi một lời cho thanh xuân</h2>
       <p>
-        K15 FM Confession là nơi để những điều chưa kịp nói được ở lại
-        sau ngày hội ngộ.
+        K15 FM Confession là nơi để những điều chưa kịp nói được ở lại sau ngày hội ngộ.
       </p>
 
-      <div class="info-point">
-        💙 Gửi lời cảm ơn tới một người bạn, thầy cô hoặc BTC.
-      </div>
-
-      <div class="info-point">
-        💌 Nhắn gửi tới một người từng đi qua thanh xuân của bạn.
-      </div>
-
-      <div class="info-point">
-        🫶 Có thể ẩn danh hoàn toàn nếu bạn muốn.
-      </div>
-
-      <div class="info-point">
-        🛡️ Bài chỉ xuất hiện trên website sau khi BTC duyệt.
-      </div>
-
+      <div class="info-point">💙 Gửi lời cảm ơn tới một người bạn, thầy cô hoặc BTC.</div>
+      <div class="info-point">💌 Nhắn gửi tới một người từng đi qua thanh xuân của bạn.</div>
+      <div class="info-point">📷 Có thể gửi kèm 01 ảnh kỷ niệm để câu chuyện đầy đủ hơn.</div>
+      <div class="info-point">🫶 Có thể ẩn danh hoàn toàn nếu bạn muốn.</div>
+      <div class="info-point">🛡️ Nội dung và ảnh chỉ xuất hiện sau khi BTC duyệt.</div>
     </aside>
 
     <section class="panel form-panel">
 
       <div id="formArea">
 
-        <h2>
-          Gửi confession
-        </h2>
+        <h2>Gửi confession</h2>
 
         <p class="lead">
           BTC sẽ duyệt trước khi hiển thị công khai trên “Bức tường K15”.
         </p>
 
-        <!--
-          KHÔNG DÙNG FETCH POST.
-          Form submit trực tiếp sang Apps Script và nhận phản hồi trong iframe ẩn.
-        -->
         <form
           id="confessionForm"
           method="POST"
@@ -606,10 +603,7 @@ textarea:focus{
           <div class="grid">
 
             <div class="field">
-              <label for="senderName">
-                Tên người gửi
-              </label>
-
+              <label for="senderName">Tên người gửi</label>
               <input
                 id="senderName"
                 name="senderName"
@@ -619,10 +613,7 @@ textarea:focus{
             </div>
 
             <div class="field">
-              <label for="senderClass">
-                Lớp
-              </label>
-
+              <label for="senderClass">Lớp</label>
               <input
                 id="senderClass"
                 name="senderClass"
@@ -632,46 +623,19 @@ textarea:focus{
             </div>
 
             <div class="field">
-              <label for="category">
-                Chủ đề *
-              </label>
-
-              <select
-                id="category"
-                name="category"
-                required
-              >
-                <option value="">
-                  -- Chọn chủ đề --
-                </option>
-
-                <option value="Cảm ơn">
-                  💙 Cảm ơn
-                </option>
-
-                <option value="Gửi một người">
-                  💌 Gửi một người
-                </option>
-
-                <option value="Gửi Thầy Cô">
-                  🎓 Gửi Thầy Cô
-                </option>
-
-                <option value="Gửi lớp mình">
-                  🫶 Gửi lớp mình
-                </option>
-
-                <option value="Chuyện K15">
-                  📻 Chuyện K15
-                </option>
+              <label for="category">Chủ đề *</label>
+              <select id="category" name="category" required>
+                <option value="">-- Chọn chủ đề --</option>
+                <option value="Cảm ơn">💙 Cảm ơn</option>
+                <option value="Gửi một người">💌 Gửi một người</option>
+                <option value="Gửi Thầy Cô">🎓 Gửi Thầy Cô</option>
+                <option value="Gửi lớp mình">🫶 Gửi lớp mình</option>
+                <option value="Chuyện K15">📻 Chuyện K15</option>
               </select>
             </div>
 
             <div class="field">
-              <label for="recipient">
-                Gửi tới *
-              </label>
-
+              <label for="recipient">Gửi tới *</label>
               <input
                 id="recipient"
                 name="recipient"
@@ -682,11 +646,7 @@ textarea:focus{
             </div>
 
             <div class="field full">
-
-              <label for="message">
-                Nội dung *
-              </label>
-
+              <label for="message">Nội dung *</label>
               <textarea
                 id="message"
                 name="message"
@@ -694,15 +654,59 @@ textarea:focus{
                 required
                 placeholder="Viết điều bạn muốn gửi..."
               ></textarea>
-
-              <div class="counter">
-                <span id="charCount">0</span>/2500 ký tự
-              </div>
-
+              <div class="counter"><span id="charCount">0</span>/2500 ký tự</div>
             </div>
 
             <div class="field full">
+              <label>📷 Ảnh kỷ niệm đính kèm (không bắt buộc)</label>
 
+              <div class="upload-box" id="uploadBox">
+
+                <input
+                  class="upload-input"
+                  id="imageFile"
+                  type="file"
+                  accept="image/jpeg,image/png,image/webp"
+                >
+
+                <button
+                  class="upload-trigger"
+                  id="chooseImageBtn"
+                  type="button"
+                >
+                  📷 Chọn một bức ảnh
+                </button>
+
+                <div class="upload-note">
+                  JPG, PNG hoặc WebP · tối đa 8 MB · 01 ảnh/confession.
+                  Chỉ đăng ảnh bạn có quyền chia sẻ.
+                </div>
+
+                <div class="image-preview" id="imagePreview">
+                  <div class="image-preview-wrap">
+                    <img id="imagePreviewImg" alt="Ảnh kỷ niệm đã chọn">
+                    <button
+                      class="remove-image"
+                      id="removeImageBtn"
+                      type="button"
+                      aria-label="Xóa ảnh"
+                    >
+                      ×
+                    </button>
+                  </div>
+
+                  <div class="image-file-info" id="imageFileInfo"></div>
+                </div>
+
+              </div>
+
+              <!-- Payload ảnh gửi sang Apps Script -->
+              <input type="hidden" id="imageBase64" name="imageBase64">
+              <input type="hidden" id="imageName" name="imageName">
+              <input type="hidden" id="imageMimeType" name="imageMimeType">
+            </div>
+
+            <div class="field full">
               <label for="contactEmail">
                 Email liên hệ riêng với BTC
                 (không công khai, không bắt buộc)
@@ -715,48 +719,34 @@ textarea:focus{
                 maxlength="120"
                 placeholder="email@example.com"
               >
-
             </div>
 
             <div class="field full">
-
               <label class="anon-row">
-
                 <input
                   id="anonymous"
                   name="anonymous"
                   type="checkbox"
                   value="1"
                 >
-
                 <span>
                   <b>Đăng ẩn danh.</b>
                   Nếu chọn, tên/lớp của bạn sẽ không xuất hiện trên website.
                 </span>
-
               </label>
-
             </div>
 
             <!-- Honeypot chống bot -->
-            <div
-              style="position:absolute;left:-9999px;top:-9999px"
-              aria-hidden="true"
-            >
-              <input
-                type="text"
-                name="website"
-                tabindex="-1"
-                autocomplete="off"
-              >
+            <div style="position:absolute;left:-9999px;top:-9999px" aria-hidden="true">
+              <input type="text" name="website" tabindex="-1" autocomplete="off">
             </div>
 
           </div>
 
           <div class="privacy">
             🔒 Nội dung sẽ ở trạng thái <b>Chờ duyệt</b>.
-            Chỉ confession được BTC đánh dấu <b>Đã duyệt</b>
-            mới xuất hiện công khai.
+            Chỉ confession được BTC đánh dấu <b>Đã duyệt</b> mới xuất hiện công khai.
+            Ảnh đính kèm cũng chỉ hiển thị khi bài được duyệt.
           </div>
 
           <div class="submit-row">
@@ -769,10 +759,7 @@ textarea:focus{
               ♡ GỬI CONFESSION
             </button>
 
-            <div
-              class="status"
-              id="statusText"
-            >
+            <div class="status" id="statusText">
               Viết điều bạn thật sự muốn nói.
             </div>
 
@@ -782,22 +769,12 @@ textarea:focus{
 
       </div>
 
-      <div
-        class="success-box"
-        id="successBox"
-      >
-
+      <div class="success-box" id="successBox">
         <b>✓ Confession đã được gửi tới BTC</b>
-
         <br><br>
-
-        Nội dung đang ở trạng thái
-        <b>Chờ duyệt</b>.
-        Sau khi BTC duyệt, confession sẽ xuất hiện trên
-        Bức tường K15.
-
+        Nội dung đang ở trạng thái <b>Chờ duyệt</b>.
+        Sau khi BTC duyệt, confession sẽ xuất hiện trên Bức tường K15.
         <br>
-
         <button
           class="send-another"
           id="sendAnother"
@@ -805,7 +782,6 @@ textarea:focus{
         >
           Viết thêm một confession
         </button>
-
       </div>
 
     </section>
@@ -815,93 +791,33 @@ textarea:focus{
   <section class="wall-section">
 
     <div class="section-head">
-
-      <small>
-        K15 Wall
-      </small>
-
-      <h2>
-        Bức tường K15
-      </h2>
-
+      <small>K15 Wall</small>
+      <h2>Bức tường K15</h2>
       <p>
-        Những lời nhắn đã được BTC duyệt sẽ xuất hiện tại đây.
+        Những lời nhắn và hình ảnh đã được BTC duyệt sẽ xuất hiện tại đây.
       </p>
-
     </div>
 
     <div class="filters">
-
-      <button
-        class="filter-btn active"
-        data-filter="Tất cả"
-        type="button"
-      >
-        Tất cả
-      </button>
-
-      <button
-        class="filter-btn"
-        data-filter="Cảm ơn"
-        type="button"
-      >
-        💙 Cảm ơn
-      </button>
-
-      <button
-        class="filter-btn"
-        data-filter="Gửi một người"
-        type="button"
-      >
-        💌 Gửi một người
-      </button>
-
-      <button
-        class="filter-btn"
-        data-filter="Gửi Thầy Cô"
-        type="button"
-      >
-        🎓 Gửi Thầy Cô
-      </button>
-
-      <button
-        class="filter-btn"
-        data-filter="Gửi lớp mình"
-        type="button"
-      >
-        🫶 Gửi lớp mình
-      </button>
-
-      <button
-        class="filter-btn"
-        data-filter="Chuyện K15"
-        type="button"
-      >
-        📻 Chuyện K15
-      </button>
-
+      <button class="filter-btn active" data-filter="Tất cả" type="button">Tất cả</button>
+      <button class="filter-btn" data-filter="Cảm ơn" type="button">💙 Cảm ơn</button>
+      <button class="filter-btn" data-filter="Gửi một người" type="button">💌 Gửi một người</button>
+      <button class="filter-btn" data-filter="Gửi Thầy Cô" type="button">🎓 Gửi Thầy Cô</button>
+      <button class="filter-btn" data-filter="Gửi lớp mình" type="button">🫶 Gửi lớp mình</button>
+      <button class="filter-btn" data-filter="Chuyện K15" type="button">📻 Chuyện K15</button>
     </div>
 
-    <div
-      class="confession-grid"
-      id="confessionGrid"
-    >
-
+    <div class="confession-grid" id="confessionGrid">
       <div class="loading">
-
         <div class="spinner"></div>
-
         Đang tải những điều chưa kịp nói...
-
       </div>
-
     </div>
 
   </section>
 
 </main>
 
-<!-- iframe nhận POST Apps Script, tránh CORS -->
 <iframe
   id="confessionSubmitFrame"
   name="confessionSubmitFrame"
@@ -909,135 +825,71 @@ textarea:focus{
   style="display:none"
 ></iframe>
 
+<div class="lightbox" id="imageLightbox" aria-hidden="true">
+  <button class="lb-close" id="imageLightboxClose" type="button" aria-label="Đóng">×</button>
+  <img id="imageLightboxImg" alt="Ảnh confession K15 FM">
+</div>
+
 <footer class="footer">
-  K15 FM · Thanh xuân phát lại
-  <br>
+  K15 FM · Thanh xuân phát lại<br>
   Kỷ niệm 10 năm ra trường Sinh viên K15 Học viện Ngân hàng
 </footer>
 
-<script src="/assets/js/site-header.js?v=20260811-confession-final"></script>
+<script src="/assets/js/site-header.js?v=20260811-confession-upload-final"></script>
 
 <script>
-/* =====================================================
-   K15 FM CONFESSION - FINAL
-   POST: form -> iframe ẩn (không fetch POST)
-   GET : fetch danh sách bài đã duyệt
-===================================================== */
-
 const CONFESSION_API_URL =
   "https://script.google.com/macros/s/AKfycbxLmLXW7bPlG0nAJNXQQ0dmGz3vw3Wjnx0VZaRAOj6Vah2UxgDvPqj3GV1r4jmybdVYGg/exec";
 
-const form =
-  document.getElementById(
-    "confessionForm"
-  );
+const MAX_IMAGE_BYTES = 8 * 1024 * 1024;
 
-const submitFrame =
-  document.getElementById(
-    "confessionSubmitFrame"
-  );
+const form = document.getElementById("confessionForm");
+const submitFrame = document.getElementById("confessionSubmitFrame");
+const submitBtn = document.getElementById("submitBtn");
+const statusText = document.getElementById("statusText");
+const successBox = document.getElementById("successBox");
+const formArea = document.getElementById("formArea");
+const sendAnother = document.getElementById("sendAnother");
+const message = document.getElementById("message");
+const charCount = document.getElementById("charCount");
+const confessionGrid = document.getElementById("confessionGrid");
 
-const submitBtn =
-  document.getElementById(
-    "submitBtn"
-  );
-
-const statusText =
-  document.getElementById(
-    "statusText"
-  );
-
-const successBox =
-  document.getElementById(
-    "successBox"
-  );
-
-const formArea =
-  document.getElementById(
-    "formArea"
-  );
-
-const sendAnother =
-  document.getElementById(
-    "sendAnother"
-  );
-
-const message =
-  document.getElementById(
-    "message"
-  );
-
-const charCount =
-  document.getElementById(
-    "charCount"
-  );
-
-const confessionGrid =
-  document.getElementById(
-    "confessionGrid"
-  );
+const imageFile = document.getElementById("imageFile");
+const chooseImageBtn = document.getElementById("chooseImageBtn");
+const removeImageBtn = document.getElementById("removeImageBtn");
+const uploadBox = document.getElementById("uploadBox");
+const imagePreview = document.getElementById("imagePreview");
+const imagePreviewImg = document.getElementById("imagePreviewImg");
+const imageFileInfo = document.getElementById("imageFileInfo");
+const imageBase64 = document.getElementById("imageBase64");
+const imageName = document.getElementById("imageName");
+const imageMimeType = document.getElementById("imageMimeType");
 
 let approvedConfessions = [];
 let activeFilter = "Tất cả";
 
-/*
-  Biến này giúp phân biệt:
-  iframe load lần đầu khi trang mở
-  với iframe load sau khi vừa submit.
-*/
 let submissionInProgress = false;
 let submitFallbackTimer = null;
+let imageReady = true;
 
+message.addEventListener("input", function(){
+  charCount.textContent =
+    String(message.value.length);
+});
 
-/* =========================
-   ĐẾM KÝ TỰ
-========================= */
-
-message.addEventListener(
-  "input",
-  function () {
-
-    charCount.textContent =
-      String(
-        message.value.length
-      );
-
-  }
-);
-
-
-/* =========================
-   ESCAPE HTML
-========================= */
-
-function escapeHtml(value) {
-
-  return String(
-    value == null
-      ? ""
-      : value
-  )
+function escapeHtml(value){
+  return String(value == null ? "" : value)
     .replace(/&/g,"&amp;")
     .replace(/</g,"&lt;")
     .replace(/>/g,"&gt;")
     .replace(/"/g,"&quot;")
     .replace(/'/g,"&#039;");
-
 }
 
+function formatDate(value){
+  if(!value) return "";
 
-/* =========================
-   FORMAT DATE
-========================= */
-
-function formatDate(value) {
-
-  if (!value) {
-    return "";
-  }
-
-  try {
-
+  try{
     return new Intl.DateTimeFormat(
       "vi-VN",
       {
@@ -1045,38 +897,198 @@ function formatDate(value) {
         month:"2-digit",
         year:"numeric"
       }
-    )
-      .format(
-        new Date(value)
-      );
-
-  } catch (error) {
-
+    ).format(new Date(value));
+  }catch(error){
     return "";
-
   }
 }
 
+function formatBytes(bytes){
+  if(!bytes) return "0 MB";
 
-/* =========================
-   LOAD CONFESSION ĐÃ DUYỆT
-========================= */
+  const mb = bytes / 1024 / 1024;
 
-async function loadApproved() {
+  return mb.toFixed(
+    mb >= 1 ? 1 : 2
+  ) + " MB";
+}
 
-  try {
+/* =====================================================
+   IMAGE PICKER
+===================================================== */
 
+chooseImageBtn.addEventListener(
+  "click",
+  function(){
+    imageFile.click();
+  }
+);
+
+imageFile.addEventListener(
+  "change",
+  function(){
+
+    const file =
+      imageFile.files &&
+      imageFile.files[0]
+        ? imageFile.files[0]
+        : null;
+
+    if(!file){
+      clearSelectedImage();
+      return;
+    }
+
+    const allowed = [
+      "image/jpeg",
+      "image/png",
+      "image/webp"
+    ];
+
+    if(!allowed.includes(file.type)){
+      alert(
+        "Ảnh phải là JPG, PNG hoặc WebP."
+      );
+      clearSelectedImage();
+      return;
+    }
+
+    if(file.size > MAX_IMAGE_BYTES){
+      alert(
+        "Ảnh vượt quá 8 MB. Bạn vui lòng chọn ảnh nhẹ hơn."
+      );
+      clearSelectedImage();
+      return;
+    }
+
+    imageReady = false;
+    submitBtn.disabled = true;
+    statusText.className = "status";
+    statusText.textContent =
+      "Đang chuẩn bị ảnh đính kèm...";
+
+    const reader =
+      new FileReader();
+
+    reader.onload =
+      function(event){
+
+        const dataUrl =
+          String(
+            event.target.result ||
+            ""
+          );
+
+        const commaIndex =
+          dataUrl.indexOf(",");
+
+        if(commaIndex === -1){
+          alert(
+            "Không đọc được ảnh. Vui lòng thử ảnh khác."
+          );
+          clearSelectedImage();
+          return;
+        }
+
+        imageBase64.value =
+          dataUrl.slice(
+            commaIndex + 1
+          );
+
+        imageName.value =
+          file.name;
+
+        imageMimeType.value =
+          file.type;
+
+        imagePreviewImg.src =
+          dataUrl;
+
+        imageFileInfo.textContent =
+          file.name +
+          " · " +
+          formatBytes(file.size);
+
+        imagePreview.classList.add(
+          "show"
+        );
+
+        uploadBox.classList.add(
+          "has-image"
+        );
+
+        chooseImageBtn.textContent =
+          "📷 Đổi ảnh khác";
+
+        imageReady = true;
+        submitBtn.disabled = false;
+        statusText.textContent =
+          "Ảnh đã sẵn sàng. Bạn có thể gửi confession.";
+      };
+
+    reader.onerror =
+      function(){
+        alert(
+          "Không đọc được ảnh. Vui lòng thử lại."
+        );
+        clearSelectedImage();
+      };
+
+    reader.readAsDataURL(
+      file
+    );
+  }
+);
+
+removeImageBtn.addEventListener(
+  "click",
+  clearSelectedImage
+);
+
+function clearSelectedImage(){
+  imageFile.value = "";
+  imageBase64.value = "";
+  imageName.value = "";
+  imageMimeType.value = "";
+  imagePreviewImg.src = "";
+  imageFileInfo.textContent = "";
+
+  imagePreview.classList.remove(
+    "show"
+  );
+
+  uploadBox.classList.remove(
+    "has-image"
+  );
+
+  chooseImageBtn.textContent =
+    "📷 Chọn một bức ảnh";
+
+  imageReady = true;
+  submitBtn.disabled = false;
+
+  if(!submissionInProgress){
+    statusText.className = "status";
+    statusText.textContent =
+      "Viết điều bạn thật sự muốn nói.";
+  }
+}
+
+/* =====================================================
+   LOAD APPROVED CONFESSIONS
+===================================================== */
+
+async function loadApproved(){
+  try{
     const response =
       await fetch(
         CONFESSION_API_URL +
         "?action=list&t=" +
         Date.now(),
-        {
-          cache:"no-store"
-        }
+        {cache:"no-store"}
       );
 
-    if (!response.ok) {
+    if(!response.ok){
       throw new Error(
         "HTTP " +
         response.status
@@ -1086,17 +1098,13 @@ async function loadApproved() {
     const data =
       await response.json();
 
-    if (
+    if(
       !data ||
       data.success !== true ||
-      !Array.isArray(
-        data.items
-      )
-    ) {
-
+      !Array.isArray(data.items)
+    ){
       throw new Error(
-        data &&
-        data.error
+        data && data.error
           ? data.error
           : "Dữ liệu không hợp lệ"
       );
@@ -1107,7 +1115,7 @@ async function loadApproved() {
 
     renderWall();
 
-  } catch (error) {
+  }catch(error){
 
     console.error(
       "Load confession error:",
@@ -1121,53 +1129,55 @@ async function loadApproved() {
           Vui lòng thử lại sau.
         </div>
       `;
-
   }
 }
 
-
-/* =========================
-   RENDER WALL
-========================= */
-
-function renderWall() {
-
+function renderWall(){
   const items =
-    activeFilter ===
-    "Tất cả"
-
+    activeFilter === "Tất cả"
       ? approvedConfessions
+      : approvedConfessions.filter(
+          function(item){
+            return (
+              item.category ===
+              activeFilter
+            );
+          }
+        );
 
-      : approvedConfessions
-          .filter(
-            function (item) {
-
-              return (
-                item.category ===
-                activeFilter
-              );
-
-            }
-          );
-
-
-  if (!items.length) {
-
+  if(!items.length){
     confessionGrid.innerHTML =
       `
         <div class="empty">
           Chưa có confession nào trong mục này.
         </div>
       `;
-
     return;
   }
-
 
   confessionGrid.innerHTML =
     items
       .map(
-        function (item) {
+        function(item,index){
+
+          const imageHtml =
+            item.imageUrl
+              ? `
+                <button
+                  class="confession-image"
+                  type="button"
+                  data-confession-image="${index}"
+                  aria-label="Xem ảnh confession"
+                >
+                  <img
+                    src="${escapeHtml(item.imageUrl)}"
+                    alt="Ảnh đính kèm confession ${escapeHtml(item.publicId)}"
+                    loading="lazy"
+                    decoding="async"
+                  >
+                </button>
+              `
+              : "";
 
           return `
             <article class="confession-card">
@@ -1198,6 +1208,8 @@ function renderWall() {
                 ${escapeHtml(item.message)}
               </div>
 
+              ${imageHtml}
+
               <div class="confession-sign">
                 —
                 ${escapeHtml(
@@ -1208,295 +1220,218 @@ function renderWall() {
 
             </article>
           `;
-
         }
       )
       .join("");
 
-}
+  document
+    .querySelectorAll(
+      "[data-confession-image]"
+    )
+    .forEach(
+      function(button){
 
-
-/* =========================
-   FILTER
-========================= */
-
-document
-  .querySelectorAll(
-    ".filter-btn"
-  )
-  .forEach(
-    function (button) {
-
-      button
-        .addEventListener(
+        button.addEventListener(
           "click",
-          function () {
+          function(){
 
-            activeFilter =
-              button
-                .dataset
-                .filter;
+            const item =
+              items[
+                Number(
+                  button.dataset.confessionImage
+                )
+              ];
 
-
-            document
-              .querySelectorAll(
-                ".filter-btn"
-              )
-              .forEach(
-                function (btn) {
-
-                  btn
-                    .classList
-                    .toggle(
-                      "active",
-                      btn ===
-                      button
-                    );
-
-                }
+            if(
+              item &&
+              item.imageUrl
+            ){
+              openImageLightbox(
+                item.imageLargeUrl ||
+                item.imageUrl
               );
-
-
-            renderWall();
-
+            }
           }
         );
+      }
+    );
+}
 
+/* =====================================================
+   FILTER
+===================================================== */
+
+document
+  .querySelectorAll(".filter-btn")
+  .forEach(
+    function(button){
+
+      button.addEventListener(
+        "click",
+        function(){
+
+          activeFilter =
+            button.dataset.filter;
+
+          document
+            .querySelectorAll(
+              ".filter-btn"
+            )
+            .forEach(
+              function(btn){
+
+                btn.classList.toggle(
+                  "active",
+                  btn === button
+                );
+              }
+            );
+
+          renderWall();
+        }
+      );
     }
   );
 
-
-/* =========================
-   SUBMIT CONFESSION
-   FORM -> HIDDEN IFRAME
-========================= */
+/* =====================================================
+   SUBMIT VIA HIDDEN IFRAME
+===================================================== */
 
 form.addEventListener(
   "submit",
-  function (event) {
+  function(event){
 
-    /*
-      Không preventDefault hoàn toàn,
-      vì chúng ta cần browser thực sự submit form.
-      Chỉ chặn khi validation lỗi.
-    */
-
-    if (!form.checkValidity()) {
-
+    if(!form.checkValidity()){
       event.preventDefault();
-
       form.reportValidity();
-
       return;
     }
 
-
-    if (
-      !CONFESSION_API_URL
-    ) {
-
+    if(!imageReady){
       event.preventDefault();
-
       alert(
-        "Chưa cấu hình CONFESSION_API_URL."
+        "Ảnh vẫn đang được xử lý. Bạn đợi một chút rồi gửi lại nhé."
       );
-
       return;
     }
-
-
-    /*
-      Gắn action đúng Apps Script.
-    */
 
     form.action =
       CONFESSION_API_URL;
 
-
     submissionInProgress =
       true;
 
-
     submitBtn.disabled =
       true;
-
 
     submitBtn.textContent =
       "ĐANG GỬI...";
 
-
     statusText.className =
       "status";
 
-
     statusText.textContent =
-      "Đang gửi confession tới BTC...";
+      imageBase64.value
+        ? "Đang gửi confession và ảnh tới BTC..."
+        : "Đang gửi confession tới BTC...";
 
-
-    successBox
-      .classList
-      .remove(
-        "show"
-      );
-
-
-    /*
-      Fallback:
-      nếu vì lý do nào đó iframe load event
-      không phát ở một trình duyệt,
-      sau 6 giây vẫn trả giao diện về trạng thái bình thường.
-
-      Lưu ý: điều này không tự khẳng định dữ liệu đã lưu;
-      chỉ tránh nút bị treo.
-    */
+    successBox.classList.remove(
+      "show"
+    );
 
     clearTimeout(
       submitFallbackTimer
     );
 
-
     submitFallbackTimer =
       setTimeout(
-        function () {
+        function(){
 
-          if (
+          if(
             submissionInProgress
-          ) {
+          ){
 
             submissionInProgress =
               false;
 
-
             submitBtn.disabled =
               false;
-
 
             submitBtn.textContent =
               "♡ GỬI CONFESSION";
 
-
             statusText.className =
               "status";
 
-
             statusText.textContent =
-              "Nếu chưa thấy xác nhận, vui lòng kiểm tra lại hoặc gửi lại sau ít phút.";
-
+              "Nếu chưa thấy xác nhận, vui lòng kiểm tra lại hoặc thử gửi lại sau ít phút.";
           }
-
         },
-        6000
+        12000
       );
-
   }
 );
 
-
-/* =========================
-   IFRAME LOAD SAU POST
-========================= */
-
 submitFrame.addEventListener(
   "load",
-  function () {
+  function(){
 
-    /*
-      iframe load ngay khi trang mới mở.
-      Chỉ xử lý khi vừa submit.
-    */
-
-    if (
+    if(
       !submissionInProgress
-    ) {
+    ){
       return;
     }
 
-
     submissionInProgress =
       false;
-
 
     clearTimeout(
       submitFallbackTimer
     );
 
-
     submitBtn.disabled =
       false;
-
 
     submitBtn.textContent =
       "♡ GỬI CONFESSION";
 
-
     statusText.className =
       "status success";
-
 
     statusText.textContent =
       "Đã gửi tới BTC.";
 
-
-    /*
-      Vì cross-origin nên JS không thể đọc JSON
-      bên trong iframe Apps Script.
-
-      Nhưng iframe load chứng minh POST đã hoàn thành
-      ở tầng trình duyệt.
-    */
-
     formArea.style.display =
       "none";
 
-
-    successBox
-      .classList
-      .add(
-        "show"
-      );
-
-
-    /*
-      Không reload wall ngay vì confession mới vẫn là Chờ duyệt.
-    */
-
+    successBox.classList.add(
+      "show"
+    );
   }
 );
 
-
-/* =========================
-   VIẾT THÊM CONFESSION
-========================= */
-
 sendAnother.addEventListener(
   "click",
-  function () {
+  function(){
 
     form.reset();
-
+    clearSelectedImage();
 
     charCount.textContent =
       "0";
 
-
-    successBox
-      .classList
-      .remove(
-        "show"
-      );
-
+    successBox.classList.remove(
+      "show"
+    );
 
     formArea.style.display =
       "";
 
-
     statusText.className =
       "status";
 
-
     statusText.textContent =
       "Viết điều bạn thật sự muốn nói.";
-
 
     window.scrollTo({
       top:
@@ -1507,17 +1442,94 @@ sendAnother.addEventListener(
         120,
       behavior:"smooth"
     });
-
   }
 );
 
+/* =====================================================
+   IMAGE LIGHTBOX
+===================================================== */
 
-/* =========================
-   LOAD WALL
-========================= */
+const imageLightbox =
+  document.getElementById(
+    "imageLightbox"
+  );
+
+const imageLightboxImg =
+  document.getElementById(
+    "imageLightboxImg"
+  );
+
+function openImageLightbox(url){
+  imageLightboxImg.src =
+    url;
+
+  imageLightbox.classList.add(
+    "open"
+  );
+
+  imageLightbox.setAttribute(
+    "aria-hidden",
+    "false"
+  );
+
+  document.body.style.overflow =
+    "hidden";
+}
+
+function closeImageLightbox(){
+  imageLightbox.classList.remove(
+    "open"
+  );
+
+  imageLightbox.setAttribute(
+    "aria-hidden",
+    "true"
+  );
+
+  imageLightboxImg.src = "";
+
+  document.body.style.overflow =
+    "";
+}
+
+document
+  .getElementById(
+    "imageLightboxClose"
+  )
+  .addEventListener(
+    "click",
+    closeImageLightbox
+  );
+
+imageLightbox.addEventListener(
+  "click",
+  function(event){
+
+    if(
+      event.target ===
+      imageLightbox
+    ){
+      closeImageLightbox();
+    }
+  }
+);
+
+document.addEventListener(
+  "keydown",
+  function(event){
+
+    if(
+      event.key === "Escape" &&
+      imageLightbox
+        .classList
+        .contains("open")
+    ){
+      closeImageLightbox();
+    }
+  }
+);
 
 loadApproved();
-
 </script>
 
 </body>
