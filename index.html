@@ -5,29 +5,29 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#071d42">
 
-<title>K15 Confession | Điều chưa kịp nói</title>
-<meta name="description" content="Gửi lời cảm ơn, lời nhắn và những điều chưa kịp nói sau Hội khóa K15 FM – Thanh xuân phát lại.">
+<title>K15 FM – Thanh xuân phát lại | After Reunion</title>
+<meta name="description" content="K15 FM – Thanh xuân phát lại. Nơi lưu giữ ảnh, video, những lời nhắn và ký ức sau Hội khóa 10 năm Sinh viên K15 Học viện Ngân hàng.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="/assets/css/site-header.css?v=20260811-confession-upload-final">
+<link rel="stylesheet" href="/assets/css/site-header.css?v=20260811-after-reunion-video-final">
 
 <style>
 :root{
-  --navy:#071d42;
-  --navy2:#0b2b60;
+  --navy:#061a3b;
+  --navy2:#0a2d62;
   --navy3:#123e7a;
   --gold:#f8c24e;
-  --goldsoft:#fff4ce;
-  --text:#172033;
+  --gold2:#ffd76a;
+  --cream:#fff8e9;
+  --text:#182230;
   --muted:#667085;
-  --line:#e4e8ef;
-  --green:#0f7b61;
-  --red:#b42318;
-  --shadow:0 20px 60px rgba(7,29,66,.12)
+  --line:#e5e9f0;
+  --shadow:0 22px 70px rgba(7,29,66,.13);
 }
+
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
@@ -35,462 +35,581 @@ body{
   color:var(--text);
   font-family:"Be Vietnam Pro","Segoe UI",Arial,sans-serif;
   background:
-    radial-gradient(circle at 8% 0%,rgba(248,194,78,.11),transparent 26%),
-    radial-gradient(circle at 94% 3%,rgba(18,62,122,.08),transparent 24%),
-    linear-gradient(180deg,#f8fafc 0%,#fff 48%,#fffaf0 100%);
-  -webkit-font-smoothing:antialiased
+    radial-gradient(circle at 10% 0%,rgba(248,194,78,.10),transparent 26%),
+    linear-gradient(180deg,#f8fafc 0%,#fff 50%,#fffaf0 100%);
+  -webkit-font-smoothing:antialiased;
 }
-button,input,textarea,select{font:inherit}
 a{color:inherit}
-.shell{width:min(1120px,calc(100% - 28px));margin:auto}
+button{font:inherit}
+img{max-width:100%}
+.shell{width:min(1180px,calc(100% - 28px));margin:auto}
 
-/* HERO */
+/* HERO SLIDESHOW */
 .hero{
   position:relative;
+  min-height:min(820px,calc(100vh - 72px));
   overflow:hidden;
-  padding:clamp(88px,10vw,132px) 20px clamp(74px,8vw,104px);
-  text-align:center;
+  display:flex;
+  align-items:flex-end;
   color:#fff;
-  background:
-    radial-gradient(circle at 17% 18%,rgba(248,194,78,.2),transparent 27%),
-    radial-gradient(circle at 82% 10%,rgba(255,255,255,.08),transparent 22%),
-    linear-gradient(145deg,#041329 0%,var(--navy) 58%,var(--navy3) 100%)
+  background:#041329;
 }
-.hero::after{
-  content:"";
+.hero-slides,
+.hero-slide{
   position:absolute;
-  left:-10%;
-  right:-10%;
-  bottom:-58px;
-  height:105px;
-  background:#f8fafc;
-  border-radius:50% 50% 0 0
+  inset:0;
 }
-.hero-inner{
-  position:relative;
+.hero-slide{
+  opacity:0;
+  transform:scale(1.035);
+  transition:opacity 1.1s ease,transform 6.5s ease;
+  background-size:cover;
+  background-position:center;
+}
+.hero-slide.active{
+  opacity:1;
+  transform:scale(1);
+}
+.hero-overlay{
+  position:absolute;
+  inset:0;
   z-index:2;
-  width:min(850px,100%);
-  margin:auto
+  background:
+    linear-gradient(90deg,rgba(2,12,30,.90) 0%,rgba(2,12,30,.68) 42%,rgba(2,12,30,.20) 76%,rgba(2,12,30,.38) 100%),
+    linear-gradient(180deg,rgba(0,0,0,.12),rgba(0,0,0,.10) 45%,rgba(2,12,30,.78) 100%);
 }
-.eyebrow{
+.hero-noise{
+  position:absolute;
+  inset:0;
+  z-index:3;
+  pointer-events:none;
+  opacity:.26;
+  background:
+    radial-gradient(circle at 16% 18%,rgba(248,194,78,.28),transparent 26%),
+    radial-gradient(circle at 84% 10%,rgba(255,255,255,.12),transparent 20%);
+}
+.hero-content{
+  position:relative;
+  z-index:5;
+  width:min(1180px,calc(100% - 28px));
+  margin:0 auto;
+  padding:110px 0 74px;
+}
+.hero-kicker{
   display:inline-flex;
-  padding:9px 15px;
-  border:1px solid rgba(248,194,78,.45);
+  align-items:center;
+  gap:8px;
+  padding:9px 14px;
+  border:1px solid rgba(248,194,78,.48);
   border-radius:999px;
-  color:#ffe39d;
-  background:rgba(255,255,255,.06);
+  background:rgba(6,26,59,.44);
+  color:#ffe49a;
   font-size:11px;
   font-weight:900;
   letter-spacing:1px;
-  text-transform:uppercase
+  text-transform:uppercase;
+  backdrop-filter:blur(8px);
 }
-.hero h1{
-  margin:20px 0 0;
+.hero-kicker::before{
+  content:"";
+  width:8px;height:8px;
+  border-radius:50%;
+  background:#67e8b4;
+  box-shadow:0 0 0 5px rgba(103,232,180,.12);
+}
+.hero-title{
+  max-width:800px;
+  margin:22px 0 0;
   font-family:"Sora","Be Vietnam Pro",sans-serif;
-  font-size:clamp(40px,7vw,72px);
-  line-height:1.05;
+  font-size:clamp(44px,7vw,86px);
+  line-height:.98;
+  letter-spacing:-4px;
   font-weight:700;
-  letter-spacing:-2.4px
 }
-.hero h1 span{display:block;margin-top:8px;color:var(--gold)}
-.hero p{
-  max-width:720px;
-  margin:18px auto 0;
-  color:rgba(255,255,255,.82);
-  font-size:14px;
-  line-height:1.85
-}
-
-/* MAIN */
-.main{
-  position:relative;
-  z-index:5;
-  margin-top:-26px;
-  padding-bottom:78px
-}
-.intro-grid{
-  display:grid;
-  grid-template-columns:.9fr 1.1fr;
-  gap:20px;
-  align-items:start
-}
-.panel{
-  overflow:hidden;
-  background:#fff;
-  border:1px solid rgba(7,29,66,.08);
-  border-radius:22px;
-  box-shadow:var(--shadow)
-}
-
-/* INFO */
-.info-panel{
-  padding:28px;
-  color:#fff;
-  background:
-    radial-gradient(circle at 88% 10%,rgba(248,194,78,.18),transparent 28%),
-    linear-gradient(145deg,#06182f,#0c3269)
-}
-.info-panel h2{
-  margin:0;
-  color:var(--gold);
-  font-family:"Sora","Be Vietnam Pro",sans-serif;
-  font-size:28px;
-  line-height:1.3
-}
-.info-panel p{
-  color:rgba(255,255,255,.82);
-  font-size:12px;
-  line-height:1.8
-}
-.info-point{
-  margin-top:11px;
-  padding:11px 12px;
-  border:1px solid rgba(255,255,255,.12);
-  border-radius:12px;
-  color:rgba(255,255,255,.9);
-  background:rgba(255,255,255,.05);
-  font-size:11px;
-  line-height:1.65
-}
-
-/* FORM */
-.form-panel{padding:28px}
-.form-panel h2{
-  margin:0;
-  color:var(--navy);
-  font-family:"Sora","Be Vietnam Pro",sans-serif;
-  font-size:25px
-}
-.lead{
-  margin:7px 0 18px;
-  color:var(--muted);
-  font-size:11.5px;
-  line-height:1.7
-}
-.grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:12px
-}
-.field{margin-bottom:12px}
-.full{grid-column:1/-1}
-label{
+.hero-title span{
   display:block;
-  margin-bottom:6px;
-  color:#344054;
-  font-size:11px;
-  font-weight:800
-}
-input,select,textarea{
-  width:100%;
-  border:1px solid #d8dee8;
-  border-radius:11px;
-  background:#fff;
-  color:#172033;
-  outline:none
-}
-input,select{height:46px;padding:0 13px}
-textarea{min-height:180px;padding:13px;resize:vertical;line-height:1.7}
-input:focus,select:focus,textarea:focus{
-  border-color:#91a7c7;
-  box-shadow:0 0 0 4px rgba(7,29,66,.06)
-}
-.anon-row{
-  display:flex;
-  align-items:flex-start;
-  gap:9px;
-  padding:11px 12px;
-  border:1px solid #e4e8ef;
-  border-radius:11px;
-  background:#f8fafc;
-  font-size:10.5px;
-  line-height:1.6;
-  color:#475467
-}
-.anon-row input{
-  width:18px;
-  height:18px;
-  margin-top:1px
-}
-.privacy{
   margin-top:12px;
-  padding:11px 12px;
-  border:1px solid #f1dc9b;
-  border-radius:11px;
-  background:#fff9e8;
-  color:#5a4a1e;
-  font-size:10.5px;
-  line-height:1.65
+  color:var(--gold);
 }
-.counter{
-  margin-top:5px;
-  text-align:right;
-  color:#98a2b3;
-  font-size:10px
+.hero-copy{
+  max-width:680px;
+  margin:23px 0 0;
+  color:rgba(255,255,255,.84);
+  font-size:15px;
+  line-height:1.85;
 }
-.submit-row{
+.hero-date{
   display:flex;
-  align-items:center;
-  gap:10px;
-  margin-top:14px
-}
-.submit-btn{
-  min-height:48px;
-  padding:0 18px;
-  border:0;
-  border-radius:12px;
-  color:var(--navy);
-  background:linear-gradient(135deg,#f6b81a,#ffd76a);
-  font-weight:900;
-  cursor:pointer
-}
-.submit-btn:disabled{opacity:.55;cursor:not-allowed}
-.status{
-  flex:1;
-  color:var(--muted);
-  font-size:10.5px;
-  line-height:1.5
-}
-.status.error{color:var(--red)}
-.status.success{color:var(--green)}
-
-.success-box{
-  display:none;
-  margin-top:14px;
-  padding:18px;
-  text-align:center;
-  border:1px solid #b7e4c7;
-  border-radius:14px;
-  background:#f0fdf4;
-  color:#0f5f4b;
+  flex-wrap:wrap;
+  gap:9px 18px;
+  margin-top:22px;
+  color:#fff7df;
   font-size:11px;
-  line-height:1.7
+  font-weight:900;
+  letter-spacing:.3px;
 }
-.success-box.show{display:block}
-.send-another{
-  margin-top:10px;
-  min-height:40px;
-  padding:0 14px;
-  border:1px solid #b7e4c7;
-  border-radius:10px;
-  background:#fff;
-  color:#0f5f4b;
-  font-weight:800;
-  cursor:pointer
+.hero-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:25px;
 }
-
-/* IMAGE UPLOAD */
-.upload-box{
-  position:relative;
-  padding:15px;
-  border:1.5px dashed #c9d2df;
-  border-radius:14px;
-  background:#fbfcfe
-}
-.upload-box.has-image{
-  border-style:solid;
-  border-color:#e1b94a;
-  background:#fffdf7
-}
-.upload-input{display:none}
-.upload-trigger{
-  min-height:44px;
-  padding:0 14px;
+.btn{
+  min-height:46px;
+  padding:0 16px;
   display:inline-flex;
   align-items:center;
   justify-content:center;
   gap:8px;
   border:0;
-  border-radius:11px;
-  background:#eef3f9;
-  color:var(--navy);
-  font-size:10.5px;
+  border-radius:12px;
+  text-decoration:none;
+  cursor:pointer;
+  font-size:11.5px;
   font-weight:900;
-  cursor:pointer
 }
-.upload-note{
-  margin-top:8px;
-  color:#667085;
-  font-size:9.5px;
-  line-height:1.6
+.btn-gold{
+  color:var(--navy);
+  background:linear-gradient(135deg,var(--gold),var(--gold2));
+  box-shadow:0 14px 35px rgba(248,194,78,.20);
 }
-.image-preview{
-  display:none;
-  margin-top:13px
-}
-.image-preview.show{display:block}
-.image-preview-wrap{
-  position:relative;
-  overflow:hidden;
-  max-width:440px;
-  border-radius:13px;
-  border:1px solid #e4e8ef;
-  background:#eef2f6
-}
-.image-preview img{
-  width:100%;
-  max-height:360px;
-  display:block;
-  object-fit:contain;
-  background:#f8fafc
-}
-.remove-image{
-  position:absolute;
-  top:9px;
-  right:9px;
-  min-width:34px;
-  height:34px;
-  border:0;
-  border-radius:50%;
-  background:rgba(4,19,41,.78);
+.btn-glass{
   color:#fff;
-  cursor:pointer
+  border:1px solid rgba(255,255,255,.22);
+  background:rgba(255,255,255,.08);
+  backdrop-filter:blur(8px);
 }
-.image-file-info{
-  margin-top:7px;
-  color:#667085;
-  font-size:9.5px;
-  line-height:1.5
+.btn-secondary{
+  color:var(--navy);
+  background:#f1f4f8;
+  border:1px solid #dce2ea;
+}
+.hero-controls{
+  position:absolute;
+  right:max(18px,calc((100vw - 1180px)/2));
+  bottom:76px;
+  z-index:6;
+  display:flex;
+  align-items:center;
+  gap:9px;
+}
+.hero-arrow{
+  width:43px;height:43px;
+  display:grid;place-items:center;
+  border:1px solid rgba(255,255,255,.25);
+  border-radius:50%;
+  background:rgba(4,19,41,.48);
+  color:#fff;
+  cursor:pointer;
+  backdrop-filter:blur(8px);
+}
+.hero-dots{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  max-width:220px;
+  overflow:hidden;
+}
+.hero-dot{
+  width:7px;height:7px;
+  flex:0 0 7px;
+  border:0;
+  padding:0;
+  border-radius:999px;
+  background:rgba(255,255,255,.38);
+  cursor:pointer;
+}
+.hero-dot.active{
+  width:24px;
+  flex-basis:24px;
+  background:var(--gold);
+}
+.hero-loading{
+  position:absolute;
+  inset:0;
+  display:grid;
+  place-items:center;
+  color:rgba(255,255,255,.7);
+  font-size:12px;
 }
 
-/* WALL */
-.wall-section{margin-top:40px}
-.section-head{text-align:center;margin-bottom:18px}
+/* STATS */
+.stats-wrap{
+  position:relative;
+  z-index:10;
+  margin-top:-32px;
+}
+.stats{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:1px;
+  overflow:hidden;
+  border:1px solid rgba(7,29,66,.08);
+  border-radius:20px;
+  background:#e8edf3;
+  box-shadow:var(--shadow);
+}
+.stat{
+  min-height:124px;
+  padding:23px 20px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  text-align:center;
+  background:#fff;
+}
+.stat strong{
+  color:var(--navy);
+  font-family:"Sora",sans-serif;
+  font-size:32px;
+  letter-spacing:-1.5px;
+}
+.stat span{
+  margin-top:5px;
+  color:var(--muted);
+  font-size:10.5px;
+  font-weight:700;
+}
+
+/* GENERAL */
+.section{padding:72px 0 0}
+.section-head{text-align:center;margin-bottom:24px}
 .section-head small{
   color:#d68c00;
   font-size:10px;
   font-weight:900;
-  letter-spacing:1px;
-  text-transform:uppercase
+  letter-spacing:1.1px;
+  text-transform:uppercase;
 }
 .section-head h2{
   margin:7px 0 0;
   color:var(--navy);
   font-family:"Sora","Be Vietnam Pro",sans-serif;
-  font-size:clamp(28px,4vw,40px)
+  font-size:clamp(30px,4.6vw,48px);
+  line-height:1.1;
+  letter-spacing:-2px;
 }
 .section-head p{
-  max-width:700px;
-  margin:8px auto 0;
+  max-width:720px;
+  margin:11px auto 0;
   color:var(--muted);
-  font-size:12px;
-  line-height:1.7
+  font-size:12.5px;
+  line-height:1.75;
 }
-.filters{
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
-  gap:8px;
-  margin-bottom:18px
-}
-.filter-btn{
-  min-height:38px;
-  padding:0 12px;
-  border:1px solid #dce2ea;
-  border-radius:999px;
-  background:#fff;
-  color:#475467;
-  cursor:pointer;
-  font-size:10.5px;
-  font-weight:900
-}
-.filter-btn.active{
-  color:#fff;
-  border-color:var(--navy);
-  background:var(--navy)
-}
-.confession-grid{
-  display:grid;
-  grid-template-columns:repeat(3,minmax(0,1fr));
-  gap:14px
-}
-.confession-card{
-  position:relative;
+
+/* OFFICIAL VIDEO */
+.official-video{
   overflow:hidden;
-  padding:20px;
-  min-height:220px;
   background:#fff;
-  border:1px solid #e4e8ef;
-  border-radius:18px;
-  box-shadow:0 8px 24px rgba(7,29,66,.06)
+  border:1px solid rgba(7,29,66,.08);
+  border-radius:25px;
+  box-shadow:var(--shadow);
 }
-.confession-card::before{
-  content:"";
+.video-frame{
+  position:relative;
+  width:100%;
+  aspect-ratio:16/9;
+  overflow:hidden;
+  background:#041329;
+}
+.video-frame iframe{
   position:absolute;
-  left:0;top:0;bottom:0;
-  width:4px;
-  background:var(--gold)
+  inset:0;
+  width:100%;
+  height:100%;
+  border:0;
 }
-.confession-meta{
+.video-caption{
+  padding:22px 24px;
   display:flex;
   align-items:center;
   justify-content:space-between;
-  gap:10px;
-  color:#98a2b3;
-  font-size:9.5px
+  gap:20px;
 }
-.confession-tag{
-  padding:5px 8px;
-  border-radius:999px;
-  background:var(--goldsoft);
-  color:#8a5300;
-  font-weight:900
+.video-caption span{
+  color:#d68c00;
+  font-size:9px;
+  font-weight:900;
+  letter-spacing:1px;
 }
-.confession-to{
-  margin-top:13px;
-  color:#344054;
+.video-caption h3{
+  margin:5px 0 0;
+  color:var(--navy);
+  font-family:"Sora",sans-serif;
+  font-size:22px;
+}
+.video-caption p{
+  margin:6px 0 0;
+  color:var(--muted);
   font-size:10.5px;
-  font-weight:800
 }
-.confession-text{
-  margin-top:9px;
-  color:#1f2937;
+
+/* MEMORY HUB */
+.hub-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:14px;
+}
+.hub-card{
+  position:relative;
+  overflow:hidden;
+  min-height:300px;
+  padding:25px;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+  border-radius:22px;
+  text-decoration:none;
+  color:#fff;
+  box-shadow:0 14px 40px rgba(7,29,66,.11);
+  isolation:isolate;
+}
+.hub-card::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:-2;
+  background:linear-gradient(145deg,#06182f,#0d3972);
+}
+.hub-card::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:-1;
+  background:
+    radial-gradient(circle at 80% 12%,rgba(248,194,78,.26),transparent 28%),
+    linear-gradient(180deg,transparent 20%,rgba(2,12,30,.72) 100%);
+}
+.hub-card:nth-child(2)::before{background:linear-gradient(145deg,#422006,#8a4d07)}
+.hub-card:nth-child(3)::before{background:linear-gradient(145deg,#043a35,#075847)}
+.hub-icon{
+  position:absolute;
+  top:22px;right:22px;
+  width:50px;height:50px;
+  display:grid;place-items:center;
+  border-radius:50%;
+  color:var(--navy);
+  background:var(--gold);
+  font-size:20px;
+}
+.hub-kicker{
+  color:#ffe39d;
+  font-size:9px;
+  font-weight:900;
+  letter-spacing:1px;
+  text-transform:uppercase;
+}
+.hub-card h3{
+  margin:7px 0 0;
+  font-family:"Sora",sans-serif;
+  font-size:25px;
+}
+.hub-card p{
+  margin:9px 0 0;
+  color:rgba(255,255,255,.80);
+  font-size:11px;
+  line-height:1.7;
+}
+.hub-link{
+  margin-top:17px;
+  font-size:10.5px;
+  font-weight:900;
+  color:#fff1bd;
+}
+
+/* FEATURED GALLERY */
+.gallery-shell{
+  padding:22px;
+  background:#fff;
+  border:1px solid rgba(7,29,66,.08);
+  border-radius:24px;
+  box-shadow:var(--shadow);
+}
+.featured-grid{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:10px;
+}
+.feature-photo{
+  position:relative;
+  overflow:hidden;
+  aspect-ratio:4/3;
+  border:0;
+  padding:0;
+  border-radius:14px;
+  background:#edf2f7;
+  cursor:pointer;
+}
+.feature-photo:nth-child(1),
+.feature-photo:nth-child(6){
+  grid-column:span 2;
+}
+.feature-photo img{
+  width:100%;
+  height:100%;
+  display:block;
+  object-fit:cover;
+  transition:transform .28s ease;
+}
+.feature-photo:hover img{transform:scale(1.035)}
+.feature-photo::after{
+  content:"↗";
+  position:absolute;
+  right:10px;
+  bottom:10px;
+  width:30px;height:30px;
+  display:grid;place-items:center;
+  border-radius:50%;
+  color:#fff;
+  background:rgba(4,19,41,.70);
+}
+.gallery-empty{
+  padding:35px 18px;
+  text-align:center;
+  color:var(--muted);
+  font-size:11px;
+}
+.gallery-actions{
+  display:flex;
+  justify-content:center;
+  gap:9px;
+  flex-wrap:wrap;
+  margin-top:18px;
+}
+
+/* STORY */
+.story{
+  overflow:hidden;
+  display:grid;
+  grid-template-columns:1.05fr .95fr;
+  border-radius:25px;
+  background:
+    radial-gradient(circle at 90% 10%,rgba(248,194,78,.20),transparent 28%),
+    linear-gradient(145deg,#041329,var(--navy2));
+  box-shadow:var(--shadow);
+}
+.story-copy{padding:42px 36px}
+.story-copy small{
+  color:#f7c55a;
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:1px;
+  text-transform:uppercase;
+}
+.story-copy h2{
+  margin:10px 0 0;
+  color:#fff;
+  font-family:"Sora",sans-serif;
+  font-size:clamp(30px,4vw,45px);
+  line-height:1.12;
+}
+.story-copy p{
+  margin:16px 0 0;
+  color:rgba(255,255,255,.78);
+  font-size:12px;
+  line-height:1.85;
+}
+.story-quote{
+  min-height:340px;
+  padding:35px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  background:rgba(255,255,255,.06);
+}
+.story-quote blockquote{
+  max-width:390px;
+  margin:0;
+  color:#fff6d8;
+  font-family:"Sora",sans-serif;
+  font-size:clamp(20px,3vw,30px);
+  line-height:1.6;
+}
+.story-quote span{
+  display:block;
+  margin-top:15px;
+  color:rgba(255,255,255,.55);
+  font-family:"Be Vietnam Pro",sans-serif;
+  font-size:10px;
+  font-weight:700;
+}
+
+/* DISCOVER */
+.discover-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:12px;
+}
+.discover-card{
+  min-height:150px;
+  padding:21px;
+  border:1px solid var(--line);
+  border-radius:18px;
+  background:#fff;
+  text-decoration:none;
+  box-shadow:0 8px 25px rgba(7,29,66,.05);
+}
+.discover-card b{
+  display:block;
+  color:var(--navy);
+  font-family:"Sora",sans-serif;
+  font-size:15px;
+}
+.discover-card p{
+  margin:7px 0 0;
+  color:var(--muted);
+  font-size:10.5px;
+  line-height:1.65;
+}
+.discover-card span{
+  display:block;
+  margin-top:13px;
+  color:#b87300;
+  font-size:10px;
+  font-weight:900;
+}
+
+/* END CTA */
+.end-cta{
+  margin:72px 0 74px;
+  padding:48px 26px;
+  text-align:center;
+  border-radius:25px;
+  color:#fff;
+  background:
+    radial-gradient(circle at 10% 10%,rgba(248,194,78,.21),transparent 27%),
+    linear-gradient(145deg,#041329,var(--navy2));
+  box-shadow:var(--shadow);
+}
+.end-cta small{
+  color:#f8c24e;
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:1px;
+  text-transform:uppercase;
+}
+.end-cta h2{
+  max-width:800px;
+  margin:10px auto 0;
+  font-family:"Sora",sans-serif;
+  font-size:clamp(28px,4vw,44px);
+  line-height:1.25;
+}
+.end-cta p{
+  max-width:720px;
+  margin:14px auto 0;
+  color:rgba(255,255,255,.75);
   font-size:12px;
   line-height:1.8;
-  white-space:pre-wrap
 }
-.confession-image{
-  margin-top:14px;
-  overflow:hidden;
-  border-radius:13px;
-  border:1px solid #e4e8ef;
-  background:#eef2f6;
-  cursor:pointer
+.end-actions{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:9px;
+  margin-top:22px;
 }
-.confession-image img{
-  width:100%;
-  max-height:320px;
-  display:block;
-  object-fit:cover
-}
-.confession-sign{
-  margin-top:16px;
-  padding-top:11px;
-  border-top:1px dashed #e4e8ef;
-  color:#667085;
-  font-size:10px;
-  font-style:italic
-}
-.empty,.loading,.error-box{
-  grid-column:1/-1;
-  padding:32px 18px;
-  text-align:center;
-  background:#fff;
-  border:1px solid #e4e8ef;
-  border-radius:16px;
-  color:#667085;
-  font-size:11px;
-  line-height:1.7
-}
-.spinner{
-  width:34px;height:34px;
-  margin:0 auto 10px;
-  border:3px solid #e4e8ef;
-  border-top-color:var(--gold);
-  border-radius:50%;
-  animation:spin .8s linear infinite
-}
-@keyframes spin{to{transform:rotate(360deg)}}
 
 /* LIGHTBOX */
 .lightbox{
@@ -501,52 +620,93 @@ input:focus,select:focus,textarea:focus{
   align-items:center;
   justify-content:center;
   padding:20px;
-  background:rgba(2,10,24,.94)
+  background:rgba(2,10,24,.94);
 }
 .lightbox.open{display:flex}
 .lightbox img{
   width:min(1100px,92vw);
-  max-height:86vh;
-  display:block;
+  max-height:84vh;
   object-fit:contain;
   border-radius:14px;
-  background:#08162d
+  background:#08162d;
 }
 .lb-close{
   position:fixed;
-  top:18px;
-  right:18px;
-  width:44px;
-  height:44px;
+  top:18px;right:18px;
+  width:44px;height:44px;
   border:1px solid rgba(255,255,255,.22);
   border-radius:50%;
   color:#fff;
   background:rgba(255,255,255,.10);
   font-size:24px;
-  cursor:pointer
+  cursor:pointer;
 }
 
+/* FOOTER */
 .footer{
-  padding:24px 18px;
+  padding:26px 18px;
   text-align:center;
+  color:rgba(255,255,255,.64);
   background:#041329;
-  color:rgba(255,255,255,.65);
-  font-size:11px;
-  line-height:1.7
+  font-size:10.5px;
+  line-height:1.7;
 }
 
-@media(max-width:900px){
-  .intro-grid{grid-template-columns:1fr}
-  .confession-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+/* LOADING SHIMMER */
+.shimmer{
+  position:relative;
+  overflow:hidden;
+  background:#e8edf3;
 }
-@media(max-width:600px){
-  .grid{grid-template-columns:1fr}
-  .full{grid-column:auto}
-  .form-panel,.info-panel{padding:22px 17px}
-  .submit-row{flex-direction:column;align-items:stretch}
-  .submit-btn{width:100%}
-  .status{text-align:center}
-  .confession-grid{grid-template-columns:1fr}
+.shimmer::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  transform:translateX(-100%);
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.55),transparent);
+  animation:shimmer 1.4s infinite;
+}
+@keyframes shimmer{100%{transform:translateX(100%)}}
+
+/* RESPONSIVE */
+@media(max-width:980px){
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .hub-grid,.discover-grid{grid-template-columns:1fr 1fr}
+  .story{grid-template-columns:1fr}
+  .featured-grid{grid-template-columns:repeat(3,1fr)}
+}
+@media(max-width:700px){
+  .hero{
+    min-height:760px;
+    align-items:flex-end;
+  }
+  .hero-overlay{
+    background:
+      linear-gradient(180deg,rgba(2,12,30,.20),rgba(2,12,30,.62) 48%,rgba(2,12,30,.94) 100%);
+  }
+  .hero-content{padding-bottom:115px}
+  .hero-title{
+    font-size:clamp(42px,13vw,62px);
+    letter-spacing:-2.5px;
+  }
+  .hero-controls{
+    left:14px;
+    right:14px;
+    bottom:54px;
+    justify-content:center;
+  }
+  .stats-wrap{margin-top:-22px}
+  .hub-grid,.discover-grid{grid-template-columns:1fr}
+  .featured-grid{grid-template-columns:repeat(2,1fr);gap:7px}
+  .feature-photo:nth-child(1),
+  .feature-photo:nth-child(6){grid-column:span 1}
+  .video-caption{
+    align-items:flex-start;
+    flex-direction:column;
+  }
+  .video-caption .btn{width:100%}
+  .story-copy{padding:30px 22px}
+  .story-quote{min-height:260px;padding:25px 20px}
 }
 </style>
 </head>
@@ -555,279 +715,306 @@ input:focus,select:focus,textarea:focus{
 
 <div id="k15-site-header"></div>
 
-<header class="hero">
-  <div class="hero-inner">
-    <div class="eyebrow">K15 Confession · Sau ngày hội ngộ</div>
-    <h1>ĐIỀU CHƯA KỊP<span>NÓI</span></h1>
-    <p>
-      Một lời cảm ơn, một lời nhắn, một điều từng giữ trong lòng.
-      Bạn có thể ký tên, để lại câu chuyện ẩn danh và gửi kèm một bức ảnh kỷ niệm.
+<header class="hero" id="top">
+  <div class="hero-slides" id="heroSlides">
+    <div class="hero-loading" id="heroLoading">
+      Đang tải những khoảnh khắc K15 FM...
+    </div>
+  </div>
+
+  <div class="hero-overlay"></div>
+  <div class="hero-noise"></div>
+
+  <div class="hero-content">
+    <div class="hero-kicker">
+      Hội khóa 10 năm · Sinh viên K15 HVNH
+    </div>
+
+    <h1 class="hero-title">
+      MỘT THẬP KỶ
+      <span>ĐÃ TRỞ VỀ</span>
+    </h1>
+
+    <p class="hero-copy">
+      Ngày hội ngộ đã khép lại, nhưng những bức ảnh, những cái ôm,
+      tiếng cười và những câu chuyện của K15 vẫn còn ở đây để chúng ta
+      có thể phát lại bất cứ lúc nào.
     </p>
+
+    <div class="hero-date">
+      <span>09.08.2026</span>
+      <span>HỌC VIỆN NGÂN HÀNG · HÀ NỘI</span>
+      <span>K15 FM · THANH XUÂN PHÁT LẠI</span>
+    </div>
+
+    <div class="hero-actions">
+      <a class="btn btn-gold" href="/media/">📸 Xem ảnh & video</a>
+      <a class="btn btn-glass" href="/confession/">♡ Gửi một confession</a>
+    </div>
+  </div>
+
+  <div class="hero-controls" id="heroControls" hidden>
+    <button class="hero-arrow" id="heroPrev" type="button" aria-label="Ảnh trước">‹</button>
+    <div class="hero-dots" id="heroDots"></div>
+    <button class="hero-arrow" id="heroNext" type="button" aria-label="Ảnh tiếp">›</button>
   </div>
 </header>
 
-<main class="main shell">
+<div class="stats-wrap shell">
+  <section class="stats">
+    <div class="stat">
+      <strong>10</strong>
+      <span>Năm kết nối</span>
+    </div>
 
-  <section class="intro-grid">
+    <div class="stat">
+      <strong>40</strong>
+      <span>Lớp đồng hành</span>
+    </div>
 
-    <aside class="panel info-panel">
-      <h2>Gửi một lời cho thanh xuân</h2>
+    <div class="stat">
+      <strong id="homePhotoCount">—</strong>
+      <span>Ảnh đang lưu giữ</span>
+    </div>
+
+    <div class="stat">
+      <strong id="homeVideoCount">—</strong>
+      <span>Video & thước phim</span>
+    </div>
+  </section>
+</div>
+
+<main class="shell">
+
+  <section class="section">
+    <div class="section-head">
+      <small>K15 FM Official Video</small>
+      <h2>Thanh xuân đã được phát lại</h2>
       <p>
-        K15 FM Confession là nơi để những điều chưa kịp nói được ở lại sau ngày hội ngộ.
+        Cùng nhìn lại những khoảnh khắc, những gương mặt
+        và một phần thanh xuân của K15 Học viện Ngân hàng.
       </p>
+    </div>
 
-      <div class="info-point">💙 Gửi lời cảm ơn tới một người bạn, thầy cô hoặc BTC.</div>
-      <div class="info-point">💌 Nhắn gửi tới một người từng đi qua thanh xuân của bạn.</div>
-      <div class="info-point">📷 Có thể gửi kèm 01 ảnh kỷ niệm để câu chuyện đầy đủ hơn.</div>
-      <div class="info-point">🫶 Có thể ẩn danh hoàn toàn nếu bạn muốn.</div>
-      <div class="info-point">🛡️ Nội dung và ảnh chỉ xuất hiện sau khi BTC duyệt.</div>
-    </aside>
-
-    <section class="panel form-panel">
-
-      <div id="formArea">
-
-        <h2>Gửi confession</h2>
-
-        <p class="lead">
-          BTC sẽ duyệt trước khi hiển thị công khai trên “Bức tường K15”.
-        </p>
-
-        <form
-          id="confessionForm"
-          method="POST"
-          target="confessionSubmitFrame"
-          autocomplete="off"
-        >
-
-          <div class="grid">
-
-            <div class="field">
-              <label for="senderName">Tên người gửi</label>
-              <input
-                id="senderName"
-                name="senderName"
-                maxlength="100"
-                placeholder="Có thể để trống nếu ẩn danh"
-              >
-            </div>
-
-            <div class="field">
-              <label for="senderClass">Lớp</label>
-              <input
-                id="senderClass"
-                name="senderClass"
-                maxlength="50"
-                placeholder="KTB, NHE, TCD..."
-              >
-            </div>
-
-            <div class="field">
-              <label for="category">Chủ đề *</label>
-              <select id="category" name="category" required>
-                <option value="">-- Chọn chủ đề --</option>
-                <option value="Cảm ơn">💙 Cảm ơn</option>
-                <option value="Gửi một người">💌 Gửi một người</option>
-                <option value="Gửi Thầy Cô">🎓 Gửi Thầy Cô</option>
-                <option value="Gửi lớp mình">🫶 Gửi lớp mình</option>
-                <option value="Chuyện K15">📻 Chuyện K15</option>
-              </select>
-            </div>
-
-            <div class="field">
-              <label for="recipient">Gửi tới *</label>
-              <input
-                id="recipient"
-                name="recipient"
-                maxlength="120"
-                required
-                placeholder="Ví dụ: Một người bạn KTB..."
-              >
-            </div>
-
-            <div class="field full">
-              <label for="message">Nội dung *</label>
-              <textarea
-                id="message"
-                name="message"
-                maxlength="2500"
-                required
-                placeholder="Viết điều bạn muốn gửi..."
-              ></textarea>
-              <div class="counter"><span id="charCount">0</span>/2500 ký tự</div>
-            </div>
-
-            <div class="field full">
-              <label>📷 Ảnh kỷ niệm đính kèm (không bắt buộc)</label>
-
-              <div class="upload-box" id="uploadBox">
-
-                <input
-                  class="upload-input"
-                  id="imageFile"
-                  type="file"
-                  accept="image/jpeg,image/png,image/webp"
-                >
-
-                <button
-                  class="upload-trigger"
-                  id="chooseImageBtn"
-                  type="button"
-                >
-                  📷 Chọn một bức ảnh
-                </button>
-
-                <div class="upload-note">
-                  JPG, PNG hoặc WebP · tối đa 8 MB · 01 ảnh/confession.
-                  Chỉ đăng ảnh bạn có quyền chia sẻ.
-                </div>
-
-                <div class="image-preview" id="imagePreview">
-                  <div class="image-preview-wrap">
-                    <img id="imagePreviewImg" alt="Ảnh kỷ niệm đã chọn">
-                    <button
-                      class="remove-image"
-                      id="removeImageBtn"
-                      type="button"
-                      aria-label="Xóa ảnh"
-                    >
-                      ×
-                    </button>
-                  </div>
-
-                  <div class="image-file-info" id="imageFileInfo"></div>
-                </div>
-
-              </div>
-
-              <!-- Payload ảnh gửi sang Apps Script -->
-              <input type="hidden" id="imageBase64" name="imageBase64">
-              <input type="hidden" id="imageName" name="imageName">
-              <input type="hidden" id="imageMimeType" name="imageMimeType">
-            </div>
-
-            <div class="field full">
-              <label for="contactEmail">
-                Email liên hệ riêng với BTC
-                (không công khai, không bắt buộc)
-              </label>
-
-              <input
-                id="contactEmail"
-                name="contactEmail"
-                type="email"
-                maxlength="120"
-                placeholder="email@example.com"
-              >
-            </div>
-
-            <div class="field full">
-              <label class="anon-row">
-                <input
-                  id="anonymous"
-                  name="anonymous"
-                  type="checkbox"
-                  value="1"
-                >
-                <span>
-                  <b>Đăng ẩn danh.</b>
-                  Nếu chọn, tên/lớp của bạn sẽ không xuất hiện trên website.
-                </span>
-              </label>
-            </div>
-
-            <!-- Honeypot chống bot -->
-            <div style="position:absolute;left:-9999px;top:-9999px" aria-hidden="true">
-              <input type="text" name="website" tabindex="-1" autocomplete="off">
-            </div>
-
-          </div>
-
-          <div class="privacy">
-            🔒 Nội dung sẽ ở trạng thái <b>Chờ duyệt</b>.
-            Chỉ confession được BTC đánh dấu <b>Đã duyệt</b> mới xuất hiện công khai.
-            Ảnh đính kèm cũng chỉ hiển thị khi bài được duyệt.
-          </div>
-
-          <div class="submit-row">
-
-            <button
-              class="submit-btn"
-              id="submitBtn"
-              type="submit"
-            >
-              ♡ GỬI CONFESSION
-            </button>
-
-            <div class="status" id="statusText">
-              Viết điều bạn thật sự muốn nói.
-            </div>
-
-          </div>
-
-        </form>
-
+    <div class="official-video">
+      <div class="video-frame">
+        <iframe
+          src="https://www.youtube.com/embed/tcewgtu6zrk?rel=0"
+          title="K15 FM – Thanh xuân phát lại"
+          loading="lazy"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen>
+        </iframe>
       </div>
 
-      <div class="success-box" id="successBox">
-        <b>✓ Confession đã được gửi tới BTC</b>
-        <br><br>
-        Nội dung đang ở trạng thái <b>Chờ duyệt</b>.
-        Sau khi BTC duyệt, confession sẽ xuất hiện trên Bức tường K15.
-        <br>
-        <button
-          class="send-another"
-          id="sendAnother"
-          type="button"
+      <div class="video-caption">
+        <div>
+          <span>K15 FM · OFFICIAL VIDEO</span>
+          <h3>Mười năm – một lần trở về</h3>
+          <p>
+            2016 – 2026 · Kỷ niệm 10 năm ra trường
+            Sinh viên K15 Học viện Ngân hàng
+          </p>
+        </div>
+
+        <a
+          class="btn btn-gold"
+          href="https://youtu.be/tcewgtu6zrk"
+          target="_blank"
+          rel="noopener"
         >
-          Viết thêm một confession
-        </button>
+          ▶ Xem trên YouTube
+        </a>
       </div>
-
-    </section>
-
+    </div>
   </section>
 
-  <section class="wall-section">
-
+  <section class="section">
     <div class="section-head">
-      <small>K15 Wall</small>
-      <h2>Bức tường K15</h2>
+      <small>Sau ngày hội ngộ</small>
+      <h2>Những điều còn ở lại</h2>
       <p>
-        Những lời nhắn và hình ảnh đã được BTC duyệt sẽ xuất hiện tại đây.
+        Từ những bức ảnh vừa được ghi lại cho tới những lời chưa kịp nói
+        và những lá thư dành cho tương lai.
       </p>
     </div>
 
-    <div class="filters">
-      <button class="filter-btn active" data-filter="Tất cả" type="button">Tất cả</button>
-      <button class="filter-btn" data-filter="Cảm ơn" type="button">💙 Cảm ơn</button>
-      <button class="filter-btn" data-filter="Gửi một người" type="button">💌 Gửi một người</button>
-      <button class="filter-btn" data-filter="Gửi Thầy Cô" type="button">🎓 Gửi Thầy Cô</button>
-      <button class="filter-btn" data-filter="Gửi lớp mình" type="button">🫶 Gửi lớp mình</button>
-      <button class="filter-btn" data-filter="Chuyện K15" type="button">📻 Chuyện K15</button>
+    <div class="hub-grid">
+
+      <a class="hub-card" href="/media/">
+        <div class="hub-icon">📸</div>
+        <div class="hub-kicker">K15 Memories</div>
+        <h3>Ảnh & Video Hội khóa</h3>
+        <p>
+          Xem lại photobooth, Hội trường lớn, Nhà hàng, Pickleball
+          và những khoảnh khắc sau Hội khóa.
+        </p>
+        <div class="hub-link">Xem toàn bộ kho media →</div>
+      </a>
+
+      <a class="hub-card" href="/confession/">
+        <div class="hub-icon">♡</div>
+        <div class="hub-kicker">K15 Confession</div>
+        <h3>Điều chưa kịp nói</h3>
+        <p>
+          Gửi lời cảm ơn, một lời nhắn cho bạn cũ, Thầy Cô,
+          lớp mình hoặc một người từng đi qua thanh xuân.
+        </p>
+        <div class="hub-link">Gửi confession →</div>
+      </a>
+
+      <a class="hub-card" href="/tuonglai/">
+        <div class="hub-icon">✉</div>
+        <div class="hub-kicker">Khu Tương Lai</div>
+        <h3>Thư gửi tương lai</h3>
+        <p>
+          Viết ở hiện tại, gửi lại cho những năm tháng phía trước.
+          Một ngày nào đó, chúng ta sẽ đọc lại và mỉm cười.
+        </p>
+        <div class="hub-link">Viết một lá thư →</div>
+      </a>
+
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <small>Khoảnh khắc nổi bật</small>
+      <h2>Thanh xuân trong từng khung hình</h2>
+      <p>
+        Ảnh được lấy tự động từ kho Google Drive K15 FM.
+        Khi BTC cập nhật thêm ảnh, trang chủ cũng tự cập nhật theo.
+      </p>
     </div>
 
-    <div class="confession-grid" id="confessionGrid">
-      <div class="loading">
-        <div class="spinner"></div>
-        Đang tải những điều chưa kịp nói...
+    <div class="gallery-shell">
+      <div class="featured-grid" id="featuredGrid">
+        <div class="feature-photo shimmer"></div>
+        <div class="feature-photo shimmer"></div>
+        <div class="feature-photo shimmer"></div>
+        <div class="feature-photo shimmer"></div>
+        <div class="feature-photo shimmer"></div>
+        <div class="feature-photo shimmer"></div>
+        <div class="feature-photo shimmer"></div>
+        <div class="feature-photo shimmer"></div>
+      </div>
+
+      <div class="gallery-actions">
+        <a class="btn btn-gold" href="/media/">Xem toàn bộ ảnh & video</a>
+        <a class="btn btn-secondary" href="/gallery/">Xem ảnh lớp K15</a>
       </div>
     </div>
+  </section>
 
+  <section class="section">
+    <div class="story">
+      <div class="story-copy">
+        <small>2016 — 2026</small>
+        <h2>Mười năm không chỉ là một cột mốc.</h2>
+
+        <p>
+          Đó là quãng đường đủ dài để mỗi người trưởng thành,
+          nhưng cũng đủ gần để chỉ một bài hát, một tấm ảnh
+          hay một câu chuyện cũ có thể đưa tất cả trở lại sân trường năm ấy.
+        </p>
+
+        <p>
+          K15 FM không dừng lại sau một ngày hội ngộ.
+          Website này sẽ tiếp tục là nơi lưu giữ ký ức, nối dài những kết nối
+          và để thanh xuân của K15 được phát lại thêm nhiều lần nữa.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn btn-gold" href="/nhataitro/">♥ Nhà tài trợ đồng hành</a>
+          <a class="btn btn-glass" href="/danhsach/">☷ Danh sách K15</a>
+        </div>
+      </div>
+
+      <div class="story-quote">
+        <blockquote>
+          “Có những thanh xuân chỉ cần một lần phát lại
+          là đủ khiến ta muốn trở về.”
+          <span>K15 FM · Thanh xuân phát lại</span>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <small>K15 FM Memory Hub</small>
+      <h2>Mọi ký ức trong một điểm chạm</h2>
+      <p>
+        Những phần quan trọng của K15 FM vẫn được giữ lại để có thể xem lại bất cứ lúc nào.
+      </p>
+    </div>
+
+    <div class="discover-grid">
+
+      <a class="discover-card" href="/media/">
+        <b>▶ Ảnh & Video</b>
+        <p>Kho ảnh và video sau Hội khóa, tự cập nhật từ Google Drive.</p>
+        <span>Khám phá →</span>
+      </a>
+
+      <a class="discover-card" href="/gallery/">
+        <b>◫ Ảnh lớp</b>
+        <p>Những album thời sinh viên và ký ức riêng của từng lớp K15.</p>
+        <span>Xem album →</span>
+      </a>
+
+      <a class="discover-card" href="/confession/">
+        <b>♡ Confession</b>
+        <p>Những điều chưa kịp nói sau ngày hội ngộ.</p>
+        <span>Đọc & gửi lời nhắn →</span>
+      </a>
+
+      <a class="discover-card" href="/tuonglai/">
+        <b>✉ Thư gửi tương lai</b>
+        <p>Viết một lá thư để K15 của những năm sau có thể đọc lại.</p>
+        <span>Viết thư →</span>
+      </a>
+
+      <a class="discover-card" href="/nhataitro/">
+        <b>♥ Nhà tài trợ</b>
+        <p>Vinh danh những cá nhân, thương hiệu và đơn vị đã đồng hành cùng K15 FM.</p>
+        <span>Xem vinh danh →</span>
+      </a>
+
+      <a class="discover-card" href="/danhsach/">
+        <b>☷ Danh sách K15</b>
+        <p>Tìm lại những gương mặt đã cùng trở về trong dịp Hội khóa 10 năm.</p>
+        <span>Tra cứu →</span>
+      </a>
+
+    </div>
+  </section>
+
+  <section class="end-cta">
+    <small>K15 FM · 09.08.2026</small>
+
+    <h2>
+      Ngày hội ngộ đã khép lại.
+      Nhưng K15 FM vẫn đang phát sóng.
+    </h2>
+
+    <p>
+      Những bức ảnh vẫn còn đó. Những lời chưa kịp nói vẫn còn đó.
+      Và những người từng cùng nhau đi qua một thời thanh xuân vẫn còn ở đây.
+    </p>
+
+    <div class="end-actions">
+      <a class="btn btn-gold" href="/media/">📸 Phát lại ngày hội ngộ</a>
+      <a class="btn btn-glass" href="/confession/">♡ Gửi điều chưa kịp nói</a>
+    </div>
   </section>
 
 </main>
 
-<iframe
-  id="confessionSubmitFrame"
-  name="confessionSubmitFrame"
-  title="Confession submission"
-  style="display:none"
-></iframe>
-
-<div class="lightbox" id="imageLightbox" aria-hidden="true">
-  <button class="lb-close" id="imageLightboxClose" type="button" aria-label="Đóng">×</button>
-  <img id="imageLightboxImg" alt="Ảnh confession K15 FM">
+<div class="lightbox" id="homeLightbox" aria-hidden="true">
+  <button class="lb-close" id="homeLightboxClose" type="button" aria-label="Đóng">×</button>
+  <img id="homeLightboxImage" alt="Khoảnh khắc K15 FM">
 </div>
 
 <footer class="footer">
@@ -835,47 +1022,21 @@ input:focus,select:focus,textarea:focus{
   Kỷ niệm 10 năm ra trường Sinh viên K15 Học viện Ngân hàng
 </footer>
 
-<script src="/assets/js/site-header.js?v=20260811-confession-upload-final"></script>
+<script src="/assets/js/site-header.js?v=20260811-after-reunion-video-final"></script>
 
 <script>
-const CONFESSION_API_URL =
-  "https://script.google.com/macros/s/AKfycbxLmLXW7bPlG0nAJNXQQ0dmGz3vw3Wjnx0VZaRAOj6Vah2UxgDvPqj3GV1r4jmybdVYGg/exec";
+const MEDIA_API_URL =
+  "https://script.google.com/macros/s/AKfycbxKK68exvmpy4ob1GXF4E42FMfalVzap3R2HwNi8zj_ZQttF9NHY6UVk4EtzqWRIe8b/exec";
 
-const MAX_IMAGE_BYTES = 8 * 1024 * 1024;
+const HERO_MAX = 10;
+const FEATURED_MAX = 8;
+const HERO_INTERVAL = 5200;
 
-const form = document.getElementById("confessionForm");
-const submitFrame = document.getElementById("confessionSubmitFrame");
-const submitBtn = document.getElementById("submitBtn");
-const statusText = document.getElementById("statusText");
-const successBox = document.getElementById("successBox");
-const formArea = document.getElementById("formArea");
-const sendAnother = document.getElementById("sendAnother");
-const message = document.getElementById("message");
-const charCount = document.getElementById("charCount");
-const confessionGrid = document.getElementById("confessionGrid");
-
-const imageFile = document.getElementById("imageFile");
-const chooseImageBtn = document.getElementById("chooseImageBtn");
-const removeImageBtn = document.getElementById("removeImageBtn");
-const uploadBox = document.getElementById("uploadBox");
-const imagePreview = document.getElementById("imagePreview");
-const imagePreviewImg = document.getElementById("imagePreviewImg");
-const imageFileInfo = document.getElementById("imageFileInfo");
-const imageBase64 = document.getElementById("imageBase64");
-const imageName = document.getElementById("imageName");
-const imageMimeType = document.getElementById("imageMimeType");
-
-let approvedConfessions = [];
-let activeFilter = "Tất cả";
-
-let submissionInProgress = false;
-let submitFallbackTimer = null;
-let imageReady = true;
-
-message.addEventListener("input", function(){
-  charCount.textContent =
-    String(message.value.length);
-});
+let allImages = [];
+let heroImages = [];
+let featuredImages = [];
+let heroIndex = 0;
+let heroTimer = null;
 
 function escapeHtml(value){
   return String(value == null ? "" : value)
@@ -886,212 +1047,127 @@ function escapeHtml(value){
     .replace(/'/g,"&#039;");
 }
 
-function formatDate(value){
-  if(!value) return "";
+function normalizeItem(item,folderName){
+  const id = String(item.id || "").trim();
+  const type = String(item.type || "").toLowerCase();
 
-  try{
-    return new Intl.DateTimeFormat(
-      "vi-VN",
-      {
-        day:"2-digit",
-        month:"2-digit",
-        year:"numeric"
+  return {
+    id:id,
+    name:String(item.name || "K15 FM"),
+    type:type,
+    folderName:String(folderName || ""),
+    thumbnail:
+      item.thumbnail ||
+      (
+        type === "image"
+          ? "https://drive.google.com/thumbnail?id=" +
+            encodeURIComponent(id) +
+            "&sz=w1600"
+          : ""
+      ),
+    hero:
+      "https://drive.google.com/thumbnail?id=" +
+      encodeURIComponent(id) +
+      "&sz=w2400",
+    large:
+      "https://drive.google.com/thumbnail?id=" +
+      encodeURIComponent(id) +
+      "&sz=w2000"
+  };
+}
+
+function flattenFolder(folder,collector){
+  const own =
+    Array.isArray(folder.ownItems)
+      ? folder.ownItems
+      : [];
+
+  own.forEach(function(item){
+    if(String(item.type || "").toLowerCase() === "image"){
+      collector.push(
+        normalizeItem(item,folder.name)
+      );
+    }
+  });
+
+  const children =
+    Array.isArray(folder.subfolders)
+      ? folder.subfolders
+      : [];
+
+  children.forEach(function(child){
+    flattenFolder(child,collector);
+  });
+}
+
+function dedupeImages(items){
+  const seen = new Set();
+
+  return items.filter(function(item){
+    if(!item.id || seen.has(item.id)){
+      return false;
+    }
+
+    seen.add(item.id);
+    return true;
+  });
+}
+
+function scoreImage(item){
+  const text =
+    (item.folderName + " " + item.name)
+      .toLowerCase();
+
+  let score = 0;
+
+  if(text.includes("hội trường")) score += 40;
+  if(text.includes("hoi truong")) score += 40;
+  if(text.includes("nhà hàng")) score += 35;
+  if(text.includes("nha hang")) score += 35;
+  if(text.includes("photobooth")) score += 30;
+  if(text.includes("check in")) score += 25;
+  if(text.includes("check-in")) score += 25;
+  if(text.includes("back chính")) score += 22;
+  if(text.includes("pickle")) score += 18;
+
+  return score;
+}
+
+function chooseHeroImages(items){
+  return items
+    .map(function(item,index){
+      return {
+        item:item,
+        originalIndex:index,
+        score:scoreImage(item)
+      };
+    })
+    .sort(function(a,b){
+      if(b.score !== a.score){
+        return b.score - a.score;
       }
-    ).format(new Date(value));
-  }catch(error){
-    return "";
-  }
+
+      return a.originalIndex - b.originalIndex;
+    })
+    .slice(0,HERO_MAX)
+    .map(function(entry){
+      return entry.item;
+    });
 }
 
-function formatBytes(bytes){
-  if(!bytes) return "0 MB";
-
-  const mb = bytes / 1024 / 1024;
-
-  return mb.toFixed(
-    mb >= 1 ? 1 : 2
-  ) + " MB";
-}
-
-/* =====================================================
-   IMAGE PICKER
-===================================================== */
-
-chooseImageBtn.addEventListener(
-  "click",
-  function(){
-    imageFile.click();
-  }
-);
-
-imageFile.addEventListener(
-  "change",
-  function(){
-
-    const file =
-      imageFile.files &&
-      imageFile.files[0]
-        ? imageFile.files[0]
-        : null;
-
-    if(!file){
-      clearSelectedImage();
-      return;
-    }
-
-    const allowed = [
-      "image/jpeg",
-      "image/png",
-      "image/webp"
-    ];
-
-    if(!allowed.includes(file.type)){
-      alert(
-        "Ảnh phải là JPG, PNG hoặc WebP."
-      );
-      clearSelectedImage();
-      return;
-    }
-
-    if(file.size > MAX_IMAGE_BYTES){
-      alert(
-        "Ảnh vượt quá 8 MB. Bạn vui lòng chọn ảnh nhẹ hơn."
-      );
-      clearSelectedImage();
-      return;
-    }
-
-    imageReady = false;
-    submitBtn.disabled = true;
-    statusText.className = "status";
-    statusText.textContent =
-      "Đang chuẩn bị ảnh đính kèm...";
-
-    const reader =
-      new FileReader();
-
-    reader.onload =
-      function(event){
-
-        const dataUrl =
-          String(
-            event.target.result ||
-            ""
-          );
-
-        const commaIndex =
-          dataUrl.indexOf(",");
-
-        if(commaIndex === -1){
-          alert(
-            "Không đọc được ảnh. Vui lòng thử ảnh khác."
-          );
-          clearSelectedImage();
-          return;
-        }
-
-        imageBase64.value =
-          dataUrl.slice(
-            commaIndex + 1
-          );
-
-        imageName.value =
-          file.name;
-
-        imageMimeType.value =
-          file.type;
-
-        imagePreviewImg.src =
-          dataUrl;
-
-        imageFileInfo.textContent =
-          file.name +
-          " · " +
-          formatBytes(file.size);
-
-        imagePreview.classList.add(
-          "show"
-        );
-
-        uploadBox.classList.add(
-          "has-image"
-        );
-
-        chooseImageBtn.textContent =
-          "📷 Đổi ảnh khác";
-
-        imageReady = true;
-        submitBtn.disabled = false;
-        statusText.textContent =
-          "Ảnh đã sẵn sàng. Bạn có thể gửi confession.";
-      };
-
-    reader.onerror =
-      function(){
-        alert(
-          "Không đọc được ảnh. Vui lòng thử lại."
-        );
-        clearSelectedImage();
-      };
-
-    reader.readAsDataURL(
-      file
-    );
-  }
-);
-
-removeImageBtn.addEventListener(
-  "click",
-  clearSelectedImage
-);
-
-function clearSelectedImage(){
-  imageFile.value = "";
-  imageBase64.value = "";
-  imageName.value = "";
-  imageMimeType.value = "";
-  imagePreviewImg.src = "";
-  imageFileInfo.textContent = "";
-
-  imagePreview.classList.remove(
-    "show"
-  );
-
-  uploadBox.classList.remove(
-    "has-image"
-  );
-
-  chooseImageBtn.textContent =
-    "📷 Chọn một bức ảnh";
-
-  imageReady = true;
-  submitBtn.disabled = false;
-
-  if(!submissionInProgress){
-    statusText.className = "status";
-    statusText.textContent =
-      "Viết điều bạn thật sự muốn nói.";
-  }
-}
-
-/* =====================================================
-   LOAD APPROVED CONFESSIONS
-===================================================== */
-
-async function loadApproved(){
+async function loadHomeMedia(){
   try{
     const response =
       await fetch(
-        CONFESSION_API_URL +
-        "?action=list&t=" +
+        MEDIA_API_URL +
+        "?t=" +
         Date.now(),
         {cache:"no-store"}
       );
 
     if(!response.ok){
       throw new Error(
-        "HTTP " +
-        response.status
+        "HTTP " + response.status
       );
     }
 
@@ -1101,373 +1177,304 @@ async function loadApproved(){
     if(
       !data ||
       data.success !== true ||
-      !Array.isArray(data.items)
+      !Array.isArray(data.categories)
     ){
       throw new Error(
         data && data.error
           ? data.error
-          : "Dữ liệu không hợp lệ"
+          : "Media API không trả về dữ liệu hợp lệ"
       );
     }
 
-    approvedConfessions =
-      data.items;
+    const images = [];
 
-    renderWall();
+    data.categories.forEach(function(category){
+      flattenFolder(category,images);
+    });
+
+    allImages =
+      dedupeImages(images);
+
+    heroImages =
+      chooseHeroImages(allImages);
+
+    featuredImages =
+      allImages.slice(0,FEATURED_MAX);
+
+    renderHero();
+    renderFeatured();
+
+    const totalPhotos =
+      allImages.length;
+
+    let totalVideos = 0;
+
+    function countVideos(folder){
+      const own =
+        Array.isArray(folder.ownItems)
+          ? folder.ownItems
+          : [];
+
+      totalVideos +=
+        own.filter(function(item){
+          return String(item.type || "").toLowerCase() === "video";
+        }).length;
+
+      const children =
+        Array.isArray(folder.subfolders)
+          ? folder.subfolders
+          : [];
+
+      children.forEach(countVideos);
+    }
+
+    data.categories.forEach(countVideos);
+
+    document.getElementById("homePhotoCount").textContent =
+      totalPhotos.toLocaleString("vi-VN");
+
+    document.getElementById("homeVideoCount").textContent =
+      totalVideos.toLocaleString("vi-VN");
 
   }catch(error){
+    console.error("Homepage media error:",error);
 
-    console.error(
-      "Load confession error:",
-      error
-    );
+    document.getElementById("heroLoading").textContent =
+      "K15 FM · Thanh xuân phát lại";
 
-    confessionGrid.innerHTML =
+    document.getElementById("featuredGrid").innerHTML =
       `
-        <div class="error-box">
-          Chưa tải được confession.
-          Vui lòng thử lại sau.
+        <div class="gallery-empty" style="grid-column:1/-1">
+          Kho ảnh đang được cập nhật.
+          <br>
+          Bạn có thể xem trực tiếp tại mục Ảnh & Video.
         </div>
       `;
+
+    document.getElementById("homePhotoCount").textContent = "—";
+    document.getElementById("homeVideoCount").textContent = "—";
   }
 }
 
-function renderWall(){
-  const items =
-    activeFilter === "Tất cả"
-      ? approvedConfessions
-      : approvedConfessions.filter(
-          function(item){
-            return (
-              item.category ===
-              activeFilter
-            );
-          }
-        );
+function renderHero(){
+  const root =
+    document.getElementById("heroSlides");
 
-  if(!items.length){
-    confessionGrid.innerHTML =
+  const controls =
+    document.getElementById("heroControls");
+
+  const dots =
+    document.getElementById("heroDots");
+
+  if(!heroImages.length){
+    root.innerHTML = "";
+    controls.hidden = true;
+    return;
+  }
+
+  root.innerHTML =
+    heroImages
+      .map(function(item,index){
+        return `
+          <div
+            class="hero-slide ${index === 0 ? "active" : ""}"
+            data-index="${index}"
+            style="background-image:url('${escapeHtml(item.hero)}')"
+            aria-hidden="${index === 0 ? "false" : "true"}"
+          ></div>
+        `;
+      })
+      .join("");
+
+  dots.innerHTML =
+    heroImages
+      .map(function(_,index){
+        return `
+          <button
+            class="hero-dot ${index === 0 ? "active" : ""}"
+            type="button"
+            data-hero-dot="${index}"
+            aria-label="Xem ảnh ${index + 1}"
+          ></button>
+        `;
+      })
+      .join("");
+
+  controls.hidden =
+    heroImages.length <= 1;
+
+  dots
+    .querySelectorAll("[data-hero-dot]")
+    .forEach(function(button){
+      button.addEventListener(
+        "click",
+        function(){
+          showHeroSlide(
+            Number(button.dataset.heroDot)
+          );
+          restartHeroTimer();
+        }
+      );
+    });
+
+  restartHeroTimer();
+}
+
+function showHeroSlide(index){
+  if(!heroImages.length){
+    return;
+  }
+
+  heroIndex =
+    (
+      index +
+      heroImages.length
+    ) %
+    heroImages.length;
+
+  document
+    .querySelectorAll(".hero-slide")
+    .forEach(function(slide,i){
+      const active =
+        i === heroIndex;
+
+      slide.classList.toggle(
+        "active",
+        active
+      );
+
+      slide.setAttribute(
+        "aria-hidden",
+        active ? "false" : "true"
+      );
+    });
+
+  document
+    .querySelectorAll(".hero-dot")
+    .forEach(function(dot,i){
+      dot.classList.toggle(
+        "active",
+        i === heroIndex
+      );
+    });
+}
+
+function restartHeroTimer(){
+  clearInterval(heroTimer);
+
+  if(heroImages.length <= 1){
+    return;
+  }
+
+  heroTimer =
+    setInterval(
+      function(){
+        showHeroSlide(
+          heroIndex + 1
+        );
+      },
+      HERO_INTERVAL
+    );
+}
+
+document
+  .getElementById("heroPrev")
+  .addEventListener(
+    "click",
+    function(){
+      showHeroSlide(
+        heroIndex - 1
+      );
+      restartHeroTimer();
+    }
+  );
+
+document
+  .getElementById("heroNext")
+  .addEventListener(
+    "click",
+    function(){
+      showHeroSlide(
+        heroIndex + 1
+      );
+      restartHeroTimer();
+    }
+  );
+
+function renderFeatured(){
+  const grid =
+    document.getElementById("featuredGrid");
+
+  if(!featuredImages.length){
+    grid.innerHTML =
       `
-        <div class="empty">
-          Chưa có confession nào trong mục này.
+        <div class="gallery-empty" style="grid-column:1/-1">
+          Kho ảnh đang được cập nhật.
         </div>
       `;
     return;
   }
 
-  confessionGrid.innerHTML =
-    items
-      .map(
-        function(item,index){
-
-          const imageHtml =
-            item.imageUrl
-              ? `
-                <button
-                  class="confession-image"
-                  type="button"
-                  data-confession-image="${index}"
-                  aria-label="Xem ảnh confession"
-                >
-                  <img
-                    src="${escapeHtml(item.imageUrl)}"
-                    alt="Ảnh đính kèm confession ${escapeHtml(item.publicId)}"
-                    loading="lazy"
-                    decoding="async"
-                  >
-                </button>
-              `
-              : "";
-
-          return `
-            <article class="confession-card">
-
-              <div class="confession-meta">
-
-                <span class="confession-tag">
-                  ${escapeHtml(item.category)}
-                </span>
-
-                <span>
-                  #${escapeHtml(item.publicId)}
-                  ·
-                  ${formatDate(
-                    item.approvedAt ||
-                    item.createdAt
-                  )}
-                </span>
-
-              </div>
-
-              <div class="confession-to">
-                Gửi tới:
-                ${escapeHtml(item.recipient)}
-              </div>
-
-              <div class="confession-text">
-                ${escapeHtml(item.message)}
-              </div>
-
-              ${imageHtml}
-
-              <div class="confession-sign">
-                —
-                ${escapeHtml(
-                  item.displayName ||
-                  "Một người K15"
-                )}
-              </div>
-
-            </article>
-          `;
-        }
-      )
+  grid.innerHTML =
+    featuredImages
+      .map(function(item,index){
+        return `
+          <button
+            class="feature-photo"
+            type="button"
+            data-feature-index="${index}"
+            aria-label="Xem ${escapeHtml(item.name)}"
+          >
+            <img
+              src="${escapeHtml(item.thumbnail)}"
+              alt="${escapeHtml(item.name)}"
+              loading="lazy"
+              decoding="async"
+            >
+          </button>
+        `;
+      })
       .join("");
 
-  document
-    .querySelectorAll(
-      "[data-confession-image]"
-    )
-    .forEach(
-      function(button){
-
-        button.addEventListener(
-          "click",
-          function(){
-
-            const item =
-              items[
-                Number(
-                  button.dataset.confessionImage
-                )
-              ];
-
-            if(
-              item &&
-              item.imageUrl
-            ){
-              openImageLightbox(
-                item.imageLargeUrl ||
-                item.imageUrl
-              );
-            }
-          }
-        );
-      }
-    );
-}
-
-/* =====================================================
-   FILTER
-===================================================== */
-
-document
-  .querySelectorAll(".filter-btn")
-  .forEach(
-    function(button){
-
+  grid
+    .querySelectorAll(".feature-photo")
+    .forEach(function(button){
       button.addEventListener(
         "click",
         function(){
+          const item =
+            featuredImages[
+              Number(
+                button.dataset.featureIndex
+              )
+            ];
 
-          activeFilter =
-            button.dataset.filter;
-
-          document
-            .querySelectorAll(
-              ".filter-btn"
-            )
-            .forEach(
-              function(btn){
-
-                btn.classList.toggle(
-                  "active",
-                  btn === button
-                );
-              }
-            );
-
-          renderWall();
+          if(item){
+            openHomeLightbox(item);
+          }
         }
       );
-    }
-  );
-
-/* =====================================================
-   SUBMIT VIA HIDDEN IFRAME
-===================================================== */
-
-form.addEventListener(
-  "submit",
-  function(event){
-
-    if(!form.checkValidity()){
-      event.preventDefault();
-      form.reportValidity();
-      return;
-    }
-
-    if(!imageReady){
-      event.preventDefault();
-      alert(
-        "Ảnh vẫn đang được xử lý. Bạn đợi một chút rồi gửi lại nhé."
-      );
-      return;
-    }
-
-    form.action =
-      CONFESSION_API_URL;
-
-    submissionInProgress =
-      true;
-
-    submitBtn.disabled =
-      true;
-
-    submitBtn.textContent =
-      "ĐANG GỬI...";
-
-    statusText.className =
-      "status";
-
-    statusText.textContent =
-      imageBase64.value
-        ? "Đang gửi confession và ảnh tới BTC..."
-        : "Đang gửi confession tới BTC...";
-
-    successBox.classList.remove(
-      "show"
-    );
-
-    clearTimeout(
-      submitFallbackTimer
-    );
-
-    submitFallbackTimer =
-      setTimeout(
-        function(){
-
-          if(
-            submissionInProgress
-          ){
-
-            submissionInProgress =
-              false;
-
-            submitBtn.disabled =
-              false;
-
-            submitBtn.textContent =
-              "♡ GỬI CONFESSION";
-
-            statusText.className =
-              "status";
-
-            statusText.textContent =
-              "Nếu chưa thấy xác nhận, vui lòng kiểm tra lại hoặc thử gửi lại sau ít phút.";
-          }
-        },
-        12000
-      );
-  }
-);
-
-submitFrame.addEventListener(
-  "load",
-  function(){
-
-    if(
-      !submissionInProgress
-    ){
-      return;
-    }
-
-    submissionInProgress =
-      false;
-
-    clearTimeout(
-      submitFallbackTimer
-    );
-
-    submitBtn.disabled =
-      false;
-
-    submitBtn.textContent =
-      "♡ GỬI CONFESSION";
-
-    statusText.className =
-      "status success";
-
-    statusText.textContent =
-      "Đã gửi tới BTC.";
-
-    formArea.style.display =
-      "none";
-
-    successBox.classList.add(
-      "show"
-    );
-  }
-);
-
-sendAnother.addEventListener(
-  "click",
-  function(){
-
-    form.reset();
-    clearSelectedImage();
-
-    charCount.textContent =
-      "0";
-
-    successBox.classList.remove(
-      "show"
-    );
-
-    formArea.style.display =
-      "";
-
-    statusText.className =
-      "status";
-
-    statusText.textContent =
-      "Viết điều bạn thật sự muốn nói.";
-
-    window.scrollTo({
-      top:
-        form
-          .getBoundingClientRect()
-          .top +
-        window.scrollY -
-        120,
-      behavior:"smooth"
     });
-  }
-);
+}
 
-/* =====================================================
-   IMAGE LIGHTBOX
-===================================================== */
+const homeLightbox =
+  document.getElementById("homeLightbox");
 
-const imageLightbox =
-  document.getElementById(
-    "imageLightbox"
-  );
+const homeLightboxImage =
+  document.getElementById("homeLightboxImage");
 
-const imageLightboxImg =
-  document.getElementById(
-    "imageLightboxImg"
-  );
+function openHomeLightbox(item){
+  homeLightboxImage.src =
+    item.large;
 
-function openImageLightbox(url){
-  imageLightboxImg.src =
-    url;
+  homeLightboxImage.alt =
+    item.name;
 
-  imageLightbox.classList.add(
+  homeLightbox.classList.add(
     "open"
   );
 
-  imageLightbox.setAttribute(
+  homeLightbox.setAttribute(
     "aria-hidden",
     "false"
   );
@@ -1476,40 +1483,34 @@ function openImageLightbox(url){
     "hidden";
 }
 
-function closeImageLightbox(){
-  imageLightbox.classList.remove(
+function closeHomeLightbox(){
+  homeLightbox.classList.remove(
     "open"
   );
 
-  imageLightbox.setAttribute(
+  homeLightbox.setAttribute(
     "aria-hidden",
     "true"
   );
 
-  imageLightboxImg.src = "";
+  homeLightboxImage.src = "";
 
   document.body.style.overflow =
     "";
 }
 
 document
-  .getElementById(
-    "imageLightboxClose"
-  )
+  .getElementById("homeLightboxClose")
   .addEventListener(
     "click",
-    closeImageLightbox
+    closeHomeLightbox
   );
 
-imageLightbox.addEventListener(
+homeLightbox.addEventListener(
   "click",
   function(event){
-
-    if(
-      event.target ===
-      imageLightbox
-    ){
-      closeImageLightbox();
+    if(event.target === homeLightbox){
+      closeHomeLightbox();
     }
   }
 );
@@ -1517,19 +1518,16 @@ imageLightbox.addEventListener(
 document.addEventListener(
   "keydown",
   function(event){
-
     if(
       event.key === "Escape" &&
-      imageLightbox
-        .classList
-        .contains("open")
+      homeLightbox.classList.contains("open")
     ){
-      closeImageLightbox();
+      closeHomeLightbox();
     }
   }
 );
 
-loadApproved();
+loadHomeMedia();
 </script>
 
 </body>
