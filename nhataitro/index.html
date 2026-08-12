@@ -10,9 +10,9 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?faamily=Be+Vietnam+Pro:wght@400;500;600;700;800;900&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="/assets/css/site-header.css?v=20260805-sponsor-fullimage-final">
+  <link rel="stylesheet" href="/assets/css/site-header.css?v=20260812-sponsor-linebreak-final">
 
   <style>
     :root{
@@ -1218,7 +1218,72 @@
       .tier-section.tier-gold .sponsor-card.cash .sponsor-media.person{height:220px;}
     }
 
-</style>
+
+    /* =====================================================
+       FIX GOOGLE SHEET LINE BREAKS + DIAMOND LAYOUT FINAL
+       - Giữ xuống dòng được nhập bằng Alt+Enter trong Sheet
+       - Không ép chuỗi dài thành một dòng
+       - Nếu Kim cương chỉ có 1 NTT, card được mở rộng và căn giữa
+       ===================================================== */
+
+    .sponsor-name,
+    .sponsor-sub,
+    .sponsor-product,
+    .sponsor-detail,
+    .sponsor-note,
+    .partner-item strong,
+    .partner-item span{
+      white-space:pre-line;
+      overflow-wrap:anywhere;
+      word-break:normal;
+    }
+
+    .tier-section.tier-diamond .sponsor-name,
+    .tier-section.tier-gold .sponsor-name{
+      white-space:pre-line;
+      overflow-wrap:anywhere;
+      word-break:normal;
+      line-height:1.42;
+    }
+
+    .tier-section.tier-diamond .sponsor-body,
+    .tier-section.tier-gold .sponsor-body,
+    .tier-section.tier-diamond .sponsor-card,
+    .tier-section.tier-gold .sponsor-card{
+      min-width:0;
+    }
+
+    .tier-section.tier-diamond .tier-grid > .sponsor-card:only-child{
+      grid-column:1/-1;
+      width:min(100%,880px);
+      margin-left:auto;
+      margin-right:auto;
+    }
+
+    /* Card Kim cương duy nhất: cho phần chữ thoáng hơn */
+    .tier-section.tier-diamond .tier-grid > .sponsor-card:only-child .sponsor-body{
+      padding-left:clamp(22px,4vw,34px);
+      padding-right:clamp(22px,4vw,34px);
+    }
+
+    /* Các đoạn thông tin dài vẫn xuống dòng đẹp trên mobile */
+    @media(max-width:650px){
+      .sponsor-name,
+      .sponsor-sub,
+      .sponsor-product,
+      .sponsor-detail,
+      .sponsor-note,
+      .partner-item strong,
+      .partner-item span{
+        overflow-wrap:anywhere;
+      }
+
+      .tier-section.tier-diamond .tier-grid > .sponsor-card:only-child{
+        width:100%;
+      }
+    }
+
+  </style>
 </head>
 
 <body>
@@ -1334,7 +1399,7 @@
     </footer>
   </div>
 
-  <script src="/assets/js/site-header.js?v=20260805-sponsor-fullimage-final"></script>
+  <script src="/assets/js/site-header.js?v=20260812-sponsor-linebreak-final"></script>
 
   <script>
     const SHEET_ID = "1Btmk1yZ4TfbLqnhhhnW5ykAplfT69eZh";
