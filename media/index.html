@@ -8,8 +8,8 @@
 <meta name="description" content="Ảnh, video recap và những khoảnh khắc sau Hội khóa 10 năm K15 Học viện Ngân hàng">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?familya=Be+Vietnam+Pro:wght@400;500;600;700;800;900&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/css/site-header.css?v=20260812-media-inline-video-large-final">
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/site-header.css?v=20260813-media-recap-youtube-final">
 <style>
 :root{--navy:#071d42;--navy2:#0b2b60;--navy3:#123e7a;--gold:#f8c24e;--text:#172033;--muted:#667085;--shadow:0 20px 60px rgba(7,29,66,.12)}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--text);font-family:"Be Vietnam Pro","Segoe UI",Arial,sans-serif;background:radial-gradient(circle at 8% 0%,rgba(248,194,78,.11),transparent 26%),linear-gradient(180deg,#f8fafc 0%,#fff 48%,#fffaf0 100%);-webkit-font-smoothing:antialiased}
@@ -32,6 +32,20 @@ a{color:inherit}button{font:inherit}.shell{width:min(1180px,calc(100% - 28px));m
 .photo-lightbox{position:fixed;inset:0;z-index:99999;display:none;align-items:center;justify-content:center;padding:20px;background:rgba(2,10,24,.94)}.photo-lightbox.open{display:flex}.lb-content{width:min(1050px,86vw)}.lb-content img{width:100%;max-height:76vh;display:block;object-fit:contain;border-radius:14px;background:#08162d}.lb-meta{margin-top:10px;display:flex;align-items:center;justify-content:space-between;gap:12px;color:#fff}.lb-meta strong{display:block;font-size:12px}.lb-meta span{display:block;margin-top:3px;color:rgba(255,255,255,.6);font-size:10px}.lb-actions{display:flex;gap:8px}.lb-close,.lb-nav{position:fixed;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.09);color:#fff;cursor:pointer}.lb-close{right:18px;top:18px;width:44px;height:44px;border-radius:50%;font-size:24px}.lb-nav{top:50%;transform:translateY(-50%);width:48px;height:64px;border-radius:13px;font-size:36px}.lb-prev{left:16px}.lb-next{right:16px}
 .footer{padding:24px 18px;color:rgba(255,255,255,.65);background:#041329;text-align:center;font-size:11px;line-height:1.7}
 @media(max-width:900px){.recap,.contrib{grid-template-columns:1fr}.photo-grid{grid-template-columns:repeat(3,1fr)}.video-grid{grid-template-columns:1fr;max-width:100%}.video-strip-head{max-width:100%}}@media(max-width:650px){.tabs{top:68px;grid-template-columns:1fr}.recap-cover{min-height:250px}.category-head,.subfolder-head{align-items:flex-start;flex-direction:column}.photo-grid{grid-template-columns:repeat(2,1fr);gap:7px}.video-strip{padding:12px 0 0;border-radius:14px}.video-strip-head{padding:0 12px;align-items:flex-start}.video-strip-head h4{font-size:18px}.video-grid{grid-template-columns:1fr;gap:14px;margin-top:12px;max-width:none}.video-player-card{width:100%;border-left:0;border-right:0;border-radius:0;box-shadow:none}.video-player-frame{width:100%;aspect-ratio:16/9}.video-player-info{padding:14px 12px 16px}.video-player-info strong{font-size:12px}.video-player-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px}.video-player-actions a{width:100%;min-height:42px;font-size:10px}.lb-content{width:94vw}.lb-nav{width:40px;height:54px}.lb-prev{left:6px}.lb-next{right:6px}.lb-meta{align-items:flex-start;flex-direction:column}.lb-actions{width:100%}.lb-actions .btn{flex:1}}
+
+/* OFFICIAL RECAP */
+.official-recap{width:100%;max-width:1100px;margin:0 auto;overflow:hidden;background:#fff;border:1px solid rgba(7,29,66,.08);border-radius:25px;box-shadow:0 22px 65px rgba(7,29,66,.13)}
+.recap-video-frame{position:relative;width:100%;aspect-ratio:16/9;overflow:hidden;background:#000}
+.recap-video-frame iframe{position:absolute;inset:0;width:100%;height:100%;display:block;border:0}
+.recap-video-info{padding:25px 28px 27px;display:flex;align-items:flex-end;justify-content:space-between;gap:30px}
+.recap-video-copy{max-width:720px}
+.recap-label{display:inline-block;color:#d68c00;font-size:10px;font-weight:900;letter-spacing:1.1px;text-transform:uppercase}
+.recap-video-info h3{margin:7px 0 0;color:var(--navy);font-family:"Sora","Be Vietnam Pro",sans-serif;font-size:clamp(24px,3vw,32px);letter-spacing:-1px}
+.recap-video-info p{margin:9px 0 0;color:var(--muted);font-size:12px;line-height:1.8}
+.recap-video-info .actions{flex-shrink:0;justify-content:flex-end;margin-top:0}
+@media(max-width:850px){.recap-video-info{align-items:flex-start;flex-direction:column;gap:18px}.recap-video-info .actions{width:100%;justify-content:flex-start}}
+@media(max-width:650px){.official-recap{width:calc(100% + 28px);margin-left:-14px;border-left:0;border-right:0;border-radius:0}.recap-video-info{padding:19px 16px 21px}.recap-video-info h3{font-size:23px}.recap-video-info p{font-size:11px}.recap-video-info .actions{display:grid;grid-template-columns:1fr;gap:8px}.recap-video-info .btn{width:100%;min-height:46px}}
+
 </style>
 </head>
 <body>
@@ -42,12 +56,42 @@ a{color:inherit}button{font:inherit}.shell{width:min(1180px,calc(100% - 28px));m
 <nav class="tabs"><a class="tab active" href="#video">🎬 Video Recap</a><a class="tab" href="#album">📸 Ảnh & Video sự kiện</a><a class="tab" href="#dong-gop">☁️ Gửi ảnh / video</a></nav>
 
 <section class="section" id="video">
-<div class="section-head"><small>K15 FM Official</small><h2>Video Recap Hội khóa</h2><p>Video chính thức sẽ được cập nhật tại đây sau khi ekip hoàn thiện hậu kỳ.</p></div>
-<div class="recap"><div class="recap-cover"><div class="play">▶</div></div><div class="recap-copy"><div class="tag">Official Recap</div><h3>Một thập kỷ trở về</h3><p>Những khoảnh khắc từ check-in, tri ân, hội ngộ, chụp ảnh tập thể đến phần hội và những phút giây kết nối của K15.</p><div class="actions"><a id="videoOfficial" class="btn btn-primary disabled" href="#">▶ Xem video chính thức</a><a class="btn btn-secondary" href="https://www.facebook.com/K15FM" target="_blank" rel="noopener">Fanpage K15 FM</a></div></div></div>
+  <div class="section-head">
+    <small>K15 FM Official</small>
+    <h2>Video Recap Hội khóa</h2>
+    <p>Cùng phát lại những khoảnh khắc đáng nhớ của K15 FM – Thanh xuân phát lại.</p>
+  </div>
+
+  <div class="official-recap">
+    <div class="recap-video-frame">
+      <iframe
+        src="https://www.youtube.com/embed/IU-YKxnkjRQ?rel=0"
+        title="K15 FM – Thanh xuân phát lại | Official Recap"
+        loading="lazy"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen>
+      </iframe>
+    </div>
+
+    <div class="recap-video-info">
+      <div class="recap-video-copy">
+        <span class="recap-label">K15 FM · OFFICIAL RECAP</span>
+        <h3>Một thập kỷ trở về</h3>
+        <p>Một ngày để trở về. Một ngày để gặp lại những người bạn cũ, những người thầy, người cô và những ký ức của một thời thanh xuân tại Học viện Ngân hàng.</p>
+        <p>Cùng phát lại những khoảnh khắc của <strong>K15 FM – Thanh xuân phát lại</strong>.</p>
+      </div>
+
+      <div class="actions">
+        <a class="btn btn-primary" href="https://youtu.be/IU-YKxnkjRQ" target="_blank" rel="noopener">▶ Xem trên YouTube</a>
+        <a class="btn btn-secondary" href="https://drive.google.com/drive/folders/19rVZl-kwIG6VKNI-OxAdM4kEvEMQPgeT?usp=sharing" target="_blank" rel="noopener">⬇ Tải video chất lượng cao</a>
+      </div>
+    </div>
+  </div>
 </section>
 
 <section class="section" id="album">
-<div class="section-head"><small>Media Gallery</small><h2>Ảnh & Video sau Hội khóa</h2></p></div>
+<div class="section-head"><small>Media Gallery</small><h2>Ảnh & Video sau Hội khóa</h2><p>Kho ảnh và video sau Hội khóa K15 FM, được cập nhật tự động từ Google Drive.</p></div>
 <div id="categoryTabs" class="category-tabs"></div>
 <div id="mediaLoading" class="gallery-loading"><div class="gallery-spinner"></div><p>Đang tải kho ảnh & video K15 FM...</p></div>
 <div id="mediaCategories"></div>
@@ -63,7 +107,7 @@ a{color:inherit}button{font:inherit}.shell{width:min(1180px,calc(100% - 28px));m
 
 <footer class="footer">K15 FM · Thanh xuân phát lại<br>Kỷ niệm 10 năm ra trường Sinh viên K15 Học viện Ngân hàng</footer>
 
-<script src="/assets/js/site-header.js?v=20260812-media-inline-video-large-final"></script>
+<script src="/assets/js/site-header.js?v=20260813-media-recap-youtube-final"></script>
 <script>
 const MEDIA_API_URL="https://script.google.com/macros/s/AKfycbxKK68exvmpy4ob1GXF4E42FMfalVzap3R2HwNi8zj_ZQttF9NHY6UVk4EtzqWRIe8b/exec";
 const ROOT_DRIVE_URL="https://drive.google.com/drive/folders/1LTJAG3FKjAx1Rm6ixR-ud9tCtUoSJufT?usp=sharing";
