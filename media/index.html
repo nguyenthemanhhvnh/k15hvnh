@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/css/site-header.css?v=20260813-media-recap-youtube-final">
+<link rel="stylesheet" href="/assets/css/site-header.css?v=20260816-media-recap-full-event-final">
 <style>
 :root{--navy:#071d42;--navy2:#0b2b60;--navy3:#123e7a;--gold:#f8c24e;--text:#172033;--muted:#667085;--shadow:0 20px 60px rgba(7,29,66,.12)}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--text);font-family:"Be Vietnam Pro","Segoe UI",Arial,sans-serif;background:radial-gradient(circle at 8% 0%,rgba(248,194,78,.11),transparent 26%),linear-gradient(180deg,#f8fafc 0%,#fff 48%,#fffaf0 100%);-webkit-font-smoothing:antialiased}
@@ -46,6 +46,54 @@ a{color:inherit}button{font:inherit}.shell{width:min(1180px,calc(100% - 28px));m
 @media(max-width:850px){.recap-video-info{align-items:flex-start;flex-direction:column;gap:18px}.recap-video-info .actions{width:100%;justify-content:flex-start}}
 @media(max-width:650px){.official-recap{width:calc(100% + 28px);margin-left:-14px;border-left:0;border-right:0;border-radius:0}.recap-video-info{padding:19px 16px 21px}.recap-video-info h3{font-size:23px}.recap-video-info p{font-size:11px}.recap-video-info .actions{display:grid;grid-template-columns:1fr;gap:8px}.recap-video-info .btn{width:100%;min-height:46px}}
 
+
+/* =====================================================
+   K15 FM FEATURED VIDEOS - RECAP + FULL EVENT
+===================================================== */
+.featured-video-list{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:24px
+}
+
+.featured-video-badge{
+  display:inline-flex;
+  width:fit-content;
+  margin-bottom:7px;
+  padding:6px 9px;
+  border-radius:999px;
+  background:#fff4ce;
+  color:#8a5300;
+  font-size:9px;
+  font-weight:900;
+  letter-spacing:.7px;
+  text-transform:uppercase
+}
+
+.official-recap--full{
+  border-color:rgba(248,194,78,.32)
+}
+
+.official-recap--full .recap-video-info{
+  background:
+    radial-gradient(circle at 95% 0%,rgba(248,194,78,.11),transparent 30%),
+    #fff
+}
+
+.video-jump-note{
+  margin-top:8px;
+  color:#8a5300;
+  font-size:10px;
+  line-height:1.65;
+  font-weight:700
+}
+
+@media(max-width:650px){
+  .featured-video-list{
+    gap:18px
+  }
+}
+
 </style>
 </head>
 <body>
@@ -56,38 +104,142 @@ a{color:inherit}button{font:inherit}.shell{width:min(1180px,calc(100% - 28px));m
 <nav class="tabs"><a class="tab active" href="#video">🎬 Video Recap</a><a class="tab" href="#album">📸 Ảnh & Video sự kiện</a><a class="tab" href="#dong-gop">☁️ Gửi ảnh / video</a></nav>
 
 <section class="section" id="video">
+
   <div class="section-head">
     <small>K15 FM Official</small>
-    <h2>Video Recap Hội khóa</h2>
-    <p>Cùng phát lại những khoảnh khắc đáng nhớ của K15 FM – Thanh xuân phát lại.</p>
+    <h2>Video Hội khóa K15 FM</h2>
+    <p>
+      Xem lại video recap ngắn gọn và toàn bộ chương trình Hội khóa
+      K15 FM – Thanh xuân phát lại.
+    </p>
   </div>
 
-  <div class="official-recap">
-    <div class="recap-video-frame">
-      <iframe
-  src="https://www.youtube.com/embed/CTEI-beAJBQ?rel=0"
-  title="K15 FM – Thanh xuân phát lại | Official Recap"
-  loading="lazy"
-  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-  referrerpolicy="strict-origin-when-cross-origin"
-  allowfullscreen>
-</iframe>
-    </div>
+  <div class="featured-video-list">
 
-    <div class="recap-video-info">
-      <div class="recap-video-copy">
-        <span class="recap-label">K15 FM · OFFICIAL RECAP</span>
-        <h3>Một thập kỷ trở về</h3>
-        <p>Một ngày để trở về. Một ngày để gặp lại những người bạn cũ, những người thầy, người cô và những ký ức của một thời thanh xuân tại Học viện Ngân hàng.</p>
-        <p>Cùng phát lại những khoảnh khắc của <strong>K15 FM – Thanh xuân phát lại</strong>.</p>
+    <!-- VIDEO 1: OFFICIAL RECAP -->
+    <div class="official-recap">
+
+      <div class="recap-video-frame">
+        <iframe
+          src="https://www.youtube.com/embed/CTEI-beAJBQ?rel=0"
+          title="K15 FM – Thanh xuân phát lại | Official Recap"
+          loading="lazy"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen>
+        </iframe>
       </div>
 
-      <div class="actions">
-        <a class="btn btn-primary" href="https://youtu.be/CTEI-beAJBQ" target="_blank" rel="noopener">▶ Xem trên YouTube</a>
-        <a class="btn btn-secondary" href="https://drive.google.com/drive/folders/19rVZl-kwIG6VKNI-OxAdM4kEvEMQPgeT?usp=sharing" target="_blank" rel="noopener">⬇ Tải video chất lượng cao</a>
+      <div class="recap-video-info">
+
+        <div class="recap-video-copy">
+
+          <span class="featured-video-badge">
+            Official Recap
+          </span>
+
+          <h3>Một thập kỷ trở về</h3>
+
+          <p>
+            Một ngày để trở về. Một ngày để gặp lại những người bạn cũ,
+            những người thầy, người cô và những ký ức của một thời thanh xuân
+            tại Học viện Ngân hàng.
+          </p>
+
+          <p>
+            Cùng phát lại những khoảnh khắc của
+            <strong>K15 FM – Thanh xuân phát lại</strong>.
+          </p>
+
+        </div>
+
+        <div class="actions">
+
+          <a
+            class="btn btn-primary"
+            href="https://www.youtube.com/watch?v=CTEI-beAJBQ"
+            target="_blank"
+            rel="noopener">
+            ▶ Xem Recap trên YouTube
+          </a>
+
+          <a
+            class="btn btn-secondary"
+            href="https://drive.google.com/drive/folders/19rVZl-kwIG6VKNI-OxAdM4kEvEMQPgeT?usp=sharing"
+            target="_blank"
+            rel="noopener">
+            ⬇ Tải video chất lượng cao
+          </a>
+
+        </div>
+
       </div>
+
     </div>
+
+
+    <!-- VIDEO 2: FULL HỘI KHÓA -->
+    <div class="official-recap official-recap--full">
+
+      <div class="recap-video-frame">
+        <iframe
+          src="https://www.youtube.com/embed/-KliLvrE3yc?rel=0"
+          title="K15 FM – Thanh xuân phát lại | Full Hội khóa"
+          loading="lazy"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen>
+        </iframe>
+      </div>
+
+      <div class="recap-video-info">
+
+        <div class="recap-video-copy">
+
+          <span class="featured-video-badge">
+            Full chương trình
+          </span>
+
+          <h3>Toàn bộ Hội khóa K15 FM</h3>
+
+          <p>
+            Xem lại đầy đủ chương trình Hội khóa K15 FM – Thanh xuân phát lại:
+            hội ngộ, tri ân, giao lưu, những khoảnh khắc trên sân khấu
+            và các phần nội dung đáng nhớ của ngày trở về.
+          </p>
+
+          <div class="video-jump-note">
+            ▶ Player trên website mở từ đầu để mọi người có thể xem trọn chương trình.
+          </div>
+
+        </div>
+
+        <div class="actions">
+
+          <a
+            class="btn btn-primary"
+            href="https://www.youtube.com/watch?v=-KliLvrE3yc"
+            target="_blank"
+            rel="noopener">
+            ▶ Xem Full trên YouTube
+          </a>
+
+          <a
+            class="btn btn-secondary"
+            href="https://www.youtube.com/watch?v=-KliLvrE3yc&t=244s"
+            target="_blank"
+            rel="noopener">
+            ⏱ Mở từ 04:04
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
   </div>
+
 </section>
 
 <section class="section" id="album">
@@ -107,7 +259,7 @@ a{color:inherit}button{font:inherit}.shell{width:min(1180px,calc(100% - 28px));m
 
 <footer class="footer">K15 FM · Thanh xuân phát lại<br>Kỷ niệm 10 năm ra trường Sinh viên K15 Học viện Ngân hàng</footer>
 
-<script src="/assets/js/site-header.js?v=20260813-media-recap-youtube-final"></script>
+<script src="/assets/js/site-header.js?v=20260816-media-recap-full-event-final"></script>
 <script>
 const MEDIA_API_URL="https://script.google.com/macros/s/AKfycbxKK68exvmpy4ob1GXF4E42FMfalVzap3R2HwNi8zj_ZQttF9NHY6UVk4EtzqWRIe8b/exec";
 const ROOT_DRIVE_URL="https://drive.google.com/drive/folders/1LTJAG3FKjAx1Rm6ixR-ud9tCtUoSJufT?usp=sharing";
