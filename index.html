@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="/assets/css/site-header.css?v=20260813-after-reunion-new-video-final">
+<link rel="stylesheet" href="/assets/css/site-header.css?v=20260816-after-reunion-two-videos-final">
 
 <style>
 :root{
@@ -709,6 +709,79 @@ img{max-width:100%}
   .story-copy{padding:30px 22px}
   .story-quote{min-height:260px;padding:25px 20px}
 }
+
+/* =====================================================
+   HOME FEATURED VIDEOS - OFFICIAL + FULL EVENT
+===================================================== */
+.home-video-list{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:22px
+}
+
+.official-video--full{
+  border-color:rgba(248,194,78,.30)
+}
+
+.official-video--full .video-caption{
+  background:
+    radial-gradient(circle at 94% 0%,rgba(248,194,78,.10),transparent 30%),
+    #fff
+}
+
+.video-badge{
+  display:inline-flex;
+  width:fit-content;
+  margin-bottom:6px;
+  padding:6px 9px;
+  border-radius:999px;
+  background:#fff4ce;
+  color:#8a5300;
+  font-size:9px;
+  font-weight:900;
+  letter-spacing:.8px;
+  text-transform:uppercase
+}
+
+.video-caption-copy{
+  max-width:760px
+}
+
+.video-caption .video-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  flex-shrink:0
+}
+
+.video-caption .video-actions .btn{
+  min-height:42px
+}
+
+.video-note{
+  margin-top:8px;
+  color:#8a5300;
+  font-size:10px;
+  line-height:1.65;
+  font-weight:700
+}
+
+@media(max-width:700px){
+  .home-video-list{
+    gap:18px
+  }
+
+  .video-caption .video-actions{
+    width:100%;
+    display:grid;
+    grid-template-columns:1fr;
+  }
+
+  .video-caption .video-actions .btn{
+    width:100%;
+  }
+}
+
 </style>
 </head>
 
@@ -788,47 +861,128 @@ img{max-width:100%}
 <main class="shell">
 
   <section class="section">
+
     <div class="section-head">
       <small>K15 FM Official Video</small>
       <h2>Thanh xuân đã được phát lại</h2>
       <p>
-        Cùng nhìn lại những khoảnh khắc, những gương mặt
-        và một phần thanh xuân của K15 Học viện Ngân hàng
+        Cùng nhìn lại video chính thức và toàn bộ chương trình Hội khóa
+        K15 FM – Thanh xuân phát lại.
       </p>
     </div>
 
-    <div class="official-video">
-      <div class="video-frame">
-        <iframe
-          src="https://www.youtube.com/embed/guJE7Yr61AA?rel=0"
-          title="K15 FM – Thanh xuân phát lại"
-          loading="lazy"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerpolicy="strict-origin-when-cross-origin"
-          allowfullscreen>
-        </iframe>
-      </div>
+    <div class="home-video-list">
 
-      <div class="video-caption">
-        <div>
-          <span>K15 FM · OFFICIAL VIDEO</span>
-          <h3>Mười năm – một lần trở về</h3>
-          <p>
-            2016 – 2026 · Kỷ niệm 10 năm ra trường
-            Sinh viên K15 Học viện Ngân hàng
-          </p>
+      <!-- VIDEO 1: OFFICIAL VIDEO -->
+      <div class="official-video">
+
+        <div class="video-frame">
+          <iframe
+            src="https://www.youtube.com/embed/guJE7Yr61AA?rel=0"
+            title="K15 FM – Thanh xuân phát lại | Official Video"
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen>
+          </iframe>
         </div>
 
-        <a
-          class="btn btn-gold"
-          href="https://youtu.be/guJE7Yr61AA"
-          target="_blank"
-          rel="noopener"
-        >
-          ▶ Xem trên YouTube
-        </a>
+        <div class="video-caption">
+
+          <div class="video-caption-copy">
+
+            <span class="video-badge">
+              K15 FM · OFFICIAL VIDEO
+            </span>
+
+            <h3>Mười năm – một lần trở về</h3>
+
+            <p>
+              2016 – 2026 · Kỷ niệm 10 năm ra trường
+              Sinh viên K15 Học viện Ngân hàng.
+            </p>
+
+          </div>
+
+          <div class="video-actions">
+
+            <a
+              class="btn btn-gold"
+              href="https://youtu.be/guJE7Yr61AA"
+              target="_blank"
+              rel="noopener">
+              ▶ Xem trên YouTube
+            </a>
+
+          </div>
+
+        </div>
+
       </div>
+
+
+      <!-- VIDEO 2: FULL HỘI KHÓA -->
+      <div class="official-video official-video--full">
+
+        <div class="video-frame">
+          <iframe
+            src="https://www.youtube.com/embed/-KliLvrE3yc?rel=0"
+            title="K15 FM – Thanh xuân phát lại | Full Hội khóa"
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen>
+          </iframe>
+        </div>
+
+        <div class="video-caption">
+
+          <div class="video-caption-copy">
+
+            <span class="video-badge">
+              K15 FM · FULL CHƯƠNG TRÌNH
+            </span>
+
+            <h3>Toàn bộ Hội khóa K15 FM</h3>
+
+            <p>
+              Xem lại đầy đủ chương trình Hội khóa:
+              hội ngộ, tri ân, giao lưu, những khoảnh khắc trên sân khấu
+              và các phần nội dung đáng nhớ của ngày trở về.
+            </p>
+
+            <div class="video-note">
+              ▶ Player trên website mở từ đầu để mọi người xem trọn chương trình.
+            </div>
+
+          </div>
+
+          <div class="video-actions">
+
+            <a
+              class="btn btn-gold"
+              href="https://www.youtube.com/watch?v=-KliLvrE3yc"
+              target="_blank"
+              rel="noopener">
+              ▶ Xem Full trên YouTube
+            </a>
+
+            <a
+              class="btn btn-secondary"
+              href="https://www.youtube.com/watch?v=-KliLvrE3yc&t=244s"
+              target="_blank"
+              rel="noopener">
+              ⏱ Mở từ 04:04
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
     </div>
+
   </section>
 
   <section class="section">
@@ -1021,7 +1175,7 @@ img{max-width:100%}
   Kỷ niệm 10 năm ra trường Sinh viên K15 Học viện Ngân hàng
 </footer>
 
-<script src="/assets/js/site-header.js?v=20260813-after-reunion-new-video-final"></script>
+<script src="/assets/js/site-header.js?v=20260816-after-reunion-two-videos-final"></script>
 
 <script>
 const MEDIA_API_URL =
